@@ -1,0 +1,13 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+.env.prod
+.env.dev
+dist
+.DS_Store
+.fleet
+.idea
