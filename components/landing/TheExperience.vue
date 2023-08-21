@@ -242,7 +242,7 @@
 <script setup>
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .timeline {
   &::before {
     left: 50%;
@@ -262,6 +262,9 @@
     position: absolute;
     top: 20px;
     left: calc(50% - (2.13rem + 2px));
+    svg {
+      width: 100%;
+    }
     @media (max-width: 767.98px) {
       left: -1.5rem;
     }
