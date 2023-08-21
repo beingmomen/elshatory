@@ -142,6 +142,102 @@
           </div>
         </div>
       </UCard>
+      <UCard
+        :ui="{
+          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
+          // base: 'transition ease-in-out delay-50 duration-300 hover:-mt-4 hover:mb-4',
+          body: { base: 'flex flex-col h-full' },
+        }"
+      >
+        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg flex-none">
+          <img
+            class="h-full w-full object-cover"
+            src="@/assets/imgs/projects/tiger.svg"
+            alt="image"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between grow">
+          <div>
+            <p class="mt-3 text-gray-500">#Website</p>
+
+            <h3
+              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
+            >
+              <NuxtLink to="https://tiger-golden.com/index" target="_blank">
+                TIGER GOLD
+              </NuxtLink>
+            </h3>
+            <p class="mt-3 text-gray-400">
+              Golden Tiger Company for electrical and electronic devices
+            </p>
+          </div>
+          <div class="mt-4 gap-3 flex flex-wrap">
+            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
+            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
+            <UBadge
+              color="sky"
+              label="JavaScript"
+              :ui="{ font: 'font-black' }"
+            />
+            <UBadge color="sky" label="jQuery" :ui="{ font: 'font-black' }" />
+            <UBadge
+              color="sky"
+              label="Bootstrap"
+              :ui="{ font: 'font-black' }"
+            />
+          </div>
+        </div>
+      </UCard>
+      <UCard
+        :ui="{
+          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
+          // base: 'transition ease-in-out delay-50 duration-300 hover:-mt-4 hover:mb-4',
+          body: { base: 'flex flex-col h-full' },
+        }"
+      >
+        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg flex-none">
+          <img
+            class="h-full w-full object-cover"
+            src="@/assets/imgs/projects/dream.svg"
+            alt="image"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between grow">
+          <div>
+            <p class="mt-3 text-gray-500">#Website</p>
+
+            <h3
+              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
+            >
+              <NuxtLink to="https://tiger-golden.com/index" target="_blank">
+                DREAM TV PLAYER
+              </NuxtLink>
+            </h3>
+            <p class="mt-3 text-gray-400">
+              This App Is Intended To Play On TVs (Android). If You Are Using A
+              Smartphone Or Tablet Device, Please Use The Applicationdream
+              Player
+            </p>
+          </div>
+          <div class="mt-4 gap-3 flex flex-wrap">
+            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
+            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
+            <UBadge
+              color="sky"
+              label="JavaScript"
+              :ui="{ font: 'font-black' }"
+            />
+            <UBadge color="sky" label="jQuery" :ui="{ font: 'font-black' }" />
+            <UBadge
+              color="sky"
+              label="Bootstrap"
+              :ui="{ font: 'font-black' }"
+            />
+          </div>
+        </div>
+      </UCard>
     </div>
   </div>
 </template>

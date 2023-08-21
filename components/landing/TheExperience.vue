@@ -232,7 +232,7 @@
         </UCard>
       </div>
       <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
-        <h2>March 2022 - Current</h2>
+        <h2>Dec 2020 - March 2021</h2>
         <!-- <UCard> Body </UCard> -->
       </div>
     </div>
