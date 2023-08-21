@@ -3,9 +3,7 @@
 </template>
 
 <script setup>
-definePageMeta({
-  layout: "landing",
-});
+definePageMeta({});
 </script>
 
 

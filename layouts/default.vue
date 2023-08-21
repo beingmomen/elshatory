@@ -1,40 +1,40 @@
+<script lang="ts" setup>
+import { useWindowScroll, useScroll } from "@vueuse/core";
+const { x, y } = useWindowScroll();
 
+const el = ref<HTMLElement | null>(null);
+
+const scrollTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+</script>
 
 <template>
-  <div
-    class="full-layout min-h-screen flex gap-6"
-    :class="[toggleSidebar, positionSidebar]"
-  >
-    <div class="overlay absolute" @click="closeSidebar"></div>
-
-    <UiTheFullSidebar @closeSidebar="closeSidebar" />
-
-    <div class="grow">
-      <div class="container mx-auto pe-5 ps-5 sm:ps-0">
-        <UiTheNavbar />
-        <slot />
-      </div>
-    </div>
+  <div class="dark:bg-gray-900 bg-gray-100" ref="el">
+    <LandingTheNavbar />
+    <LandingTheHero />
+    <LandingTheSkills />
+    <LandingTheServices />
+    <LandingTheExperience />
+    <LandingTheProjects />
+    <LandingTheClients />
+    <!-- <LandingTheTestimonials /> -->
+    <slot />
+    <LandingTheFooter />
+    <UButton
+      v-if="y > 1000"
+      class="fixed bottom-5 right-5"
+      icon="i-ic-outline-arrow-upward"
+      size="sm"
+      color="blue"
+      square
+      variant="solid"
+      @click="scrollTop"
+    />
   </div>
 </template>
 
-<script lang="ts" setup>
-const sidebar = useToggleSidebar();
-const fixedSidebar = useFixedSidebar();
-
-const closeSidebar = () => {
-  fixedSidebar.value = true;
-};
-
-const toggleSidebar = computed(() =>
-  sidebar.value ? "full-sidebar" : "small-sidebar"
-);
-const positionSidebar = computed(() =>
-  fixedSidebar.value ? "static-sidebar" : "fixed-sidebar"
-);
-</script>
-
 <style scoped></style>
-
-
-

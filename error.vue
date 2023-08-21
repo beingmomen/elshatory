@@ -18,7 +18,7 @@
         </p>
 
         <UButton
-          :to="localePath('/')"
+          :to="'/'"
           label="Back to Homepage"
           :padded="true"
           class="px-4 py-3"
