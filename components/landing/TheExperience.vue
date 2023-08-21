@@ -12,7 +12,9 @@
     <div
       class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row flex-col-reverse pt-8"
     >
-      <div class="timeline-company bg-gray-900 rounded-full p-1 border-2">
+      <div
+        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
+      >
         <nuxt-icon class="text-[4rem] shadow-lg" name="nanosoft"></nuxt-icon>
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] mt-3">
@@ -90,7 +92,9 @@
     <div
       class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row-reverse flex-col-reverse pt-8"
     >
-      <div class="timeline-company bg-gray-900 rounded-full p-1 border-2">
+      <div
+        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
+      >
         <nuxt-icon class="text-[4rem] shadow-lg" name="hmaserv"></nuxt-icon>
       </div>
       <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
@@ -160,7 +164,9 @@
     <div
       class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row flex-col-reverse pt-8"
     >
-      <div class="timeline-company bg-gray-900 rounded-full p-1 border-2">
+      <div
+        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
+      >
         <nuxt-icon class="text-[4rem] shadow-lg" name="hmaserv"></nuxt-icon>
       </div>
       <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
