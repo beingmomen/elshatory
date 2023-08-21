@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: process.env.BROWSER_TITLE,
+      htmlAttrs: {
+        class: 'dark'
+      },
       script: [
         // <script src="https://myawesome-lib.js"></script>
         { src: 'https://upload-widget.cloudinary.com/global/all.js' },
