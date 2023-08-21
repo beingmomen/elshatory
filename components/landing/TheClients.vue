@@ -8,35 +8,35 @@
     </h2>
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center mt-8">
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/tiger"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/streammaxy"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/dream"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/logo"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/maxott"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/qsmarket"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/q8music"
       ></nuxt-icon>
       <nuxt-icon
-        class="skill-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
+        class="clients-icon text-[6rem] grayscale hover:grayscale-0 cursor-pointer flex justify-center"
         name="clients/tigergold"
       ></nuxt-icon>
     </div>
@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" >
-.skill-icon {
+.clients-icon {
   svg {
     width: 96px;
   }

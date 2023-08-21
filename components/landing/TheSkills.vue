@@ -9,7 +9,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -19,7 +19,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -33,7 +33,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -43,7 +43,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -57,7 +57,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -67,7 +67,7 @@
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
             <nuxt-icon
-              class="text-[3rem]"
+              class="skills-icon text-[3rem]"
               :name="`skills/${skill.name}`"
             ></nuxt-icon>
           </div>
@@ -109,7 +109,13 @@ const thirdSkills = ref([
 ]);
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.skills-icon {
+  svg {
+    width: 48px;
+  }
+}
+
 @keyframes scroll {
   0% {
     transform: translate(0);
