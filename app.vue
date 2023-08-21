@@ -1,5 +1,6 @@
 <template>
-  <div :dir="useAR()">
+  <!-- <div :dir="useAR()"> -->
+  <div>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

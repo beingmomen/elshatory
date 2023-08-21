@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     'nuxt-icons',
     'nuxt-icon',
     'nuxt-swiper',
-    '@nuxtjs/i18n',
+    // '@nuxtjs/i18n',
     '@tailvue/nuxt',
     ['@nuxtjs/google-fonts', {
       families: {
@@ -54,26 +54,26 @@ export default defineNuxtConfig({
     // modules: ['navigation', 'pagination'], // all modules are imported by default
   },
 
-  i18n: {
-    vueI18n: './i18n.config.ts', // if you are using custom path, default 
+  // i18n: {
+  //   vueI18n: './i18n.config.ts', // if you are using custom path, default 
 
 
-    lazy: true,
-    langDir: 'locales',
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.json'
-      },
-      {
-        code: 'ar',
-        name: 'Arabic',
-        file: 'ar.json'
-      }
-    ],
-    defaultLocale: 'en',
-  },
+  //   lazy: true,
+  //   langDir: 'locales',
+  //   locales: [
+  //     {
+  //       code: 'en',
+  //       name: 'English',
+  //       file: 'en.json'
+  //     },
+  //     // {
+  //     //   code: 'ar',
+  //     //   name: 'Arabic',
+  //     //   file: 'ar.json'
+  //     // }
+  //   ],
+  //   defaultLocale: 'en',
+  // },
 
   ui: {
     icons: 'all'
