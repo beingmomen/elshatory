@@ -1,6 +1,6 @@
 <template>
   <div class="flex lg:container xl:container mx-auto px-12 md:px-32 h-[40rem]">
-    <div class="min-h-full pt-32">
+    <div class="min-h-full pt-8 sm:pt-32">
       <h3 class="text-gray-400 font-black text-lg">Hello everyone!</h3>
       <p class="font-black text-6xl bg-custom-gradient bg-clip-text mt-6">
         I’m
