@@ -6,8 +6,14 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: process.env.BROWSER_TITLE,
+      meta: [
+        { name: 'description', content: 'Experienced Frontend Developer specializing in creating engaging and user-friendly web experiences. Proficient in HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Vue3.JS, Nuxt3.JS, tailwindcss, and modern frontend frameworks. Portfolio showcasing a diverse range of projects that highlight responsive design, interactivity, and a passion for crafting intuitive user interfaces.' },
+        { name: 'keywords', content: 'Frontend developer, web development, MEVN Stack Developer, Technical Support, Vue.JS & Nuxt.JS Developer, HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Nuxt3.JS, Vue3.JS, Vue, Vue3, Nuxt,  Nuxt3, tailwindcss, Tailwind, responsive design, user interface, web design, portfolio' },
+        { name: 'author', content: 'Abdelmo’men Elshatory' }
+      ],
       htmlAttrs: {
-        class: 'dark'
+        class: 'dark',
+        lang: 'en'
       },
       script: [
         // <script src="https://myawesome-lib.js"></script>
@@ -34,12 +40,12 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-swiper',
     // '@nuxtjs/i18n',
-    '@tailvue/nuxt',
+    '@vite-pwa/nuxt',
     ['@nuxtjs/google-fonts', {
       families: {
         'Nunito': true,
         'Shrikhand': true,
-        'Courgette': true,
+        // 'Courgette': true,
         download: true,
         inject: true
       }

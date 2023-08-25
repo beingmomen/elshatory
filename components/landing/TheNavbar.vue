@@ -10,35 +10,61 @@
         </h1>
       </div>
       <div class="hidden sm:block">
-        <NuxtLink
-          class="text-md font-black cursor-pointer hover:underline hover:decoration-gray-400 underline-offset-4 text-gray-400 p-2 main-title"
+        <UButton
+          variant="link"
+          color="gray"
+          :ui="{
+            base: 'text-gray-400',
+            font: 'font-black',
+          }"
         >
           Home
-        </NuxtLink>
-        <NuxtLink
-          class="text-md font-black cursor-pointer hover:underline underline-offset-4 text-gray-400 p-2"
+        </UButton>
+
+        <UButton
+          variant="link"
+          color="gray"
+          :ui="{
+            base: 'text-gray-400',
+            font: 'font-black',
+          }"
           @click="scrollToSection('services')"
         >
           Services
-        </NuxtLink>
-        <NuxtLink
-          class="text-md font-black cursor-pointer hover:underline underline-offset-4 text-gray-400 p-2"
+        </UButton>
+        <UButton
+          variant="link"
+          color="gray"
+          :ui="{
+            base: 'text-gray-400',
+            font: 'font-black',
+          }"
           @click="scrollToSection('experience')"
         >
           Experience
-        </NuxtLink>
-        <NuxtLink
-          class="text-md font-black cursor-pointer hover:underline underline-offset-4 text-gray-400 p-2"
+        </UButton>
+        <UButton
+          variant="link"
+          color="gray"
+          :ui="{
+            base: 'text-gray-400',
+            font: 'font-black',
+          }"
           @click="scrollToSection('projects')"
         >
           Projects
-        </NuxtLink>
-        <NuxtLink
-          class="text-md font-black cursor-pointer hover:underline underline-offset-4 text-gray-400 p-2"
+        </UButton>
+        <UButton
+          variant="link"
+          color="gray"
+          :ui="{
+            base: 'text-gray-400',
+            font: 'font-black',
+          }"
           @click="scrollToSection('customers')"
         >
           Customers
-        </NuxtLink>
+        </UButton>
       </div>
       <div class="hidden">
         <ClientOnly>
