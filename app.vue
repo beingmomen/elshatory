@@ -13,17 +13,6 @@
 <script setup>
 const colorMode = useColorMode();
 colorMode.preference = "dark";
-
-// const activities = useActivities();
-// activities.getAll();
-// const colors = useColors();
-// colors.getAll();
-// const championships = useChampionships();
-// championships.getAll();
-// const belts = useBelts();
-// belts.getAll();
-// const mediaTypes = useMediaTypes();
-// mediaTypes.getAll();
 </script>
 
 

@@ -18,7 +18,6 @@ export default defineNuxtConfig({
       script: [
         // <script src="https://myawesome-lib.js"></script>
         { src: 'https://upload-widget.cloudinary.com/global/all.js' },
-        { src: 'https://upload-widget.cloudinary.com/global/all.js' },
       ],
       link: [{ rel: 'icon', type: 'image/svg', href: `/images/${process.env.LOGO}.svg` }]
 
@@ -34,13 +33,11 @@ export default defineNuxtConfig({
 
 
   modules: [
-    '@nuxt/image-edge',
-    '@nuxthq/ui',
+    '@nuxt/ui',
     '@pinia/nuxt',
     'nuxt-icons',
     'nuxt-icon',
     'nuxt-swiper',
-    'nuxt-gtag',
     // '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
     ['@nuxtjs/google-fonts', {
@@ -54,9 +51,7 @@ export default defineNuxtConfig({
     }]
   ],
 
-  gtag: {
-    id: 'G-DR52PN39FE'
-  },
+
 
   swiper: {
     // Swiper options
@@ -92,7 +87,7 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
-    preference: 'light' // disable system
+    preference: 'dark' // disable system
   },
 
   pinia: {
