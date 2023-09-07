@@ -104,8 +104,8 @@ watchEffect(() => {
     cloudinaryRef.value = window.cloudinary;
     widgetRef.value = cloudinaryRef.value.createUploadWidget(
       {
-        cloudName: "dyqfclwdk",
-        uploadPreset: "nuxi_strap",
+        cloudName: cloudName.value,
+        uploadPreset: uploadPreset.value,
         sources: ["local"],
         cropping: false,
         showAdvancedOptions: false,
