@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content:
-            "عبدالمؤمن الشطورى, Abdelmo’men Elshatory, frontend developer portfolio, frontend developer freelance, Frontend developer, web development, MEVN Stack Developer, Technical Support, Vue.JS & Nuxt.JS Developer, HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Nuxt3.JS, Vue3.JS, Vue, Vue3, Nuxt,  Nuxt3, tailwindcss, Tailwind, responsive design, user interface, web design, portfolio",
+            "عبدالمؤمن الشطوري, عبدالمؤمن الشطورى, Abdelmo’men Elshatory, Abdelmo’men Elshatory portfolio, Abdelmomen Elshatory, Abdelmomen Elshatory portfolio, Abdelmo’men, Abdelmomen, Elshatory, الشطورى , عبدالمؤمن, الشطوري, frontend developer portfolio, frontend developer freelance, Frontend developer, web development, MEVN Stack Developer, Technical Support, Vue.JS & Nuxt.JS Developer, HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Nuxt3.JS, Vue3.JS, Vue, Vue3, Nuxt,  Nuxt3, tailwindcss, Tailwind, responsive design, user interface, web design, portfolio",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -65,7 +65,7 @@ export default defineNuxtConfig({
     ],
   ],
 
-  image: { 
+  image: {
     // inject: true,
     quality: 80,
     dir: 'assets',
