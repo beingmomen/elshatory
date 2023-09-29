@@ -17,6 +17,7 @@
             base: 'text-gray-400',
             font: 'font-black',
           }"
+          aria-label="Home page"
         >
           Home
         </UButton>
@@ -24,6 +25,7 @@
         <UButton
           variant="link"
           color="gray"
+          aria-label="Services Page"
           :ui="{
             base: 'text-gray-400',
             font: 'font-black',
@@ -35,6 +37,7 @@
         <UButton
           variant="link"
           color="gray"
+          aria-label="Experience Page"
           :ui="{
             base: 'text-gray-400',
             font: 'font-black',
@@ -46,6 +49,7 @@
         <UButton
           variant="link"
           color="gray"
+          aria-label="Projects Page"
           :ui="{
             base: 'text-gray-400',
             font: 'font-black',
@@ -57,6 +61,7 @@
         <UButton
           variant="link"
           color="gray"
+          aria-label="Customers Page"
           :ui="{
             base: 'text-gray-400',
             font: 'font-black',

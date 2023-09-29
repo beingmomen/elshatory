@@ -1,7 +1,7 @@
 <template>
   <div class="flex lg:container xl:container mx-auto px-12 md:px-32 h-[40rem]">
     <div class="min-h-full pt-8 sm:pt-32">
-      <h3 class="text-gray-400 font-black text-lg">Hello everyone!</h3>
+      <h2 class="text-gray-400 font-black text-lg">Hello everyone!</h2>
       <p class="font-black text-6xl bg-custom-gradient bg-clip-text mt-6">
         I’m
       </p>
@@ -34,13 +34,21 @@
       </p>
 
       <div class="mt-10 flex gap-4">
-        <NuxtLink to="https://www.linkedin.com/in/beingmomen/" target="_blank">
+        <NuxtLink
+          to="https://www.linkedin.com/in/beingmomen/"
+          target="_blank"
+          aria-label="linkedin Profile"
+        >
           <nuxt-icon
             class="text-[2rem] cursor-pointer shadow-lg"
             name="linkedin"
           ></nuxt-icon>
         </NuxtLink>
-        <NuxtLink to="https://github.com/beingmomen" target="_blank">
+        <NuxtLink
+          to="https://github.com/beingmomen"
+          target="_blank"
+          aria-label="Github Profile"
+        >
           <nuxt-icon
             class="text-[2rem] cursor-pointer shadow-lg"
             name="github"

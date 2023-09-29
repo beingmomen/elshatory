@@ -6,233 +6,50 @@
     </h2>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
       <UCard
+        v-for="(project, i) in projects"
+        :key="i"
         :ui="{
           base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
           body: { base: 'flex flex-col h-full' },
         }"
       >
         <div class="h-[15rem] rounded-md overflow-hidden shadow-lg">
-          <img
+          <!-- <img
             class="h-full w-full object-cover"
-            src="@/assets/imgs/projects/erp.svg"
-            alt="image"
+            :src="project.image"
+            :alt="project.description"
+            loading="lazy"
+          /> -->
+
+          <NuxtImg
+            class="h-full w-full object-cover"
+            :src="project.image"
+            :alt="project.description"
           />
         </div>
 
         <div class="flex flex-col justify-between grow">
           <div>
-            <p class="mt-3 text-gray-500">#System</p>
+            <p class="mt-3 text-gray-400">#{{ project.type }}</p>
 
             <h3
               class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
             >
-              <NuxtLink to="https://tiger-academy.netlify.app/" target="_blank">
-                Tiger Academy
+              <NuxtLink :to="project.url" target="_blank">
+                {{ project.title }}
               </NuxtLink>
             </h3>
             <p class="mt-3 text-gray-400">
-              The web system for managing a martial arts academy, through which
-              players and tournaments can be managed, and many other features
+              {{ project.description }}
             </p>
           </div>
 
           <div class="mt-4 gap-3 flex flex-wrap">
-            <UBadge color="sky" label="Nuxt 3" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="MongoDB" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="Prisma" :ui="{ font: 'font-black' }" />
             <UBadge
+              v-for="badge in project.badges"
+              :key="badge"
               color="sky"
-              label="Tailwind CSS"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="NuxtUI" :ui="{ font: 'font-black' }" />
-          </div>
-        </div>
-      </UCard>
-      <UCard
-        :ui="{
-          base: 'transition ease-in-out delay-100 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
-          body: { base: 'flex flex-col h-full' },
-        }"
-      >
-        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg">
-          <img
-            class="h-full w-full object-cover"
-            src="@/assets/imgs/projects/maxy.svg"
-            alt="image"
-          />
-        </div>
-
-        <div class="flex flex-col justify-between grow">
-          <div>
-            <p class="mt-3 text-gray-500">#Website</p>
-
-            <h3
-              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
-            >
-              <NuxtLink to="https://streammaxy.com/" target="_blank">
-                STREAMMAXY
-              </NuxtLink>
-            </h3>
-            <p class="mt-3 text-gray-400">
-              Streammaxy offers IPTV solutions for Android, iOS, Windows, and
-              Smart TV. It's a leading IPTV provider, offering app development,
-              reseller panel, and custom solutions. With 500+ clients, they
-              boast 24/7 support and various features.
-            </p>
-          </div>
-          <div class="mt-4 gap-3 flex flex-wrap">
-            <UBadge
-              color="sky"
-              label="Javascript"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="jQuery" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="Bootstrap"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
-          </div>
-        </div>
-      </UCard>
-      <UCard
-        :ui="{
-          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
-          // base: 'transition ease-in-out delay-50 duration-300 hover:-mt-4 hover:mb-4',
-          body: { base: 'flex flex-col h-full' },
-        }"
-      >
-        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg flex-none">
-          <img
-            class="h-full w-full object-cover"
-            src="@/assets/imgs/projects/droos.svg"
-            alt="image"
-          />
-        </div>
-
-        <div class="flex flex-col justify-between grow">
-          <div>
-            <p class="mt-3 text-gray-500">#Website</p>
-
-            <h3
-              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
-            >
-              <NuxtLink to="http://droos24.com/" target="_blank">
-                Droos24
-              </NuxtLink>
-            </h3>
-            <p class="mt-3 text-gray-400">
-              droos 24 is a platform that offers lessons and educational courses
-              for the different primary, middle and high school levels
-            </p>
-          </div>
-          <div class="mt-4 gap-3 flex flex-wrap">
-            <UBadge color="sky" label="Nuxt 2" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="Tailwind CSS"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="AOS" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
-          </div>
-        </div>
-      </UCard>
-      <UCard
-        :ui="{
-          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
-          // base: 'transition ease-in-out delay-50 duration-300 hover:-mt-4 hover:mb-4',
-          body: { base: 'flex flex-col h-full' },
-        }"
-      >
-        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg flex-none">
-          <img
-            class="h-full w-full object-cover"
-            src="@/assets/imgs/projects/tiger.svg"
-            alt="image"
-          />
-        </div>
-
-        <div class="flex flex-col justify-between grow">
-          <div>
-            <p class="mt-3 text-gray-500">#Website</p>
-
-            <h3
-              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
-            >
-              <NuxtLink to="https://tiger-golden.com/index" target="_blank">
-                TIGER GOLD
-              </NuxtLink>
-            </h3>
-            <p class="mt-3 text-gray-400">
-              Golden Tiger Company for electrical and electronic devices
-            </p>
-          </div>
-          <div class="mt-4 gap-3 flex flex-wrap">
-            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="JavaScript"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="jQuery" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="Bootstrap"
-              :ui="{ font: 'font-black' }"
-            />
-          </div>
-        </div>
-      </UCard>
-      <UCard
-        :ui="{
-          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
-          // base: 'transition ease-in-out delay-50 duration-300 hover:-mt-4 hover:mb-4',
-          body: { base: 'flex flex-col h-full' },
-        }"
-      >
-        <div class="h-[15rem] rounded-md overflow-hidden shadow-lg flex-none">
-          <img
-            class="h-full w-full object-cover"
-            src="@/assets/imgs/projects/dream.svg"
-            alt="image"
-          />
-        </div>
-
-        <div class="flex flex-col justify-between grow">
-          <div>
-            <p class="mt-3 text-gray-500">#Website</p>
-
-            <h3
-              class="mt-6 font-black text-3xl hover:main-title text-gray-300 cursor-pointer"
-            >
-              <NuxtLink to="https://tiger-golden.com/index" target="_blank">
-                DREAM TV PLAYER
-              </NuxtLink>
-            </h3>
-            <p class="mt-3 text-gray-400">
-              This App Is Intended To Play On TVs (Android). If You Are Using A
-              Smartphone Or Tablet Device, Please Use The Applicationdream
-              Player
-            </p>
-          </div>
-          <div class="mt-4 gap-3 flex flex-wrap">
-            <UBadge color="sky" label="HTML" :ui="{ font: 'font-black' }" />
-            <UBadge color="sky" label="CSS" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="JavaScript"
-              :ui="{ font: 'font-black' }"
-            />
-            <UBadge color="sky" label="jQuery" :ui="{ font: 'font-black' }" />
-            <UBadge
-              color="sky"
-              label="Bootstrap"
+              :label="badge"
               :ui="{ font: 'font-black' }"
             />
           </div>
@@ -243,6 +60,7 @@
 </template>
 
 <script setup>
+const projects = projectsData();
 </script>
 
 <style lang="scss" scoped>

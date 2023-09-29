@@ -10,12 +10,18 @@
     </h2>
 
     <div
-      class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row flex-col-reverse pt-8"
+      class="timeline relative mt-16 flex justify-around items-end md:items-start flex-col-reverse pt-8"
+      v-for="(experience, index) in experiences"
+      :key="index"
+      :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
     >
       <div
         class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
       >
-        <nuxt-icon class="text-[4rem] shadow-lg" name="nanosoft"></nuxt-icon>
+        <nuxt-icon
+          class="text-[4rem] shadow-lg"
+          :name="experience.iconName"
+        ></nuxt-icon>
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] mt-3">
         <UCard
@@ -23,223 +29,70 @@
             base: 'test',
           }"
         >
-          <h2 class="font-black text-2xl">Vue.JS & Nuxt.JS Developer</h2>
+          <h2 class="font-black text-2xl">{{ experience.position }}</h2>
           <p class="mt-2 main-title font-black text-lg">
-            NanoSoft | Full Time | Remotely
+            {{ experience.company }} | {{ experience.employmentType }} |
+            {{ experience.workPlace }}
           </p>
-          <ul
-            class="list-outside list-image-[url(assets/icons/checkmark.svg)] ps-5 mt-5"
-          >
-            <li>Responsibilities</li>
-            <ul class="list-outside list-disc ps-5 my-1">
-              <li class="text-gray-400">
-                Resolved issues in legacy Vue.js systems, improving
-                functionality and performance.
-              </li>
-              <li class="text-gray-400">
-                Developed a new accounting system using the Nuxt.js framework,
-                from conception to implementation.
-              </li>
-              <li class="text-gray-400">
-                Designed and integrated components to meet specific business
-                requirements.
-              </li>
-              <li class="text-gray-400">
-                Designed and developed multiple projects focused on chart
-                displays, enhancing data visualization.
-              </li>
-              <li class="text-gray-400">
-                Collaborated with team members to ensure cohesive integration of
-                new features.
-              </li>
-              <li class="text-gray-400">
-                Played a pivotal role in the ongoing evolution of the accounting
-                system, adapting it to changing business needs.
-              </li>
-              <li class="text-gray-400">
-                Analyzed complex system requirements, identified potential
-                challenges, and proposed effective solutions.
-              </li>
-            </ul>
-            <div class="flex justify-end">
-              <UButton
-                icon="i-devicon-linkedin"
-                size="md"
-                color="primary"
-                square
-                variant="link"
-                to="https://www.linkedin.com/company/nanosoft-ly/"
-                target="_blank"
-              />
-              <UButton
-                icon="i-clarity-world-outline-badged"
-                size="md"
-                color="primary"
-                square
-                variant="link"
-                to="https://nanosoft.ly/"
-                target="_blank"
-              />
-            </div>
+          <ul class="list-outside ps-5 mt-5">
+            <li class="list-image-[url(assets/icons/checkmark.svg)]">
+              Responsibilities
+            </li>
+            <li>
+              <ul class="list-outside list-disc ps-5 my-1">
+                <li
+                  v-for="(
+                    responsibility, index2
+                  ) in experience.responsibilities"
+                  :key="index2"
+                  class="text-gray-400"
+                >
+                  {{ responsibility }}
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul class="flex justify-end">
+                <li>
+                  <UButton
+                    icon="i-devicon-linkedin"
+                    size="md"
+                    color="primary"
+                    square
+                    variant="link"
+                    :to="experience.linkedInUrl"
+                    target="_blank"
+                    aria-label="Company Linkedin"
+                  />
+                </li>
+                <li>
+                  <UButton
+                    icon="i-clarity-world-outline-badged"
+                    size="md"
+                    color="primary"
+                    square
+                    variant="link"
+                    :to="experience.companySiteUrl"
+                    target="_blank"
+                    aria-label="Company Site"
+                  />
+                </li>
+              </ul>
+            </li>
           </ul>
         </UCard>
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] pt-3">
-        <h2>March 2022 - Current</h2>
-        <!-- <UCard> Body </UCard> -->
-      </div>
-    </div>
-    <div
-      class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row-reverse flex-col-reverse pt-8"
-    >
-      <div
-        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
-      >
-        <nuxt-icon class="text-[4rem] shadow-lg" name="hmaserv"></nuxt-icon>
-      </div>
-      <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
-        <UCard
-          :ui="{
-            base: 'test',
-          }"
-        >
-          <h2 class="font-black text-2xl">Frontend Developer Developer</h2>
-          <p class="mt-2 main-title font-black text-lg">HamaServ | Full Time</p>
-          <ul
-            class="list-outside list-image-[url(assets/icons/checkmark.svg)] ps-5 mt-5"
-          >
-            <li>Responsibilities</li>
-            <ul class="list-outside list-disc ps-5 my-1">
-              <li class="text-gray-400">
-                Designed and developed visually appealing and responsive
-                websites that function seamlessly across various devices and
-                screen sizes.
-              </li>
-              <li class="text-gray-400">
-                Collaborated closely with UI/UX designers to ensure a consistent
-                and user-friendly design implementation.
-              </li>
-
-              <li class="text-gray-400">
-                Utilized Vue.js to enhance user experience and create dynamic
-                components within the Blade system.
-              </li>
-              <li class="text-gray-400">
-                Worked in conjunction with PHP Laravel developers to integrate
-                frontend components into the Blade templating system.
-              </li>
-              <li class="text-gray-400">
-                Ensured smooth communication and alignment between frontend and
-                backend development teams.
-              </li>
-            </ul>
-          </ul>
-          <div class="flex justify-end">
-            <UButton
-              icon="i-devicon-linkedin"
-              size="md"
-              color="primary"
-              square
-              variant="link"
-              to="https://www.linkedin.com/company/hmaserv/"
-              target="_blank"
-            />
-            <UButton
-              icon="i-clarity-world-outline-badged"
-              size="md"
-              color="primary"
-              square
-              variant="link"
-              to="https://www.hmaserv.com/"
-              target="_blank"
-            />
-          </div>
-        </UCard>
-      </div>
-      <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
-        <h2 class="md:text-end">March 2021 - March 2022</h2>
-        <!-- <UCard> Body </UCard> -->
-      </div>
-    </div>
-    <div
-      class="timeline relative mt-16 flex justify-around items-end md:items-start md:flex-row flex-col-reverse pt-8"
-    >
-      <div
-        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
-      >
-        <nuxt-icon class="text-[4rem] shadow-lg" name="hmaserv"></nuxt-icon>
-      </div>
-      <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
-        <UCard
-          :ui="{
-            base: 'test',
-          }"
-        >
-          <h2 class="font-black text-2xl">Web Developer</h2>
-          <p class="mt-2 main-title font-black text-lg">
-            HamaServ |
-            <span class="decoration-wavy decoration-red-500">intern</span>
-          </p>
-          <ul
-            class="list-outside list-image-[url(assets/icons/checkmark.svg)] ps-5 mt-5"
-          >
-            <li>Responsibilities</li>
-            <ul class="list-outside list-disc ps-5 my-1">
-              <li class="text-gray-400">
-                Collaborated effectively with UI/UX designers to translate
-                design concepts into functional layouts.
-              </li>
-              <li class="text-gray-400">
-                Actively engaged in developing responsive websites, gaining
-                practical experience in implementing fluid layouts and adaptive
-                designs.
-              </li>
-              <li class="text-gray-400">
-                Developed a deeper understanding of JavaScript, refining skills
-                in creating interactive and dynamic website components.
-              </li>
-              <li class="text-gray-400">
-                Acquired knowledge of interacting with backend systems,
-                appreciating the interplay between frontend and backend
-                technologies.
-              </li>
-              <li class="text-gray-400">
-                Gained experience in troubleshooting frontend challenges and
-                adapting to evolving project requirements.
-              </li>
-            </ul>
-            <div class="flex justify-end">
-              <UButton
-                icon="i-devicon-linkedin"
-                size="md"
-                color="primary"
-                square
-                variant="link"
-                to="https://www.linkedin.com/company/hmaserv/"
-                target="_blank"
-              />
-              <UButton
-                icon="i-clarity-world-outline-badged"
-                size="md"
-                color="primary"
-                square
-                variant="link"
-                to="https://www.hmaserv.com/"
-                target="_blank"
-              />
-            </div>
-          </ul>
-        </UCard>
-      </div>
-      <div class="w-[80%] sm:w-[88%] md:w-[42%] mt-3">
-        <h2>Dec 2020 - March 2021</h2>
-        <!-- <UCard> Body </UCard> -->
+        <h2 :class="{ 'md:text-end': index % 2 !== 0 }">
+          {{ experience.startDate }} - {{ experience.endDate }}
+        </h2>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const experiences = experiencesData();
 </script>
 
 <style lang="scss" >

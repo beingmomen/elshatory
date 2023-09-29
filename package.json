@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/ui": "^2.8.0",
+    "@nuxt/ui": "^2.8.1",
     "@nuxtjs/i18n": "^8.0.0-rc.4",
     "@tailwindcss/forms": "^0.5.4",
     "@types/bcrypt": "^5.0.0",
@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@iconify/json": "^2.2.76",
+    "@nuxt/image": "^1.0.0-rc.2",
     "@nuxtjs/google-fonts": "^3.0.1",
+    "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@pinia/nuxt": "^0.4.11",
     "@prisma/client": "^4.16.2",

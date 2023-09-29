@@ -9,6 +9,7 @@
           <UButton
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
+            aria-label="Linkedin Profile"
             label="Abdelmomen Elshatory"
             color="primary"
             variant="link"
@@ -23,31 +24,48 @@
           <NuxtLink
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
+            aria-label="Linkedin Profile"
           >
             <nuxt-icon
               class="text-[2rem] cursor-pointer shadow-lg"
               name="linkedin"
             ></nuxt-icon>
           </NuxtLink>
-          <NuxtLink to="https://github.com/beingmomen" target="_blank">
+          <NuxtLink
+            to="https://github.com/beingmomen"
+            target="_blank"
+            aria-label="github Profile"
+          >
             <nuxt-icon
               class="text-[2rem] cursor-pointer shadow-lg"
               name="github"
             ></nuxt-icon>
           </NuxtLink>
-          <NuxtLink to="https://twitter.com/beingmomen" target="_blank">
+          <NuxtLink
+            to="https://twitter.com/beingmomen"
+            target="_blank"
+            aria-label="twitter Profile"
+          >
             <nuxt-icon
               class="text-[2rem] cursor-pointer shadow-lg"
               name="twitter"
             ></nuxt-icon>
           </NuxtLink>
-          <NuxtLink to="https://www.facebook.com/beingmomen/" target="_blank">
+          <NuxtLink
+            to="https://www.facebook.com/beingmomen/"
+            target="_blank"
+            aria-label="facebook Profile"
+          >
             <nuxt-icon
               class="text-[2rem] cursor-pointer shadow-lg"
               name="facebook"
             ></nuxt-icon>
           </NuxtLink>
-          <NuxtLink to="https://www.instagram.com/beingmomen/" target="_blank">
+          <NuxtLink
+            to="https://www.instagram.com/beingmomen/"
+            target="_blank"
+            aria-label="instagram Profile"
+          >
             <nuxt-icon
               class="text-[2rem] cursor-pointer shadow-lg"
               name="instagram"
