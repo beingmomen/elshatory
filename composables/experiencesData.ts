@@ -19,12 +19,13 @@ export const experiencesData = () => {
       ],
       linkedInUrl: 'https://www.linkedin.com/company/nanosoft-ly/',
       companySiteUrl: 'https://nanosoft.ly/',
-      iconName: 'nanosoft',
+      iconName: 'nh2ucdo0ljnvuxqajrlk',
     },
     {
       company: 'HamaServ',
       position: 'Frontend Developer Developer',
       employmentType: 'Full Time',
+      workPlace: 'Hybrid',
       startDate: 'March 2021',
       endDate: 'March 2022',
       responsibilities: [
@@ -36,12 +37,13 @@ export const experiencesData = () => {
       ],
       linkedInUrl: 'https://www.linkedin.com/company/hmaserv/',
       companySiteUrl: 'https://www.hmaserv.com/',
-      iconName: 'hmaserv',
+      iconName: 'zmupnjctkt9z6enjbmrr.svg',
     },
     {
       company: 'HamaServ',
       position: 'Web Developer',
       employmentType: 'Intern',
+      workPlace: 'Hybrid',
       startDate: 'Dec 2020',
       endDate: 'March 2021',
       responsibilities: [
@@ -53,7 +55,7 @@ export const experiencesData = () => {
       ],
       linkedInUrl: 'https://www.linkedin.com/company/hmaserv/',
       companySiteUrl: 'https://www.hmaserv.com/',
-      iconName: 'hmaserv',
+      iconName: 'zmupnjctkt9z6enjbmrr.svg',
     },
   ]
 

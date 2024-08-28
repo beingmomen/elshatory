@@ -16,12 +16,13 @@
       :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
     >
       <div
-        class="timeline-company w-[76px] bg-gray-900 rounded-full p-1 border-2"
+        class="timeline-company w-[76px] h-[76px] bg-gray-900 rounded-full p-1 border-2 flex justify-center items-center"
       >
-        <nuxt-icon
-          class="text-[4rem] shadow-lg"
-          :name="experience.iconName"
-        ></nuxt-icon>
+        <NuxtImg
+          class="w-12 h-12 shadow-l"
+          provider="cloudinary"
+          :src="experience.iconName"
+        />
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] mt-3">
         <UCard
@@ -114,10 +115,8 @@ const experiences = experiencesData();
   .timeline-company {
     position: absolute;
     top: 20px;
-    left: calc(50% - (2.13rem + 2px));
-    svg {
-      width: 100%;
-    }
+    // left: calc(50% - (2.13rem + 2px));
+
     @media (max-width: 767.98px) {
       left: -1.5rem;
     }

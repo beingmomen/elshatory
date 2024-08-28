@@ -1,5 +1,12 @@
 <template>
-  <div></div>
+  <div>
+    <LandingTheHero />
+    <LandingTheSkills />
+    <LandingTheServices />
+    <LandingTheExperience />
+    <LandingTheProjects />
+    <LandingTheClients />
+  </div>
 </template>
 
 <script setup>

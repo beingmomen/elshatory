@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   darkMode: "class",
   content: [
@@ -11,10 +9,6 @@ module.exports = {
     "./node_modules/vue-tailwind-datepicker/**/*.js",
   ],
   theme: {
-    // colors: {
-    //   // white: "#ffffff",
-    //   // primary: "red",
-    // },
     minWidth: {
       aside: "260px",
       "aside-sm": "84px",
@@ -30,11 +24,6 @@ module.exports = {
       },
       boxShadow: {
         ms: "0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent",
-      },
-      colors: {
-        "vtd-primary": colors.sky, // Light mode Datepicker color
-        "vtd-secondary": colors.gray, // Dark mode Datepicker color
-        panel: "#64748B",
       },
     },
   },

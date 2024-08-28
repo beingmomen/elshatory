@@ -24,6 +24,7 @@
           <NuxtImg
             class="h-full w-full object-cover"
             :src="project.image"
+            provider="cloudinary"
             :alt="project.description"
           />
         </div>

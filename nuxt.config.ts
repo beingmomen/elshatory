@@ -23,8 +23,7 @@ export default defineNuxtConfig({
         lang: "en",
       },
       script: [
-        // <script src="https://myawesome-lib.js"></script>
-        { src: "https://upload-widget.cloudinary.com/global/all.js" },
+
       ],
       link: [
         {
@@ -44,13 +43,10 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/ui",
     "@pinia/nuxt",
-    "nuxt-icons",
-    "nuxt-icon",
     "nuxt-swiper",
     '@nuxtjs/robots',
     '@nuxt/image',
     // '@nuxtjs/i18n',
-    "@vite-pwa/nuxt",
     [
       "@nuxtjs/google-fonts",
       {
@@ -68,6 +64,9 @@ export default defineNuxtConfig({
   image: {
     // inject: true,
     quality: 80,
+    cloudinary: {
+      baseURL: process.env.CLOUDINARY_URL
+    },
     dir: 'assets',
     screens: {
       'xs': 320,
@@ -81,35 +80,32 @@ export default defineNuxtConfig({
   },
 
   swiper: {
-    // Swiper options
-    //----------------------
-    // prefix: 'Swiper',
-    // styleLang: 'css',
-    // modules: ['navigation', 'pagination'], // all modules are imported by default
+
   },
 
-  // i18n: {
-  //   vueI18n: './i18n.config.ts', // if you are using custom path, default
+  i18n: {
+    // vueI18n: './i18n.config.ts', // if you are using custom path, default 
 
-  //   lazy: true,
-  //   langDir: 'locales',
-  //   locales: [
-  //     {
-  //       code: 'en',
-  //       name: 'English',
-  //       file: 'en.json'
-  //     },
-  //     // {
-  //     //   code: 'ar',
-  //     //   name: 'Arabic',
-  //     //   file: 'ar.json'
-  //     // }
-  //   ],
-  //   defaultLocale: 'en',
-  // },
+
+    lazy: true,
+    langDir: 'locales',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'ar',
+        name: 'Arabic',
+        file: 'ar.json'
+      }
+    ],
+    defaultLocale: 'en',
+  },
 
   ui: {
-    icons: "all",
+
   },
 
   colorMode: {
@@ -136,18 +132,8 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    jwtAccessSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
-    jwtRefreshSecret: process.env.JWT_ACCESS_REFRESH_TOKEN_SECRET,
-    jwtExpiresIn: process.env.JWT_EXPIRES_IN,
-    jwtCookieExpiresIn: process.env.JWT_COOKIE_EXPIRES_IN,
-
     public: {
-      // Cloudinary
-      cloudinaryCloudName: process.env.CLOUD_NAME,
-      cloudinaryUploadPreset: process.env.UPLOAD_PRESET,
-
       // Site
-      siteTitle: process.env.SITE_TITLE,
       logo: process.env.LOGO,
     },
   },

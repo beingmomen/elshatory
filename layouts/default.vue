@@ -15,12 +15,7 @@ const scrollTop = () => {
 <template>
   <div class="dark:bg-gray-900 bg-gray-100" ref="el">
     <LandingTheNavbar />
-    <LandingTheHero />
-    <LandingTheSkills />
-    <LandingTheServices />
-    <LandingTheExperience />
-    <LandingTheProjects />
-    <LandingTheClients />
+
     <!-- <LandingTheTestimonials /> -->
     <slot />
     <LandingTheFooter />

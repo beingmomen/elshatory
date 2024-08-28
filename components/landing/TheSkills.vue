@@ -8,20 +8,14 @@
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
         <div v-for="(skill, i) in firstSkills" :key="i" class="p-5 mb-5 slide">
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
       </div>
@@ -32,20 +26,14 @@
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
         <div v-for="(skill, i) in secondSkills" :key="i" class="p-5 mb-5 slide">
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
       </div>
@@ -56,20 +44,14 @@
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
         <div v-for="(skill, i) in thirdSkills" :key="i" class="p-5 mb-5 slide">
           <div
             class="w-[100px] h-[100px] bg-gray-800/30 flex justify-center items-center cursor-pointer rounded-lg"
           >
-            <nuxt-icon
-              class="skills-icon text-[3rem]"
-              :name="`skills/${skill.name}`"
-            ></nuxt-icon>
+            <UIcon :name="skill.icon" class="w-10 h-10" />
           </div>
         </div>
       </div>
@@ -81,31 +63,31 @@
 const slideCount = ref(7);
 
 const firstSkills = ref([
-  { name: "tailwind" },
-  { name: "js" },
-  { name: "css3" },
-  { name: "github" },
-  { name: "jquery" },
-  { name: "html5" },
-  { name: "sass" },
+  { icon: "i-logos-tailwindcss-icon" },
+  { icon: "i-devicon-javascript" },
+  { icon: "i-devicon-css3" },
+  { icon: "i-codicon-github-inverted" },
+  { icon: "i-devicon-jquery" },
+  { icon: "i-devicon-html5" },
+  { icon: "i-logos-sass" },
 ]);
 const secondSkills = ref([
-  { name: "api" },
-  { name: "bootstrap" },
-  { name: "digital-ocean" },
-  { name: "firebase" },
-  { name: "git" },
-  { name: "gulp" },
-  { name: "nuxt" },
+  { icon: "i-hugeicons-api" },
+  { icon: "i-skill-icons-bootstrap" },
+  { icon: "i-logos-digital-ocean-icon" },
+  { icon: "i-logos-firebase" },
+  { icon: "i-ph-git-merge-bold" },
+  { icon: "i-catppuccin-gulp" },
+  { icon: "i-logos-nuxt-icon" },
 ]);
 const thirdSkills = ref([
-  { name: "gitlab" },
-  { name: "vuejs" },
-  { name: "pinia" },
-  { name: "prisma" },
-  { name: "pug" },
-  { name: "vuetify" },
-  { name: "nuxt" },
+  { icon: "i-logos-gitlab" },
+  { icon: "i-devicon-vuejs" },
+  { icon: "i-logos-pinia" },
+  { icon: "i-skill-icons-prisma" },
+  { icon: "i-vscode-icons-file-type-pug" },
+  { icon: "i-logos-vuetifyjs" },
+  { icon: "i-logos-nuxt-icon" },
 ]);
 </script>
 
