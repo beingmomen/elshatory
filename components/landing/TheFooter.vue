@@ -28,50 +28,35 @@
             target="_blank"
             aria-label="Linkedin Profile"
           >
-            <nuxt-icon
-              class="text-[2rem] cursor-pointer shadow-lg"
-              name="linkedin"
-            ></nuxt-icon>
+            <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://github.com/beingmomen"
             target="_blank"
             aria-label="github Profile"
           >
-            <nuxt-icon
-              class="text-[2rem] cursor-pointer shadow-lg"
-              name="github"
-            ></nuxt-icon>
+            <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://twitter.com/beingmomen"
             target="_blank"
             aria-label="twitter Profile"
           >
-            <nuxt-icon
-              class="text-[2rem] cursor-pointer shadow-lg"
-              name="twitter"
-            ></nuxt-icon>
+            <UIcon name="i-line-md-twitter-x" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://www.facebook.com/beingmomen/"
             target="_blank"
             aria-label="facebook Profile"
           >
-            <nuxt-icon
-              class="text-[2rem] cursor-pointer shadow-lg"
-              name="facebook"
-            ></nuxt-icon>
+            <UIcon name="i-devicon-facebook" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://www.instagram.com/beingmomen/"
             target="_blank"
             aria-label="instagram Profile"
           >
-            <nuxt-icon
-              class="text-[2rem] cursor-pointer shadow-lg"
-              name="instagram"
-            ></nuxt-icon>
+            <UIcon name="i-skill-icons-instagram" class="w-8 h-8" />
           </NuxtLink>
         </div>
       </div>

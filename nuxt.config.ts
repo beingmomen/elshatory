@@ -34,6 +34,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ["~/assets/style.scss"],
 
   imports: {
@@ -77,8 +78,6 @@ export default defineNuxtConfig({
       '2xl': 1536
     },
   },
-
-
 
   i18n: {
     // vueI18n: './i18n.config.ts', // if you are using custom path, default 
@@ -134,4 +133,6 @@ export default defineNuxtConfig({
       logo: process.env.LOGO,
     },
   },
+
+  compatibilityDate: "2024-08-29",
 });

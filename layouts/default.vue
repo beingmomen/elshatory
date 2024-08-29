@@ -1,8 +1,8 @@
-<script lang="ts" setup>
+<script setup>
 import { useWindowScroll, useScroll } from "@vueuse/core";
 const { x, y } = useWindowScroll();
 
-const el = ref<HTMLElement | null>(null);
+const el = (ref < HTMLElement) | (null > null);
 
 const scrollTop = () => {
   window.scrollTo({

@@ -1,5 +1,4 @@
 <template>
-  <!-- <div :dir="useAR()"> -->
   <div class="dark:bg-gray-900 bg-gray-900">
     <NuxtLayout>
       <NuxtPage />
@@ -11,8 +10,6 @@
 
 
 <script setup>
-const colorMode = useColorMode();
-colorMode.preference = "dark";
 </script>
 
 

@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-definePageMeta({});
 </script>
 
 

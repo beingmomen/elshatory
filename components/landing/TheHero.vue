@@ -43,37 +43,20 @@
           target="_blank"
           aria-label="linkedin Profile"
         >
-          <nuxt-icon
-            class="text-[2rem] cursor-pointer shadow-lg"
-            name="linkedin"
-          ></nuxt-icon>
+          <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
         </NuxtLink>
         <NuxtLink
           to="https://github.com/beingmomen"
           target="_blank"
           aria-label="Github Profile"
         >
-          <nuxt-icon
-            class="text-[2rem] cursor-pointer shadow-lg"
-            name="github"
-          ></nuxt-icon>
+          <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
         </NuxtLink>
-        <!-- <UButton
-          icon="i-devicon-linkedin"
-          size="xl"
-          color="primary"
-          square
-          variant="link"
-          to="https://www.linkedin.com/company/nanosoft-ly/"
-          target="_blank"
-          :ui="{
-            base: 'text-6xl',
-            icon: 'text-6xl',
-          }"
-        /> -->
       </div>
     </div>
-    <div></div>
+    <div>
+      <!-- <img src="/Morgan.gif" alt="animation logo" /> -->
+    </div>
   </div>
 </template>
 
