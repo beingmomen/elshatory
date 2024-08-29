@@ -43,7 +43,6 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/ui",
     "@pinia/nuxt",
-    "nuxt-swiper",
     '@nuxtjs/robots',
     '@nuxt/image',
     // '@nuxtjs/i18n',
@@ -79,9 +78,7 @@ export default defineNuxtConfig({
     },
   },
 
-  swiper: {
 
-  },
 
   i18n: {
     // vueI18n: './i18n.config.ts', // if you are using custom path, default 
