@@ -1,6 +1,10 @@
 <template>
   <div id="customers" class="container mx-auto px-8 mt-16">
-    <p class="font-black text-xl sm:text-2xl uppercase text-center">Trust Us</p>
+    <p
+      class="font-black text-xl sm:text-2xl uppercase text-center text-white dark:text-white"
+    >
+      Trust Us
+    </p>
     <h2
       class="font-black text-3xl sm:text-5xl uppercase mt-5 main-title text-center"
     >

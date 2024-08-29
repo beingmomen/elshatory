@@ -13,7 +13,7 @@ const scrollTop = () => {
 </script>
 
 <template>
-  <div class="dark:bg-gray-900 bg-gray-100" ref="el">
+  <div ref="el">
     <LandingTheNavbar />
 
     <!-- <LandingTheTestimonials /> -->
@@ -21,7 +21,7 @@ const scrollTop = () => {
     <LandingTheFooter />
     <UButton
       v-if="y > 1000"
-      class="fixed bottom-5 right-5"
+      class="fixed bottom-5 right-5 text-white dark:text-white"
       icon="i-ic-outline-arrow-upward"
       size="sm"
       color="blue"

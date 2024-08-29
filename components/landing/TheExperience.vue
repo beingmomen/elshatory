@@ -1,6 +1,8 @@
 <template>
   <div id="experience" class="container mx-auto px-8 mt-16">
-    <p class="text-center font-black text-xl sm:text-2xl uppercase">
+    <p
+      class="text-center font-black text-xl sm:text-2xl uppercase text-white dark:text-white"
+    >
       What I have done so far
     </p>
     <h2
@@ -26,17 +28,22 @@
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] mt-3">
         <UCard
+          class="bg-slate-900 dark:bg-slate-900 ring-gray-800 dark:ring-gray-800"
           :ui="{
-            base: 'test',
+            base: 'test ',
           }"
         >
-          <h2 class="font-black text-2xl">{{ experience.position }}</h2>
+          <h2 class="font-black text-2xl text-white dark:text-white">
+            {{ experience.position }}
+          </h2>
           <p class="mt-2 main-title font-black text-lg">
             {{ experience.company }} | {{ experience.employmentType }} |
             {{ experience.workPlace }}
           </p>
           <ul class="list-outside ps-5 mt-5">
-            <li class="list-image-[url(assets/icons/checkmark.svg)]">
+            <li
+              class="list-image-[url(assets/icons/checkmark.svg)] text-white dark:text-white"
+            >
               Responsibilities
             </li>
             <li>
@@ -68,9 +75,9 @@
                 </li>
                 <li>
                   <UButton
+                    class="text-white dark:text-white"
                     icon="i-clarity-world-outline-badged"
                     size="md"
-                    color="primary"
                     square
                     variant="link"
                     :to="experience.companySiteUrl"
@@ -84,7 +91,10 @@
         </UCard>
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] pt-3">
-        <h2 :class="{ 'md:text-end': index % 2 !== 0 }">
+        <h2
+          class="text-white dark:text-white"
+          :class="{ 'md:text-end': index % 2 !== 0 }"
+        >
           {{ experience.startDate }} - {{ experience.endDate }}
         </h2>
       </div>

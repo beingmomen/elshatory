@@ -4,7 +4,7 @@
       class="lg:container xl:container mx-auto px-4 xl:px-8 flex justify-between items-center h-full"
     >
       <div class="flex items-center gap-3">
-        <nuxt-icon class="text-[4rem] nuxt-icon-auth" :name="logo"></nuxt-icon>
+        <img class="w-16 h-16" src="/beingmomen.svg" alt="logo" />
         <h1 class="uppercase font-black text-xl text-gray-150 main-title">
           Elshatory
         </h1>

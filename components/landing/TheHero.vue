@@ -2,7 +2,9 @@
   <div class="flex lg:container xl:container mx-auto px-12 md:px-32 h-[40rem]">
     <div class="min-h-full pt-8 sm:pt-32">
       <h2 class="text-gray-400 font-black text-lg">Hello everyone!</h2>
-      <p class="font-black text-6xl bg-custom-gradient bg-clip-text mt-6">
+      <p
+        class="font-black text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white"
+      >
         I’m
       </p>
       <p
@@ -17,6 +19,7 @@
       >
         A passionate frontend developer specializing in
         <UBadge
+          class="text-black"
           color="red"
           variant="solid"
           label="Vue 3"
@@ -24,6 +27,7 @@
         />
         and
         <UBadge
+          class="text-black"
           color="red"
           variant="solid"
           label="Nuxt 3"

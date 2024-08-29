@@ -1,6 +1,6 @@
 <template>
   <!-- <div :dir="useAR()"> -->
-  <div>
+  <div class="dark:bg-gray-900 bg-gray-900">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

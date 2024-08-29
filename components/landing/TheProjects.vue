@@ -1,15 +1,18 @@
 <template>
   <div id="projects" class="container mx-auto px-8 mt-16">
-    <p class="font-black text-2xl uppercase">My Work</p>
+    <p class="font-black text-2xl uppercase text-white dark:text-white">
+      My Work
+    </p>
     <h2 class="font-black text-4xl sm:text-5xl uppercase mt-5 main-title">
       Projects.
     </h2>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
       <UCard
+        class="bg-slate-900 dark:bg-slate-900 ring-gray-800 dark:ring-gray-800"
         v-for="(project, i) in projects"
         :key="i"
         :ui="{
-          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
+          base: 'transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110  duration-300',
           body: { base: 'flex flex-col h-full' },
         }"
       >
@@ -52,6 +55,7 @@
               color="sky"
               :label="badge"
               :ui="{ font: 'font-black' }"
+              class="text-black dark:text-black"
             />
           </div>
         </div>
