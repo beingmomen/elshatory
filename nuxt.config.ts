@@ -3,16 +3,18 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Abdelmo’men Elshatory",
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
-          content: "Welcome to my personal website I'm [Your Name], a passionate [Your Profession/Interest] with over [Number of Years of Experience] years of experience. Explore my portfolio to see my work, learn more about my journey, and get in touch to discuss potential collaborations. Let's create something amazing together",
+          content:
+            "Welcome to my personal website I'm [Your Name], a passionate [Your Profession/Interest] with over [Number of Years of Experience] years of experience. Explore my portfolio to see my work, learn more about my journey, and get in touch to discuss potential collaborations. Let's create something amazing together",
         },
         {
           name: "keywords",
-          content: "Abdelmo’men Elshatory, portfolio, web developer, frontend developer, frontend engineer, frontend developer, Abdelmo’men, Elshatory"
+          content:
+            "Abdelmo’men Elshatory, portfolio, web developer, frontend developer, frontend engineer, frontend developer, Abdelmo’men, Elshatory",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -29,7 +31,7 @@ export default defineNuxtConfig({
         },
       ],
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
   },
 
   nitro: {
@@ -38,8 +40,20 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: [// '@nuxtjs/i18n',
-    '@vueuse/nuxt', '@nuxt/image', '@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxt/fonts', '@pinia/nuxt', 'nuxt-aos', '@nuxtjs/robots', '@formkit/auto-animate/nuxt', "@nuxthub/core"],
+  modules: [
+    // '@nuxtjs/i18n',
+    "@vueuse/nuxt",
+    "@nuxt/image",
+    "@nuxt/content",
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@pinia/nuxt",
+    "nuxt-aos",
+    "@nuxtjs/robots",
+    "@formkit/auto-animate/nuxt",
+    "@nuxthub/core",
+  ],
 
   css: ["~/assets/scss/main.scss"],
 
@@ -51,25 +65,24 @@ export default defineNuxtConfig({
     // inject: true,
     quality: 80,
     cloudinary: {
-      baseURL: process.env.CLOUDINARY_URL
+      baseURL: process.env.CLOUDINARY_URL,
     },
-    dir: 'assets',
+    dir: "assets",
     screens: {
-      'xs': 320,
-      'sm': 640,
-      'md': 768,
-      'lg': 1024,
-      'xl': 1280,
-      'xxl': 1536,
-      '2xl': 1536
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
     },
   },
 
-  ui: {
-  },
+  ui: {},
 
   colorMode: {
-    preference: 'dark'
+    preference: "dark",
   },
 
   // i18n: {
@@ -96,5 +109,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-08-30',
-})
+  compatibilityDate: "2024-08-30",
+});
