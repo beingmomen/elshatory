@@ -24,6 +24,7 @@
           class="w-12 h-12 shadow-l"
           provider="cloudinary"
           :src="experience.iconName"
+          :alt="experience.iconName"
         />
       </div>
       <div class="timeline-item w-[80%] sm:w-[88%] md:w-[42%] mt-3">
