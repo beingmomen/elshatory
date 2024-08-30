@@ -2,64 +2,61 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
-      title: process.env.BROWSER_TITLE,
+      title: "Abdelmo’men Elshatory",
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
       meta: [
         {
           name: "description",
-          content:
-            "Experienced Frontend Developer specializing in creating engaging and user-friendly web experiences. Proficient in HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Vue3.JS, Nuxt3.JS, tailwindcss, and modern frontend frameworks. Portfolio showcasing a diverse range of projects that highlight responsive design, interactivity, and a passion for crafting intuitive user interfaces.",
+          content: "Welcome to my personal website I'm [Your Name], a passionate [Your Profession/Interest] with over [Number of Years of Experience] years of experience. Explore my portfolio to see my work, learn more about my journey, and get in touch to discuss potential collaborations. Let's create something amazing together",
         },
         {
           name: "keywords",
-          content:
-            "عبدالمؤمن الشطوري, عبدالمؤمن الشطورى, Abdelmo’men Elshatory, Abdelmo’men Elshatory portfolio, Abdelmomen Elshatory, Abdelmomen Elshatory portfolio, Abdelmo’men, Abdelmomen, Elshatory, الشطورى , عبدالمؤمن, الشطوري, frontend developer portfolio, frontend developer freelance, Frontend developer, web development, MEVN Stack Developer, Technical Support, Vue.JS & Nuxt.JS Developer, HTML, CSS, JavaScript, Vue.JS, Nuxt.JS, Nuxt3.JS, Vue3.JS, Vue, Vue3, Nuxt,  Nuxt3, tailwindcss, Tailwind, responsive design, user interface, web design, portfolio",
+          content: "Abdelmo’men Elshatory, portfolio, web developer, frontend developer, frontend engineer, frontend developer, Abdelmo’men, Elshatory"
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
       htmlAttrs: {
-        class: "dark",
+        class: "",
         lang: "en",
       },
-      script: [
-
-      ],
+      script: [],
       link: [
         {
           rel: "icon",
           type: "image/svg",
-          href: `/images/${process.env.LOGO}.svg`,
+          href: `/logo.svg`,
         },
       ],
     },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
-  css: ["~/assets/style.scss"],
+  nitro: {
+    compressPublicAssets: true,
+  },
+
+  devtools: { enabled: true },
+
+  modules: [
+    // '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    '@nuxt/image',
+    '@nuxt/content',
+    '@nuxt/ui',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@pinia/nuxt',
+    'nuxt-aos',
+    '@nuxtjs/robots',
+    '@formkit/auto-animate/nuxt'
+  ],
+
+  css: ["~/assets/scss/main.scss"],
 
   imports: {
     dirs: ["stores"],
   },
-
-  modules: [
-    "@nuxt/ui",
-    "@pinia/nuxt",
-    '@nuxtjs/robots',
-    '@nuxt/image',
-    // '@nuxtjs/i18n',
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Nunito: true,
-          Shrikhand: true,
-          // 'Courgette': true,
-          download: true,
-          inject: true,
-        },
-      },
-    ],
-  ],
 
   image: {
     // inject: true,
@@ -79,60 +76,36 @@ export default defineNuxtConfig({
     },
   },
 
-  i18n: {
-    // vueI18n: './i18n.config.ts', // if you are using custom path, default 
-
-
-    lazy: true,
-    langDir: 'locales',
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.json'
-      },
-      {
-        code: 'ar',
-        name: 'Arabic',
-        file: 'ar.json'
-      }
-    ],
-    defaultLocale: 'en',
-  },
-
   ui: {
-
   },
 
   colorMode: {
-    preference: "dark", // disable system
+    preference: 'dark'
   },
 
-  pinia: {
-    autoImports: [
-      // automatically imports `defineStore`
-      "defineStore", // import { defineStore } from 'pinia'
-      ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
-    ],
-  },
+  // i18n: {
+  //   vueI18n: './i18n.config.ts',
+  //   defaultLocale: 'en',
+  // },
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-      cssnano:
-        process.env.NODE_ENV === "production"
-          ? { preset: ["default", { discardComments: { removeAll: true } }] }
-          : false, // disable cssnano when not in production
-    },
-  },
+  // postcss: {
+  //   plugins: {
+  //     tailwindcss: {},
+  //     autoprefixer: {},
+  //     cssnano:
+  //       process.env.NODE_ENV === "production"
+  //         ? { preset: ["default", { discardComments: { removeAll: true } }] }
+  //         : false, // disable cssnano when not in production
+  //   },
+  // },
 
   runtimeConfig: {
+    // jwtAccessSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
+
     public: {
-      // Site
       logo: process.env.LOGO,
     },
   },
 
-  compatibilityDate: "2024-08-29",
-});
+  compatibilityDate: '2024-08-30',
+})

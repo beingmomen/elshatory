@@ -1,12 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-
-module.exports = {
-  darkMode: "class",
+export default {
   content: [
-    "node_modules/tailvue/dist/tailvue.es.js",
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-    "./node_modules/vue-tailwind-datepicker/**/*.js",
+    "./pages/**/*.{html,js}",
+    "./components/**/*.{html,js}",
+    "./app.vue",
   ],
   theme: {
     minWidth: {
@@ -25,7 +22,28 @@ module.exports = {
       boxShadow: {
         ms: "0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent",
       },
+      aspectRatio: {
+        auto: "auto",
+        square: "1 / 1",
+        video: "16 / 9",
+      },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".main-title": {
+          "@apply bg-custom-gradient bg-clip-text": {},
+          "-webkit-text-fill-color": "transparent !important",
+        },
+        ".hover\\:main-title:hover": {
+          "@apply bg-custom-gradient bg-clip-text": {},
+          "-webkit-text-fill-color": "transparent !important",
+        },
+      };
+
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };

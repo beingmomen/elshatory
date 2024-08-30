@@ -1,17 +1,13 @@
 <template>
   <div>
-    <LandingTheHero />
-    <LandingTheSkills />
-    <LandingTheServices />
-    <LandingTheExperience />
-    <LandingTheProjects />
-    <LandingTheClients />
+    <TheHomeHeroSection />
+    <TheHomeSkillsSection />
+    <TheHomeServicesSection />
+    <TheHomeExperienceSection />
+    <TheHomeProjectsSection />
+    <TheHomeClientsSection />
   </div>
 </template>
 
 <script setup>
 </script>
-
-
-<style scoped>
-</style>
