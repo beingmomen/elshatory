@@ -36,6 +36,12 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
+    prerender: {
+      // Pre-render the homepage
+      routes: ['/'],
+      // Then crawl all the links on the page
+      crawlLinks: true
+    }
   },
 
   devtools: { enabled: true },
@@ -52,7 +58,6 @@ export default defineNuxtConfig({
     "nuxt-aos",
     "@nuxtjs/robots",
     "@formkit/auto-animate/nuxt",
-    "@nuxthub/core",
   ],
 
   css: ["~/assets/scss/main.scss"],
