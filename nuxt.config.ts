@@ -38,19 +38,8 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: [
-    // '@nuxtjs/i18n',
-    '@vueuse/nuxt',
-    '@nuxt/image',
-    '@nuxt/content',
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@pinia/nuxt',
-    'nuxt-aos',
-    '@nuxtjs/robots',
-    '@formkit/auto-animate/nuxt'
-  ],
+  modules: [// '@nuxtjs/i18n',
+    '@vueuse/nuxt', '@nuxt/image', '@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxt/fonts', '@pinia/nuxt', 'nuxt-aos', '@nuxtjs/robots', '@formkit/auto-animate/nuxt', "@nuxthub/core"],
 
   css: ["~/assets/scss/main.scss"],
 
