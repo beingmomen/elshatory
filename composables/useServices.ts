@@ -7,6 +7,7 @@ export const useServices = () => {
       title: "Web Development",
       description:
         "Creating static or dynamic websites for various purposes, such as personal blogs, business websites, e-commerce sites, portfolio websites, and more."
+
     },
     {
       id: 2,

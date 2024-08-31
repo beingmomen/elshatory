@@ -1,3 +1,9 @@
 {
+  "system" : {
+    "title" : "Abdelmo’men Elshatory",
+    "description" : "Abdelmomen Elshatory, a frontend developer specializing in high-performance web applications using Vue.js and Nuxt.js. I transform ideas into interactive and innovative web experiences.",
+    "og:title": "Abdelmomen Elshatory | Frontend Developer specializing in Vue.js and Nuxt.js",
+    "og:description": "A frontend developer specializing in high-performance web applications using Vue.js and Nuxt.js."
+  },
   "welcome": "Welcomeeee" 
 }

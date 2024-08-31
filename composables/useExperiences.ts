@@ -20,6 +20,7 @@ export const useExperiences = () => {
       linkedInUrl: 'https://www.linkedin.com/company/nanosoft-ly/',
       companySiteUrl: 'https://nanosoft.ly/',
       iconName: 'nh2ucdo0ljnvuxqajrlk',
+      imageAlt: ''
     },
     {
       company: 'HamaServ',

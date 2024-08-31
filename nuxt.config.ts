@@ -7,14 +7,11 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
-          name: "description",
-          content:
-            "Welcome to my personal website I'm [Your Name], a passionate [Your Profession/Interest] with over [Number of Years of Experience] years of experience. Explore my portfolio to see my work, learn more about my journey, and get in touch to discuss potential collaborations. Let's create something amazing together",
+          name: "description", content: "",
         },
         {
           name: "keywords",
-          content:
-            "Abdelmo’men Elshatory, portfolio, web developer, frontend developer, frontend engineer, frontend developer, Abdelmo’men, Elshatory",
+          content: "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -47,7 +44,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    // '@nuxtjs/i18n',
+    '@nuxtjs/i18n',
     "@vueuse/nuxt",
     "@nuxt/image",
     "@nuxt/content",
@@ -90,10 +87,23 @@ export default defineNuxtConfig({
     preference: "dark",
   },
 
-  // i18n: {
-  //   vueI18n: './i18n.config.ts',
-  //   defaultLocale: 'en',
-  // },
+  i18n: {
+    lazy: true,
+    langDir: 'locales',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'ar',
+        name: 'Arabic',
+        file: 'ar.json'
+      }
+    ],
+    defaultLocale: 'en',
+  },
 
   // postcss: {
   //   plugins: {

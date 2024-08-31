@@ -19,15 +19,15 @@ export const useProjects = () => {
         "Streammaxy offers IPTV solutions for Android, iOS, Windows, and Smart TV. It's a leading IPTV provider, offering app development, reseller panel, and custom solutions. With 500+ clients, they boast 24/7 support and various features.",
       badges: ["JavaScript", "jQuery", "Bootstrap", "HTML", "CSS"],
     },
-    {
-      title: "Droos24",
-      url: "http://droos24.com/",
-      image: "droos_afzkff.svg",
-      type: "Website",
-      description:
-        "Droos 24 is a platform that offers lessons and educational courses for the different primary, middle, and high school levels.",
-      badges: ["Nuxt 2", "Tailwind CSS", "AOS", "HTML", "CSS"],
-    },
+    // {
+    //   title: "Droos24",
+    //   url: "http://droos24.com/",
+    //   image: "droos_afzkff.svg",
+    //   type: "Website",
+    //   description:
+    //     "Droos 24 is a platform that offers lessons and educational courses for the different primary, middle, and high school levels.",
+    //   badges: ["Nuxt 2", "Tailwind CSS", "AOS", "HTML", "CSS"],
+    // },
     // {
     //   title: "TIGER GOLD",
     //   url: "https://tiger-golden.com/index",

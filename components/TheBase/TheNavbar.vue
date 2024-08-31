@@ -4,11 +4,16 @@
       class="lg:container xl:container mx-auto px-4 xl:px-8 flex justify-between items-center h-full"
     >
       <div class="flex items-center gap-3">
-        <img class="w-16 h-16" src="/logo.svg" alt="logo" />
+        <img
+          class="w-16 h-16"
+          src="/logo.svg"
+          alt="Abdelmomen Elshatory Logo"
+        />
         <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
           Abdelmo’men
         </h1>
       </div>
+      <TheBaseTheLang />
       <div class="hidden sm:block">
         <UButton
           variant="link"
