@@ -13,7 +13,7 @@
           Abdelmo’men
         </h1>
       </div>
-      <TheBaseTheLang />
+      <!-- <TheBaseTheLang /> -->
       <div class="hidden sm:block">
         <UButton
           variant="link"
