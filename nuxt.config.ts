@@ -18,6 +18,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         class: "",
         lang: "ar",
+        dir: "rtl",
       },
       script: [],
       link: [
