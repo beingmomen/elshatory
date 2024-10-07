@@ -3,12 +3,14 @@
     <p
       class="font-bold text-2xl uppercase text-white dark:text-white text-center"
     >
-      {{ $t("various_services") }}.
+      <!-- {{ $t("various_services") }}. -->
+      خدمات متنوعة
     </p>
     <h2
       class="font-bold text-4xl sm:text-5xl uppercase mt-5 main-title text-center"
     >
-      {{ $t("our_services") }}
+      <!-- {{ $t("our_services") }} -->
+      ما الذي أقدمه لك؟
     </h2>
     <div
       class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center mt-8"

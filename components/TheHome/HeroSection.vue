@@ -4,11 +4,16 @@
   >
     <!--  h-[40rem] -->
     <div class="min-h-full pt-8 sm:pt-32 w-2/3">
-      <h2 class="text-gray-400 font-bold text-2xl">{{ $t("welcome") }}</h2>
+      <h2 class="text-gray-400 font-bold text-2xl">
+        <!-- {{ $t("welcome") }} -->
+
+        مرحبا بالجميع !
+      </h2>
       <p
         class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white"
       >
-        {{ $t("me") }}
+        <!-- {{ $t("me") }} -->
+        أنا
       </p>
       <p
         id="typed"

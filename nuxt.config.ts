@@ -94,23 +94,23 @@ export default defineNuxtConfig({
     preference: "dark",
   },
 
-  i18n: {
-    lazy: true,
-    langDir: 'locales',
-    locales: [
-      // {
-      //   code: 'en',
-      //   name: 'English',
-      //   file: 'en.json'
-      // },
-      {
-        code: 'ar',
-        name: 'Arabic',
-        file: 'ar.json'
-      }
-    ],
-    defaultLocale: 'ar',
-  },
+  // i18n: {
+  //   lazy: true,
+  //   langDir: 'locales',
+  //   locales: [
+  //     // {
+  //     //   code: 'en',
+  //     //   name: 'English',
+  //     //   file: 'en.json'
+  //     // },
+  //     {
+  //       code: 'ar',
+  //       name: 'Arabic',
+  //       file: 'ar.json'
+  //     }
+  //   ],
+  //   defaultLocale: 'ar',
+  // },
 
   // postcss: {
   //   plugins: {
