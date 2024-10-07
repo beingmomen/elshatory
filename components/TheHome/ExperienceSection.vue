@@ -3,12 +3,12 @@
     <p
       class="text-center font-bold text-xl sm:text-2xl uppercase text-white dark:text-white"
     >
-      What I have done so far
+      ما قمت به حتى الآن.
     </p>
     <h2
       class="text-center font-bold text-3xl sm:text-5xl uppercase mt-5 main-title"
     >
-      Work Experience.
+      رحلتي في العمل.
     </h2>
 
     <div

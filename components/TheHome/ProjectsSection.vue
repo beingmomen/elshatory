@@ -1,10 +1,14 @@
 <template>
   <div id="projects" class="container mx-auto px-8 mt-16">
-    <p class="font-bold text-2xl uppercase text-white dark:text-white">
-      My Work
+    <p
+      class="font-bold text-2xl uppercase text-white dark:text-white text-center"
+    >
+      مشاريعنا، قصص نجاح تُروى بفضل عملائنا.
     </p>
-    <h2 class="font-bold text-4xl sm:text-5xl uppercase mt-5 main-title">
-      Projects.
+    <h2
+      class="font-bold text-4xl sm:text-5xl uppercase mt-5 main-title text-center"
+    >
+      مشاريع العملاء
     </h2>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
       <UCard
@@ -43,9 +47,9 @@
                 {{ project.title }}
               </NuxtLink>
             </h3>
-            <p class="mt-3 text-gray-400">
+            <!-- <p class="mt-3 text-gray-400">
               {{ project.description }}
-            </p>
+            </p> -->
           </div>
 
           <div class="mt-4 gap-3 flex flex-wrap">

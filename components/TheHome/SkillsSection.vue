@@ -1,6 +1,7 @@
 <template>
   <div
-    class="overflow-hidden container mx-auto md:w-[600px] lg:w-[900px] xl:w-[1100px]"
+    dir="ltr"
+    class="overflow-hidden container mx-auto md:w-[600px] lg:w-[900px] xl:w-[1100px] py-10"
   >
     <div class="slider my-6">
       <div class="flex gap-6 justify-center animation slide-track">
@@ -92,12 +93,6 @@ const thirdSkills = ref([
 </script>
 
 <style lang="scss">
-.skills-icon {
-  svg {
-    width: 48px;
-  }
-}
-
 @keyframes scroll {
   0% {
     transform: translate(0);

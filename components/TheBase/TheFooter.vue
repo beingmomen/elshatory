@@ -7,12 +7,12 @@
         class="flex items-center gap-5 sm:justify-between flex-col sm:flex-row"
       >
         <p class="text-center sm:text-start text-white dark:text-white">
-          &copy; {{ useFormatDate(new Date(), "YYYY") }} Created by
+          &copy; {{ useFormatDate(new Date(), "YYYY") }}
           <UButton
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
             aria-label="Linkedin Profile"
-            label="Abdelmomen Elshatory"
+            label="عبدالمؤمن الشطوري"
             color="primary"
             variant="link"
             class="text-3xl main-title underline"
@@ -36,6 +36,13 @@
             aria-label="github Profile"
           >
             <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://qabilah.com/profile/beingmomen/posts"
+            target="_blank"
+            aria-label="linkedin Profile"
+          >
+            <img src="/qabilah-2.webp" class="w-8 h-8" alt="qabilah" />
           </NuxtLink>
           <NuxtLink
             to="https://twitter.com/beingmomen"

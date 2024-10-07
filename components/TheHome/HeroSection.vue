@@ -1,11 +1,14 @@
 <template>
-  <div class="flex lg:container xl:container mx-auto px-12 md:px-32 h-[40rem]">
-    <div class="min-h-full pt-8 sm:pt-32">
-      <h2 class="text-gray-400 font-bold text-lg">Hello everyone!</h2>
+  <div
+    class="flex items-center justify-between lg:container xl:container mx-auto px-12 md:px-32"
+  >
+    <!--  h-[40rem] -->
+    <div class="min-h-full pt-8 sm:pt-32 w-2/3">
+      <h2 class="text-gray-400 font-bold text-2xl">{{ $t("welcome") }}</h2>
       <p
         class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white"
       >
-        I’m
+        {{ $t("me") }}
       </p>
       <p
         id="typed"
@@ -14,44 +17,130 @@
         <span ref="typedText" class="cursor"></span>
       </p>
 
-      <p
-        class="text-gray-400 font-bold text-lg sm:w-[450px] mt-6 min-w-[301.5px]"
-      >
-        A passionate frontend developer specializing in
-        <UBadge
-          class="text-black"
-          color="red"
-          variant="solid"
-          label="Vue 3"
-          :ui="{ font: 'font-bold' }"
-        />
-        and
-        <UBadge
-          class="text-black"
-          color="red"
-          variant="solid"
-          label="Nuxt 3"
-          :ui="{ font: 'font-bold' }"
-        />
-        . With a blend of creativity and cutting-edge technology, I transform
-        ideas into intuitive and immersive web experiences.
-      </p>
+      <div class="container mx-auto px-4 mt-10 text-gray-400">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+          خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js
+        </h2>
 
-      <div class="mt-10 flex gap-4">
-        <NuxtLink
-          to="https://www.linkedin.com/in/beingmomen/"
-          target="_blank"
-          aria-label="linkedin Profile"
-        >
-          <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
-        </NuxtLink>
-        <NuxtLink
-          to="https://github.com/beingmomen"
-          target="_blank"
-          aria-label="Github Profile"
-        >
-          <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
-        </NuxtLink>
+        <p class="text-xl mb-8">
+          أحول رؤيتك إلى واقع رقمي مبهر. بفضل خبرتي المتخصصة في Vue.js و
+          Nuxt.js، أقدم:
+        </p>
+
+        <ul class="text-lg mb-8 space-y-2">
+          <li class="flex items-center">
+            <svg
+              class="w-6 h-6 me-2 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            تطبيقات ويب فائقة الأداء تلبي احتياجات عملائك
+          </li>
+          <li class="flex items-center">
+            <svg
+              class="w-6 h-6 me-2 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            تصاميم متجاوبة تضمن تجربة مثالية على جميع الأجهزة
+          </li>
+          <li class="flex items-center">
+            <svg
+              class="w-6 h-6 me-2 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            حلول مبتكرة باستخدام أحدث التقنيات مثل Nuxt 3 و TailwindCSS
+          </li>
+        </ul>
+
+        <p class="text-xl mb-8">
+          أنا لست مجرد مطور، بل شريك في نجاحك. دعنا نحول أفكارك إلى تجارب ويب
+          تفاعلية تترك انطباعًا لا يُنسى.
+        </p>
+
+        <div class="mt-10 flex gap-4 items-center">
+          <NuxtLink
+            to="https://www.linkedin.com/in/beingmomen/"
+            target="_blank"
+            aria-label="linkedin Profile"
+          >
+            <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://github.com/beingmomen"
+            target="_blank"
+            aria-label="Github Profile"
+          >
+            <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://qabilah.com/profile/beingmomen/posts"
+            target="_blank"
+            aria-label="linkedin Profile"
+          >
+            <img src="/qabilah-2.webp" class="w-8 h-8" alt="qabilah" />
+          </NuxtLink>
+
+          <UButton
+            class="font-bold main-title"
+            color="blue"
+            :ui="{ rounded: 'rounded-full' }"
+            size="xl"
+            icon="i-material-symbols-download"
+            trailing
+            variant="outline"
+            target="_blank"
+            to="https://drive.google.com/file/d/157_ZQjba7KZopZzMTVhEfcndqMif0APG/view?usp=sharing"
+          >
+            تحميل السيرة الذاتية
+          </UButton>
+        </div>
+
+        <div class="mt-10">
+          <NuxtLink
+            to="contact"
+            class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
+          >
+            هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
+          </NuxtLink>
+        </div>
+      </div>
+
+      <!-- <p
+        class="text-gray-400 font-bold text-2xl sm:w-[600px] mt-6 min-w-[301.5px]"
+      >
+        {{ $t("description") }}
+      </p> -->
+    </div>
+    <div class="p-14 lg:p-0">
+      <div
+        class="hero-img flex justify-center w-[297px] h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
+      >
+        <NuxtImg
+          provider="cloudinary"
+          src="beingmomen/zmwazvdckxs6g9cnbbaq"
+          alt="hero"
+          class="w-full h-full object-cover rounded-3xl"
+        />
       </div>
     </div>
     <div>
@@ -63,7 +152,11 @@
 <script setup>
 const typedTextSpan = ref(null);
 const cursorSpan = ref(null);
-const textArray = ["Abdelmo’men Elshatory", "Frontend Developer"];
+const textArray = [
+  "عبدالمؤمن الشطوري",
+  "Frontend Developer | Nuxt",
+  "Abdelmo’men Elshatory",
+];
 const typingDelay = 100;
 const erasingDelay = 100;
 const newTextDelay = 500;

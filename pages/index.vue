@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="text">
     <TheHomeHeroSection />
     <TheHomeSkillsSection />
     <TheHomeServicesSection />
-    <TheHomeExperienceSection />
+    <!-- <TheHomeExperienceSection /> -->
+    <TheHomeTestimonialsSection />
     <TheHomeProjectsSection />
     <TheHomeClientsSection />
   </div>

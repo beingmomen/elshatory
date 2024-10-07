@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Abdelmo’men Elshatory",
+      title: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       ],
       htmlAttrs: {
         class: "",
-        lang: "en",
+        lang: "ar",
       },
       script: [],
       link: [
@@ -54,8 +54,14 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-aos",
     "@nuxtjs/robots",
+    "@nuxtjs/cloudinary",
     "@formkit/auto-animate/nuxt",
   ],
+
+  cloudinary: {
+    cloudName: 'dyqfclwdk',
+    uploadPreset: 'beingmomen',
+  },
 
   css: ["~/assets/scss/main.scss"],
 
@@ -102,7 +108,7 @@ export default defineNuxtConfig({
         file: 'ar.json'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'ar',
   },
 
   // postcss: {
@@ -121,6 +127,7 @@ export default defineNuxtConfig({
 
     public: {
       logo: process.env.LOGO,
+      baseURL: process.env.BASE_URL,
     },
   },
 

@@ -1,10 +1,14 @@
 <template>
-  <div id="services" class="container mx-auto px-8 mt-16">
-    <p class="font-bold text-2xl uppercase text-white dark:text-white">
-      VARIOUS SERVICES
+  <section id="services" class="container mx-auto px-8 mt-16">
+    <p
+      class="font-bold text-2xl uppercase text-white dark:text-white text-center"
+    >
+      {{ $t("various_services") }}.
     </p>
-    <h2 class="font-bold text-4xl sm:text-5xl uppercase mt-5 main-title">
-      Our services.
+    <h2
+      class="font-bold text-4xl sm:text-5xl uppercase mt-5 main-title text-center"
+    >
+      {{ $t("our_services") }}
     </h2>
     <div
       class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center mt-8"
@@ -24,12 +28,12 @@
         </div>
 
         <h3 class="mt-4 font-bold text-2xl main-title">{{ service.title }}</h3>
-        <p class="mt-3 text-gray-300">
+        <p class="mt-3 text-gray-300 text-xl">
           {{ service.description }}
         </p>
       </UCard>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

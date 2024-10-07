@@ -12,7 +12,9 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxtjs/cloudinary": "^3.1.0",
     "@nuxtjs/robots": "^3.0.0",
+    "joi": "^17.13.3",
     "nuxt": "^3.12.4",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"

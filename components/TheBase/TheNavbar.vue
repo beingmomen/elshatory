@@ -1,21 +1,18 @@
 <template>
-  <div class="h-20">
+  <div class="pt-5">
     <nav
       class="lg:container xl:container mx-auto px-4 xl:px-8 flex justify-between items-center h-full"
     >
       <div class="flex items-center gap-3">
-        <img
-          class="w-16 h-16"
-          src="/logo.svg"
-          alt="Abdelmomen Elshatory Logo"
-        />
-        <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
+        <img class="w-40" src="/logo.svg" alt="Abdelmomen Elshatory Logo" />
+        <!-- <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
           Abdelmo’men
-        </h1>
+        </h1> -->
       </div>
-      <TheBaseTheLang />
+      <!-- <TheBaseTheLang /> -->
       <div class="hidden sm:block">
         <UButton
+          class="text-xl"
           variant="link"
           color="gray"
           :ui="{
@@ -23,11 +20,13 @@
             font: 'font-bold',
           }"
           aria-label="Home page"
+          to="/"
         >
-          Home
+          الرئيسية
         </UButton>
 
         <UButton
+          class="text-xl"
           variant="link"
           color="gray"
           aria-label="Services Page"
@@ -37,9 +36,9 @@
           }"
           @click="scrollToSection('services')"
         >
-          Services
+          خدماتنا
         </UButton>
-        <UButton
+        <!-- <UButton
           variant="link"
           color="gray"
           aria-label="Experience Page"
@@ -50,8 +49,9 @@
           @click="scrollToSection('experience')"
         >
           Experience
-        </UButton>
+        </UButton> -->
         <UButton
+          class="text-xl"
           variant="link"
           color="gray"
           aria-label="Projects Page"
@@ -61,9 +61,10 @@
           }"
           @click="scrollToSection('projects')"
         >
-          Projects
+          المشاريع
         </UButton>
         <UButton
+          class="text-xl"
           variant="link"
           color="gray"
           aria-label="Customers Page"
@@ -73,8 +74,23 @@
           }"
           @click="scrollToSection('customers')"
         >
-          Customers
+          العملاء
         </UButton>
+        <UChip position="top-left" inset>
+          <UButton
+            class="text-xl"
+            variant="link"
+            color="gray"
+            aria-label="testimonial Page"
+            :ui="{
+              base: 'text-gray-400',
+              font: 'font-bold',
+            }"
+            to="/testimonial"
+          >
+            قم بتقييمنا
+          </UButton>
+        </UChip>
       </div>
     </nav>
   </div>

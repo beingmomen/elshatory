@@ -1,38 +1,34 @@
 export const useServices = () => {
-
   const services = [
     {
       id: 1,
-      image: "websites_gnakzn.svg",
-      title: "Web Development",
+      image: "beingmomen/websites_gnakzn.svg",
+      title: "تطوير المواقع الإلكترونية",
       description:
-        "Creating static or dynamic websites for various purposes, such as personal blogs, business websites, e-commerce sites, portfolio websites, and more."
-
+        "إنشاء مواقع ويب ثابتة أو ديناميكية لمختلف الأغراض، بما في ذلك المدونات الشخصية، ومواقع الأعمال، ومنصات التجارة الإلكترونية، ومعارض الأعمال الإبداعية، وأكثر من ذلك. نضمن تصميمًا عصريًا وتجربة مستخدم سلسة."
     },
     {
       id: 2,
-      image: "node_ub9mfe.svg",
-      title: "MEVN Stack Developer",
+      image: "beingmomen/node_ub9mfe.svg",
+      title: "خبير تطوير MEVN Stack",
       description:
-        "Use MEVN (MongoDB, Express.js, Vue.js, Node.js) for dynamic web apps with real-time features. Build APIs connecting frontend and backend, ensuring modern and efficient user experiences."
+        "استخدام تقنيات MEVN (MongoDB، Express.js، Vue.js، Node.js) لبناء تطبيقات ويب ديناميكية مع ميزات تفاعلية في الوقت الفعلي. تطوير واجهات برمجة التطبيقات (APIs) لربط الواجهة الأمامية بالخلفية، مما يضمن تجارب مستخدم حديثة وفعالة."
     },
     {
       id: 3,
-      image: "nuxt-vue_w5aulo.svg",
-      title: "Vue.JS, Nuxt.JS Developer",
+      image: "beingmomen/nuxt-vue_w5aulo.svg",
+      title: "مطور Vue.js و Nuxt.js",
       description:
-        "Vue.js enables interactive web interfaces, while Nuxt.js streamlines server-side rendering for faster, SEO-friendly applications."
+        "استخدام Vue.js لإنشاء واجهات ويب تفاعلية وديناميكية، بينما يوفر Nuxt.js حلاً متكاملاً للعرض من جانب الخادم، مما يؤدي إلى تطبيقات أسرع وأكثر توافقًا مع محركات البحث. نقدم حلولاً مبتكرة تجمع بين الأداء العالي وسهولة الاستخدام."
     },
     {
       id: 4,
-      image: "technical_qjvpr3.svg                                                                               ",
-      title: "Technical Support",
+      image: "beingmomen/technical_qjvpr3.svg",
+      title: "الدعم الفني وتحسين الأداء",
       description:
-        "Support bug fixes, and performance optimization. They ensure cross-browser compatibility, enhance UI, and fix JavaScript issues. They also troubleshoot integrations and boost accessibility."
+        "تقديم خدمات شاملة للدعم الفني، بما في ذلك إصلاح الأخطاء وتحسين الأداء. نضمن التوافق عبر مختلف المتصفحات، ونعزز واجهة المستخدم، ونحل مشاكل JavaScript. كما نقوم بتحسين التكامل مع الأنظمة الأخرى وتعزيز إمكانية الوصول لضمان تجربة مستخدم متميزة لجميع الزوار."
     }
-  ]
+  ];
 
-
-
-  return services
+  return services;
 }
