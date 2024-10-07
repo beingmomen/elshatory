@@ -97,11 +97,11 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locales',
     locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.json'
-      },
+      // {
+      //   code: 'en',
+      //   name: 'English',
+      //   file: 'en.json'
+      // },
       {
         code: 'ar',
         name: 'Arabic',

@@ -137,8 +137,8 @@
       >
         <NuxtImg
           provider="cloudinary"
-          src="beingmomen/zmwazvdckxs6g9cnbbaq"
-          alt="hero"
+          src="beingmomen/fdr33lrypqxafnvpu1ql"
+          alt="My Awesome Image"
           class="w-full h-full object-cover rounded-3xl"
         />
       </div>
