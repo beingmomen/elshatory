@@ -89,7 +89,7 @@ onMounted(() => {
     }
 
     carouselRef.value.next();
-  }, 3000);
+  }, 10000);
 });
 </script>
 
