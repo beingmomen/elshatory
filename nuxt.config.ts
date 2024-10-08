@@ -36,11 +36,9 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       // Pre-render the homepage
-      // routes: ['/'],
+      routes: ['/'],
       // Then crawl all the links on the page
-      // crawlLinks: true
-      crawlLinks: false,
-      routes: []
+      crawlLinks: true
     }
   },
 
