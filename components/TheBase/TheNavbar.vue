@@ -1,10 +1,12 @@
 <template>
   <div class="pt-5">
     <nav
-      class="lg:container xl:container mx-auto px-4 xl:px-8 flex justify-between items-center h-full"
+      class="lg:container xl:container mx-auto px-4 xl:px-8 flex justify-center md:justify-between items-center h-full"
     >
       <div class="flex items-center gap-3">
-        <img class="w-40" src="/logo.svg" alt="Abdelmomen Elshatory Logo" />
+        <NuxtLink to="/">
+          <img class="w-40" src="/logo.svg" alt="Abdelmomen Elshatory Logo" />
+        </NuxtLink>
         <!-- <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
           Abdelmo’men
         </h1> -->

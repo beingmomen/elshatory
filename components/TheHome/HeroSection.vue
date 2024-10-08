@@ -1,26 +1,39 @@
 <template>
   <div
-    class="flex items-center justify-between lg:container xl:container mx-auto px-12 md:px-32"
+    class="flex flex-col lg:flex-row items-center justify-between lg:container xl:container mx-auto px-4 md:px-32"
   >
     <!--  h-[40rem] -->
-    <div class="min-h-full pt-8 sm:pt-32 w-2/3">
-      <h2 class="text-gray-400 font-bold text-2xl">
+    <div class="min-h-full pt-8 sm:pt-32 w-full xl:w-2/3">
+      <h2 class="text-gray-400 font-bold text-2xl text-center xl:text-start">
         <!-- {{ $t("welcome") }} -->
 
         مرحبا بالجميع !
       </h2>
       <p
-        class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white"
+        class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white text-center xl:text-start"
       >
         <!-- {{ $t("me") }} -->
         أنا
       </p>
       <p
         id="typed"
-        class="font-bold text-5xl sm:text-6xl bg-custom-gradient bg-clip-text main-title mt-6 min-h-[96px] sm:min-h-[60px]"
+        class="font-bold text-5xl sm:text-6xl bg-custom-gradient bg-clip-text main-title mt-6 min-h-[96px] sm:min-h-[60px] text-center xl:text-start"
       >
         <span ref="typedText" class="cursor"></span>
       </p>
+
+      <div class="py-14 xl:p-0 flex justify-center xl:hidden">
+        <div
+          class="hero-img flex justify-center max-w-[350px] lg:max-w-[700px] h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
+        >
+          <NuxtImg
+            provider="cloudinary"
+            src="beingmomen/fdr33lrypqxafnvpu1ql"
+            alt="My Awesome Image"
+            class="w-full h-full object-cover rounded-3xl"
+          />
+        </div>
+      </div>
 
       <div class="container mx-auto px-4 mt-10 text-gray-400">
         <h2 class="text-2xl md:text-3xl font-semibold mb-6">
@@ -82,7 +95,9 @@
           تفاعلية تترك انطباعًا لا يُنسى.
         </p>
 
-        <div class="mt-10 flex gap-4 items-center">
+        <div
+          class="mt-10 flex flex-wrap justify-center xl:justify-start gap-4 items-center"
+        >
           <NuxtLink
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
@@ -120,10 +135,10 @@
           </UButton>
         </div>
 
-        <div class="mt-10">
+        <div class="mt-10 text-center xl:text-start">
           <NuxtLink
             to="contact"
-            class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
+            class="bg-white text-[13px] md:text-xl text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
           >
             هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
           </NuxtLink>
@@ -136,9 +151,9 @@
         {{ $t("description") }}
       </p> -->
     </div>
-    <div class="p-14 lg:p-0">
+    <div class="py-14 xl:p-0 hidden xl:block">
       <div
-        class="hero-img flex justify-center w-[297px] h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
+        class="hero-img flex justify-center h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
       >
         <NuxtImg
           provider="cloudinary"

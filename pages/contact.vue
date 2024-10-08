@@ -1,5 +1,7 @@
 <template>
-  <div class="h-screen flex flex-col justify-center items-center">
+  <div
+    class="container mx-auto px-8 h-screen flex flex-col justify-center items-center"
+  >
     <p
       class="font-bold text-xl sm:text-2xl uppercase text-center text-white dark:text-white"
     >
@@ -11,7 +13,7 @@
       أخبرنا بما تريد وسنقوم بالتواصل معك باذن الله تعالي
     </h2>
 
-    <div class="w-1/2 mx-auto mt-20">
+    <div class="w-full md:w-1/2 mx-auto mt-20">
       <UForm
         ref="form"
         :schema="schema"
