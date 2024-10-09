@@ -58,23 +58,6 @@
 <script setup>
 const config = useRuntimeConfig();
 const baseUrl = config.public.baseURL;
-const items = [
-  {
-    id: 1,
-    image: "https://picsum.photos/1920/1080?random=1",
-    name: "محمد عبد الله",
-    title: "مدرب ومعلم",
-    description: "شكرًا لك على الفرصة الرائعة والتجربة الرائعة.",
-  },
-  {
-    id: 2,
-    image: "https://picsum.photos/1920/1080?random=2",
-    name: "محمد عبد الله",
-    title: "مدرب ومعلم",
-    description:
-      "لقد استمتعت كثيرًا بالتدريب مع المدرب. شكرًا لك على الفرصة الرائعة والتجربة الرائعة.",
-  },
-];
 
 const { data } = await useFetch(`${baseUrl}/testimonials/confirmed`);
 
