@@ -52,6 +52,7 @@
             loading="lazy"
             width="1200"
             height="1200"
+            sizes="400px"
             :modifiers="{
               c: 'crop',
               g: 'auto',
@@ -80,7 +81,7 @@ onMounted(() => {
     }
 
     carouselRef.value.next();
-  }, 1000000);
+  }, 10000);
 });
 </script>
 

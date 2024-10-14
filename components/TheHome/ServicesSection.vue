@@ -22,12 +22,20 @@
       >
         <div class="h-[12rem] rounded overflow-hidden">
           <NuxtImg
-            class="h-full w-full object-cover"
+            class="object-cover w-full h-full"
             provider="cloudinary"
             :src="service.image"
             :alt="service.description"
             loading="lazy"
+            width="1000"
+            height="800"
+            sizes="300px md:400px"
           />
+          <!-- sizes="(max-width: 200px) 100vw, 50vw" -->
+          <!-- :modifiers="{
+              c: 'crop',
+              g: 'auto',
+            }" -->
         </div>
 
         <h3 class="mt-4 font-bold text-2xl main-title">{{ service.title }}</h3>
