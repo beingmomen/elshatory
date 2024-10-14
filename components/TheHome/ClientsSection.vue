@@ -1,5 +1,5 @@
 <template>
-  <div dir="ltr" id="customers" class="container mx-auto px-8 mt-16">
+  <div id="customers" class="container mx-auto px-8 mt-16">
     <p
       class="font-bold text-xl sm:text-2xl uppercase text-center text-white dark:text-white"
     >
