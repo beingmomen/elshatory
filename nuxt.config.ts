@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         },
         {
           name: "keywords",
-          content: "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive",
+          content: "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive, Abdelmomen Elshatory عبدالمؤمن الشطوري",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
