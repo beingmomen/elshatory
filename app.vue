@@ -18,6 +18,8 @@ useSeoMeta({
     "مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js.",
   ogImage:
     "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+  ogUrl: "https://beingmomen.com",
+  ogType: "website",
   twitterCard: "summary_large_image",
   twitterTitle: "عبدالمؤمن الشطوري",
   twitterDescription:

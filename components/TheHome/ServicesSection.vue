@@ -26,6 +26,7 @@
             provider="cloudinary"
             :src="service.image"
             :alt="service.description"
+            loading="lazy"
           />
         </div>
 

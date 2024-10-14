@@ -23,10 +23,17 @@
           class="max-w-[150px] min-w-[100px] flex items-center justify-center"
         >
           <NuxtImg
-            class="w-full object-cover"
+            class="w-32 h-32 object-contain"
             provider="cloudinary"
             :src="item"
             alt="client"
+            loading="lazy"
+            width="1200"
+            height="1200"
+            :modifiers="{
+              c: 'crop',
+              g: 'auto',
+            }"
           />
         </div>
       </UCarousel>

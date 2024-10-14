@@ -33,6 +33,7 @@
             :src="project.image"
             provider="cloudinary"
             :alt="project.description"
+            loading="lazy"
           />
         </div>
 

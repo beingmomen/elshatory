@@ -42,12 +42,20 @@
           >
             {{ item.name }}
           </p>
+
           <NuxtImg
-            class="rounded-full w-28 h-28 mb-16 mt-5 object-cover object-center"
+            class="rounded-full h-28 w-28 mb-16 mt-5 object-cover object-center"
             draggable="false"
             provider="cloudinary"
             :src="item.image"
             :alt="item.name"
+            loading="lazy"
+            width="1200"
+            height="1200"
+            :modifiers="{
+              c: 'crop',
+              g: 'auto',
+            }"
           />
         </div>
       </UCarousel>
@@ -72,7 +80,7 @@ onMounted(() => {
     }
 
     carouselRef.value.next();
-  }, 10000);
+  }, 1000000);
 });
 </script>
 
