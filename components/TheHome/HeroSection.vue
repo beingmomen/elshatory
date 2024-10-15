@@ -31,7 +31,6 @@
             src="beingmomen/vfejpbwmvykwp1hrkjir"
             alt="My Awesome Image"
             class="w-full h-full object-cover rounded-3xl"
-            loading="lazy"
             format="webp"
           />
         </div>
@@ -162,7 +161,6 @@
           src="beingmomen/vfejpbwmvykwp1hrkjir"
           alt="My Awesome Image"
           class="w-full h-full object-cover rounded-3xl"
-          loading="lazy"
           format="webp"
         />
       </div>
