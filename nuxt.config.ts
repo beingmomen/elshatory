@@ -40,11 +40,11 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       // TODO: Add this when you want dist file
-      // routes: ['/'],
-      // crawlLinks: true
+      routes: ['/', "/testimonial", "/contact"],
+      crawlLinks: true
       // TODO: Add this when you want build
-      routes: [],
-      crawlLinks: false,
+      // routes: [],
+      // crawlLinks: false,
     },
   },
 
