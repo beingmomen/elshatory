@@ -157,9 +157,11 @@ export default defineNuxtConfig({
     treeshakeClientOnly: true,
   },
 
-  // Vite-specific optimizations
+
+
   vite: {
     build: {
+
       cssCodeSplit: true, // Split CSS into chunks
       rollupOptions: {
         output: {

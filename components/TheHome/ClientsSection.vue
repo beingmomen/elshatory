@@ -28,6 +28,8 @@
             :src="item"
             alt="client"
             loading="lazy"
+            format="webp"
+            quality="80"
             width="1200"
             height="1200"
             :modifiers="{
