@@ -174,10 +174,7 @@ export default defineNuxtConfig({
     },
     // Enable CSS optimization
     css: {
-      preprocessorOptions: {
-        scss: {
-        }
-      },
+
       postcss: {
         plugins: [
           require('postcss-import'),
