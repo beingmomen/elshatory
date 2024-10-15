@@ -56,6 +56,10 @@
 </template>
 
 <script setup>
+useHead({
+  titleTemplate: "قم بتقييمنا - %s",
+});
+
 import Joi from "joi";
 const config = useRuntimeConfig();
 const toast = useToast();

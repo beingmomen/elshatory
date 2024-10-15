@@ -1,5 +1,7 @@
 <template>
   <div class="text">
+
+
     <TheHomeHeroSection />
     <TheHomeSkillsSection />
     <TheHomeServicesSection />

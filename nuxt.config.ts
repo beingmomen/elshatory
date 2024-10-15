@@ -7,11 +7,13 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
-          name: "description", content: "",
+          name: "description",
+          content: "",
         },
         {
           name: "keywords",
-          content: "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive, Abdelmomen Elshatory عبدالمؤمن الشطوري",
+          content:
+            "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive, Abdelmomen Elshatory عبدالمؤمن الشطوري",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -42,14 +44,14 @@ export default defineNuxtConfig({
       // crawlLinks: true
       // TODO: Add this when you want build
       routes: [],
-      crawlLinks: false
-    }
+      crawlLinks: false,
+    },
   },
 
   devtools: { enabled: true },
 
   modules: [
-    '@nuxtjs/i18n',
+    // "@nuxtjs/i18n",
     "@vueuse/nuxt",
     "@nuxt/image",
     "@nuxt/content",
@@ -58,14 +60,21 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@pinia/nuxt",
     "nuxt-aos",
-    "@nuxtjs/robots",
     "@nuxtjs/cloudinary",
     "@formkit/auto-animate/nuxt",
+    "@nuxtjs/seo",
   ],
 
+  site: {
+    url: 'https://beingmomen.com',
+    name: 'الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري',
+    description: 'عبدالمؤمن الشطوري، مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js. أعمل على تحويل الأفكار إلى تجارب ويب تفاعلية ومبتكرة',
+    defaultLocale: 'ar', // not needed if you have @nuxtjs/i18n installed
+  },
+
   cloudinary: {
-    cloudName: 'dyqfclwdk',
-    uploadPreset: 'beingmomen',
+    cloudName: "dyqfclwdk",
+    uploadPreset: "beingmomen",
   },
 
   css: ["~/assets/scss/main.scss"],
@@ -137,7 +146,7 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: 9731
+    port: 9731,
   },
 
   compatibilityDate: "2024-08-30",

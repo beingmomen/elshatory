@@ -56,6 +56,9 @@
 </template>
 
 <script setup>
+useHead({
+  titleTemplate: "تواصل معنا - %s",
+});
 import Joi from "joi";
 const config = useRuntimeConfig();
 const toast = useToast();
