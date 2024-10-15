@@ -54,16 +54,11 @@ export default defineNuxtConfig({
     // "@nuxtjs/i18n",
     "@vueuse/nuxt",
     "@nuxt/image",
-    "@nuxt/content",
     "@nuxt/ui",
     "@nuxt/eslint",
     "@nuxt/fonts",
-    "@pinia/nuxt",
-    "nuxt-aos",
     "@nuxtjs/cloudinary",
-    "@formkit/auto-animate/nuxt",
     "@nuxtjs/seo",
-    'nuxt-purgecss',
   ],
 
   site: {
@@ -81,7 +76,7 @@ export default defineNuxtConfig({
   css: ["~/assets/scss/main.scss"],
 
   imports: {
-    dirs: ["stores"],
+    dirs: [],
   },
 
   image: {
@@ -102,7 +97,9 @@ export default defineNuxtConfig({
     },
   },
 
-  ui: {},
+  ui: {
+    global: true
+  },
 
   colorMode: {
     preference: "dark",
