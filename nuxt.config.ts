@@ -165,7 +165,7 @@ export default defineNuxtConfig({
         output: {
           manualChunks: {
             // Group vendor modules into a separate chunk
-            vendor: ['vue-router']
+            vendor: []
           }
         }
       },
