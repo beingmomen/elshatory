@@ -4,7 +4,7 @@ export const useProjects = () => {
     {
       title: "لوحة تحكم | أكاديمية النمر الذهبي",
       url: "https://tiger-academy.netlify.app/",
-      image: "beingmomen/erp_a5upr7.svg",
+      image: "beingmomen/projects/kumcpisodzlmbjl09rkq",
       type: "نظام ادارة محتوي",
       description:
         "The web system for managing a martial arts academy, through which players and tournaments can be managed, and many other features",
@@ -13,7 +13,7 @@ export const useProjects = () => {
     {
       title: "أكاديمية النمر الذهبي",
       url: "https://gloden-tiger-academy.netlify.app/",
-      image: "beingmomen/ugp5j8oc6lnqau5gsj6f",
+      image: "beingmomen/projects/z6maczq6efi4frqrocr4",
       type: "موقع شركة",
       description:
         "The most powerful media player in the world to play all live broadcasts with movie and series libraries",
@@ -22,7 +22,7 @@ export const useProjects = () => {
     {
       title: "STREAMMAXY",
       url: "https://streammaxy.com/",
-      image: "beingmomen/maxy_vkp7m0.svg",
+      image: "beingmomen/projects/eue84zgeqqhcxnsqdmml",
       type: "موقع شركة",
       description:
         "Streammaxy offers IPTV solutions for Android, iOS, Windows, and Smart TV. It's a leading IPTV provider, offering app development, reseller panel, and custom solutions. With 500+ clients, they boast 24/7 support and various features.",
@@ -49,7 +49,7 @@ export const useProjects = () => {
     {
       title: "دريم تي في بلاير",
       url: "https://www.dreamplayer.org/",
-      image: "beingmomen/dream_avl1zx.svg",
+      image: "beingmomen/projects/ntzcicgt0xive8ea4eof",
       type: "موقع شركة",
       description:
         "This App Is Intended To Play On TVs (Android). If You Are Using A Smartphone Or Tablet Device, Please Use The Applicationdream Player.",
@@ -58,7 +58,7 @@ export const useProjects = () => {
     {
       title: "SPIDER TV",
       url: "https://spidertvapp.com/",
-      image: "beingmomen/t9pmql4uqoxaph9hymyl",
+      image: "beingmomen/projects/iioskrrbfdwywmta7ciy",
       type: "موقع شركة",
       description:
         "The most powerful media player in the world to play all live broadcasts with movie and series libraries",
