@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     "@nuxtjs/cloudinary",
     "@formkit/auto-animate/nuxt",
     "@nuxtjs/seo",
+    'nuxt-purgecss',
   ],
 
   site: {
@@ -150,4 +151,39 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2024-08-30",
+
+  // Enable Nuxt's experimental tree-shaking
+  experimental: {
+    treeshakeClientOnly: true,
+  },
+
+  // Vite-specific optimizations
+  vite: {
+    build: {
+      cssCodeSplit: true, // Split CSS into chunks
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Group vendor modules into a separate chunk
+            vendor: ['vue', 'vue-router']
+          }
+        }
+      },
+    },
+    // Enable CSS optimization
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/_variables.scss" as *;'
+        }
+      },
+      postcss: {
+        plugins: [
+          require('postcss-import'),
+          // require('tailwindcss'),
+          // require('autoprefixer'),
+        ],
+      },
+    },
+  },
 });

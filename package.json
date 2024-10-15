@@ -16,6 +16,7 @@
     "@nuxtjs/seo": "^2.0.0-rc.23",
     "joi": "^17.13.3",
     "nuxt": "^3.13.2",
+    "sass-loader": "^16.0.2",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
@@ -40,6 +41,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt-aos": "^1.2.4",
+    "nuxt-purgecss": "^2.0.0",
     "sass": "^1.79.5"
   }
 }
