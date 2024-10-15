@@ -37,9 +37,7 @@
             />
           </blockquote>
 
-          <p
-            class="text-3xl text-center font-bold text-zinc-300 mt-10 font-['Ruwudu']"
-          >
+          <p class="text-3xl text-center font-bold text-zinc-300 mt-10">
             {{ item.name }}
           </p>
 

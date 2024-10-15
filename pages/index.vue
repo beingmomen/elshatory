@@ -1,17 +1,14 @@
 <template>
   <div class="text">
-
-
     <TheHomeHeroSection />
     <TheHomeSkillsSection />
-    <TheHomeServicesSection />
+    <LazyTheHomeServicesSection />
     <!-- <TheHomeExperienceSection /> -->
-    <TheHomeTestimonialsSection />
-    <TheHomeProjectsSection />
-    <TheHomeClientsSection />
+    <LazyTheHomeTestimonialsSection />
+    <LazyTheHomeProjectsSection />
+    <LazyTheHomeClientsSection />
   </div>
 </template>
 
 <script setup>
-
 </script>

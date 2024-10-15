@@ -35,6 +35,9 @@
             :alt="project.description"
             loading="lazy"
           />
+          <!-- width="1200"
+            height="600" -->
+          <!-- sizes="300px md:700px" -->
         </div>
 
         <div class="flex flex-col justify-between grow">
