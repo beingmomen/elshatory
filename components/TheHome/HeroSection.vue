@@ -118,7 +118,12 @@
             target="_blank"
             aria-label="linkedin Profile"
           >
-            <img src="/qabilah-2.webp" class="w-8 h-8" alt="qabilah" />
+            <NuxtImg
+              provider="cloudinary"
+              src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
+              alt="qabilah"
+              class="w-8 h-8 object-cover"
+            />
           </NuxtLink>
 
           <UButton

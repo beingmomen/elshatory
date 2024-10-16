@@ -5,12 +5,19 @@
     >
       <div class="flex items-center gap-3">
         <NuxtLink to="/">
-          <img
+          <!-- <img
             class="w-40 object-contain"
             src="/logo.svg"
             alt="Abdelmomen Elshatory Logo"
             height="100"
             width="100"
+          /> -->
+          <NuxtImg
+            provider="cloudinary"
+            src="beingmomen/zuzddnyz6ipqcc7tkcpb"
+            alt="Abdelmomen Elshatory Logo"
+            class="w-40 object-contain"
+            format="webp"
           />
         </NuxtLink>
         <!-- <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
