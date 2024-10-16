@@ -26,8 +26,8 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          type: "image/svg",
-          href: `/logo.svg`,
+          type: "image/webp",
+          href: `${process.env.CLOUDINARY_URL}beingmomen/xhjsrjkz4pfcsworh2mt`,
         },
       ],
     },

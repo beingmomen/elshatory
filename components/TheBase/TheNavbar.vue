@@ -5,26 +5,17 @@
     >
       <div class="flex items-center gap-3">
         <NuxtLink to="/">
-          <!-- <img
-            class="w-40 object-contain"
-            src="/logo.svg"
-            alt="Abdelmomen Elshatory Logo"
-            height="100"
-            width="100"
-          /> -->
           <NuxtImg
             provider="cloudinary"
-            src="beingmomen/zuzddnyz6ipqcc7tkcpb"
+            src="beingmomen/xhjsrjkz4pfcsworh2mt"
             alt="Abdelmomen Elshatory Logo"
-            class="w-40 object-contain"
-            format="webp"
+            class="w-40 h-20 object-contain"
+            width="1900"
+            height="950"
           />
         </NuxtLink>
-        <!-- <h1 class="uppercase font-bold text-xl text-gray-150 main-title">
-          Abdelmo’men
-        </h1> -->
       </div>
-      <!-- <TheBaseTheLang /> -->
+
       <div class="hidden sm:block">
         <UButton
           class="text-xl"
@@ -34,7 +25,7 @@
             base: 'text-gray-400',
             font: 'font-bold',
           }"
-          aria-label="Home page"
+          aria-label="Navigate to Home page"
           to="/"
         >
           الرئيسية
@@ -44,7 +35,7 @@
           class="text-xl"
           variant="link"
           color="gray"
-          aria-label="Services Page"
+          aria-label="Navigate to Services section"
           :ui="{
             base: 'text-gray-400',
             font: 'font-bold',
@@ -69,7 +60,7 @@
           class="text-xl"
           variant="link"
           color="gray"
-          aria-label="Projects Page"
+          aria-label="Navigate to Projects section"
           :ui="{
             base: 'text-gray-400',
             font: 'font-bold',
@@ -82,7 +73,7 @@
           class="text-xl"
           variant="link"
           color="gray"
-          aria-label="Customers Page"
+          aria-label="Navigate to Customers section"
           :ui="{
             base: 'text-gray-400',
             font: 'font-bold',
@@ -96,7 +87,7 @@
             class="text-xl"
             variant="link"
             color="gray"
-            aria-label="testimonial Page"
+            aria-label="Navigate to testimonial page"
             :ui="{
               base: 'text-gray-400',
               font: 'font-bold',
