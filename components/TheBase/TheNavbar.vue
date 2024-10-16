@@ -10,8 +10,8 @@
             src="beingmomen/xhjsrjkz4pfcsworh2mt"
             alt="Abdelmomen Elshatory Logo"
             class="w-40 h-20 object-contain"
-            width="1900"
-            height="950"
+            width="800"
+            height="400"
           />
         </NuxtLink>
       </div>
