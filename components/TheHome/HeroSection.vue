@@ -166,13 +166,13 @@
         {{ $t("description") }}
       </p> -->
     </div>
-    <div v-if="width > 1280" class="py-14 xl:p-0">
+    <div v-if="width >= 1280" class="py-14 xl:p-0">
       <div
         class="hero-img flex justify-center h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
       >
         <NuxtImg
           provider="cloudinary"
-          src="beingmomen/vfejpbwmvykwp1hrkjir"
+          src="beingmomen/edisxdkamb8dn3z0bhez"
           alt="My Awesome Image"
           class="w-full h-full object-cover rounded-3xl"
           format="webp"
