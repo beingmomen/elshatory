@@ -12,6 +12,7 @@
             class="w-40 h-20 object-contain"
             width="800"
             height="400"
+            format="webp"
           />
         </NuxtLink>
       </div>
