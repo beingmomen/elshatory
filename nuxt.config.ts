@@ -88,35 +88,7 @@ export default defineNuxtConfig({
       },
     },
 
-    // fonts: [{
-    //   family: 'Font A',
-    //   locals: ['Font A'],
-    //   fallback: ['Arial', 'sans-serif'],
-    //   variances: [
-    //     {
-    //       style: 'normal',
-    //       weight: 400,
-    //       sources: [
-    //         { src: '@/assets/fonts/font-a-regular.woff', type: 'woff' },
-    //         { src: '@/assets/fonts/font-a-regular.woff2', type: 'woff2' }
-    //       ]
-    //     }, {
-    //       style: 'italic',
-    //       weight: 400,
-    //       sources: [
-    //         { src: '@/assets/fonts/font-a-regularItalic.woff', type: 'woff' },
-    //         { src: '@/assets/fonts/font-a-regularItalic.woff2', type: 'woff2' }
-    //       ]
-    //     }, {
-    //       style: 'normal',
-    //       weight: 700,
-    //       sources: [
-    //         { src: '@/assets/fonts/font-a-700.woff', type: 'woff' },
-    //         { src: '@/assets/fonts/font-a-700.woff2', type: 'woff2' }
-    //       ]
-    //     }
-    //   ]
-    // }],
+
 
     targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
 
@@ -267,6 +239,11 @@ export default defineNuxtConfig({
           // require('tailwindcss'),
           // require('autoprefixer'),
         ],
+      },
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+        },
       },
     },
   },
