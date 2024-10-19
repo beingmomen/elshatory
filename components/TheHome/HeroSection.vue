@@ -22,10 +22,7 @@
         <span ref="typedText" class="cursor"></span>
       </p>
 
-      <div
-        v-if="width < 1280"
-        class="px-10 xl:px-0 py-14 xl:p-0 flex justify-center"
-      >
+      <div class="px-10 xl:px-0 py-14 xl:p-0 flex justify-center lg:hidden">
         <div
           class="hero-img flex justify-center min-w-[180px] w-full max-w-[340px] lg:max-w-[700px] h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
         >
@@ -166,7 +163,7 @@
         {{ $t("description") }}
       </p> -->
     </div>
-    <div v-if="width >= 1280" class="py-14 xl:p-0">
+    <div class="py-14 xl:p-0 hidden lg:block">
       <div
         class="hero-img flex justify-center h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
       >
@@ -186,8 +183,8 @@
 </template>
 
 <script setup>
-import { useWindowSize } from "@vueuse/core";
-const { width } = useWindowSize();
+// import { useWindowSize } from "@vueuse/core";
+// const { width } = useWindowSize();
 
 const typedTextSpan = ref(null);
 const cursorSpan = ref(null);

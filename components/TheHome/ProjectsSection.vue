@@ -34,6 +34,8 @@
             provider="cloudinary"
             :alt="project.description"
             loading="lazy"
+            width="325"
+            height="240"
           />
           <!-- width="1200"
             height="600" -->
