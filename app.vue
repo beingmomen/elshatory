@@ -1,6 +1,7 @@
 <template>
   <div dir="rtl" class="dark:bg-gray-900 bg-gray-900">
     <NuxtLoadingIndicator />
+    <VitePwaManifest />
 
     <NuxtLayout>
       <NuxtPage />
