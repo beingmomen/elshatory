@@ -83,6 +83,18 @@ export default defineNuxtConfig({
     },
   },
 
+  vitalizer: {
+    // Remove the render-blocking entry CSS
+    disableStylesheets: 'entry',
+    disablePrefetchLinks: true,
+    delayHydration: {
+      hydrateOnEvents: ['mousemove', 'scroll', 'keydown', 'click', 'touchstart', 'wheel'],
+      idleCallbackTimeout: 8000,
+      postIdleTimeout: 4000
+    }
+
+  },
+
   delayHydration: {
     // enables nuxt-delay-hydration in dev mode for testing
     // debug: process.env.NODE_ENV === "development",
