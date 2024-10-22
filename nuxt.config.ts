@@ -61,37 +61,82 @@ export default defineNuxtConfig({
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
-    "nuxt-vitalizer",
   ],
 
   pwa: {
     manifest: {
-      name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
-      short_name: "عبدالمؤمن الشطوري",
-      description: 'A sample PWA built with Nuxt 3',
-      start_url: '/index.html',
+      name: 'My Awesome App',
+      lang: 'en',
       display: 'standalone',
+      background_color: '#f7fafc',
+      theme_color: '#3498db',
       icons: [
         {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_192,h_192,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "192x192",
-          type: "image/png",
+          src: '/icon.png',
+          sizes: '192x192',
+          type: 'image/png'
         },
         {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_512,h_512,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "512x512",
-          type: "image/png",
-        },
-      ],
+          src: '/icon-maskable.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'maskable'
+        }
+      ]
     },
+    strategies: 'injectManifest',
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:index)?(html|js|css|png|jpg|jpeg|gif|svg)$/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'pw-cache',
+            expiration: {
+              maxEntries: 32,
+              maxAgeSeconds: 24 * 60 * 60 // 24 hours
+            }
+          }
+        },
+        {
+          urlPattern: /^https?:\/\/fonts\.googleapis\.com\/.*$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'google-fonts-cache'
+          }
+        }
+      ]
+    },
+    registerWebManifestInRouteRules: true,
+    client: {
+      registerPlugin: true,
+      installPrompt: true,
+      periodicSyncForUpdates: 3600 // Check for updates every hour
+    }
   },
 
-  vitalizer: {
-    // Remove the render-blocking entry CSS
-    disableStylesheets: 'entry',
-    disablePrefetchLinks: true,
+  // pwa: {
+  //   manifest: {
+  //     name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
+  //     short_name: "عبدالمؤمن الشطوري",
+  //     description: 'A sample PWA built with Nuxt 3',
+  //     start_url: '/index.html',
+  //     display: 'standalone',
+  //     icons: [
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_192,h_192,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "192x192",
+  //         type: "image/png",
+  //       },
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_512,h_512,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "512x512",
+  //         type: "image/png",
+  //       },
+  //     ],
+  //   },
+  // },
 
-  },
 
   delayHydration: {
     // enables nuxt-delay-hydration in dev mode for testing
