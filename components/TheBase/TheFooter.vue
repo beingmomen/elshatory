@@ -22,7 +22,7 @@
           />
         </p>
 
-        <div class="flex gap-6">
+        <div class="flex gap-6 flex-wrap justify-center">
           <NuxtLink
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
@@ -46,7 +46,7 @@
               provider="cloudinary"
               src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
               alt="qabilah"
-              class="w-8 h-8 object-cover"
+              class="w-8 min-w-8 h-8 object-cover"
             />
           </NuxtLink>
           <NuxtLink
