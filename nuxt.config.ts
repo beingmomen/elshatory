@@ -68,6 +68,9 @@ export default defineNuxtConfig({
     manifest: {
       name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
       short_name: "عبدالمؤمن الشطوري",
+      description: 'A sample PWA built with Nuxt 3',
+      start_url: '/index.html',
+      display: 'standalone',
       icons: [
         {
           src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_192,h_192,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
@@ -87,11 +90,6 @@ export default defineNuxtConfig({
     // Remove the render-blocking entry CSS
     disableStylesheets: 'entry',
     disablePrefetchLinks: true,
-    delayHydration: {
-      hydrateOnEvents: ['mousemove', 'scroll', 'keydown', 'click', 'touchstart', 'wheel'],
-      idleCallbackTimeout: 8000,
-      postIdleTimeout: 4000
-    }
 
   },
 
