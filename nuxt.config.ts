@@ -70,6 +70,9 @@ export default defineNuxtConfig({
       name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
       short_name: "عبدالمؤمن الشطوري",
       description: "Abdelmo'men Elshatory",
+      theme_color: "#000000",
+      lang: "ar",
+
       icons: [
         {
           src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_64,h_64,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
