@@ -18,7 +18,7 @@
         </template>
         <p class="text-4xl">Go back to your</p>
         <UButton
-          icon="i-tabler-send"
+          icon="i-ic-round-send"
           size="xl"
           color="primary"
           variant="solid"

@@ -1090,6 +1090,13 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify-json/ic@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@iconify-json/ic/-/ic-1.2.1.tgz"
+  integrity sha512-UjL/bjJP/T5EV881+hTzcfTKVo0KEUjhnMiJcLtPzNgPtU2KZZmRx8BSKKR61H4CN/5FTEbyawGyG0aEt3SwGQ==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/logos@^1.2.3":
   version "1.2.3"
   resolved "https://registry.npmjs.org/@iconify-json/logos/-/logos-1.2.3.tgz"
