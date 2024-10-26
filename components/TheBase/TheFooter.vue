@@ -9,7 +9,7 @@
         <p class="text-center sm:text-start text-white dark:text-white">
           &copy; {{ useFormatDate(new Date(), "YYYY") }}
           <UButton
-            to="https://www.linkedin.com/in/beingmomen/"
+            to="https://beingmomen.com"
             target="_blank"
             aria-label="Linkedin Profile"
             label="عبدالمؤمن الشطوري"

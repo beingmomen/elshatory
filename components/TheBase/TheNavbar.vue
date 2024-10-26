@@ -8,7 +8,7 @@
           <NuxtImg
             provider="cloudinary"
             src="beingmomen/xhjsrjkz4pfcsworh2mt"
-            alt="Abdelmomen Elshatory Logo"
+            alt="Abdelmomen Elshatory"
             class="w-40 h-20 object-contain"
             width="200"
             height="100"

@@ -57,7 +57,7 @@
 
 <script setup>
 useHead({
-  titleTemplate: "تواصل معنا - %s",
+  titleTemplate: "تواصل معنا - beingmomen - %s",
 });
 import Joi from "joi";
 const config = useRuntimeConfig();

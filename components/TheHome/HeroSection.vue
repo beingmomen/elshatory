@@ -29,7 +29,7 @@
           <NuxtImg
             provider="cloudinary"
             src="beingmomen/edisxdkamb8dn3z0bhez"
-            alt="My Awesome Image"
+            alt="Elshatory"
             class="w-full h-full object-cover rounded-3xl"
           />
           <!-- format="webp"
@@ -180,7 +180,7 @@
         <NuxtImg
           provider="cloudinary"
           src="beingmomen/edisxdkamb8dn3z0bhez"
-          alt="My Awesome Image"
+          alt="الشطوري"
           class="w-full h-full object-cover rounded-3xl"
           format="webp"
         />
