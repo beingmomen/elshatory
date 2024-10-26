@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     manifest: {
       name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
       short_name: "عبدالمؤمن الشطوري",
-      description: 'Abdelmo’men Elshatory',
+      description: "Abdelmo'men Elshatory",
       icons: [
         {
           src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_64,h_64,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
@@ -92,13 +92,13 @@ export default defineNuxtConfig({
           type: "image/png",
         },
       ],
-      workbox: {
-        navigateFallback: "/",
-      },
-      devOptions: {
-        enabled: true,
-        type: "module",
-      },
+    },
+    workbox: {
+      navigateFallback: "/",
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
     },
   },
 
