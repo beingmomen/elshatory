@@ -1076,20 +1076,6 @@
   dependencies:
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
-"@iconify-json/catppuccin@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/@iconify-json/catppuccin/-/catppuccin-1.2.4.tgz"
-  integrity sha512-yirVaJjjNwcqD5U7RFodXdkI3aBfp8MGFrRY/OA3UyisIwhydniWaeyn8MUpOnR865qRinEyKwUh57b5yQQfoA==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/codicon@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@iconify-json/codicon/-/codicon-1.2.2.tgz"
-  integrity sha512-ZO63Qy0e+/VBESGHE3CZEE2EFpzlBOTPSiMtIDQc1qIGvh6HpYVRNpEGuawF91oEws7PLuUifCIZL5NpYpKloA==
-  dependencies:
-    "@iconify/types" "*"
-
 "@iconify-json/devicon@^1.2.4":
   version "1.2.4"
   resolved "https://registry.npmjs.org/@iconify-json/devicon/-/devicon-1.2.4.tgz"
@@ -1104,20 +1090,6 @@
   dependencies:
     "@iconify/types" "*"
 
-"@iconify-json/hugeicons@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@iconify-json/hugeicons/-/hugeicons-1.2.1.tgz"
-  integrity sha512-IedWO3xgMuRdRaolyl8kLOMA01xQ2QhldCKWrqtIxEpalndU7hoh1dUR00ackhWLFDwpKdGQGzuF5/Szaw40CQ==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/line-md@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@iconify-json/line-md/-/line-md-1.2.2.tgz"
-  integrity sha512-UCYTTO5aARoVbOOPCaomOoXDC8maSolIV8KVDmK9VuzfjpqkMg/vJo/nWaoQPIf310SZjdvAqHvIwsbzr6J+sw==
-  dependencies:
-    "@iconify/types" "*"
-
 "@iconify-json/logos@^1.2.3":
   version "1.2.3"
   resolved "https://registry.npmjs.org/@iconify-json/logos/-/logos-1.2.3.tgz"
@@ -1125,38 +1097,10 @@
   dependencies:
     "@iconify/types" "*"
 
-"@iconify-json/lucide@^1.2.9":
-  version "1.2.9"
-  resolved "https://registry.npmjs.org/@iconify-json/lucide/-/lucide-1.2.9.tgz"
-  integrity sha512-4gTg74GLiIPJtt4HrAoQuxRLana085kXBf2BhGDzSpPPg8xkgRemRKhhiZE0qasKyBt/nif67Rvuz/NUFWtvDg==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/material-symbols@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/@iconify-json/material-symbols/-/material-symbols-1.2.4.tgz"
-  integrity sha512-qZy0wJWZsfPVwXRyIwltCdfVI/aANnKI99IcIo7MXYPmPkMVEfIo+sr1LEnpxvYtC5klLY4rEcLPxEPm3Y935g==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/ph@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@iconify-json/ph/-/ph-1.2.1.tgz"
-  integrity sha512-x0DNfwWrS18dbsBYOq3XGiZnGz4CgRyC+YSl/TZvMQiKhIUl1woWqUbMYqqfMNUBzjyk7ulvaRovpRsIlqIf8g==
-  dependencies:
-    "@iconify/types" "*"
-
 "@iconify-json/skill-icons@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@iconify-json/skill-icons/-/skill-icons-1.2.0.tgz"
   integrity sha512-5zlPrzF5pelV1wut7C88zmAiYONvGxvFw11dXW1Pr1oIhUOtYhC7x3zkErSTFkyZ3m5fEgcEUrcO1W3UhNJVpw==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/vscode-icons@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@iconify-json/vscode-icons/-/vscode-icons-1.2.2.tgz"
-  integrity sha512-bTpT0HJDRqGkxQv8oiETNHLEnBZpnA1QaRD35CQyO7M7qgWVLx2xwn/lK6e4waojmlPC3ckMBx3WFIUUn0/Jdg==
   dependencies:
     "@iconify/types" "*"
 
@@ -1620,7 +1564,7 @@
   optionalDependencies:
     ipx "^2.1.0"
 
-"@nuxt/kit@^3.11.2", "@nuxt/kit@^3.12.1", "@nuxt/kit@^3.12.2", "@nuxt/kit@^3.12.3", "@nuxt/kit@^3.12.4", "@nuxt/kit@^3.13.0", "@nuxt/kit@^3.13.1", "@nuxt/kit@^3.13.2", "@nuxt/kit@^3.9.0", "@nuxt/kit@3.13.2":
+"@nuxt/kit@^3.11.2", "@nuxt/kit@^3.12.1", "@nuxt/kit@^3.12.3", "@nuxt/kit@^3.12.4", "@nuxt/kit@^3.13.0", "@nuxt/kit@^3.13.1", "@nuxt/kit@^3.13.2", "@nuxt/kit@^3.9.0", "@nuxt/kit@3.13.2":
   version "3.13.2"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.13.2.tgz"
   integrity sha512-KvRw21zU//wdz25IeE1E5m/aFSzhJloBRAQtv+evcFeZvuroIxpIQuUqhbzuwznaUwpiWbmwlcsp5uOWmi4vwA==
@@ -7054,15 +6998,6 @@ nuxt-site-config@^2.2.15, nuxt-site-config@^2.2.16, nuxt-site-config@^2.2.18, nu
     sirv "^2.0.4"
     site-config-stack "2.2.18"
     ufo "^1.5.4"
-
-nuxt-vitalizer@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/nuxt-vitalizer/-/nuxt-vitalizer-0.10.0.tgz"
-  integrity sha512-z5leudr8wD2msKl7ETLGUICSOVoXVLMA8bAeRuWN4/UuYl7g7G2k7Idzl1z8ft/VmoYZ9ld3J0/2UZOZuxxzog==
-  dependencies:
-    "@nuxt/kit" "^3.12.2"
-    defu "^6.1.4"
-    knitwork "^1.1.0"
 
 nuxt@^3.13.2:
   version "3.13.2"

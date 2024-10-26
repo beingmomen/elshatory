@@ -116,7 +116,7 @@
             target="_blank"
             aria-label="Github Profile"
           >
-            <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
+            <UIcon name="i-skill-icons-github-dark" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://qabilah.com/profile/beingmomen/posts"

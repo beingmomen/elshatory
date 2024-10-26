@@ -35,7 +35,7 @@
             target="_blank"
             aria-label="github Profile"
           >
-            <UIcon name="i-codicon-github-inverted" class="w-8 h-8" />
+            <UIcon name="i-skill-icons-github-dark" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://qabilah.com/profile/beingmomen/posts"
@@ -45,7 +45,7 @@
             <NuxtImg
               provider="cloudinary"
               src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
-              alt="qabilah"
+              alt="عبدالمؤمن"
               class="w-8 min-w-8 h-8 object-cover"
             />
           </NuxtLink>
@@ -54,7 +54,7 @@
             target="_blank"
             aria-label="twitter Profile"
           >
-            <UIcon name="i-line-md-twitter-x" class="w-8 h-8" />
+            <UIcon name="i-devicon-twitter" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://www.facebook.com/beingmomen/"

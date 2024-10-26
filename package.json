@@ -13,6 +13,9 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@iconify-json/devicon": "^1.2.4",
+    "@iconify-json/logos": "^1.2.3",
+    "@iconify-json/skill-icons": "^1.2.0",
     "@nuxtjs/cloudinary": "^3.1.0",
     "@nuxtjs/fontaine": "^0.4.3",
     "@nuxtjs/seo": "^2.0.0-rc.23",
@@ -26,17 +29,6 @@
   },
   "devDependencies": {
     "@formkit/auto-animate": "^0.8.2",
-    "@iconify-json/catppuccin": "^1.2.4",
-    "@iconify-json/codicon": "^1.2.2",
-    "@iconify-json/devicon": "^1.2.4",
-    "@iconify-json/hugeicons": "^1.2.1",
-    "@iconify-json/line-md": "^1.2.2",
-    "@iconify-json/logos": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.9",
-    "@iconify-json/material-symbols": "^1.2.4",
-    "@iconify-json/ph": "^1.2.1",
-    "@iconify-json/skill-icons": "^1.2.0",
-    "@iconify-json/vscode-icons": "^1.2.2",
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/fonts": "^0.7.0",
     "@nuxt/image": "^1.7.0",

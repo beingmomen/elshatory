@@ -64,31 +64,34 @@
 const slideCount = ref(7);
 
 const firstSkills = ref([
-  { icon: "i-logos-tailwindcss-icon" },
-  { icon: "i-devicon-javascript" },
-  { icon: "i-devicon-css3" },
-  { icon: "i-codicon-github-inverted" },
-  { icon: "i-devicon-jquery" },
-  { icon: "i-devicon-html5" },
-  { icon: "i-logos-sass" },
+  { icon: "i-skill-icons-tailwindcss-light" },
+  { icon: "i-skill-icons-javascript" },
+  { icon: "i-skill-icons-css" },
+  { icon: "i-skill-icons-github-dark" },
+  { icon: "i-skill-icons-jquery" },
+  { icon: "i-skill-icons-html" },
+  { icon: "i-skill-icons-sass" },
+  { icon: "i-skill-icons-figma-light" },
 ]);
 const secondSkills = ref([
-  { icon: "i-hugeicons-api" },
-  { icon: "i-skill-icons-bootstrap" },
   { icon: "i-logos-digital-ocean-icon" },
+  { icon: "i-skill-icons-bootstrap" },
+  { icon: "i-skill-icons-graphql-light" },
   { icon: "i-logos-firebase" },
-  { icon: "i-ph-git-merge-bold" },
-  { icon: "i-catppuccin-gulp" },
-  { icon: "i-logos-nuxt-icon" },
+  { icon: "i-skill-icons-git" },
+  { icon: "i-skill-icons-gulp" },
+  { icon: "i-skill-icons-nuxtjs-light" },
+  { icon: "i-skill-icons-xd" },
 ]);
 const thirdSkills = ref([
-  { icon: "i-logos-gitlab" },
-  { icon: "i-devicon-vuejs" },
-  { icon: "i-logos-pinia" },
+  { icon: "i-skill-icons-gitlab-light" },
+  { icon: "i-skill-icons-vuejs-light" },
+  { icon: "i-skill-icons-pinia-light" },
   { icon: "i-skill-icons-prisma" },
-  { icon: "i-vscode-icons-file-type-pug" },
-  { icon: "i-logos-vuetifyjs" },
-  { icon: "i-logos-nuxt-icon" },
+  { icon: "i-skill-icons-pug-light" },
+  { icon: "i-skill-icons-vuetify-light" },
+  { icon: "i-skill-icons-githubactions-light" },
+  { icon: "i-skill-icons-netlify-light" },
 ]);
 </script>
 
