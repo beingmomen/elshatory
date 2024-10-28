@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content:
-            "عبدالمؤمن الشطوري, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, تطوير مواقع, Frontend Developer, JavaScript, Abdelmomen Elshatory, Web Development, Websites, Responsive, Abdelmomen Elshatory عبدالمؤمن الشطوري, Elshatory, الشطوري, الشطورى, Abdelmomen, Abdelmo’men, مطور frontend , مطور واجهات أمامية و vue.js, مطور vue.js, مطور nuxt.js, beingmomen",
+            "",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -96,9 +96,17 @@ export default defineNuxtConfig({
         },
       ],
     },
-    workbox: {
-      navigateFallback: "/",
-    },
+    // workbox: {
+    //   globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico}'],
+    //   // You can exclude the patterns causing warnings
+    //   globIgnores: [
+    //     '**/node_modules/**/*',
+    //     'sw.js',
+    //     'workbox-*.js',
+    //     '**/_payload.json',
+    //     '_nuxt/builds/**/*.json'
+    //   ]
+    // },
     devOptions: {
       enabled: true,
       type: "module",
