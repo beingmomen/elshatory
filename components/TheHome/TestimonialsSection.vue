@@ -48,14 +48,14 @@
             :src="item.image"
             :alt="item.name"
             loading="lazy"
-          />
-          <!-- width="1200"
+            width="1200"
             height="1200"
             sizes="400px"
             :modifiers="{
               c: 'crop',
               g: 'auto',
-            }" -->
+            }"
+          />
         </div>
       </UCarousel>
     </div>
