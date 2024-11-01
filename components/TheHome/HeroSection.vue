@@ -4,20 +4,26 @@
   >
     <!--  h-[40rem] -->
     <div class="min-h-full pt-8 sm:pt-32 w-full xl:w-2/3">
-      <h2 class="text-gray-400 font-bold text-2xl text-center xl:text-start">
-        <!-- {{ $t("welcome") }} -->
+      <div>
+        <TheUiBlurReveal :delay="0">
+          <h2
+            class="text-gray-400 font-bold text-2xl text-center xl:text-start"
+          >
+            مرحبا بالجميع 👋
+          </h2>
+        </TheUiBlurReveal>
+        <TheUiBlurReveal :delay="200">
+          <p
+            class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white text-center xl:text-start"
+          >
+            أنا
+          </p>
+        </TheUiBlurReveal>
+      </div>
 
-        مرحبا بالجميع !
-      </h2>
-      <p
-        class="font-bold text-6xl bg-custom-gradient bg-clip-text mt-6 text-white dark:text-white text-center xl:text-start"
-      >
-        <!-- {{ $t("me") }} -->
-        أنا
-      </p>
       <p
         id="typed"
-        class="font-bold text-5xl sm:text-6xl bg-custom-gradient bg-clip-text main-title mt-6 min-h-[96px] sm:min-h-[60px] text-center xl:text-start"
+        class="font-bold text-5xl sm:text-6xl bg-custom-gradient bg-clip-text main-title mt-6 min-h-[96px] sm:min-h-[100px] text-center xl:text-start py-5"
       >
         <span ref="typedText" class="cursor"></span>
       </p>
@@ -29,7 +35,7 @@
           <NuxtImg
             provider="cloudinary"
             src="beingmomen/edisxdkamb8dn3z0bhez"
-            alt="Elshatory"
+            alt="الشطوري"
             class="w-full h-full object-cover rounded-3xl"
           />
           <!-- format="webp"
@@ -42,9 +48,15 @@
       </div>
 
       <div class="container mx-auto px-4 mt-10 text-gray-400">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-6">
-          خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js
-        </h2>
+        <TheUiRadiantText
+          class="inline-flex items-center justify-center py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
+          :duration="4"
+        >
+          <!-- <span class="text-3xl font-bold">✨ Introducing Inspira UI</span> -->
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+            خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js ✨
+          </h2>
+        </TheUiRadiantText>
 
         <p class="text-xl mb-8">
           أحول رؤيتك إلى واقع رقمي مبهر. بفضل خبرتي المتخصصة في Vue.js و
@@ -155,15 +167,25 @@
             :ui="{ base: '-mx-2 rounded-none ring-0', background: '' }"
           >
             <template #content>
-              <UAvatar icon="i-line-md-external-link" size="xs" />
+              <UAvatar icon="i-ic-baseline-launch" size="xs" />
             </template>
-            <NuxtLink
+            <div class="flex justify-center items-center flex-col px-4">
+              <p class="text-xl md:text-3xl max-w-3xl mx-auto mb-10">
+                <TheUiLinkPreview
+                  url="https://beingmomen.com/contact"
+                  class="bg-white text-[13px] md:text-xl text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
+                >
+                  هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
+                </TheUiLinkPreview>
+              </p>
+            </div>
+            <!-- <NuxtLink
               to="contact"
               aria-label="Navigate to contact page"
               class="bg-white text-[13px] md:text-xl text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
             >
               هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
-            </NuxtLink>
+            </NuxtLink> -->
           </UChip>
         </div>
       </div>
@@ -205,8 +227,8 @@ const textArray = [
   "Frontend Developer | Nuxt",
   "Abdelmo’men Elshatory",
 ];
-const typingDelay = 100;
-const erasingDelay = 100;
+const typingDelay = 100; // 100
+const erasingDelay = 100; // 100
 const newTextDelay = 500;
 let textArrayIndex = 0;
 let charIndex = 0;

@@ -12,8 +12,7 @@ export default defineNuxtConfig({
         },
         {
           name: "keywords",
-          content:
-            "",
+          content: "",
         },
         { name: "author", content: "Abdelmo’men Elshatory" },
       ],
@@ -61,11 +60,21 @@ export default defineNuxtConfig({
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
+    '@vueuse/motion/nuxt',
   ],
 
-
+  // tailwindcss: {
+  //   cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
+  //   configPath: "tailwind.config",
+  //   exposeConfig: {
+  //     level: 2,
+  //   },
+  //   config: {},
+  //   viewer: true,
+  // },
 
   pwa: {
+    registerType: "autoUpdate",
     manifest: {
       name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
       short_name: "عبدالمؤمن الشطوري",
@@ -113,7 +122,6 @@ export default defineNuxtConfig({
     },
   },
 
-
   delayHydration: {
     // enables nuxt-delay-hydration in dev mode for testing
     // debug: process.env.NODE_ENV === "development",
@@ -121,6 +129,7 @@ export default defineNuxtConfig({
   },
 
   booster: {
+
     detection: {
       performance: true,
       browserSupport: true,
@@ -164,7 +173,7 @@ export default defineNuxtConfig({
     uploadPreset: "beingmomen",
   },
 
-  css: ["~/assets/scss/main.scss"],
+  css: [],
 
   imports: {
     dirs: [],
@@ -292,4 +301,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  build: {},
+  sourcemap: {
+    server: true,
+    client: true
+  }
 });
