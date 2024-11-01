@@ -52,7 +52,6 @@
           class="inline-flex items-center justify-center py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
           :duration="4"
         >
-          <!-- <span class="text-3xl font-bold">✨ Introducing Inspira UI</span> -->
           <h2 class="text-2xl md:text-3xl font-semibold mb-6">
             خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js ✨
           </h2>
@@ -119,14 +118,14 @@
           <NuxtLink
             to="https://www.linkedin.com/in/beingmomen/"
             target="_blank"
-            aria-label="linkedin Profile"
+            aria-label="الشطوري | LinkedIn"
           >
             <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
           </NuxtLink>
           <NuxtLink
             to="https://github.com/beingmomen"
             target="_blank"
-            aria-label="Github Profile"
+            aria-label="الشطوري | Github"
           >
             <UIcon name="i-skill-icons-github-dark" class="w-8 h-8" />
           </NuxtLink>
@@ -138,7 +137,7 @@
             <NuxtImg
               provider="cloudinary"
               src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
-              alt="qabilah"
+              alt="الشطوري | قبيلة"
               class="w-8 h-8 object-cover"
               preload
             />
@@ -217,9 +216,6 @@
 </template>
 
 <script setup>
-// import { useWindowSize } from "@vueuse/core";
-// const { width } = useWindowSize();
-
 const typedTextSpan = ref(null);
 const cursorSpan = ref(null);
 const textArray = [
