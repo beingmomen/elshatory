@@ -128,6 +128,7 @@
               src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
               alt="qabilah"
               class="w-8 h-8 object-cover"
+              preload
             />
           </NuxtLink>
 
@@ -183,6 +184,7 @@
           alt="الشطوري"
           class="w-full h-full object-cover rounded-3xl"
           format="webp"
+          preload
         />
       </div>
     </div>
