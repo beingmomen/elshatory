@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxtjs/cloudinary",
     "@nuxtjs/seo",
-    "@vite-pwa/nuxt",
+    // "@vite-pwa/nuxt",
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
@@ -65,53 +65,53 @@ export default defineNuxtConfig({
 
 
 
-  pwa: {
-    manifest: {
-      name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
-      short_name: "عبدالمؤمن الشطوري",
-      description: "Abdelmo'men Elshatory",
-      theme_color: "#000000",
-      lang: "ar",
+  // pwa: {
+  //   manifest: {
+  //     name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
+  //     short_name: "عبدالمؤمن الشطوري",
+  //     description: "Abdelmo'men Elshatory",
+  //     theme_color: "#000000",
+  //     lang: "ar",
 
-      icons: [
-        {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_64,h_64,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "64x64",
-          type: "image/png",
-        },
-        {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_144,h_144,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "144x144",
-          type: "image/png",
-        },
-        {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_192,h_192,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "192x192",
-          type: "image/png",
-        },
-        {
-          src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_512,h_512,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
-          sizes: "512x512",
-          type: "image/png",
-        },
-      ],
-    },
-    // workbox: {
-    //   globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico}'],
-    //   // You can exclude the patterns causing warnings
-    //   globIgnores: [
-    //     '**/node_modules/**/*',
-    //     'sw.js',
-    //     'workbox-*.js',
-    //     '**/_payload.json',
-    //     '_nuxt/builds/**/*.json'
-    //   ]
-    // },
-    devOptions: {
-      enabled: true,
-      type: "module",
-    },
-  },
+  //     icons: [
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_64,h_64,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "64x64",
+  //         type: "image/png",
+  //       },
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_144,h_144,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "144x144",
+  //         type: "image/png",
+  //       },
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_192,h_192,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "192x192",
+  //         type: "image/png",
+  //       },
+  //       {
+  //         src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_512,h_512,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
+  //         sizes: "512x512",
+  //         type: "image/png",
+  //       },
+  //     ],
+  //   },
+  //   // workbox: {
+  //   //   globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico}'],
+  //   //   // You can exclude the patterns causing warnings
+  //   //   globIgnores: [
+  //   //     '**/node_modules/**/*',
+  //   //     'sw.js',
+  //   //     'workbox-*.js',
+  //   //     '**/_payload.json',
+  //   //     '_nuxt/builds/**/*.json'
+  //   //   ]
+  //   // },
+  //   // devOptions: {
+  //   //   enabled: true,
+  //   //   type: "module",
+  //   // },
+  // },
 
 
   delayHydration: {
