@@ -129,13 +129,14 @@ export default defineNuxtConfig({
   },
 
   booster: {
-
+    // @ts-ignore
     detection: {
       performance: true,
       browserSupport: true,
     },
 
     performanceMetrics: {
+      // @ts-ignore
       device: {
         hardwareConcurrency: { min: 2, max: 48 },
         deviceMemory: { min: 2 },
@@ -146,6 +147,7 @@ export default defineNuxtConfig({
       },
     },
 
+    // @ts-ignore
     targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
 
     componentAutoImport: false,
@@ -186,16 +188,6 @@ export default defineNuxtConfig({
       baseURL: process.env.CLOUDINARY_URL,
     },
     dir: "assets",
-    // screens: {
-    //   xs: 320,
-    //   sm: 640,
-    //   md: 768,
-    //   lg: 1024,
-    //   xl: 1280,
-    //   xxl: 1536,
-    //   "2xl": 1536,
-    // },
-
     screens: {
       default: 320,
       xxs: 480,
@@ -242,20 +234,8 @@ export default defineNuxtConfig({
   //   defaultLocale: 'ar',
   // },
 
-  // postcss: {
-  //   plugins: {
-  //     tailwindcss: {},
-  //     autoprefixer: {},
-  //     cssnano:
-  //       process.env.NODE_ENV === "production"
-  //         ? { preset: ["default", { discardComments: { removeAll: true } }] }
-  //         : false, // disable cssnano when not in production
-  //   },
-  // },
 
   runtimeConfig: {
-    // jwtAccessSecret: process.env.JWT_ACCESS_TOKEN_SECRET,
-
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
