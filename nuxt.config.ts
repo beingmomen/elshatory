@@ -63,15 +63,15 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
   ],
 
-  // tailwindcss: {
-  //   cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-  //   configPath: "tailwind.config",
-  //   exposeConfig: {
-  //     level: 2,
-  //   },
-  //   config: {},
-  //   viewer: true,
-  // },
+  tailwindcss: {
+    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
+    configPath: "tailwind.config",
+    exposeConfig: {
+      level: 2,
+    },
+    config: {},
+    viewer: true,
+  },
 
   pwa: {
     registerType: "autoUpdate",
