@@ -50,7 +50,7 @@
       <div class="container mx-auto px-4 mt-10 text-gray-400">
         <TheUiRadiantText
           class="inline-flex items-center justify-center py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
-          :duration="4"
+          :duration="0"
         >
           <h2 class="text-2xl md:text-3xl font-semibold mb-6">
             خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js ✨
@@ -171,7 +171,7 @@
             <div class="flex justify-center items-center flex-col px-4">
               <p class="text-xl md:text-3xl max-w-3xl mx-auto mb-10">
                 <TheUiLinkPreview
-                  url="https://beingmomen.com/contact"
+                  :url="`${url.origin}/contact`"
                   class="bg-white text-[13px] md:text-xl text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300"
                 >
                   هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
@@ -216,6 +216,9 @@
 </template>
 
 <script setup>
+const url = useRequestURL();
+console.warn("url", url);
+
 const typedTextSpan = ref(null);
 const cursorSpan = ref(null);
 const textArray = [
