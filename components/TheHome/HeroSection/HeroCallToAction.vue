@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10 text-center xl:text-start">
     <TheUiLinkPreview
-      :url="`${url.origin}/contact`"
+      url="/contact"
       class="bg-white text-[13px] md:text-xl text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300 relative"
     >
       هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
