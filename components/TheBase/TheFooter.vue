@@ -11,7 +11,7 @@
           <UButton
             to="https://beingmomen.com"
             target="_blank"
-            aria-label="Linkedin Profile"
+            aria-label="الشطوري"
             label="عبدالمؤمن الشطوري"
             color="primary"
             variant="link"

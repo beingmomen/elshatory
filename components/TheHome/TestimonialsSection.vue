@@ -12,52 +12,42 @@
       آراء العملاء والشركاء
     </h2>
 
-    <div dir="ltr" class="mt-5">
-      <UCarousel
-        ref="carouselRef"
-        v-slot="{ item }"
-        :items="data.data"
-        :ui="{ item: 'basis-full' }"
-        class="rounded-lg overflow-hidden"
-        indicators
-      >
-        <div class="flex flex-col items-center w-full mt-10">
-          <blockquote
-            dir="rtl"
-            class="text-2xl italic leading-relaxed text-center font-bold font-italic text-zinc-100 w-2/3"
-          >
-            <UIcon name="i-lucide-quote" class="w-5 h-5 text-primary mx-2" />
+    <div
+      class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background"
+    >
+      <!-- First Marquee -->
+      <TheUiMarquee pauseOnHover class="[--duration:20s]">
+        <TheUiReviewCard
+          v-for="review in firstRow"
+          :key="review.email"
+          :img="review.image"
+          :name="review.name"
+          :email="review.email"
+          :body="review.description"
+        />
+      </TheUiMarquee>
 
-            <span class="mt-10">
-              {{ item.description }}
-            </span>
-            <UIcon
-              name="i-lucide-quote"
-              class="w-5 h-5 text-primary mx-2 rotate-180"
-            />
-          </blockquote>
+      <!-- Second Marquee (reverse) -->
+      <TheUiMarquee reverse pauseOnHover class="[--duration:20s]">
+        <TheUiReviewCard
+          v-for="review in secondRow"
+          :key="review.email"
+          :img="review.image"
+          :name="review.name"
+          :email="review.email"
+          :body="review.description"
+        />
+      </TheUiMarquee>
 
-          <p class="text-3xl text-center font-bold text-zinc-300 mt-10">
-            {{ item.name }}
-          </p>
+      <!-- Left Gradient -->
+      <div
+        class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-slate-900"
+      />
 
-          <NuxtImg
-            class="rounded-full h-28 w-28 mb-16 mt-5 object-cover object-center"
-            draggable="false"
-            provider="cloudinary"
-            :src="item.image"
-            :alt="item.name"
-            loading="lazy"
-            width="1200"
-            height="1200"
-            sizes="400px"
-            :modifiers="{
-              c: 'crop',
-              g: 'auto',
-            }"
-          />
-        </div>
-      </UCarousel>
+      <!-- Right Gradient -->
+      <div
+        class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-slate-900"
+      />
     </div>
   </section>
 </template>
@@ -68,19 +58,9 @@ const baseUrl = config.public.baseURL;
 
 const { data } = await useFetch(`${baseUrl}/testimonials/confirmed`);
 
-const carouselRef = ref();
-
-onMounted(() => {
-  setInterval(() => {
-    if (!carouselRef.value) return;
-
-    if (carouselRef.value.page === carouselRef.value.pages) {
-      return carouselRef.value.select(0);
-    }
-
-    carouselRef.value.next();
-  }, 10000);
-});
+// Split reviews into two rows
+const firstRow = ref(data.value.data.slice(0, data.value.data.length / 2));
+const secondRow = ref(data.value.data.slice(data.value.data.length / 2));
 </script>
 
 <style lang="scss" scoped>
