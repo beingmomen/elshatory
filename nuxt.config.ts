@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxtjs/cloudinary",
     "@nuxtjs/seo",
-    // "@vite-pwa/nuxt",
+    "@vite-pwa/nuxt",
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
