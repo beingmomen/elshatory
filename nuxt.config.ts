@@ -14,7 +14,7 @@ export default defineNuxtConfig({
           name: "keywords",
           content: "",
         },
-        { name: "author", content: "Abdelmo’men Elshatory" },
+        { name: "author", content: "Abdelmomen Elshatory" },
       ],
       htmlAttrs: {
         class: "",

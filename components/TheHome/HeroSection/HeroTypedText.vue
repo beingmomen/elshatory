@@ -13,7 +13,7 @@ const cursorSpan = ref(null);
 const textArray = [
   "عبدالمؤمن الشطوري",
   "Frontend Developer | Nuxt",
-  "Abdelmo’men Elshatory",
+  "Abdelmomen Elshatory",
 ];
 const typingDelay = 100; // 100
 const erasingDelay = 100; // 100

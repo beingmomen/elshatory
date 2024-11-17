@@ -53,7 +53,7 @@ useHead({
           "الشطوري",
           "Abdelmomen",
           "Elshatory",
-          "Abdelmo’men",
+          "Abdelmomen",
         ],
         url: "https://beingmomen.com",
         jobTitle: "Senior Frontend Developer",
