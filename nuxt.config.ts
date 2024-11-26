@@ -36,13 +36,11 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      // TODO: Add this when you want dist file
-      routes: ["/", "/testimonial", "/contact"],
+      routes: ['/'],
       crawlLinks: true,
-      // TODO: Add this when you want build
-      // routes: [],
-      // crawlLinks: false,
-    },
+      failOnError: false,
+      autoSubfolderIndex: false
+    }
   },
 
   devtools: { enabled: true },
@@ -236,6 +234,7 @@ export default defineNuxtConfig({
 
   // Enable Nuxt's experimental tree-shaking
   experimental: {
+    viewTransition: true,
     treeshakeClientOnly: true,
   },
 
