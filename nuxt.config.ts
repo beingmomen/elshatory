@@ -46,31 +46,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    // "@nuxtjs/i18n",
     "@vueuse/nuxt",
     "@nuxt/image",
     "@nuxt/ui",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxtjs/cloudinary",
-    "@nuxtjs/seo",
     "@vite-pwa/nuxt",
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
     '@vueuse/motion/nuxt',
   ],
-
-
-  // tailwindcss: {
-  //   cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-  //   configPath: "tailwind.config",
-  //   exposeConfig: {
-  //     level: 2,
-  //   },
-  //   config: {},
-  //   viewer: true,
-  // },
 
   pwa: {
     manifest: {
