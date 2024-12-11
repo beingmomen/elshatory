@@ -8,13 +8,17 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "description",
-          content: "",
+          content: "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء",
         },
         {
           name: "keywords",
-          content: "",
+          content: "عبدالمؤمن الشطوري, beingmomen, الشطورى, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer, web development",
         },
         { name: "author", content: "Abdelmomen Elshatory" },
+        { name: "robots", content: "index, follow" },
+        { name: "googlebot", content: "index, follow" },
+        { property: "og:locale", content: "ar" },
+        { property: "og:locale:alternate", content: "en" },
       ],
       htmlAttrs: {
         class: "",
