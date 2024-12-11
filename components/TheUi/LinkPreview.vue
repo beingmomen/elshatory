@@ -15,7 +15,7 @@
     <div
       v-if="isVisible"
       ref="preview"
-      class="absolute z-50 pointer-events-none"
+      class="absolute z-50 pointer-events-none" 
       :style="previewStyle"
     >
       <div
