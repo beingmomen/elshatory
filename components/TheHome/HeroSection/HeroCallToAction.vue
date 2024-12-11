@@ -16,7 +16,6 @@
 
 <script setup>
 const url = useRequestURL();
-  console.warn('url', url)
 </script>
 
 <style lang="scss" scoped>

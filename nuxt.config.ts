@@ -2,36 +2,37 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
+      title: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
-          content: "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء",
+          content: "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء | Official website of Abdelmomen Elshatory - Frontend Developer",
         },
         {
           name: "keywords",
-          content: "عبدالمؤمن الشطوري, beingmomen, الشطورى, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer, web development",
+          content: "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
         },
         { name: "author", content: "Abdelmomen Elshatory" },
-        { name: "robots", content: "index, follow" },
+        { name: "robots", content: "index, follow, max-image-preview:large" },
         { name: "googlebot", content: "index, follow" },
-        { property: "og:locale", content: "ar" },
-        { property: "og:locale:alternate", content: "en" },
       ],
       htmlAttrs: {
         class: "",
         lang: "ar",
         dir: "rtl",
       },
-      script: [],
       link: [
         {
           rel: "icon",
           type: "image/webp",
           href: `${process.env.CLOUDINARY_URL}beingmomen/xhjsrjkz4pfcsworh2mt`,
         },
+        {
+          rel: "canonical",
+          href: "https://beingmomen.com"
+        }
       ],
     },
     pageTransition: { name: "page", mode: "out-in" },
@@ -65,12 +66,11 @@ export default defineNuxtConfig({
 
   pwa: {
     manifest: {
-      name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
+      name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
       short_name: "عبدالمؤمن الشطوري",
-      description: "Abdelmo'men Elshatory",
+      description: "Frontend Developer - Abdelmomen Elshatory",
       theme_color: "#000000",
       lang: "ar",
-
       icons: [
         {
           src: "https://res.cloudinary.com/dyqfclwdk/image/upload/f_auto,q_auto,w_64,h_64,c_fill/v1729081164/beingmomen/edisxdkamb8dn3z0bhez.webp",
@@ -94,7 +94,6 @@ export default defineNuxtConfig({
         },
       ]
     },
-
   },
 
   delayHydration: {
@@ -139,10 +138,9 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://beingmomen.com",
-    name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري",
-    description:
-      "عبدالمؤمن الشطوري، مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js. أعمل على تحويل الأفكار إلى تجارب ويب تفاعلية ومبتكرة",
-    defaultLocale: "ar", // not needed if you have @nuxtjs/i18n installed
+    name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
+    description: "عبدالمؤمن الشطوري، مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js. أعمل على تحويل الأفكار إلى تجارب ويب تفاعلية ومبتكرة",
+    defaultLocale: "ar",
   },
 
   cloudinary: {
@@ -190,25 +188,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "dark",
   },
-
-  // i18n: {
-  //   lazy: true,
-  //   langDir: 'locales',
-  //   locales: [
-  //     // {
-  //     //   code: 'en',
-  //     //   name: 'English',
-  //     //   file: 'en.json'
-  //     // },
-  //     {
-  //       code: 'ar',
-  //       name: 'Arabic',
-  //       file: 'ar.json'
-  //     }
-  //   ],
-  //   defaultLocale: 'ar',
-  // },
-
 
   runtimeConfig: {
     public: {
