@@ -2,17 +2,20 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
+      title:
+        "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
-          content: "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء | Official website of Abdelmomen Elshatory - Frontend Developer",
+          content:
+            "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء | Official website of Abdelmomen Elshatory - Frontend Developer",
         },
         {
           name: "keywords",
-          content: "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
+          content:
+            "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
         },
         { name: "author", content: "Abdelmomen Elshatory" },
         { name: "robots", content: "index, follow, max-image-preview:large" },
@@ -31,8 +34,8 @@ export default defineNuxtConfig({
         },
         {
           rel: "canonical",
-          href: "https://beingmomen.com"
-        }
+          href: "https://beingmomen.com",
+        },
       ],
     },
     pageTransition: { name: "page", mode: "out-in" },
@@ -41,11 +44,11 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      routes: ['/'],
+      routes: ["/"],
       crawlLinks: true,
       failOnError: false,
-      autoSubfolderIndex: false
-    }
+      autoSubfolderIndex: false,
+    },
   },
 
   devtools: { enabled: true },
@@ -61,8 +64,16 @@ export default defineNuxtConfig({
     "nuxt-booster",
     "nuxt-delay-hydration",
     "@nuxtjs/fontaine",
-    '@vueuse/motion/nuxt',
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/seo",
   ],
+
+  // site: {
+  //   url: 'https://beingmomen.com',
+  //   name: 'الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory',
+  //   description: 'عبدالمؤمن الشطوري، مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js',
+  //   defaultLocale: 'ar'
+  // },
 
   pwa: {
     manifest: {
@@ -92,7 +103,7 @@ export default defineNuxtConfig({
           sizes: "512x512",
           type: "image/png",
         },
-      ]
+      ],
     },
   },
 
@@ -134,13 +145,6 @@ export default defineNuxtConfig({
       component: "0%",
       asset: "0%",
     },
-  },
-
-  site: {
-    url: "https://beingmomen.com",
-    name: "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
-    description: "عبدالمؤمن الشطوري، مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js. أعمل على تحويل الأفكار إلى تجارب ويب تفاعلية ومبتكرة",
-    defaultLocale: "ar",
   },
 
   cloudinary: {
@@ -237,11 +241,10 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-  },
+  build: {},
 
   sourcemap: {
     server: true,
-    client: true
-  }
+    client: true,
+  },
 });
