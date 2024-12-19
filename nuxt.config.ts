@@ -17,6 +17,7 @@ export default defineNuxtConfig({
           content:
             "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
         },
+        { name: "google-site-verification", content: "81yw9t6e3WHEXdyKeGn-9UWQys3yharvd3GOdNTvTqo" },
         { name: "author", content: "Abdelmomen Elshatory" },
         { name: "robots", content: "index, follow, max-image-preview:large" },
         { name: "googlebot", content: "index, follow" },
