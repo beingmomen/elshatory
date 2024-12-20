@@ -7,10 +7,6 @@ on:
   push:
     branches: ["main"]
 
-env:
-  BASE_URL: ${{ vars.BASE_URL }}
-  CLOUDINARY_URL: ${{ vars.CLOUDINARY_URL }}
-
 jobs:
   build:
     runs-on: self-hosted
