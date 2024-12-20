@@ -45,16 +45,8 @@
   </nav>
 </template>
 
-<script setup lang="ts">
-interface NavItem {
-  label: string;
-  to?: string;
-  sectionId?: string;
-  ariaLabel: string;
-  isChip?: boolean;
-}
-
-const navItems: NavItem[] = [
+<script setup>
+const navItems = [
   {
     label: "الرئيسية",
     to: "/",
@@ -83,7 +75,7 @@ const navItems: NavItem[] = [
   },
 ];
 
-const scrollToSection = (sectionId: string) => {
+const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
