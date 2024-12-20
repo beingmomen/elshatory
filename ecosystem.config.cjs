@@ -5,8 +5,7 @@ module.exports = {
       port: "9731",
       exec_mode: "cluster",
       instances: 1,
-      script: "./node_modules/nuxt/bin/nuxt.js",
-      args: "start",
+      script: "./.output/server/index.mjs",
     },
   ],
 };
