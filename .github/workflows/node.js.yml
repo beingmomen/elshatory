@@ -10,7 +10,7 @@ on:
 env:
   BASE_URL: ${{ vars.BASE_URL }}
   CLOUDINARY_URL: ${{ vars.CLOUDINARY_URL }}
-
+  CLOUDINARY_CLOUD_NAME: ${{ vars.CLOUDINARY_CLOUD_NAME }}
 jobs:
   build:
     runs-on: self-hosted
