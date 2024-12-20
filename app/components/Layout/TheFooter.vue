@@ -1,77 +1,74 @@
 <template>
-  <div class="container mx-auto px-8 mt-16 pb-5">
-    <UCard class="">
-      <div
-        class="flex items-center gap-5 sm:justify-between flex-col sm:flex-row"
-      >
-        <p class="text-center sm:text-start text-white dark:text-white">
-          <span class="text-xl"> &copy; 2024 </span>
-          <UButton
-            to="https://beingmomen.com"
-            target="_blank"
-            aria-label="الشطوري"
-            label="عبدالمؤمن الشطوري"
-            color="primary"
-            variant="link"
-            class="text-3xl text-gradient font-black"
-          />
-        </p>
-
-        <div class="flex gap-6 flex-wrap justify-center">
-          <NuxtLink
-            to="https://www.linkedin.com/in/beingmomen/"
-            target="_blank"
-            aria-label="Linkedin Profile"
-          >
-            <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
-          </NuxtLink>
-          <NuxtLink
-            to="https://github.com/beingmomen"
-            target="_blank"
-            aria-label="github Profile"
-          >
-            <UIcon name="i-skill-icons-github-dark" class="w-8 h-8" />
-          </NuxtLink>
-          <NuxtLink
-            to="https://qabilah.com/profile/beingmomen/posts"
-            target="_blank"
-            aria-label="linkedin Profile"
-          >
-            <NuxtImg
-              provider="cloudinary"
-              src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
-              alt="عبدالمؤمن"
-              class="w-8 min-w-8 h-8 object-cover"
+  <footer class="mt-auto py-8">
+    <UContainer>
+      <UCard class="bg-gray-900">
+        <div
+          class="flex items-center gap-5 sm:justify-between flex-col sm:flex-row"
+        >
+          <div class="text-center sm:text-start">
+            <span class="text-xl text-gray-600 dark:text-gray-400"
+              >&copy; {{ new Date().getFullYear() }}
+            </span>
+            <UButton
+              to="https://beingmomen.com"
+              target="_blank"
+              aria-label="الشطوري"
+              label="عبدالمؤمن الشطوري"
+              color="primary"
+              variant="link"
+              class="text-3xl text-gradient font-black"
             />
-          </NuxtLink>
-          <NuxtLink
-            to="https://twitter.com/beingmomen"
-            target="_blank"
-            aria-label="twitter Profile"
+          </div>
+
+          <nav
+            class="flex gap-4 flex-wrap justify-center"
+            aria-label="Social Media Links"
           >
-            <UIcon name="i-devicon-twitter" class="w-8 h-8" />
-          </NuxtLink>
-          <NuxtLink
-            to="https://www.facebook.com/beingmomen/"
-            target="_blank"
-            aria-label="facebook Profile"
-          >
-            <UIcon name="i-devicon-facebook" class="w-8 h-8" />
-          </NuxtLink>
-          <NuxtLink
-            to="https://www.instagram.com/beingmomen/"
-            target="_blank"
-            aria-label="instagram Profile"
-          >
-            <UIcon name="i-skill-icons-instagram" class="w-8 h-8" />
-          </NuxtLink>
+            <CommonSocialLink
+              v-for="link in socialLinks"
+              :key="link.url"
+              v-bind="link"
+            />
+          </nav>
         </div>
-      </div>
-    </UCard>
-  </div>
+      </UCard>
+    </UContainer>
+  </footer>
 </template>
 
 <script setup>
+const socialLinks = [
+  {
+    url: "https://www.linkedin.com/in/beingmomen/",
+    icon: "i-skill-icons-linkedin",
+    label: "Linkedin Profile",
+  },
+  {
+    url: "https://github.com/beingmomen",
+    icon: "i-skill-icons-github-dark",
+    label: "Github Profile",
+  },
+  {
+    url: "https://qabilah.com/profile/beingmomen/posts",
+    image: "beingmomen/icons/rfq6c4v71eb49k6btf7r",
+    label: "Qabilah Profile",
+  },
+  {
+    url: "https://twitter.com/beingmomen",
+    icon: "i-devicon-twitter",
+    label: "Twitter Profile",
+  },
+  {
+    url: "https://www.facebook.com/beingmomen/",
+    icon: "i-devicon-facebook",
+    label: "Facebook Profile",
+  },
+  {
+    url: "https://www.instagram.com/beingmomen/",
+    icon: "i-skill-icons-instagram",
+    label: "Instagram Profile",
+  },
+];
 </script>
 
 <style lang="scss" scoped>

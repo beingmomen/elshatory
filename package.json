@@ -15,8 +15,10 @@
     "@iconify-json/lucide": "^1.2.16",
     "@nuxt/image": "^1.8.1",
     "@nuxt/ui": "3.0.0-alpha.9",
+    "@nuxtjs/cloudinary": "^4.0.0",
     "@vueuse/motion": "^2.2.6",
     "clsx": "^2.1.1",
+    "joi": "^17.13.3",
     "nuxt": "^3.14.1592",
     "tailwind-merge": "^2.5.5"
   },

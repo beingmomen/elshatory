@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/image", "@vueuse/motion/nuxt"],
+  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/image", "@vueuse/motion/nuxt", "@nuxtjs/cloudinary"],
   css: ['~/assets/css/main.css'],
 
   image: {
@@ -29,6 +29,11 @@ export default defineNuxtConfig({
       quality: 'auto:best',
     },
     dir: 'assets/images'
+  },
+
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
   },
 
   future: {

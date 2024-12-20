@@ -1,8 +1,114 @@
 <template>
-  <div>Contact</div>
+  <section class="grow flex items-center">
+    <UContainer>
+      <p class="font-bold text-xl sm:text-2xl text-center">
+        نحن هنا لنهتم بما تريد
+      </p>
+      <h2 class="font-bold text-3xl sm:text-5xl text-gradient mt-5 text-center">
+        أخبرنا بما تريد وسنقوم بالتواصل معك باذن الله تعالي
+      </h2>
+
+      <UForm
+        ref="form"
+        :schema="schema"
+        :state="state"
+        class="space-y-4 mx-auto mt-8"
+        @submit="onSubmit"
+      >
+        <UFormField label="الاسم" name="name" size="lg" required>
+          <UInput v-model="state.name" class="w-full" />
+        </UFormField>
+
+        <UFormField label="الهاتف" name="phone" size="lg" required>
+          <UInput v-model="state.phone" class="w-full" />
+        </UFormField>
+
+        <UFormField label="البريد الإلكتروني" name="email" size="lg">
+          <UInput v-model="state.email" class="w-full" />
+        </UFormField>
+
+        <UFormField label="رأيك يهمنا" name="description" size="lg" required>
+          <UTextarea v-model="state.description" class="w-full" :rows="6" />
+        </UFormField>
+
+        <UButton
+          type="submit"
+          block
+          class="font-black text-xl"
+          :loading="loading"
+        >
+          ارسال
+        </UButton>
+      </UForm>
+    </UContainer>
+  </section>
 </template>
 
 <script setup>
+import Joi from "joi";
+useHead({
+  titleTemplate: "تواصل معنا - %s",
+});
+const config = useRuntimeConfig();
+const toast = useToast();
+const form = ref();
+
+const loading = ref(false);
+
+const baseUrl = config.public.baseURL;
+
+const schema = Joi.object({
+  name: Joi.string().required().messages({
+    "string.empty": "الاسم مطلوب",
+    "any.required": "الاسم مطلوب",
+  }),
+  phone: Joi.string().required().messages({
+    "string.empty": "الهاتف مطلوب",
+    "any.required": "الهاتف مطلوب",
+  }),
+  email: Joi.string()
+    .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
+    .messages({
+      "string.empty": "البريد الإلكتروني مطلوب",
+      "string.email": "يرجى إدخال عنوان بريد إلكتروني صالح",
+      "any.required": "البريد الإلكتروني مطلوب",
+    }),
+  description: Joi.string().required().messages({
+    "string.empty": "النبذة مطلوبة",
+    "any.required": "النبذة مطلوبة",
+  }),
+});
+
+const state = reactive({
+  name: undefined,
+  phone: undefined,
+  email: undefined,
+  description: undefined,
+});
+
+async function onSubmit(event) {
+  // Do something with event.data
+
+  loading.value = true;
+
+  try {
+    const { message, status } = await $fetch(`${baseUrl}${"/contact"}`, {
+      method: "POST",
+      body: event.data,
+    });
+
+    if (status === "success") {
+      toast.add({ title: message, color: "green", timeout: 3000 });
+      loading.value = false;
+      state.name = undefined;
+      state.phone = undefined;
+      state.email = undefined;
+      state.description = undefined;
+    }
+  } catch (error) {
+    console.warn("error", error);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
