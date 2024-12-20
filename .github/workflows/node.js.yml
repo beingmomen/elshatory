@@ -11,6 +11,7 @@ env:
   BASE_URL: ${{ vars.BASE_URL }}
   CLOUDINARY_URL: ${{ vars.CLOUDINARY_URL }}
   CLOUDINARY_CLOUD_NAME: ${{ vars.CLOUDINARY_CLOUD_NAME }}
+  CLOUDINARY_UPLOAD_PRESET: ${{ vars.CLOUDINARY_UPLOAD_PRESET }}
 jobs:
   build:
     runs-on: self-hosted
