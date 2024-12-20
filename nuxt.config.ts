@@ -1,34 +1,41 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/image", "@vueuse/motion/nuxt", "@nuxtjs/cloudinary"],
-  css: ['~/assets/css/main.css'],
+  modules: [
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/cloudinary",
+    "@nuxtjs/seo",
+  ],
+  css: ["~/assets/css/main.css"],
 
   image: {
     quality: 80,
-    format: ['webp'],
+    format: ["webp"],
     screens: {
-      'xs': 320,
-      'sm': 640,
-      'md': 768,
-      'lg': 1024,
-      'xl': 1280,
-      'xxl': 1536,
-      '2xl': 1536
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
     },
-    domains: ['beingmomen.com'],
+    domains: ["beingmomen.com"],
     alias: {
-      'https://beingmomen.com': 'https://beingmomen.com',
+      "https://beingmomen.com": "https://beingmomen.com",
     },
-    provider: 'cloudinary',
+    provider: "cloudinary",
     cloudinary: {
-      baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`
+      baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
     },
     modifiers: {
-      effect: 'sharpen:100',
-      quality: 'auto:best',
+      effect: "sharpen:100",
+      quality: "auto:best",
     },
-    dir: 'assets/images'
+    dir: "assets/images",
   },
 
   cloudinary: {
@@ -37,7 +44,7 @@ export default defineNuxtConfig({
   },
 
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
 
   compatibilityDate: "2024-11-27",
@@ -137,4 +144,4 @@ export default defineNuxtConfig({
     server: true,
     client: true,
   },
-})
+});
