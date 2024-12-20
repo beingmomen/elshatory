@@ -163,6 +163,10 @@ export default defineNuxtConfig({
     url: 'https://beingmomen.com',
   },
 
+  build: {
+    analyze: true,
+  },
+
   vite: {
     build: {
       cssCodeSplit: true, // Split CSS into chunks
