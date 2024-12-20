@@ -1,5 +1,5 @@
 <template>
-  <nav class="pt-5 bg-gray-900">
+  <nav class="pt-5">
     <UContainer class="flex justify-center md:justify-between items-center">
       <div class="flex items-center gap-3">
         <NuxtLink to="/">

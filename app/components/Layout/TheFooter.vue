@@ -1,14 +1,12 @@
 <template>
   <footer class="mt-auto py-8">
     <UContainer>
-      <UCard class="bg-gray-900">
+      <UCard>
         <div
           class="flex items-center gap-5 sm:justify-between flex-col sm:flex-row"
         >
           <div class="text-center sm:text-start">
-            <span class="text-xl text-gray-600 dark:text-gray-400"
-              >&copy; {{ new Date().getFullYear() }}
-            </span>
+            <span class="text-xl">&copy; {{ new Date().getFullYear() }} </span>
             <UButton
               to="https://beingmomen.com"
               target="_blank"
