@@ -1,5 +1,5 @@
 <template>
-  <section class="grow flex items-center">
+  <section class="grow flex items-center py-10">
     <UContainer>
       <p class="font-bold text-xl sm:text-2xl text-center">
         نحن هنا لنهتم بما تريد
@@ -46,7 +46,38 @@
 <script setup>
 import Joi from "joi";
 const { loading, post } = useApiRequest();
+
+// SEO Meta for Contact Page
+useSeoMeta({
+  title: "Contact | Abdelmomen Elshatory",
+  ogTitle: "Contact | Abdelmomen Elshatory",
+  description: "Get in touch with Abdelmomen Elshatory.",
+  ogDescription: "Contact page for reaching out to Abdelmomen Elshatory.",
+  ogImage: "URL_TO_CONTACT_IMAGE",
+  ogUrl: "https://beingmomen.com/contact",
+  ogType: "website",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Contact | Abdelmomen Elshatory",
+  twitterDescription: "Get in touch with Abdelmomen Elshatory.",
+  twitterImage: "URL_TO_CONTACT_IMAGE",
+  twitterSite: "@beingmomen",
+  keywords: "contact, get in touch, Abdelmomen Elshatory, beingmomen",
+});
+
+// Structured Data for Contact Page
 useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        name: "Contact",
+        description: "Contact page for reaching out to Abdelmomen Elshatory.",
+        url: "https://beingmomen.com/contact",
+      }),
+    },
+  ],
   titleTemplate: "تواصل معنا - %s",
 });
 

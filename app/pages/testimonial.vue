@@ -1,5 +1,5 @@
 <template>
-  <section class="grow flex items-center">
+  <section class="grow flex items-center py-10">
     <UContainer>
       <p class="font-bold text-xl sm:text-2xl text-center">
         نحن هنا نهتم برأيك
@@ -54,6 +54,42 @@ useHead({
   titleTemplate: "قم بتقييمنا - %s",
 });
 
+// SEO Meta for Testimonial Page
+useSeoMeta({
+  title: "Testimonial | Abdelmomen Elshatory",
+  ogTitle: "Testimonial | Abdelmomen Elshatory",
+  description:
+    "Read testimonial from satisfied clients of Abdelmomen Elshatory.",
+  ogDescription:
+    "Testimonial from clients showcasing the work of Abdelmomen Elshatory.",
+  ogImage: "URL_TO_TESTIMONIAL_IMAGE",
+  ogUrl: "https://beingmomen.com/testimonial",
+  ogType: "website",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Testimonial | Abdelmomen Elshatory",
+  twitterDescription:
+    "Read testimonial from satisfied clients of Abdelmomen Elshatory.",
+  twitterImage: "URL_TO_TESTIMONIAL_IMAGE",
+  twitterSite: "@beingmomen",
+  keywords: "testimonial, client reviews, Abdelmomen Elshatory, beingmomen",
+});
+
+// Structured Data for Testimonial Page
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Testimonial",
+        description: "Client testimonial for Abdelmomen Elshatory.",
+        url: "https://beingmomen.com/testimonial",
+      }),
+    },
+  ],
+});
+
 const form = ref(null);
 
 const schema = Joi.object({
@@ -96,7 +132,7 @@ watch(
 );
 
 async function onSubmit(event) {
-  const { status } = await post("/testimonials", event.data);
+  const { status } = await post("/testimonial", event.data);
 
   if (status === "success") {
     state.name = "";
