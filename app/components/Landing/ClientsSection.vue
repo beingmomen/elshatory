@@ -14,7 +14,7 @@
       <UCarousel
         v-slot="{ item }"
         loop
-        :autoplay="{ delay: 10000 }"
+        :autoplay="{ delay: 1000 }"
         :items="items"
         :ui="{
           item: 'basis-full md:basis-1/2 lg:basis-1/5 flex justify-center items-center',

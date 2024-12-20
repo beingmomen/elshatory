@@ -16,84 +16,78 @@
       </div>
 
       <div class="hidden sm:block">
-        <UButton
-          class="text-xl"
-          variant="link"
-          color="gray"
-          :ui="{
-            base: 'text-gray-400',
-            font: 'font-bold',
-          }"
-          aria-label="Navigate to Home page"
-          to="/"
-        >
-          الرئيسية
-        </UButton>
-
-        <UButton
-          class="text-xl"
-          variant="link"
-          color="gray"
-          aria-label="Navigate to Services section"
-          :ui="{
-            base: 'text-gray-400',
-            font: 'font-bold',
-          }"
-          @click="scrollToSection('services')"
-        >
-          خدماتنا
-        </UButton>
-        <UButton
-          class="text-xl"
-          variant="link"
-          color="gray"
-          aria-label="Navigate to Projects section"
-          :ui="{
-            base: 'text-gray-400',
-            font: 'font-bold',
-          }"
-          @click="scrollToSection('projects')"
-        >
-          المشاريع
-        </UButton>
-        <UButton
-          class="text-xl"
-          variant="link"
-          color="gray"
-          aria-label="Navigate to Customers section"
-          :ui="{
-            base: 'text-gray-400',
-            font: 'font-bold',
-          }"
-          @click="scrollToSection('customers')"
-        >
-          العملاء
-        </UButton>
-        <UChip position="top-left" inset>
+        <template v-for="item in navItems" :key="item.label">
+          <UChip v-if="item.isChip" position="top-left" inset>
+            <UButton
+              class="text-xl font-bold cursor-pointer"
+              variant="link"
+              color="neutral"
+              :aria-label="item.ariaLabel"
+              :to="item.to"
+            >
+              {{ item.label }}
+            </UButton>
+          </UChip>
           <UButton
-            class="text-xl"
+            v-else
+            class="text-xl font-bold cursor-pointer"
             variant="link"
-            color="gray"
-            aria-label="Navigate to testimonial page"
-            :ui="{
-              base: 'text-gray-400',
-              font: 'font-bold',
-            }"
-            to="/testimonial"
+            color="neutral"
+            :aria-label="item.ariaLabel"
+            :to="item.to"
+            @click="item.sectionId && scrollToSection(item.sectionId)"
           >
-            قم بتقييمنا
+            {{ item.label }}
           </UButton>
-        </UChip>
+        </template>
       </div>
     </UContainer>
   </nav>
 </template>
 
-<script setup>
-const scrollToSection = (sectionRef) => {
-  document.getElementById(sectionRef).scrollIntoView({
-    behavior: "smooth",
-  });
+<script setup lang="ts">
+interface NavItem {
+  label: string;
+  to?: string;
+  sectionId?: string;
+  ariaLabel: string;
+  isChip?: boolean;
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "الرئيسية",
+    to: "/",
+    ariaLabel: "Navigate to Home page",
+  },
+  {
+    label: "خدماتنا",
+    sectionId: "services",
+    ariaLabel: "Navigate to Services section",
+  },
+  {
+    label: "المشاريع",
+    sectionId: "projects",
+    ariaLabel: "Navigate to Projects section",
+  },
+  {
+    label: "العملاء",
+    sectionId: "customers",
+    ariaLabel: "Navigate to Customers section",
+  },
+  {
+    label: "قم بتقييمنا",
+    to: "/testimonial",
+    ariaLabel: "Navigate to testimonial page",
+    isChip: true,
+  },
+];
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
 };
 </script>
 
