@@ -35,7 +35,7 @@
           <h3 class="mt-4 font-bold text-2xl text-gradient">
             {{ service.title }}
           </h3>
-          <p class="mt-3 text-gray-300 text-xl">
+          <p class="mt-3 text-neutral-50 text-xl">
             {{ service.description }}
           </p>
         </UCard>

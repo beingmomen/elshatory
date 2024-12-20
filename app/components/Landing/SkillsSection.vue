@@ -81,12 +81,6 @@
       </div>
     </UContainer>
   </section>
-  <!-- <div
-    dir="ltr"
-    class="overflow-hidden container mx-auto md:w-[600px] lg:w-[900px] xl:w-[1100px] py-10"
-  >
-
-  </div> -->
 </template>
 
 <script setup>
@@ -139,7 +133,8 @@ const thirdSkills = ref([
   height: 100px;
   margin-inline: auto;
   position: relative;
-  width: 960px;
+  // width: 960px;
+  overflow: hidden;
 }
 
 .slider:after {
