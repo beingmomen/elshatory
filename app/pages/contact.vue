@@ -9,7 +9,6 @@
       </h2>
 
       <UForm
-        ref="form"
         :schema="schema"
         :state="state"
         class="space-y-4 mx-auto mt-8"
@@ -34,7 +33,7 @@
         <UButton
           type="submit"
           block
-          class="font-black text-xl"
+          class="font-black text-xl cursor-pointer"
           :loading="loading"
         >
           ارسال
@@ -46,16 +45,10 @@
 
 <script setup>
 import Joi from "joi";
+const { loading, post } = useApiRequest();
 useHead({
   titleTemplate: "تواصل معنا - %s",
 });
-const config = useRuntimeConfig();
-const toast = useToast();
-const form = ref();
-
-const loading = ref(false);
-
-const baseUrl = config.public.baseURL;
 
 const schema = Joi.object({
   name: Joi.string().required().messages({
@@ -87,26 +80,13 @@ const state = reactive({
 });
 
 async function onSubmit(event) {
-  // Do something with event.data
+  const { status } = await post("/contact", event.data);
 
-  loading.value = true;
-
-  try {
-    const { message, status } = await $fetch(`${baseUrl}${"/contact"}`, {
-      method: "POST",
-      body: event.data,
-    });
-
-    if (status === "success") {
-      toast.add({ title: message, color: "green", timeout: 3000 });
-      loading.value = false;
-      state.name = undefined;
-      state.phone = undefined;
-      state.email = undefined;
-      state.description = undefined;
-    }
-  } catch (error) {
-    console.warn("error", error);
+  if (status === "success") {
+    state.name = undefined;
+    state.phone = undefined;
+    state.email = undefined;
+    state.description = undefined;
   }
 }
 </script>

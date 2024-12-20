@@ -37,7 +37,7 @@
         <UButton
           type="submit"
           block
-          class="font-black text-xl"
+          class="font-black text-xl cursor-pointer"
           :loading="loading"
         >
           ارسال
@@ -49,17 +49,12 @@
 
 <script setup>
 import Joi from "joi";
+const { loading, post } = useApiRequest();
 useHead({
   titleTemplate: "قم بتقييمنا - %s",
 });
 
-const config = useRuntimeConfig();
-const toast = useToast();
 const form = ref(null);
-
-const loading = ref(false);
-
-const baseUrl = config.public.baseURL;
 
 const schema = Joi.object({
   name: Joi.string().required().messages({
@@ -101,27 +96,13 @@ watch(
 );
 
 async function onSubmit(event) {
-  // Do something with event.data
-  console.log(event.data);
-  console.warn("baseUrl", baseUrl);
-  loading.value = true;
+  const { status } = await post("/testimonials", event.data);
 
-  try {
-    const { message, status } = await $fetch(`${baseUrl}${"/testimonials"}`, {
-      method: "POST",
-      body: event.data,
-    });
-
-    if (status === "success") {
-      toast.add({ title: message, color: "green", timeout: 3000 });
-      loading.value = false;
-      state.name = "";
-      state.email = "";
-      state.description = "";
-      state.image = "";
-    }
-  } catch (error) {
-    console.warn("error", error);
+  if (status === "success") {
+    state.name = "";
+    state.email = "";
+    state.description = "";
+    state.image = "";
   }
 }
 </script>
