@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10 flex justify-center lg:justify-start">
     <h2
-      class="bg-white md:text-xl text-picton-500 font-bold py-3 px-6 rounded-full hover:bg-picton-100 transition duration-300 relative w-fit"
+      class="bg-white text-[13px] md:text-xl text-picton-500 font-bold py-3 px-6 rounded-full hover:bg-picton-100 transition duration-300 relative w-fit"
     >
       <NuxtLink to="/contact">
         هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
