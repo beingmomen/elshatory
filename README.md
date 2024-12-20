@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt UI v3 Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui3.nuxt.dev) to learn more.
 
 ## Setup
 

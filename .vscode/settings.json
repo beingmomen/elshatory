@@ -1,16 +1,8 @@
 {
-  "eslint.experimental.useFlatConfig": true,
-  "files.associations": {
+"files.associations": {
     "*.css": "tailwindcss"
-  },
-  "editor.quickSuggestions": {
-      "strings": true
-  },
-  "editor.wordWrap": "on",
-  "cSpell.words": [
-    "cloudinary",
-    "Elshatory",
-    "Vite",
-    "عبدالمؤمن"
-  ],
+},
+"editor.quickSuggestions": {
+    "strings": "on"
+}
 }
