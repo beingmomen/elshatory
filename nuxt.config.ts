@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@nuxtjs/cloudinary",
     "@nuxtjs/seo",
+    "nuxt-delay-hydration",
   ],
   css: ["~/assets/css/main.css"],
 
@@ -41,6 +42,12 @@ export default defineNuxtConfig({
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
+  },
+
+  delayHydration: {
+    // enables nuxt-delay-hydration in dev mode for testing
+    // debug: process.env.NODE_ENV === "development",
+    mode: "mount",
   },
 
   future: {
