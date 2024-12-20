@@ -1,84 +1,75 @@
-# Personal Portfolio Website
+# Nuxt 3 Minimal Starter
 
-A modern, responsive personal portfolio website built with Nuxt.js. This project showcases my work, skills, and professional experience in an elegant and interactive way.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Features
+## Setup
 
-- Responsive design for all devices
-- Dynamic project showcase
-- Multi-language support (i18n)
-- Dark/Light theme
-- Interactive UI components
-- SEO optimized
-- Fast loading and performance optimized
-
-## Technologies Used
-
-- **Frontend Framework:** Nuxt.js
-- **UI/Styling:** Custom components and styling
-- **State Management:** Vuex store
-- **Internationalization:** i18n
-- **Package Manager:** Yarn
-- **Version Control:** Git
-
-## Project Structure
-
-```
-abdelmomen/
-├── @core/          # Core functionality and utilities
-├── assets/         # Static assets (images, styles, etc.)
-├── components/     # Reusable Vue components
-├── layouts/        # Page layouts
-├── locales/        # Translation files
-├── middleware/     # Nuxt.js middleware
-├── pages/          # Application pages
-├── plugins/        # Vue.js plugins
-├── static/         # Static files
-└── store/          # Vuex store modules
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- Yarn package manager
-
-### Installation
+Make sure to install the dependencies:
 
 ```bash
-# install dependencies
-$ yarn install
+# npm
+npm install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+# pnpm
+pnpm install
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+# yarn
+yarn install
 
-# generate static project
-$ yarn generate
+# bun
+bun install
 ```
 
-## Deployment
+## Development Server
 
-The project can be deployed as a static site or server-rendered application. For static deployment:
+Start the development server on `http://localhost:3000`:
 
-1. Run `yarn generate`
-2. Deploy the generated `dist` directory to your hosting platform
+```bash
+# npm
+npm run dev
 
-## License
+# pnpm
+pnpm run dev
 
-This project is open source and available under the [MIT License](LICENSE).
+# yarn
+yarn dev
 
-## Contact
+# bun
+bun run dev
+```
 
-For any inquiries or suggestions, feel free to reach out:
+## Production
 
-- Portfolio: [Your Portfolio URL]
-- GitHub: [Your GitHub Profile]
-- LinkedIn: [Your LinkedIn Profile]
+Build the application for production:
 
----
-Built with ❤️ using Nuxt.js
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
