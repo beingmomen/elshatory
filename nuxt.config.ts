@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     "@nuxtjs/cloudinary",
     "@nuxtjs/seo",
     "nuxt-delay-hydration",
+    "nuxt-booster",
+    "@nuxtjs/fontaine",
   ],
   css: ["~/assets/css/main.css"],
 
@@ -24,9 +26,11 @@ export default defineNuxtConfig({
       xxl: 1536,
       "2xl": 1536,
     },
-    domains: ["beingmomen.com"],
+    domains: ["beingmomen.com", 'youtube.com', 'vimeo.com'],
     alias: {
       "https://beingmomen.com": "https://beingmomen.com",
+      youtube: 'youtube.com',
+      vimeo: 'vimeo.com'
     },
     provider: "cloudinary",
     cloudinary: {
@@ -48,6 +52,39 @@ export default defineNuxtConfig({
     // enables nuxt-delay-hydration in dev mode for testing
     // debug: process.env.NODE_ENV === "development",
     mode: "mount",
+  },
+
+  booster: {
+    detection: {
+      performance: true,
+      browserSupport: true,
+      battery: true, // Added to resolve TypeScript type error
+    },
+
+    performanceDeviceMetrics: {
+      hardwareConcurrency: { min: 2, max: 48 },
+      deviceMemory: { min: 2 },
+    },
+
+    performanceTimingMetrics: {
+      fcp: 800,
+      dcl: 1200,
+    },
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
+
+    componentAutoImport: false,
+    componentPrefix: undefined,
+
+    /**
+     * IntersectionObserver rootMargin for Compoennts and Assets
+     */
+    lazyOffset: {
+      component: "0%",
+      asset: "0%",
+    },
   },
 
   future: {
@@ -73,7 +110,10 @@ export default defineNuxtConfig({
           content:
             "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
         },
-        { name: "google-site-verification", content: "81yw9t6e3WHEXdyKeGn-9UWQys3yharvd3GOdNTvTqo" },
+        {
+          name: "google-site-verification",
+          content: "81yw9t6e3WHEXdyKeGn-9UWQys3yharvd3GOdNTvTqo",
+        },
         { name: "author", content: "Abdelmomen Elshatory" },
         { name: "robots", content: "index, follow, max-image-preview:large" },
         { name: "googlebot", content: "index, follow" },
@@ -117,6 +157,10 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true,
     treeshakeClientOnly: true,
+  },
+
+  site: {
+    url: 'https://beingmomen.com',
   },
 
   vite: {
