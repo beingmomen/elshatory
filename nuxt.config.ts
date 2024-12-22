@@ -26,11 +26,11 @@ export default defineNuxtConfig({
       xxl: 1536,
       "2xl": 1536,
     },
-    domains: ["beingmomen.com", 'youtube.com', 'vimeo.com'],
+    domains: ["beingmomen.com", "youtube.com", "vimeo.com"],
     alias: {
       "https://beingmomen.com": "https://beingmomen.com",
-      youtube: 'youtube.com',
-      vimeo: 'vimeo.com'
+      youtube: "youtube.com",
+      vimeo: "vimeo.com",
     },
     provider: "cloudinary",
     cloudinary: {
@@ -160,7 +160,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://beingmomen.com',
+    url: "https://beingmomen.com",
   },
 
   build: {
