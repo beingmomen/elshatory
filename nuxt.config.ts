@@ -11,8 +11,17 @@ export default defineNuxtConfig({
     "nuxt-delay-hydration",
     "nuxt-booster",
     "@nuxtjs/fontaine",
+    "nuxt-tiptap-editor",
+    "nuxt-link-checker",
   ],
   css: ["~/assets/css/main.css"],
+
+  tiptap: {
+    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
+    lowlight: {
+      theme: "github-dark",
+    },
+  },
 
   image: {
     quality: 80,
