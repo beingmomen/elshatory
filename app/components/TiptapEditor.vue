@@ -25,7 +25,8 @@
     </div>
 
     <TiptapEditorContent
-      class="tiptap-editor-ui-content mt-10"
+      dir="ltr"
+      class="min-w-full prose prose-invert tiptap-editor-ui-content mt-10"
       :editor="editor"
     />
     <div
