@@ -1,10 +1,37 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div class="tiptap-editor-ui w-fit mx-auto max-w-[800px]">
+  <div class="tiptap-editor-ui w-fit mx-auto max-w-[950px]">
     <div
       v-if="editor"
       class="tiptap-editor-ui__toolbar bg-neutral-800 rounded-xl [&>*]:after:border-e [&>*]:after:border-neutral-600 [&>*]:last-of-type:after:border-0 space-x-2"
     >
+      <UTooltip text="Link">
+        <UPopover
+          :content="{
+            align: 'center',
+            side: 'top',
+          }"
+        >
+          <UButton
+            :variant="editor.isActive?.('link') ? 'link' : 'ghost'"
+            color="neutral"
+            size="xl"
+            icon="i-material-symbols-link"
+            @click="setLink"
+          />
+          <template #content>
+            <div class="flex flex-col space-y-2 p-2">
+              <UInput
+                v-model="linkUrl"
+                placeholder="Enter URL"
+                class="w-full"
+                @keyup.enter="confirmLink"
+              />
+              <UButton block @click="confirmLink"> Confirm Link </UButton>
+            </div>
+          </template>
+        </UPopover>
+      </UTooltip>
       <UButtonGroup
         v-for="(group, groupIndex) in toolbarGroups"
         :key="groupIndex"
@@ -42,8 +69,39 @@
 const editor = useEditor({
   content: "",
   // content: "<p>I'm running Tiptap with Vue.js. 🎉</p>",
-  extensions: [TiptapStarterKit],
+  extensions: [
+    TiptapStarterKit,
+    TiptapUnderline,
+    TiptapLink.configure({
+      openOnClick: false,
+      defaultProtocol: "https",
+      shouldAutoLink: (url) => url.startsWith("https://"),
+    }),
+  ],
 });
+
+const linkUrl = ref("");
+
+const setLink = () => {
+  const previousUrl = editor.value.getAttributes("link").href || "";
+  linkUrl.value = previousUrl;
+};
+
+const confirmLink = () => {
+  // empty
+  if (!linkUrl.value) {
+    editor.value.chain().focus().extendMarkRange("link").unsetLink().run();
+    return;
+  }
+
+  // update link
+  editor.value
+    .chain()
+    .focus()
+    .extendMarkRange("link")
+    .setLink({ href: linkUrl.value })
+    .run();
+};
 
 // Button configurations
 const toolbarGroups = [
@@ -62,11 +120,23 @@ const toolbarGroups = [
       tooltip: "Italic",
     },
     {
+      icon: "i-material-symbols-format-underlined",
+      action: "toggleUnderline",
+      isActive: () => editor.value?.isActive("underline"),
+      tooltip: "Underline",
+    },
+    {
       icon: "i-material-symbols-format-strikethrough",
       action: "toggleStrike",
       isActive: () => editor.value?.isActive("strike"),
       tooltip: "Strikethrough",
     },
+    // {
+    //   icon: "i-material-symbols-link",
+    //   action: "toggleLink",
+    //   isActive: () => editor.value?.isActive("link"),
+    //   tooltip: "Link",
+    // },
     // {
     //   icon: "i-material-symbols-code",
     //   action: "toggleCode",
