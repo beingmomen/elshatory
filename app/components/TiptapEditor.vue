@@ -5,33 +5,36 @@
       v-if="editor"
       class="tiptap-editor-ui__toolbar bg-neutral-800 rounded-xl [&>*]:after:border-e [&>*]:after:border-neutral-600 [&>*]:last-of-type:after:border-0 space-x-2"
     >
-      <UTooltip text="Link">
-        <UPopover
-          :content="{
-            align: 'center',
-            side: 'top',
-          }"
-        >
-          <UButton
-            :variant="editor.isActive?.('link') ? 'link' : 'ghost'"
-            color="neutral"
-            size="xl"
-            icon="i-material-symbols-link"
-            @click="setLink"
-          />
-          <template #content>
-            <div class="flex flex-col space-y-2 p-2">
-              <UInput
-                v-model="linkUrl"
-                placeholder="Enter URL"
-                class="w-full"
-                @keyup.enter="confirmLink"
-              />
-              <UButton block @click="confirmLink"> Confirm Link </UButton>
-            </div>
-          </template>
-        </UPopover>
-      </UTooltip>
+      <UButtonGroup>
+        <UTooltip text="Link">
+          <UPopover
+            :content="{
+              align: 'center',
+              side: 'top',
+            }"
+          >
+            <UButton
+              :variant="editor.isActive?.('link') ? 'link' : 'ghost'"
+              color="neutral"
+              size="xl"
+              icon="i-material-symbols-link"
+              @click="setLink"
+            />
+            <template #content>
+              <div class="flex flex-col space-y-2 p-2">
+                <UInput
+                  v-model="linkUrl"
+                  placeholder="Enter URL"
+                  class="w-full"
+                  @keyup.enter="confirmLink"
+                />
+                <UButton block @click="confirmLink"> Confirm Link </UButton>
+              </div>
+            </template>
+          </UPopover>
+        </UTooltip>
+      </UButtonGroup>
+
       <UButtonGroup
         v-for="(group, groupIndex) in toolbarGroups"
         :key="groupIndex"
