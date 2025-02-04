@@ -54,6 +54,16 @@
         </div>
       </UCard>
     </div>
+
+    <div v-if="data.projectsTotal > 6" class="mt-10 flex justify-center">
+      <UButton
+        label="كل المشاريع"
+        variant="outline"
+        color="primary"
+        class="font-bold text-xl"
+        to="/projects"
+      />
+    </div>
   </div>
 </template>
 
