@@ -22,27 +22,15 @@ useHead({
 });
 
 useSeoMeta({
-  title:
-    "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
+  title: "عبدالمؤمن الشطوري | مطور واجهات MEVN متخصص في Vue.js & Nuxt.js",
   ogTitle:
-    "عبدالمؤمن الشطوري (Elshatory) | مطور واجهات أمامية Vue.js و Nuxt.js",
+    "عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل",
   description:
-    "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء | Official website of Abdelmomen Elshatory - Frontend Developer",
+    "مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.",
   ogDescription:
-    "عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في تطوير تطبيقات ويب عالية الأداء باستخدام Vue.js و Nuxt.js. تحويل الأفكار إلى تجارب ويب تفاعلية ومبتكرة",
-  ogImage:
-    "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
-  ogUrl: "https://beingmomen.com",
-  ogType: "website",
-  twitterCard: "summary_large_image",
-  twitterTitle: "عبدالمؤمن الشطوري (Elshatory) | Frontend Developer",
-  twitterDescription:
-    "مطور واجهات أمامية متخصص في Vue.js و Nuxt.js - تطوير تطبيقات ويب تفاعلية وعالية الأداء",
-  twitterImage:
-    "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
-  twitterSite: "@beingmomen",
+    "حلول برمجية مبتكرة بـ Vue.js/Nuxt.js - تصفح أعمالي واحصل على استشارة مجانية الآن",
   keywords:
-    "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
+    "مطور MEVN, Nuxt.js Developer, Vue.js Expert, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, MEVN Stack, مشاريع برمجية, تقييم عملاء",
 });
 
 useHead({
@@ -51,21 +39,31 @@ useHead({
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Person",
+        "@type": ["Person", "ProfessionalService"],
         name: "Abdelmomen Elshatory",
-        alternateName: [
-          "عبدالمؤمن الشطوري",
-          "beingmomen",
-          "الشطورى",
-          "Elshatory",
-        ],
-        jobTitle: "Frontend Developer",
-        description: "Frontend Developer specializing in Vue.js and Nuxt.js",
+        alternateName: ["عبدالمؤمن الشطوري", "beingmomen"],
+        jobTitle: "Frontend Developer & MEVN Stack Specialist",
+        description: "مطور واجهات أمامية متخصص في MEVN Stack بخبرة 3 سنوات",
         url: "https://beingmomen.com",
+        image: {
+          "@type": "ImageObject",
+          url: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+          width: "800",
+          height: "600",
+        },
         sameAs: [
           "https://github.com/beingmomen",
           "https://linkedin.com/in/beingmomen",
+          "https://twitter.com/beingmomen",
         ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "الخدمات",
+          itemListElement: [
+            { "@type": "Offer", name: "تطوير تطبيقات Vue.js" },
+            { "@type": "Offer", name: "حلول Nuxt.js متكاملة" },
+          ],
+        },
       }),
     },
   ],

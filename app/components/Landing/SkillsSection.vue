@@ -94,8 +94,6 @@ const skills = computed(() => data.value?.skills || []);
 const skillsCount = computed(() => skills.value.length);
 const groupSize = computed(() => Math.ceil(skillsCount.value / 3));
 
-console.log("groupSize :>> ", groupSize);
-
 const firstSkills = computed(() => skills.value.slice(0, groupSize.value));
 
 const secondSkills = computed(() =>
