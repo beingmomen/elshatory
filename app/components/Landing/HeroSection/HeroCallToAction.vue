@@ -3,7 +3,7 @@
     <h2
       class="bg-white text-[13px] md:text-xl text-picton-500 font-bold py-3 px-6 rounded-full hover:bg-picton-100 transition duration-300 relative w-fit"
     >
-      <NuxtLink to="/contact">
+      <NuxtLink to="/contact" rel="canonical">
         هل أنت مستعد لإطلاق مشروعك التالي؟ دعنا نبدأ!
         <UAvatar
           icon="i-ic-baseline-launch"

@@ -24,6 +24,7 @@
               color="neutral"
               :aria-label="item.ariaLabel"
               :to="item.to"
+              rel="canonical"
             >
               {{ item.label }}
             </UButton>
