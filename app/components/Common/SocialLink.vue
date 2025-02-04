@@ -14,6 +14,9 @@
         :src="image"
         :alt="label"
         class="w-8 min-w-8 h-8 object-cover"
+        width="32"
+        height="32"
+        format="webp"
       />
     </template>
   </NuxtLink>
@@ -23,19 +26,19 @@
 defineProps({
   url: {
     type: String,
-    required: true
+    required: true,
   },
   label: {
     type: String,
-    required: true
+    required: true,
   },
   icon: {
     type: String,
-    default: ''
+    default: "",
   },
   image: {
     type: String,
-    default: ''
-  }
+    default: "",
+  },
 });
 </script>

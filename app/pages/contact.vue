@@ -4,9 +4,9 @@
       <p class="font-bold text-xl sm:text-2xl text-center">
         نحن هنا لنهتم بما تريد
       </p>
-      <h2 class="font-bold text-3xl sm:text-5xl text-gradient mt-5 text-center">
+      <p class="font-bold text-3xl sm:text-5xl text-gradient mt-5 text-center">
         أخبرنا بما تريد وسنقوم بالتواصل معك باذن الله تعالي
-      </h2>
+      </p>
 
       <UForm
         :schema="schema"

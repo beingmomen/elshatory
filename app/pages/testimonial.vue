@@ -4,9 +4,9 @@
       <p class="font-bold text-xl sm:text-2xl text-center">
         نحن هنا نهتم برأيك
       </p>
-      <h2 class="font-bold text-3xl sm:text-5xl mt-5 text-gradient text-center">
+      <p class="font-bold text-3xl sm:text-5xl mt-5 text-gradient text-center">
         نرجو منك ابداء رأيك فى عملنا
-      </h2>
+      </p>
 
       <UForm
         ref="form"
