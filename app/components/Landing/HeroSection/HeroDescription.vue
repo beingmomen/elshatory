@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-6">
       خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js ✨
-    </h2>
+    </h1>
 
     <p class="text-xl mb-8">
       أحول رؤيتك إلى واقع رقمي مبهر. بفضل خبرتي المتخصصة في Vue.js و Nuxt.js،

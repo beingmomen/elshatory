@@ -26,6 +26,7 @@
         src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
         alt="الشطوري | قبيلة"
         class="w-8 h-8 object-cover"
+        sizes="sm:100vw md:50vw lg:400px"
         preload
       />
     </NuxtLink>
