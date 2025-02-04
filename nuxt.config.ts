@@ -194,7 +194,6 @@ export default defineNuxtConfig({
         plugins: [
           // require('tailwindcss'),
           // require("postcss-import"),
-          // require('autoprefixer'),
         ],
       },
       preprocessorOptions: {
