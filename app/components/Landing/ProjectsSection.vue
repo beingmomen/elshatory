@@ -12,8 +12,8 @@
     </h2>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
       <UCard
-        v-for="(project, i) in projects"
-        :key="i"
+        v-for="project in data.projects"
+        :key="project._id"
         class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
       >
         <div class="h-[15rem] rounded-md overflow-hidden shadow-lg">
@@ -30,7 +30,7 @@
 
         <div class="flex flex-col justify-between grow">
           <div>
-            <p class="mt-3 text-gray-400">#{{ project.type }}</p>
+            <p class="mt-3 text-gray-400">#{{ project.tag }}</p>
 
             <h3
               class="mt-6 font-bold text-3xl hover:text-gradient text-gray-300 cursor-pointer"
@@ -44,10 +44,10 @@
 
           <div class="mt-4 gap-3 flex flex-wrap">
             <UBadge
-              v-for="badge in project.badges"
-              :key="badge"
+              v-for="badge in project.tags"
+              :key="badge._id"
               color="primary"
-              :label="badge"
+              :label="badge.title"
               class="text-black dark:text-black font-bold"
             />
           </div>
@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-const projects = useProjects();
+const { data } = await useLanding();
 </script>
 
 <style lang="scss" scoped>

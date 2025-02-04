@@ -84,38 +84,27 @@
 </template>
 
 <script setup>
+const { data } = await useLanding();
 const slideCount = ref(7);
 
-const firstSkills = ref([
-  { icon: "i-skill-icons-tailwindcss-light" },
-  { icon: "i-skill-icons-javascript" },
-  { icon: "i-skill-icons-css" },
-  { icon: "i-skill-icons-github-dark" },
-  { icon: "i-skill-icons-jquery" },
-  { icon: "i-skill-icons-html" },
-  { icon: "i-skill-icons-sass" },
-  { icon: "i-skill-icons-figma-light" },
-]);
-const secondSkills = ref([
-  { icon: "i-logos-digital-ocean-icon" },
-  { icon: "i-skill-icons-bootstrap" },
-  { icon: "i-skill-icons-graphql-light" },
-  { icon: "i-logos-firebase" },
-  { icon: "i-skill-icons-git" },
-  { icon: "i-skill-icons-gulp" },
-  { icon: "i-skill-icons-nuxtjs-light" },
-  { icon: "i-skill-icons-xd" },
-]);
-const thirdSkills = ref([
-  { icon: "i-skill-icons-gitlab-light" },
-  { icon: "i-skill-icons-vuejs-light" },
-  { icon: "i-skill-icons-pinia-light" },
-  { icon: "i-skill-icons-prisma" },
-  { icon: "i-skill-icons-pug-light" },
-  { icon: "i-skill-icons-vuetify-light" },
-  { icon: "i-skill-icons-githubactions-light" },
-  { icon: "i-skill-icons-netlify-light" },
-]);
+// Initialize skills data with a default empty array
+const skills = computed(() => data.value?.skills || []);
+
+// Split skills into three groups for different sliders
+const skillsCount = computed(() => skills.value.length);
+const groupSize = computed(() => Math.ceil(skillsCount.value / 3));
+
+const firstSkills = computed(
+  () => skills.value.slice(0, groupSize.value)
+);
+
+const secondSkills = computed(
+  () => skills.value.slice(groupSize.value, groupSize.value * 2)
+);
+
+const thirdSkills = computed(
+  () => skills.value.slice(groupSize.value * 2)
+);
 </script>
 
 <style lang="scss">
@@ -183,4 +172,3 @@ const thirdSkills = ref([
   transition: all 0.3s linear;
 }
 </style>
-

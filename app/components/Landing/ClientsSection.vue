@@ -15,7 +15,7 @@
         v-slot="{ item }"
         loop
         :autoplay="{ delay: 1000 }"
-        :items="items"
+        :items="data.clients"
         :ui="{
           item: 'basis-full md:basis-1/2 lg:basis-1/5 flex justify-center items-center',
         }"
@@ -26,7 +26,7 @@
           <NuxtImg
             class="w-32 h-32 object-contain"
             provider="cloudinary"
-            :src="item"
+            :src="item.image"
             alt="client"
             loading="lazy"
             format="webp"
@@ -45,19 +45,20 @@
 </template>
 
 <script setup>
-const items = [
-  "beingmomen/clients/kmjlnjntlcqy1bqhekb4",
-  "beingmomen/clients/armsg41juqluibx003hf",
-  "beingmomen/clients/tjwstowfbzzp8z8osn3e",
-  "beingmomen/clients/knyl7hs3ny1vpz5qebbc",
-  "beingmomen/clients/yah7ammgfnk5bp9chjzh",
-  "beingmomen/clients/hnyqiyetlingybknpblx",
-  "beingmomen/clients/nyehtoxkyeuglyj6pprn",
-  "beingmomen/clients/tbxjvymjvgeogjytyxow",
-  "beingmomen/clients/le5idxg7tvrg44ti5wj1",
-  "beingmomen/clients/ygf61a5im66czrhmncf1",
-  "beingmomen/clients/wcqsjnl4beqy1oerkr24",
-];
+const { data } = await useLanding();
+// const items = [
+//   "beingmomen/clients/kmjlnjntlcqy1bqhekb4",
+//   "beingmomen/clients/armsg41juqluibx003hf",
+//   "beingmomen/clients/tjwstowfbzzp8z8osn3e",
+//   "beingmomen/clients/knyl7hs3ny1vpz5qebbc",
+//   "beingmomen/clients/yah7ammgfnk5bp9chjzh",
+//   "beingmomen/clients/hnyqiyetlingybknpblx",
+//   "beingmomen/clients/nyehtoxkyeuglyj6pprn",
+//   "beingmomen/clients/tbxjvymjvgeogjytyxow",
+//   "beingmomen/clients/le5idxg7tvrg44ti5wj1",
+//   "beingmomen/clients/ygf61a5im66czrhmncf1",
+//   "beingmomen/clients/wcqsjnl4beqy1oerkr24",
+// ];
 </script>
 
 <style lang="scss" >

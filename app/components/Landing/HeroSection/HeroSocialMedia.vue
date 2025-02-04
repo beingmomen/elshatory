@@ -38,7 +38,7 @@
       trailing
       variant="outline"
       target="_blank"
-      to="https://drive.google.com/file/d/157_ZQjba7KZopZzMTVhEfcndqMif0APG/view?usp=sharing"
+      :to="data?.info.resumeUrl"
     >
       تحميل السيرة الذاتية
     </UButton>
@@ -46,6 +46,7 @@
 </template>
 
 <script setup>
+const { data } = await useLanding();
 </script>
 
 <style lang="scss" scoped>

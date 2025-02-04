@@ -53,14 +53,12 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
-const baseUrl = config.public.baseURL;
-
-const { data } = await useFetch(`${baseUrl}/testimonials/confirmed`);
+const { data } = await useLanding();
+const testimonials = data?.value?.testimonials || [];
 
 // Split reviews into two rows
-const firstRow = ref(data.value.data.slice(0, data.value.data.length / 2));
-const secondRow = ref(data.value.data.slice(data.value.data.length / 2));
+const firstRow = ref(testimonials.slice(0, testimonials.length / 2));
+const secondRow = ref(testimonials.slice(testimonials.length / 2));
 </script>
 
 <style lang="scss" scoped>
