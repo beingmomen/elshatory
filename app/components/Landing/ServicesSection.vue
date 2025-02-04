@@ -6,11 +6,11 @@
       >
         خدمات متنوعة
       </p>
-      <h2
+      <h3
         class="font-bold text-4xl sm:text-5xl uppercase mt-5 text-gradient text-center"
       >
         ما الذي أقدمه لك؟
-      </h2>
+      </h3>
 
       <div
         class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center mt-8"

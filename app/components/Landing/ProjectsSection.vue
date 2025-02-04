@@ -5,11 +5,11 @@
     >
       مشاريعنا، قصص نجاح تُروى بفضل عملائنا.
     </p>
-    <h2
+    <h5
       class="font-bold text-4xl sm:text-5xl uppercase mt-5 text-gradient text-center"
     >
       مشاريع العملاء
-    </h2>
+    </h5>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
       <UCard
         v-for="project in data.projects"

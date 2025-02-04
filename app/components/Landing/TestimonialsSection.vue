@@ -6,11 +6,11 @@
       <!-- رحم الله امرأ عمل عملاً فأحسنه -->
       إبداعنا يُقاس برضا من تعاملوا معنا.
     </p>
-    <h2
+    <h4
       class="font-bold text-3xl sm:text-5xl uppercase mt-5 text-gradient text-center"
     >
       آراء العملاء والشركاء
-    </h2>
+    </h4>
 
     <div
       class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background"
