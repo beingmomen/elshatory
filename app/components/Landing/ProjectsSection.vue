@@ -32,14 +32,14 @@
           <div>
             <p class="mt-3 text-gray-400">#{{ project.tag }}</p>
 
-            <h3
+            <p
               class="mt-6 font-bold text-3xl hover:text-gradient text-gray-300 cursor-pointer"
             >
               <NuxtLink :to="project.url" target="_blank">
                 {{ project.title }}
                 <!-- <UIcon name="i-ic-baseline-launch" class="size-5" /> -->
               </NuxtLink>
-            </h3>
+            </p>
           </div>
 
           <div class="mt-4 gap-3 flex flex-wrap">
