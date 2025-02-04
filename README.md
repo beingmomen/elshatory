@@ -72,4 +72,11 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information
+
+TODO:
+
+- add أ. قسم "كيف أعمل؟" (How I Work)
+- ب. قسم "الأسئلة الشائعة" (FAQ)
+- ث. قسم "المقالات" (Blogs)
+- 2. تحويل التقييمات إلى بيانات منظمة (Schema):
