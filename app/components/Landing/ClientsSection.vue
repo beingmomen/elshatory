@@ -5,11 +5,11 @@
     >
       شراكات تحقق طموحاتنا المشتركة.
     </p>
-    <h6
+    <h5
       class="font-bold text-3xl sm:text-5xl uppercase mt-5 text-gradient text-center"
     >
       شراكاتنا وعملاءنا
-    </h6>
+    </h5>
     <div class="mt-16">
       <UCarousel
         v-slot="{ item }"

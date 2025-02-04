@@ -8,7 +8,6 @@
         src="beingmomen/edisxdkamb8dn3z0bhez"
         alt="عبدالمؤمن الشطوري - Frontend Developer"
         class="w-full h-full object-cover rounded-3xl"
-        sizes="(min-width: 1280px) 472px, (min-width: 1024px) 700px, (min-width: 180px) 340px"
         format="webp"
         preload
       />
