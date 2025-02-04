@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10 flex justify-center lg:justify-start">
-    <p
+    <h2
       class="bg-white text-[13px] md:text-xl text-picton-500 font-bold py-3 px-6 rounded-full hover:bg-picton-100 transition duration-300 relative w-fit"
     >
       <NuxtLink to="/contact">
@@ -11,7 +11,7 @@
           class="absolute -top-2 -left-1"
         />
       </NuxtLink>
-    </p>
+    </h2>
   </div>
 </template>
 

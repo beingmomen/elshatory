@@ -9,6 +9,7 @@
         alt="عبدالمؤمن الشطوري - Frontend Developer"
         class="w-full h-full object-cover rounded-3xl"
         format="webp"
+        sizes="(min-width: 1024px) 472px, 323px"
         preload
       />
     </div>

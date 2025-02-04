@@ -4,10 +4,10 @@
       خبير في تطوير الواجهات الأمامية مع Vue.js و Nuxt.js ✨
     </h1>
 
-    <h2 class="text-xl mb-8">
+    <p class="text-xl mb-8">
       أحول رؤيتك إلى واقع رقمي مبهر. بفضل خبرتي المتخصصة في Vue.js و Nuxt.js،
       أقدم:
-    </h2>
+    </p>
 
     <ul class="text-lg mb-8 space-y-2">
       <li class="flex items-center">
