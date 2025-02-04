@@ -85,7 +85,7 @@
 
 <script setup>
 const { data } = await useLanding();
-const slideCount = ref(7);
+const slideCount = ref(9);
 
 // Initialize skills data with a default empty array
 const skills = computed(() => data.value?.skills || []);
@@ -94,17 +94,15 @@ const skills = computed(() => data.value?.skills || []);
 const skillsCount = computed(() => skills.value.length);
 const groupSize = computed(() => Math.ceil(skillsCount.value / 3));
 
-const firstSkills = computed(
-  () => skills.value.slice(0, groupSize.value)
+console.log("groupSize :>> ", groupSize);
+
+const firstSkills = computed(() => skills.value.slice(0, groupSize.value));
+
+const secondSkills = computed(() =>
+  skills.value.slice(groupSize.value, groupSize.value * 2)
 );
 
-const secondSkills = computed(
-  () => skills.value.slice(groupSize.value, groupSize.value * 2)
-);
-
-const thirdSkills = computed(
-  () => skills.value.slice(groupSize.value * 2)
-);
+const thirdSkills = computed(() => skills.value.slice(groupSize.value * 2));
 </script>
 
 <style lang="scss">
