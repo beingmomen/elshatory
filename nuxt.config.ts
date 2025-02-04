@@ -182,11 +182,7 @@ export default defineNuxtConfig({
     // Enable CSS optimization
     css: {
       postcss: {
-        plugins: [
-          // require('tailwindcss'),
-          // require("postcss-import"),
-          // require('autoprefixer'),
-        ],
+        plugins: [],
       },
       preprocessorOptions: {
         scss: {
