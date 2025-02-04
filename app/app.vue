@@ -1,5 +1,3 @@
-
-
 <template>
   <UApp :locale="ar">
     <NuxtLayout>
@@ -22,7 +20,7 @@ useHead({
 });
 
 useSeoMeta({
-  title: "عبدالمؤمن الشطوري | مطور واجهات MEVN متخصص في Vue.js & Nuxt.js",
+  title: "عبدالمؤمن الشطوري | Frontend Developer",
   ogTitle:
     "عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل",
   description:
