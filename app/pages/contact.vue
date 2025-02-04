@@ -49,9 +49,11 @@ const { loading, post } = useApiRequest();
 
 // SEO Meta for Contact Page
 useSeoMeta({
-  title: "Contact | Abdelmomen Elshatory",
+  title: "تواصل معنا | عبدالمؤمن الشطوري",
+  description:
+    "تواصل مع عبدالمؤمن الشطوري لمناقشة مشروعك القادم. نحن هنا لمساعدتك في تحقيق رؤيتك التقنية.",
+  canonical: "https://beingmomen.com/contact",
   ogTitle: "Contact | Abdelmomen Elshatory",
-  description: "Get in touch with Abdelmomen Elshatory.",
   ogDescription: "Contact page for reaching out to Abdelmomen Elshatory.",
   ogImage: "URL_TO_CONTACT_IMAGE",
   ogUrl: "https://beingmomen.com/contact",
