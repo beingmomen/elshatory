@@ -178,17 +178,16 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      routes: ["/"],
+      routes: ["/", "/contact", "/testimonial"],
       crawlLinks: true,
       failOnError: false,
       autoSubfolderIndex: false,
     },
-  },
-
-  routeRules: {
-    "/*": {
-      headers: {
-        "Referrer-Policy": "strict-origin-when-cross-origin",
+    routeRules: {
+      "/*": {
+        headers: {
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+        },
       },
     },
   },
