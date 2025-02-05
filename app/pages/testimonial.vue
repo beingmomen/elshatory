@@ -57,8 +57,8 @@ useHead({
 // SEO Meta for Testimonial Page
 useSeoMeta({
   title: "آراء العملاء | عبدالمؤمن الشطوري",
-  description: "اقرأ آراء وتجارب العملاء السابقين مع عبدالمؤمن الشطوري. شارك تجربتك معنا.",
-  canonical: "https://beingmomen.com/testimonial",
+  description:
+    "اقرأ آراء وتجارب العملاء السابقين مع عبدالمؤمن الشطوري. شارك تجربتك معنا.",
   ogTitle: "Testimonial | Abdelmomen Elshatory",
   ogDescription:
     "Testimonial from clients showcasing the work of Abdelmomen Elshatory.",
