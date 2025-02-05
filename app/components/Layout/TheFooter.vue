@@ -8,8 +8,6 @@
           <div class="text-center sm:text-start">
             <span class="text-xl">&copy; {{ new Date().getFullYear() }} </span>
             <UButton
-              to="https://beingmomen.com"
-              target="_blank"
               aria-label="الشطوري"
               label="عبدالمؤمن الشطوري"
               color="primary"

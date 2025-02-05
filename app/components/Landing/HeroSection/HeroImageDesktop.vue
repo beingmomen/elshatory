@@ -10,10 +10,10 @@
         class="w-full h-full object-cover rounded-3xl"
         format="webp"
         preload
-        width="472"
-        height="510"
+        width="473"
+        height="511"
+        sizes="(max-width: 640px) 323px, 472px"
       />
-      <!-- sizes="(max-width: 640px) 323px, 472px" -->
     </div>
   </div>
 </template>

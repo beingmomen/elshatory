@@ -4,6 +4,7 @@
     target="_blank"
     :aria-label="label"
     class="hover:opacity-80 transition-opacity"
+    rel="noopener noreferrer"
   >
     <template v-if="icon">
       <UIcon :name="icon" class="w-8 h-8" />

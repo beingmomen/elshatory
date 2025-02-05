@@ -6,6 +6,7 @@
       to="https://www.linkedin.com/in/beingmomen/"
       target="_blank"
       aria-label="الشطوري | LinkedIn"
+      rel="noopener noreferrer"
     >
       <UIcon name="i-skill-icons-linkedin" class="w-8 h-8" />
     </NuxtLink>
@@ -13,6 +14,7 @@
       to="https://github.com/beingmomen"
       target="_blank"
       aria-label="الشطوري | Github"
+      rel="noopener noreferrer"
     >
       <UIcon name="i-skill-icons-github-dark" class="w-8 h-8" />
     </NuxtLink>
@@ -20,6 +22,7 @@
       to="https://qabilah.com/profile/beingmomen/posts"
       target="_blank"
       aria-label="linkedin Profile"
+      rel="noopener noreferrer"
     >
       <NuxtImg
         provider="cloudinary"
@@ -43,6 +46,7 @@
       variant="outline"
       target="_blank"
       :to="data?.info.resumeUrl"
+      rel="noopener noreferrer"
     >
       تحميل السيرة الذاتية
     </UButton>

@@ -35,7 +35,11 @@
             <p
               class="mt-6 font-bold text-3xl hover:text-gradient text-gray-300 cursor-pointer"
             >
-              <NuxtLink :to="project.url" target="_blank">
+              <NuxtLink
+                :to="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{ project.title }}
                 <!-- <UIcon name="i-ic-baseline-launch" class="size-5" /> -->
               </NuxtLink>
