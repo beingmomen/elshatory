@@ -212,9 +212,9 @@ export default defineNuxtConfig({
     url: "https://beingmomen.com",
   },
 
-  seo: {
-    redirectToCanonicalSiteUrl: false,
-  },
+  // seo: {
+  //   redirectToCanonicalSiteUrl: false,
+  // },
 
   build: {
     analyze: true,
