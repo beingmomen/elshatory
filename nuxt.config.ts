@@ -185,6 +185,14 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    "/*": {
+      headers: {
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+      },
+    },
+  },
+
   runtimeConfig: {
     public: {
       logo: process.env.LOGO,
