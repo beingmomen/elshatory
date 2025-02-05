@@ -59,6 +59,7 @@ useSeoMeta({
   title: "آراء العملاء | عبدالمؤمن الشطوري",
   description:
     "اقرأ آراء وتجارب العملاء السابقين مع عبدالمؤمن الشطوري. شارك تجربتك معنا.",
+  canonical: "https://beingmomen.com/testimonial",
   ogTitle: "Testimonial | Abdelmomen Elshatory",
   ogDescription:
     "Testimonial from clients showcasing the work of Abdelmomen Elshatory.",

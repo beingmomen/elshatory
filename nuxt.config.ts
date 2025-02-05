@@ -95,20 +95,29 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title:
-        "الموقع الرسمي لمهندس البرمجيات عبدالمؤمن الشطوري | Abdelmomen Elshatory",
+      title: "عبدالمؤمن الشطوري | Frontend Developer",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
           name: "description",
           content:
-            "الموقع الرسمي للمهندس عبدالمؤمن الشطوري - مطور واجهات أمامية متخصص في Vue.js و Nuxt.js. خبرة في تطوير تطبيقات ويب تفاعلية عالية الأداء | Official website of Abdelmomen Elshatory - Frontend Developer",
+            "مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.",
         },
         {
           name: "keywords",
           content:
-            "عبدالمؤمن الشطوري, beingmomen, الشطورى, Elshatory, Abdelmomen Elshatory, مطور واجهات أمامية, Vue.js, Nuxt.js, تطوير ويب, مبرمج, frontend developer",
+            "مطور MEVN, Nuxt.js Developer, Vue.js Expert, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, MEVN Stack, مشاريع برمجية, تقييم عملاء",
+        },
+        {
+          property: "og:title",
+          content:
+            "عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل",
+        },
+        {
+          property: "og:description",
+          content:
+            "حلول برمجية مبتكرة بـ Vue.js/Nuxt.js - تصفح أعمالي واحصل على استشارة مجانية الآن",
         },
         {
           name: "google-site-verification",
@@ -127,6 +136,39 @@ export default defineNuxtConfig({
         {
           rel: "canonical",
           href: "https://beingmomen.com",
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["Person", "ProfessionalService"],
+            name: "Abdelmomen Elshatory",
+            alternateName: ["عبدالمؤمن الشطوري", "beingmomen"],
+            jobTitle: "Frontend Developer & MEVN Stack Specialist",
+            description: "مطور واجهات أمامية متخصص في MEVN Stack بخبرة 3 سنوات",
+            url: "https://beingmomen.com",
+            image: {
+              "@type": "ImageObject",
+              url: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+              width: "800",
+              height: "600",
+            },
+            sameAs: [
+              "https://github.com/beingmomen",
+              "https://linkedin.com/in/beingmomen",
+              "https://twitter.com/beingmomen",
+            ],
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "الخدمات",
+              itemListElement: [
+                { "@type": "Offer", name: "تطوير تطبيقات Vue.js" },
+                { "@type": "Offer", name: "حلول Nuxt.js متكاملة" },
+              ],
+            },
+          }),
         },
       ],
     },
