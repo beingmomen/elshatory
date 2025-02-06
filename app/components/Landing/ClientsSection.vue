@@ -27,7 +27,7 @@
             class="w-32 h-32 object-contain"
             provider="cloudinary"
             :src="item.image"
-            alt="client"
+            :alt="`الشطوري - ${item.name}`"
             loading="lazy"
             format="webp"
             quality="80"

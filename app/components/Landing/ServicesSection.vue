@@ -25,7 +25,7 @@
               class="object-cover w-full h-full"
               provider="cloudinary"
               :src="service.image"
-              :alt="service.title"
+              :alt="service.altText"
               loading="lazy"
               width="1000"
               height="800"

@@ -9,7 +9,7 @@
         class="rounded-full"
         width="32"
         height="32"
-        :alt="name"
+        :alt="`beingmomen - ${body}`"
       />
       <div class="flex flex-col">
         <span class="text-sm font-medium dark:text-white">
