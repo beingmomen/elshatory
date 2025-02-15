@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "nuxt-delay-hydration",
     "nuxt-booster",
     "@nuxtjs/fontaine",
+    "nuxt-capo",
   ],
   css: ["~/assets/css/main.css"],
 
