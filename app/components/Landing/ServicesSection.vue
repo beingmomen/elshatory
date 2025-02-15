@@ -27,10 +27,10 @@
               :src="service.image"
               :alt="service.altText"
               loading="lazy"
-              width="1000"
-              height="800"
               sizes="300px md:400px"
             />
+            <!-- width="1000"
+            height="800" -->
           </div>
 
           <h3 class="mt-4 font-bold text-2xl text-gradient">
