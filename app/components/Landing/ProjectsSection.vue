@@ -21,7 +21,7 @@
             class="h-full w-full"
             :src="project.image"
             provider="cloudinary"
-            :alt="`project.altText - ${project.title}`"
+            :alt="`${project.altText} - ${project.title}`"
             loading="lazy"
             width="325"
             height="240"

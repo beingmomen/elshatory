@@ -24,17 +24,7 @@
       aria-label="linkedin Profile"
       rel="noopener noreferrer"
     >
-      <NuxtImg
-        provider="cloudinary"
-        src="beingmomen/icons/rfq6c4v71eb49k6btf7r"
-        alt="الشطوري | قبيلة"
-        class="w-8 h-8 object-cover"
-        width="32"
-        height="32"
-        loading="lazy"
-        format="webp"
-        quality="80"
-      />
+      <UIcon name="i-custom-qabilah" class="w-8 h-8" />
     </NuxtLink>
 
     <UButton

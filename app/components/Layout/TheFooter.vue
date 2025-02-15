@@ -46,7 +46,7 @@ const socialLinks = [
   },
   {
     url: "https://qabilah.com/profile/beingmomen/posts",
-    image: "beingmomen/icons/rfq6c4v71eb49k6btf7r",
+    icon: "i-custom-qabilah",
     label: "Qabilah Profile",
   },
   {

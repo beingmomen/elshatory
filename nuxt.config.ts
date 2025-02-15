@@ -54,6 +54,15 @@ export default defineNuxtConfig({
     mode: "mount",
   },
 
+  icon: {
+    customCollections: [
+      {
+        prefix: "custom",
+        dir: "./app/assets/icons",
+      },
+    ],
+  },
+
   booster: {
     detection: {
       performance: true,
