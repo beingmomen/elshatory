@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-// const error = useError();
+const error = useError();
 
 const handleError = () => {
   clearError({
@@ -46,6 +46,7 @@ const handleError = () => {
                 >
                   Page not found
                 </h1>
+                {{ error }}
                 <p class="mt-4 text-lg">
                   Oops! Looks like you've wandered into uncharted territory.
                 </p>

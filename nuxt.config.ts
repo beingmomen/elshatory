@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "nuxt-delay-hydration",
     "nuxt-booster",
     "@nuxtjs/fontaine",
-    "nuxt-capo",
+    // "nuxt-capo",
   ],
   css: ["~/assets/css/main.css"],
 
@@ -206,6 +206,11 @@ export default defineNuxtConfig({
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
+      cloudinary: {
+        cloudinaryUrl: process.env.CLOUDINARY_URL,
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
+      },
     },
   },
 
