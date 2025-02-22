@@ -14,6 +14,34 @@
 const { fetchBlogs, data } = useBlog();
 
 await fetchBlogs();
+
+useHead({
+  title: "المدونة - عبدالمؤمن الشطوري",
+  meta: [
+    {
+      name: "description",
+      content:
+        "اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا",
+    },
+    {
+      name: "keywords",
+      content: "مدونة, برمجة, تطوير الويب, جافا سكريبت, vue.js, nuxt.js, تقنية",
+    },
+    { property: "og:title", content: "المدونة - عبدالمؤمن الشطوري" },
+    {
+      property: "og:description",
+      content:
+        "اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا",
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:title", content: "المدونة - عبدالمؤمن الشطوري" },
+    {
+      name: "twitter:description",
+      content:
+        "اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا",
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>
