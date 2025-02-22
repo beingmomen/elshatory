@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Abdelmomen El-shatory Blog</title>
+    <link>http://127.0.0.1:1996/api/v1/blog</link>
+    <description>Latest articles and insights from Abdelmomen El-shatory.</description>
+    <lastBuildDate>Sat, 22 Feb 2025 18:39:56 GMT</lastBuildDate>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <generator>https://github.com/beingmomen/blog</generator>
+    <language>en</language>
+    <image>
+      <title>Abdelmomen El-shatory Blog</title>
+      <url>http://127.0.0.1:1996/api/v1/icon.png</url>
+      <link>http://127.0.0.1:1996/api/v1/blog</link>
+    </image>
+    <copyright>Copyright 2025 Abdelmomen El-shatory All Rights Reserved</copyright>
+    <atom:link href="http://127.0.0.1:1996/api/v1/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title><![CDATA[ The Evolution of Shiki v1.0 ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/the-evolution-of-shiki-v10</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/the-evolution-of-shiki-v10</guid>
+      <pubDate>Sat, 22 Feb 2025 12:32:59 GMT</pubDate>
+      <description><![CDATA[ Shiki v1.0 came with many improvements and features - see how Nuxt drives the evolution of Shiki! ]]></description>
+      <enclosure url="beingmomen/clients/xgy6tpb03f7l3kvikiib.avif" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Optimizing Data Loading in Nuxt with Parallel Requests ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/optimizing-data-loading-in-nuxt-with-parallel-requests</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/optimizing-data-loading-in-nuxt-with-parallel-requests</guid>
+      <pubDate>Sat, 22 Feb 2025 14:46:46 GMT</pubDate>
+      <description><![CDATA[ Learn how to optimize Nuxt data loading performance by implementing parallel requests with useAsyncData, reducing page load times compared to sequential data fetching operations. Includes code examples and performance comparisons. ]]></description>
+      <enclosure url="beingmomen/clients/x9ikp4alg3unlspliajt.webp" length="0" type="image/png"/>
+    </item>
+  </channel>
+</rss>

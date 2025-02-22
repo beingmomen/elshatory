@@ -51,7 +51,7 @@ const props = defineProps({
   },
 });
 
-const formatted = useDateFormat(props.blog.createdAt, "MMMM YYYY-D", {
+const formatted = useDateFormat(props.blog.createdAt, "MMMM DD-YYYY", {
   locales: "ar-EG",
 });
 </script>
