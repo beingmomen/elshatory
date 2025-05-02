@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <h1 class="text-5xl font-bold">مدونة عبدالمؤمن الشطوري</h1>
     <p class="text-2xl text-gray-400">
-      قم بالاطلاع هلى آخر الأخبار الخاص بالتقنية والتطورية.
+      قم بالاطلاع على آخر الأخبار الخاص بالتقنية .
       <UButton
         color="neutral"
         variant="subtle"
@@ -19,8 +19,6 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -55,6 +55,7 @@ export const useApiRequest = () => {
       const response = await $api(endpoint, {
         method: options.method,
         body: options.body,
+        params: options.params,
       });
 
       return handleSuccess(response, options);

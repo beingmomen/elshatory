@@ -1,8 +1,12 @@
 @import "tailwindcss";
+@import "./typography.css";
 @import "@nuxt/ui";
 
 @theme {
+  --font-sans: "Public Sans", sans-serif;
   --font-sans: "Tajawal", sans-serif;
+
+  --container-8xl: 97rem;
 
   --color-picton-50: #f0f9ff;
   --color-picton-100: #e0f2fe;
@@ -16,8 +20,6 @@
   --color-picton-900: #0c4a6e;
   --color-picton-950: #082f49;
 }
-
-@plugin "@tailwindcss/typography";
 
 @layer utilities {
   .bg-gradient-primary {
@@ -35,10 +37,6 @@
     @apply bg-clip-text;
     -webkit-text-fill-color: transparent !important;
   }
-}
-
-@theme {
-  --container-8xl: 97rem;
 }
 
 :root {

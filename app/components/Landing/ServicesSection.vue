@@ -18,7 +18,7 @@
         <UCard
           v-for="service in data.services"
           :key="service._id"
-          class="cursor-pointer hover:-mt-3 hover:mb-3 transition-all duration-300 ease-in-out"
+          class="hover:-mt-3 hover:mb-3 transition-all duration-300 ease-in-out hover:ring-primary-900 hover:ring-2 bg-gray-900"
         >
           <div class="h-[12rem] rounded overflow-hidden">
             <NuxtImg

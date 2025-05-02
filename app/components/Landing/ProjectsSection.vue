@@ -11,10 +11,11 @@
       مشاريع العملاء
     </h5>
     <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-12">
+      <!-- hover:scale-110 -->
       <UCard
         v-for="project in data.projects"
         :key="project._id"
-        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        class="hover:-mt-3 hover:mb-3 transition-all duration-300 ease-in-out bg-gray-900 hover:ring-primary-900 hover:ring-2"
       >
         <div class="h-[15rem] rounded-md overflow-hidden shadow-lg">
           <NuxtImg

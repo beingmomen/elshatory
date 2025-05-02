@@ -4,7 +4,7 @@
     <title>Abdelmomen El-shatory Blog</title>
     <link>http://127.0.0.1:1996/api/v1/blog</link>
     <description>Latest articles and insights from Abdelmomen El-shatory.</description>
-    <lastBuildDate>Sat, 22 Feb 2025 19:07:23 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 May 2025 13:32:26 GMT</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>https://github.com/beingmomen/blog</generator>
     <language>en</language>
@@ -32,6 +32,42 @@
       <pubDate>Sat, 22 Feb 2025 14:46:46 GMT</pubDate>
       <description><![CDATA[ Learn how to optimize Nuxt data loading performance by implementing parallel requests with useAsyncData, reducing page load times compared to sequential data fetching operations. Includes code examples and performance comparisons. ]]></description>
       <enclosure url="beingmomen/clients/x9ikp4alg3unlspliajt.webp" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Proident nisi omnis ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/proident-nisi-omnis</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/proident-nisi-omnis</guid>
+      <pubDate>Fri, 25 Apr 2025 16:11:55 GMT</pubDate>
+      <description><![CDATA[ Aut eiusmod ut ratio ]]></description>
+      <enclosure url="beingmomen/blog/sv7hlz9rzaqij8yloczc.png" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Officiis beatae est ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/officiis-beatae-est</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/officiis-beatae-est</guid>
+      <pubDate>Sat, 26 Apr 2025 12:43:28 GMT</pubDate>
+      <description><![CDATA[ Cillum dolor dolorem ]]></description>
+      <enclosure url="beingmomen/blog/fmkjgqxtsglhcdft3nds.jpg" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Nihil maxime maiores ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/nihil-maxime-maiores</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/nihil-maxime-maiores</guid>
+      <pubDate>Sat, 26 Apr 2025 12:50:04 GMT</pubDate>
+      <description><![CDATA[ Et corrupti qui cor ]]></description>
+      <enclosure url="beingmomen/blog/lln2ekr3ywg3pzzdbhay.jpg" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Velit quae autem ex ]]></title>
+      <link>http://127.0.0.1:1996/api/v1/blog/velit-quae-autem-ex</link>
+      <guid>http://127.0.0.1:1996/api/v1/blog/velit-quae-autem-ex</guid>
+      <pubDate>Fri, 02 May 2025 13:08:40 GMT</pubDate>
+      <description><![CDATA[ Perspiciatis laboru ]]></description>
+      <enclosure url="beingmomen/blog/y1141qjhcvo2jm1mtbyc.jpg" length="0" type="image/png"/>
     </item>
   </channel>
 </rss>

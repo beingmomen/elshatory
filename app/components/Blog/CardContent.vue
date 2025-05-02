@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/html-self-closing -->
 <template>
   <div
-    class="rounded-xl ring-1 hover:ring-3 ring-gray-800 hover:ring-picton-900 transition-all duration-200 shadow bg-gray-900 hover:bg-gray-900/50 relative group flex flex-col overflow-hidden"
+    class="rounded-xl ring-1 hover:ring-3 ring-gray-800 hover:ring-primary-900 transition-all duration-200 shadow bg-gray-900 hover:bg-gray-900/50 relative group flex flex-col overflow-hidden"
   >
     <NuxtLink :to="`/blog/${blog.slug}`">
       <div class="aspect-video max-h-[267px]">
@@ -27,7 +27,9 @@
       <div class="px-4 py-4 sm:px-6 pt-0">
         <div class="flex items-center justify-between gap-3">
           <time class="text-gray-500 dark:text-gray-400">
-            {{ formatted }}
+            {{
+              useFormatDate({ date: blog.createdAt, format: "DD MMMM YYYY" })
+            }}
           </time>
           <div class="inline-flex flex-row-reverse justify-end">
             <img
@@ -43,16 +45,11 @@
 </template>
 
 <script setup>
-import { useDateFormat } from "@vueuse/core";
-const props = defineProps({
+defineProps({
   blog: {
     type: Object,
     required: true,
   },
-});
-
-const formatted = useDateFormat(props.blog.createdAt, "MMMM DD-YYYY", {
-  locales: "ar-EG",
 });
 </script>
 

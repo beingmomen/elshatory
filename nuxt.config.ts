@@ -1,107 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    "@nuxt/ui",
-    "@nuxt/eslint",
-    "@nuxt/image",
-    "@vueuse/motion/nuxt",
-    "@nuxtjs/cloudinary",
-    "@nuxtjs/seo",
-    "nuxt-delay-hydration",
-    "nuxt-booster",
-    "@nuxtjs/fontaine",
-    // "nuxt-capo",
-  ],
-  css: ["~/assets/css/main.css"],
-
-  image: {
-    quality: 80,
-    format: ["webp"],
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      "2xl": 1536,
-    },
-    domains: ["beingmomen.com", "youtube.com", "vimeo.com"],
-    alias: {
-      "https://beingmomen.com": "https://beingmomen.com",
-      youtube: "youtube.com",
-      vimeo: "vimeo.com",
-    },
-    provider: "cloudinary",
-    cloudinary: {
-      baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
-    },
-    modifiers: {
-      effect: "sharpen:100",
-      quality: "auto:best",
-    },
-    dir: "assets/images",
-  },
-
-  cloudinary: {
-    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
-  },
-
-  delayHydration: {
-    // enables nuxt-delay-hydration in dev mode for testing
-    // debug: process.env.NODE_ENV === "development",
-    mode: "mount",
-  },
-
-  icon: {
-    customCollections: [
-      {
-        prefix: "custom",
-        dir: "./app/assets/icons",
-      },
-    ],
-  },
-
-  booster: {
-    detection: {
-      performance: true,
-      browserSupport: true,
-      battery: true, // Added to resolve TypeScript type error
-    },
-
-    performanceDeviceMetrics: {
-      hardwareConcurrency: { min: 2, max: 48 },
-      deviceMemory: { min: 2 },
-    },
-
-    performanceTimingMetrics: {
-      fcp: 800,
-      dcl: 1200,
-    },
-
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
-
-    componentAutoImport: false,
-    componentPrefix: undefined,
-
-    /**
-     * IntersectionObserver rootMargin for Compoennts and Assets
-     */
-    lazyOffset: {
-      component: "0%",
-      asset: "0%",
-    },
-  },
-
   future: {
     compatibilityVersion: 4,
   },
-
-  compatibilityDate: "2024-11-27",
+  css: ["~/assets/css/main.css"],
 
   app: {
     head: {
@@ -185,21 +88,48 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  nitro: {
-    compressPublicAssets: true,
-    prerender: {
-      routes: ["/", "/contact", "/testimonial"],
-      crawlLinks: true,
-      failOnError: false,
-      autoSubfolderIndex: false,
-    },
-    routeRules: {
-      "/*": {
-        headers: {
-          "Referrer-Policy": "strict-origin-when-cross-origin",
-        },
+  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/image", "@vueuse/motion/nuxt"],
+
+  icon: {
+    customCollections: [
+      {
+        prefix: "custom",
+        dir: "./app/assets/icons",
       },
+    ],
+  },
+
+  image: {
+    quality: 80,
+    format: ["webp"],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
     },
+    domains: ["beingmomen.com", "youtube.com", "vimeo.com"],
+    alias: {
+      "https://beingmomen.com": "https://beingmomen.com",
+      youtube: "youtube.com",
+      vimeo: "vimeo.com",
+    },
+    // provider: "cloudinary",
+    cloudinary: {
+      baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
+    },
+    modifiers: {
+      effect: "sharpen:100",
+      quality: "auto:best",
+    },
+    dir: "assets/images",
+  },
+
+  tiptap: {
+    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
   },
 
   runtimeConfig: {
@@ -215,53 +145,8 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: 7777,
+    port: 9999,
   },
 
-  experimental: {
-    viewTransition: true,
-    treeshakeClientOnly: true,
-  },
-
-  site: {
-    url: "https://beingmomen.com",
-  },
-
-  // seo: {
-  //   redirectToCanonicalSiteUrl: false,
-  // },
-
-  build: {
-    analyze: true,
-  },
-
-  vite: {
-    build: {
-      cssCodeSplit: true, // Split CSS into chunks
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            // Group vendor modules into a separate chunk
-            vendor: [],
-          },
-        },
-      },
-    },
-    // Enable CSS optimization
-    css: {
-      postcss: {
-        plugins: [],
-      },
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
-    },
-  },
-
-  sourcemap: {
-    server: true,
-    client: true,
-  },
+  compatibilityDate: "2024-11-27",
 });

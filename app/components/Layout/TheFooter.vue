@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-auto py-8">
+  <footer class="mt-auto py-8 bg-gray-900">
     <UContainer>
       <UCard>
         <div
