@@ -1,208 +1,138 @@
-/* Typography styles for Tiptap Editor - Dark Mode */
+/* Typography styles for Tiptap Editor using Tailwind CSS v4 */
 
 /* Base editor styles */
 .ProseMirror {
-  color: #e2e8f0;
-  background-color: #1a202c;
+  @apply text-slate-200;
 }
 
 /* Headings */
 .ProseMirror h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 2rem 0 1rem;
-  color: #f7fafc;
+  @apply text-5xl font-bold leading-tight mt-8 mb-4 text-slate-50;
 }
 
 .ProseMirror h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 1.8rem 0 0.9rem;
-  color: #f7fafc;
+  @apply text-4xl font-semibold leading-snug mt-7 mb-3.5 text-slate-50;
 }
 
 .ProseMirror h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 1.6rem 0 0.8rem;
-  color: #f7fafc;
+  @apply text-3xl font-semibold leading-relaxed mt-6 mb-3 text-slate-50;
 }
 
 .ProseMirror h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 1.4rem 0 0.7rem;
-  color: #f7fafc;
+  @apply text-2xl font-semibold leading-relaxed mt-5.5 mb-2.5 text-slate-50;
 }
 
 .ProseMirror h5 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 1.2rem 0 0.6rem;
-  color: #f7fafc;
+  @apply text-xl font-semibold leading-relaxed mt-5 mb-2 text-slate-50;
 }
 
 .ProseMirror h6 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 1rem 0 0.5rem;
-  color: #f7fafc;
+  @apply text-lg font-semibold leading-relaxed mt-4 mb-2 text-slate-50;
 }
 
 /* Paragraphs and basic text */
 .ProseMirror p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin: 1rem 0;
-  color: #e2e8f0;
+  @apply text-base leading-7 my-4 text-slate-200;
 }
 
 /* Lists */
 .ProseMirror ul,
 .ProseMirror ol {
-  margin: 1rem 0;
-  padding-left: 2rem;
-  color: #e2e8f0;
+  @apply my-4 pl-8 text-slate-200;
 }
 
 .ProseMirror li {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+  @apply my-2 leading-6;
 }
 
 .ProseMirror ul li {
-  list-style-type: disc;
+  @apply list-disc ms-10;
 }
 
 .ProseMirror ol li {
-  list-style-type: decimal;
+  @apply list-decimal ms-10;
 }
 
 /* Blockquotes */
 .ProseMirror blockquote {
-  border-left: 4px solid #4a5568;
-  margin: 1.5rem 0;
-  padding: 0.5rem 0 0.5rem 1rem;
-  font-style: italic;
-  color: #a0aec0;
-  background-color: #2d3748;
+  @apply border-slate-600 my-6 py-2 pl-4 italic text-slate-400 bg-slate-950 rounded-md p-5 border-s-4;
 }
 
 /* Code blocks */
 .ProseMirror pre {
-  background-color: #2d3748;
-  border-radius: 0.375rem;
-  padding: 1rem;
-  margin: 1rem 0;
-  font-family: monospace;
-  font-size: 0.9rem;
-  overflow-x: auto;
-  color: #90cdf4;
+  @apply bg-slate-800 rounded-md p-4 my-4 font-mono text-sm overflow-x-auto text-sky-300;
   direction: ltr;
 }
 
 .ProseMirror code {
-  background-color: #2d3748;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  font-family: monospace;
-  font-size: 0.9em;
-  color: #90cdf4;
+  @apply bg-slate-800 py-0.5 px-1.5 rounded-sm font-mono text-sm text-sky-300;
 }
 
 /* Links */
 .ProseMirror a {
-  color: #63b3ed;
-  text-decoration: underline;
-  transition: color 0.2s ease;
+  @apply text-sky-400 underline transition-colors duration-200;
 }
 
 .ProseMirror a:hover {
-  color: #90cdf4;
+  @apply text-sky-300;
 }
 
 /* Tables */
 .ProseMirror table {
-  border-collapse: collapse;
-  margin: 1rem 0;
-  width: 100%;
+  @apply border-collapse my-4 w-full;
 }
 
 .ProseMirror th,
 .ProseMirror td {
-  border: 1px solid #4a5568;
-  padding: 0.5rem;
-  text-align: left;
+  @apply border border-slate-600 p-2 text-left;
 }
 
 .ProseMirror th {
-  background-color: #2d3748;
-  font-weight: 600;
-  color: #f7fafc;
+  @apply bg-slate-800 font-semibold text-slate-50;
 }
 
 /* Horizontal Rule */
 .ProseMirror hr {
-  border: none;
-  border-top: 2px solid #4a5568;
-  margin: 2rem 0;
+  @apply border-0 border-t-2 border-slate-600 my-8;
 }
 
 /* Text Formatting */
 .ProseMirror strong {
-  font-weight: 600;
-  color: #f7fafc;
+  @apply font-semibold text-slate-50;
 }
 
 .ProseMirror em {
-  font-style: italic;
+  @apply italic;
 }
 
 .ProseMirror s {
-  text-decoration: line-through;
-  color: #a0aec0;
+  @apply line-through text-slate-400;
 }
 
 /* Task Lists */
 .ProseMirror ul[data-type="taskList"] {
-  list-style: none;
-  padding: 0;
+  @apply list-none p-0;
 }
 
 .ProseMirror ul[data-type="taskList"] li {
-  display: flex;
-  align-items: flex-start;
-  margin: 0.5rem 0;
+  @apply flex items-start my-2;
 }
 
 .ProseMirror ul[data-type="taskList"] input[type="checkbox"] {
-  margin: 0.5rem 0.5rem 0 0;
-  background-color: #2d3748;
-  border: 1px solid #4a5568;
+  @apply mt-2 mr-2 bg-slate-800 border border-slate-600;
 }
 
 /* Images */
 .ProseMirror img {
-  max-width: 100%;
-  height: 200px;
-  margin: 1rem 0;
-  border-radius: 0.375rem;
-  border: 1px solid #4a5568;
+  @apply max-w-full max-h-100 my-4 rounded-md border border-slate-600 mx-auto;
 }
 
 /* Editor Focus */
 .ProseMirror:focus {
-  outline: none;
+  @apply outline-hidden;
 }
 
 /* Selection */
 .ProseMirror ::selection {
-  background: rgba(99, 179, 237, 0.3);
-  color: #f7fafc;
+  @apply bg-sky-400/30 text-slate-50;
 }

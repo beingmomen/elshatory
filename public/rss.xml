@@ -2,72 +2,36 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Abdelmomen El-shatory Blog</title>
-    <link>http://127.0.0.1:1996/api/v1/blog</link>
+    <link>http://127.0.0.1:1995/api/v1/blog</link>
     <description>Latest articles and insights from Abdelmomen El-shatory.</description>
-    <lastBuildDate>Fri, 02 May 2025 13:32:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 May 2025 11:52:48 GMT</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>https://github.com/beingmomen/blog</generator>
     <language>en</language>
     <image>
       <title>Abdelmomen El-shatory Blog</title>
-      <url>http://127.0.0.1:1996/api/v1/icon.png</url>
-      <link>http://127.0.0.1:1996/api/v1/blog</link>
+      <url>http://127.0.0.1:1995/api/v1/icon.png</url>
+      <link>http://127.0.0.1:1995/api/v1/blog</link>
     </image>
     <copyright>Copyright 2025 Abdelmomen El-shatory All Rights Reserved</copyright>
-    <atom:link href="http://127.0.0.1:1996/api/v1/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://127.0.0.1:1995/api/v1/blog/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-      <title><![CDATA[ The Evolution of Shiki v1.0 ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/the-evolution-of-shiki-v10</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/the-evolution-of-shiki-v10</guid>
-      <pubDate>Sat, 22 Feb 2025 12:32:59 GMT</pubDate>
-      <description><![CDATA[ Shiki v1.0 came with many improvements and features - see how Nuxt drives the evolution of Shiki! ]]></description>
-      <enclosure url="beingmomen/clients/xgy6tpb03f7l3kvikiib.avif" length="0" type="image/png"/>
+      <title><![CDATA[ تحليل عميق لـ JavaScript Hoisting وتأثيره على الكود ]]></title>
+      <link>http://127.0.0.1:1995/api/v1/blog/تحليل-عميق-لـ-javascript-hoisting-وتأثيره-على-الكود</link>
+      <guid>http://127.0.0.1:1995/api/v1/blog/تحليل-عميق-لـ-javascript-hoisting-وتأثيره-على-الكود</guid>
+      <pubDate>Fri, 23 May 2025 12:24:16 GMT</pubDate>
+      <description><![CDATA[ Hoisting فى JavaScript هو عملية يقوم بها Interpreter بنقل ال [functions, variables, classes, imports] إلى أعلى Scope الخاص بها قبل عملية تنفيذ الكود في هذه المقال سوف نقوم بشرح هذه العملية بشكل كامل باذن الله تعالي. ]]></description>
+      <enclosure url="beingmomen/blog/k1rigjz0f3wvbqt8v2f2.webp" length="0" type="image/png"/>
     </item>
 
     <item>
-      <title><![CDATA[ Optimizing Data Loading in Nuxt with Parallel Requests ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/optimizing-data-loading-in-nuxt-with-parallel-requests</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/optimizing-data-loading-in-nuxt-with-parallel-requests</guid>
-      <pubDate>Sat, 22 Feb 2025 14:46:46 GMT</pubDate>
-      <description><![CDATA[ Learn how to optimize Nuxt data loading performance by implementing parallel requests with useAsyncData, reducing page load times compared to sequential data fetching operations. Includes code examples and performance comparisons. ]]></description>
-      <enclosure url="beingmomen/clients/x9ikp4alg3unlspliajt.webp" length="0" type="image/png"/>
-    </item>
-
-    <item>
-      <title><![CDATA[ Proident nisi omnis ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/proident-nisi-omnis</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/proident-nisi-omnis</guid>
-      <pubDate>Fri, 25 Apr 2025 16:11:55 GMT</pubDate>
-      <description><![CDATA[ Aut eiusmod ut ratio ]]></description>
-      <enclosure url="beingmomen/blog/sv7hlz9rzaqij8yloczc.png" length="0" type="image/png"/>
-    </item>
-
-    <item>
-      <title><![CDATA[ Officiis beatae est ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/officiis-beatae-est</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/officiis-beatae-est</guid>
-      <pubDate>Sat, 26 Apr 2025 12:43:28 GMT</pubDate>
-      <description><![CDATA[ Cillum dolor dolorem ]]></description>
-      <enclosure url="beingmomen/blog/fmkjgqxtsglhcdft3nds.jpg" length="0" type="image/png"/>
-    </item>
-
-    <item>
-      <title><![CDATA[ Nihil maxime maiores ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/nihil-maxime-maiores</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/nihil-maxime-maiores</guid>
-      <pubDate>Sat, 26 Apr 2025 12:50:04 GMT</pubDate>
-      <description><![CDATA[ Et corrupti qui cor ]]></description>
-      <enclosure url="beingmomen/blog/lln2ekr3ywg3pzzdbhay.jpg" length="0" type="image/png"/>
-    </item>
-
-    <item>
-      <title><![CDATA[ Velit quae autem ex ]]></title>
-      <link>http://127.0.0.1:1996/api/v1/blog/velit-quae-autem-ex</link>
-      <guid>http://127.0.0.1:1996/api/v1/blog/velit-quae-autem-ex</guid>
-      <pubDate>Fri, 02 May 2025 13:08:40 GMT</pubDate>
-      <description><![CDATA[ Perspiciatis laboru ]]></description>
-      <enclosure url="beingmomen/blog/y1141qjhcvo2jm1mtbyc.jpg" length="0" type="image/png"/>
+      <title><![CDATA[ Anim culpa animi e ]]></title>
+      <link>http://127.0.0.1:1995/api/v1/blog/anim-culpa-animi-e</link>
+      <guid>http://127.0.0.1:1995/api/v1/blog/anim-culpa-animi-e</guid>
+      <pubDate>Sat, 24 May 2025 11:09:35 GMT</pubDate>
+      <description><![CDATA[ Recusandae Aliquid ]]></description>
+      <enclosure url="beingmomen/blog/ggvkznqpvthlb0bx5jhk.png" length="0" type="image/png"/>
     </item>
   </channel>
 </rss>

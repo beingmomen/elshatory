@@ -35,7 +35,7 @@
       trailing
       variant="outline"
       target="_blank"
-      :to="data?.info.resumeUrl"
+      :to="data?.info?.resumeUrl"
       rel="noopener noreferrer"
     >
       تحميل السيرة الذاتية
