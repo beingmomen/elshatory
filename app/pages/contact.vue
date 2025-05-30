@@ -11,7 +11,7 @@
       <UForm
         :schema="schema"
         :state="state"
-        class="space-y-4 mx-auto mt-8"
+        class="space-y-4 mx-auto mt-8 w-1/2"
         @submit="onSubmit"
       >
         <UFormField label="الاسم" name="name" size="lg" required>
@@ -124,5 +124,4 @@ async function onSubmit(event) {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

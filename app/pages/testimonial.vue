@@ -12,7 +12,7 @@
         ref="form"
         :schema="schema"
         :state="state"
-        class="space-y-4 mx-auto mt-8"
+        class="space-y-4 mx-auto mt-8 w-1/2"
         @submit="onSubmit"
       >
         <UFormField label="الاسم" name="name" size="lg" required>
@@ -27,11 +27,13 @@
           <UTextarea v-model="state.description" class="w-full" :rows="6" />
         </UFormField>
 
-        <FormTheCLDFile
+        <FormFileInput
           v-model="state.image"
           label="الصورة"
           name="image"
-          class="w-full"
+          size="xl"
+          input-size="lg"
+          folder="testimonial"
         />
 
         <UButton
@@ -106,9 +108,8 @@ const schema = Joi.object({
       "string.email": "يرجى إدخال عنوان بريد إلكتروني صالح",
       "any.required": "البريد الإلكتروني مطلوب",
     }),
-  description: Joi.string().min(50).required().messages({
+  description: Joi.string().required().messages({
     "string.empty": "رسالتك مطلوبة",
-    "string.min": "يجب أن يحتوي الوصف على الأقل على {#limit} حرفًا",
     "any.required": "الوصف مطلوب",
   }),
   image: Joi.string().required().messages({
@@ -133,7 +134,7 @@ watch(
 );
 
 async function onSubmit(event) {
-  const { status } = await post("/testimonial", event.data);
+  const { status } = await post("/testimonials", event.data);
 
   if (status === "success") {
     state.name = "";
@@ -144,5 +145,4 @@ async function onSubmit(event) {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
