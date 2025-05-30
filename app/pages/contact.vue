@@ -113,7 +113,7 @@ const state = reactive({
 });
 
 async function onSubmit(event) {
-  const { status } = await post("/contact", event.data);
+  const { status } = await post("/contacts", event.data);
 
   if (status === "success") {
     state.name = undefined;
