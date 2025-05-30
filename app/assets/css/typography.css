@@ -32,7 +32,7 @@
 
 /* Paragraphs and basic text */
 .ProseMirror p {
-  @apply text-base leading-7 my-4 text-slate-200;
+  @apply text-xl leading-7 my-4 text-slate-200;
 }
 
 /* Lists */
