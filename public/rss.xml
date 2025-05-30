@@ -4,7 +4,7 @@
     <title>Abdelmomen El-shatory Blog</title>
     <link>http://127.0.0.1:1995/api/v1/blog</link>
     <description>Latest articles and insights from Abdelmomen El-shatory.</description>
-    <lastBuildDate>Sat, 24 May 2025 11:52:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 16:26:26 GMT</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>https://github.com/beingmomen/blog</generator>
     <language>en</language>
@@ -32,6 +32,24 @@
       <pubDate>Sat, 24 May 2025 11:09:35 GMT</pubDate>
       <description><![CDATA[ Recusandae Aliquid ]]></description>
       <enclosure url="beingmomen/blog/ggvkznqpvthlb0bx5jhk.png" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Enim sed saepe at fu ]]></title>
+      <link>http://127.0.0.1:1995/api/v1/blog/enim-sed-saepe-at-fu</link>
+      <guid>http://127.0.0.1:1995/api/v1/blog/enim-sed-saepe-at-fu</guid>
+      <pubDate>Fri, 30 May 2025 15:21:03 GMT</pubDate>
+      <description><![CDATA[ Sit quaerat deserun ]]></description>
+      <enclosure url="beingmomen/blog/d3yr2sojufeftni0cxfq.jpg" length="0" type="image/png"/>
+    </item>
+
+    <item>
+      <title><![CDATA[ Perspiciatis et eni ]]></title>
+      <link>http://127.0.0.1:1995/api/v1/blog/perspiciatis-et-eni</link>
+      <guid>http://127.0.0.1:1995/api/v1/blog/perspiciatis-et-eni</guid>
+      <pubDate>Fri, 30 May 2025 15:28:26 GMT</pubDate>
+      <description><![CDATA[ Ut voluptatibus laud ]]></description>
+      <enclosure url="beingmomen/blog/zozw78nkawlsdri3bohy.jpg" length="0" type="image/png"/>
     </item>
   </channel>
 </rss>

@@ -53,10 +53,19 @@
         </UButton>
       </div>
 
+      <USeparator class="my-10" size="sm" />
+
       <div class="ProseMirror">
-        <ClientOnly>
-          <article v-html="decodeHTMLEntities(singleBlog.content)" />
-        </ClientOnly>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-9">
+            <ClientOnly>
+              <article v-html="decodeHTMLEntities(singleBlog.content)" />
+            </ClientOnly>
+          </div>
+          <div class="col-span-3 space-y-5">
+            <BlogBlogSidebar />
+          </div>
+        </div>
       </div>
     </UContainer>
   </div>
