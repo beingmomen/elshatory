@@ -68,12 +68,12 @@ const navItems = [
     sectionId: "customers",
     ariaLabel: "Navigate to Customers section",
   },
-  // {
-  //   label: "المقالات",
-  //   to: "/blog",
-  //   ariaLabel: "Navigate to blog page",
-  //   isChip: true,
-  // },
+  {
+    label: "المقالات",
+    to: "/blog",
+    ariaLabel: "Navigate to blog page",
+    isChip: true,
+  },
   {
     label: "قم بتقييمنا",
     to: "/testimonial",
