@@ -31,7 +31,7 @@
         </p>
       </div>
 
-      <div class="mt-4">
+      <div class="mt-4 flex justify-between items-center">
         <UButton
           color="neutral"
           variant="ghost"
@@ -51,6 +51,23 @@
             </div>
           </template>
         </UButton>
+
+        <!-- Blog Views Counter -->
+        <div
+          class="flex items-center gap-3 mt-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700"
+        >
+          <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+            <UIcon name="i-lucide-eye" class="w-5 h-5" />
+            <span class="text-sm font-medium">عدد المشاهدات:</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span
+              class="text-lg font-bold text-primary-600 dark:text-primary-400"
+            >
+              {{ singleBlog.uniqueViews || "0" }}
+            </span>
+          </div>
+        </div>
       </div>
 
       <USeparator class="my-10" size="sm" />
