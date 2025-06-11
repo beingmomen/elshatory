@@ -73,10 +73,133 @@
 
 <script setup>
 const route = useRoute();
+const config = useRuntimeConfig();
 
 const { fetchSingleBlog, singleBlog, breadcrumbList } = useBlog();
 
 await fetchSingleBlog(route.params.slug);
+
+// Computed values for DRY principle
+const blogTitle = computed(
+  () => singleBlog.value.title || "مقال - عبدالمؤمن الشطوري"
+);
+const blogDescription = computed(
+  () => singleBlog.value.description || "مقال من مدونة عبدالمؤمن الشطوري"
+);
+const blogImage = computed(() =>
+  singleBlog.value.image
+    ? `${config.public.cloudinary.cloudinaryUrl}${singleBlog.value.image}`
+    : `${config.public.siteUrl}/favicon.ico`
+);
+const blogUrl = computed(
+  () => `${config.public.siteUrl}/blog/${route.params.slug}`
+);
+
+// SEO Meta Tags
+useSeoMeta({
+  title: blogTitle,
+  description: blogDescription,
+  keywords: () =>
+    singleBlog.value.keywords || "مقال, برمجة, تطوير, عبدالمؤمن الشطوري",
+  author: "عبدالمؤمن الشطوري",
+
+  // Open Graph Tags
+  ogTitle: blogTitle,
+  ogDescription: blogDescription,
+  ogImage: blogImage,
+  ogUrl: blogUrl,
+  ogType: "article",
+  ogSiteName: "عبدالمؤمن الشطوري",
+  ogLocale: "ar_EG",
+
+  // Twitter Cards
+  twitterCard: "summary_large_image",
+  twitterTitle: blogTitle,
+  twitterDescription: blogDescription,
+  twitterImage: blogImage,
+  twitterSite: "@beingmomen",
+  twitterCreator: "@beingmomen",
+
+  // Article specific meta
+  articleAuthor: "عبدالمؤمن الشطوري",
+  articlePublishedTime: () => singleBlog.value.createdAt,
+  articleModifiedTime: () =>
+    singleBlog.value.updatedAt || singleBlog.value.createdAt,
+  articleSection: "تقنية",
+  articleTag: () => singleBlog.value.tag || ["برمجة", "تطوير"],
+});
+
+// Canonical URL
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: blogUrl,
+    },
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: () =>
+        JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: singleBlog.value.title,
+          description: singleBlog.value.description,
+          image: blogImage.value,
+          author: {
+            "@type": "Person",
+            name: "عبدالمؤمن الشطوري",
+            url: config.public.siteUrl,
+            sameAs: [
+              "https://github.com/beingmomen",
+              "https://twitter.com/beingmomen",
+            ],
+          },
+          publisher: {
+            "@type": "Person",
+            name: "عبدالمؤمن الشطوري",
+            url: config.public.siteUrl,
+          },
+          datePublished: singleBlog.value.createdAt,
+          dateModified:
+            singleBlog.value.updatedAt || singleBlog.value.createdAt,
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${config.public.siteUrl}/blog/${route.params.slug}`,
+          },
+        }),
+    },
+    {
+      type: "application/ld+json",
+      innerHTML: () =>
+        JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "الرئيسية",
+              item: config.public.siteUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "المقالات",
+              item: `${config.public.siteUrl}/blog`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: singleBlog.value.title,
+              item: `${config.public.siteUrl}/blog/${route.params.slug}`,
+            },
+          ],
+        }),
+    },
+  ],
+});
 
 function decodeHTMLEntities(html) {
   const textArea = document.createElement("textarea");

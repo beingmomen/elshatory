@@ -136,6 +136,7 @@ export default defineNuxtConfig({
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
+      siteUrl: process.env.BASE_URL || 'https://beingmomen.com',
       cloudinary: {
         cloudinaryUrl: process.env.CLOUDINARY_URL,
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
