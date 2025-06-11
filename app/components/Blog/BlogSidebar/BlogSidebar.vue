@@ -4,7 +4,22 @@
     <USeparator class="my-5" size="sm" />
     <BlogBlogSidebarLinks />
     <USeparator class="my-5" size="sm" type="dashed" />
-    <CommonCommonSocialPart />
+    <!-- <CommonCommonSocialPart /> -->
+    <div class="flex justify-between">
+      <SocialShare
+        v-for="network in [
+          'facebook',
+          'x',
+          'linkedin',
+          'reddit',
+          'whatsapp',
+          'telegram',
+        ]"
+        :key="network"
+        :network="network"
+        :label="false"
+      />
+    </div>
   </div>
 </template>
 

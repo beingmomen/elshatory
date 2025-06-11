@@ -88,7 +88,18 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxt/image", "@vueuse/motion/nuxt"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@vueuse/motion/nuxt",
+    "@stefanobartoletti/nuxt-social-share",
+  ],
+
+  socialShare: {
+    baseUrl: "https://beingmomen.com", // required!
+    // other optional module options
+  },
 
   icon: {
     customCollections: [
@@ -136,7 +147,7 @@ export default defineNuxtConfig({
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
-      siteUrl: process.env.BASE_URL || 'https://beingmomen.com',
+      siteUrl: process.env.BASE_URL || "https://beingmomen.com",
       cloudinary: {
         cloudinaryUrl: process.env.CLOUDINARY_URL,
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,

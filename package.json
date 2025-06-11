@@ -15,6 +15,7 @@
     "@iconify-json/lucide": "^1.2.26",
     "@iconify-json/simple-icons": "^1.2.26",
     "@nuxt/ui": "^3.1.0",
+    "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "@vueuse/motion": "^2.2.6",
     "clsx": "^2.1.1",
     "joi": "^17.13.3",
@@ -37,7 +38,7 @@
     "@tailwindcss/postcss": "4.0.7",
     "@tailwindcss/vite": "4.0.7"
   },
-  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "esbuild"
