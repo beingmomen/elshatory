@@ -122,9 +122,9 @@ export default defineNuxtConfig({
       xxl: 1536,
       "2xl": 1536,
     },
-    domains: [`${process.env.SITE_URL}`, "youtube.com", "vimeo.com"],
+    domains: ["beingmomen.com", "youtube.com", "vimeo.com"],
     alias: {
-      beingmomen: process.env.SITE_URL as string,
+      "https://beingmomen.com": "https://beingmomen.com",
       youtube: "youtube.com",
       vimeo: "vimeo.com",
     },
@@ -158,7 +158,7 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: process.env.PORT as undefined | number,
+    port: process.env.PORT,
   },
 
   compatibilityDate: "2024-11-27",
