@@ -79,6 +79,8 @@ const { fetchSingleBlog, singleBlog, breadcrumbList } = useBlog();
 
 await fetchSingleBlog(route.params.slug);
 
+provide("singleBlog", singleBlog);
+
 // Computed values for DRY principle
 const blogTitle = computed(
   () => singleBlog.value.title || "مقال - عبدالمؤمن الشطوري"
