@@ -94,11 +94,92 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/motion/nuxt",
     "@stefanobartoletti/nuxt-social-share",
+    "@nuxtjs/seo",
   ],
 
   socialShare: {
     baseUrl: process.env.SITE_URL, // required!
     // other optional module options
+  },
+
+  site: {
+    url: process.env.SITE_URL,
+    name: "عبدالمؤمن الشطوري",
+    description: "مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js",
+    defaultLocale: "ar",
+  },
+
+  seo: {
+    redirectToCanonicalSiteUrl: true,
+  },
+
+  robots: {
+    UserAgent: "*",
+    Allow: "/",
+    Disallow: ["/admin/", "/api/", "/_nuxt/"],
+    Sitemap: `${process.env.SITE_URL}/sitemap.xml`,
+    CrawlDelay: 1,
+  },
+
+  sitemap: {
+    hostname: process.env.SITE_URL,
+    gzip: true,
+    routes: async () => {
+      // Static routes
+      const staticRoutes = [
+        {
+          url: "/",
+          changefreq: "weekly",
+          priority: 1.0,
+          lastmod: new Date().toISOString(),
+        },
+        {
+          url: "/blog",
+          changefreq: "daily",
+          priority: 0.9,
+          lastmod: new Date().toISOString(),
+        },
+        {
+          url: "/projects",
+          changefreq: "weekly",
+          priority: 0.8,
+          lastmod: new Date().toISOString(),
+        },
+        {
+          url: "/contact",
+          changefreq: "monthly",
+          priority: 0.7,
+          lastmod: new Date().toISOString(),
+        },
+        {
+          url: "/testimonial",
+          changefreq: "monthly",
+          priority: 0.6,
+          lastmod: new Date().toISOString(),
+        },
+      ];
+      return staticRoutes;
+    },
+  },
+
+  schemaOrg: {
+    identity: {
+      type: "Person",
+      name: "عبدالمؤمن الشطوري",
+      alternateName: ["Abdelmomen Elshatory", "beingmomen"],
+      url: process.env.SITE_URL,
+      image: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+      sameAs: [
+        "https://github.com/beingmomen",
+        "https://linkedin.com/in/beingmomen",
+        "https://twitter.com/beingmomen",
+      ],
+      jobTitle: "Frontend Developer & MEVN Stack Specialist",
+      worksFor: {
+        type: "Organization",
+        name: "Freelancer",
+      },
+    },
   },
 
   icon: {

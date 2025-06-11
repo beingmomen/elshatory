@@ -15,6 +15,7 @@
     "@iconify-json/lucide": "^1.2.26",
     "@iconify-json/simple-icons": "^1.2.26",
     "@nuxt/ui": "^3.1.0",
+    "@nuxtjs/seo": "^3.0.3",
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "@vueuse/motion": "^2.2.6",
     "clsx": "^2.1.1",
