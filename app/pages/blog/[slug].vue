@@ -58,9 +58,7 @@
       <div class="ProseMirror">
         <div class="grid grid-cols-12 gap-6">
           <div class="col-span-9">
-            <ClientOnly>
-              <article v-html="decodeHTMLEntities(singleBlog.content)" />
-            </ClientOnly>
+            <article v-html="singleBlog.content" />
           </div>
           <div class="col-span-3 space-y-5">
             <BlogBlogSidebar />
@@ -202,12 +200,6 @@ useHead({
     },
   ],
 });
-
-function decodeHTMLEntities(html) {
-  const textArea = document.createElement("textarea");
-  textArea.innerHTML = html;
-  return textArea.value;
-}
 </script>
 
 <style lang="scss" scoped></style>
