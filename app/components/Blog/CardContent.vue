@@ -34,8 +34,8 @@
           <div class="inline-flex flex-row-reverse justify-end">
             <img
               class="rounded-full h-6 w-6 text-xs"
-              src="https://github.com/benjamincanac.png"
-              alt="test"
+              src="https://res.cloudinary.com/dyqfclwdk/image/upload/v1749667056/Global/wg9qe16lqfbgcaizbhuj.jpg"
+              :alt="`Abdelmomen Elshatory - ${blog.title}`"
             />
           </div>
         </div>
@@ -53,5 +53,4 @@ defineProps({
 });
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
