@@ -36,8 +36,9 @@
           color="neutral"
           variant="ghost"
           :avatar="{
-            src: 'https://github.com/nuxt.png',
+            src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/v1749667056/Global/wg9qe16lqfbgcaizbhuj.jpg',
             size: 'xl',
+            alt: `عبدالمؤمن الشطوري - ${singleBlog.title}`,
           }"
           to="https://github.com/beingmomen"
           target="_blank"
