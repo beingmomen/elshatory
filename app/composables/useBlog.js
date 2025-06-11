@@ -31,13 +31,9 @@ export const useBlog = () => {
   };
 
   const fetchSingleBlog = async (slug) => {
-    const { data } = await get(`/blogs`, {
-      params: {
-        slug,
-      },
-    });
+    const { data } = await get(`/blogs/slug/${slug}`);
 
-    singleBlog.value = data[0];
+    singleBlog.value = data.data;
   };
 
   return {

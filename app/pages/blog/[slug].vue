@@ -127,7 +127,7 @@ useSeoMeta({
   articleModifiedTime: () =>
     singleBlog.value.updatedAt || singleBlog.value.createdAt,
   articleSection: "تقنية",
-  articleTag: () => singleBlog.value.tag || ["برمجة", "تطوير"],
+  articleTag: () => singleBlog.value?.tags?.split(",") || ["برمجة", "تطوير"],
 });
 
 // Canonical URL
