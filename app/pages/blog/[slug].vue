@@ -7,14 +7,13 @@
         <span class="text-2xl text-primary-500 font-bold">المقال</span>
         <span class="text-gray-500 dark:text-gray-400">
           ·&nbsp;&nbsp;
-          <time>
-            {{
-              useFormatDate({
-                date: singleBlog.createdAt,
-                format: "DD MMMM YYYY",
-              })
-            }}
-          </time>
+
+          <NuxtTime
+            :datetime="singleBlog.createdAt"
+            year="numeric"
+            month="long"
+            locale="ar-Cyrl-CO"
+          />
         </span>
       </div>
 

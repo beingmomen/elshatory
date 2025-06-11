@@ -30,56 +30,8 @@
 </template>
 
 <script setup>
-const table = [
-  {
-    id: "heading-f44zvf",
-    text: "الفرق بين Declaration و initialization",
-    level: 2,
-    _id: "6831b13357ee83342edc4268",
-  },
-  {
-    id: "heading-u28tbj",
-    text: "طريقة تنفيذ الكود",
-    level: 2,
-    _id: "6831b13357ee83342edc4269",
-  },
-  {
-    id: "heading-5iwqoh",
-    text: "تأثير Hoisting على الكود",
-    level: 2,
-    _id: "6831b13357ee83342edc426a",
-  },
-  {
-    id: "heading-r0za2v",
-    text: "اولا على Variables",
-    level: 3,
-    _id: "6831b13357ee83342edc426b",
-  },
-  {
-    id: "heading-fnjmdk",
-    text: "ثانيا على Classess",
-    level: 3,
-    _id: "6831b13357ee83342edc426c",
-  },
-  {
-    id: "heading-inryru",
-    text: "ثالثا على Function",
-    level: 3,
-    _id: "6831b13357ee83342edc426d",
-  },
-  {
-    id: "heading-y8fe36",
-    text: "ملخص موضوع ال Hoisting ده:",
-    level: 2,
-    _id: "6831b13357ee83342edc426e",
-  },
-  {
-    id: "heading-gafdic",
-    text: "نصائح لكتابة كود سليم",
-    level: 2,
-    _id: "6831b13357ee83342edc426f",
-  },
-];
+const singleBlog = inject("singleBlog");
+const table = computed(() => singleBlog.value.tableOfContents);
 
 const activeHeading = ref("");
 
@@ -96,7 +48,7 @@ const scrollToHeading = (headingId) => {
 
 // Function to determine which heading is currently in view
 const updateActiveHeading = () => {
-  const headings = table
+  const headings = table.value
     .map((item) => ({
       id: item.id,
       element: document.getElementById(item.id),
