@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "canonical",
-          href: "https://beingmomen.com",
+          href: process.env.SITE_URL,
         },
       ],
       script: [
@@ -61,7 +61,7 @@ export default defineNuxtConfig({
             alternateName: ["عبدالمؤمن الشطوري", "beingmomen"],
             jobTitle: "Frontend Developer & MEVN Stack Specialist",
             description: "مطور واجهات أمامية متخصص في MEVN Stack بخبرة 3 سنوات",
-            url: "https://beingmomen.com",
+            url: process.env.SITE_URL,
             image: {
               "@type": "ImageObject",
               url: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
@@ -97,7 +97,7 @@ export default defineNuxtConfig({
   ],
 
   socialShare: {
-    baseUrl: "https://beingmomen.com", // required!
+    baseUrl: process.env.SITE_URL, // required!
     // other optional module options
   },
 
@@ -122,9 +122,9 @@ export default defineNuxtConfig({
       xxl: 1536,
       "2xl": 1536,
     },
-    domains: ["beingmomen.com", "youtube.com", "vimeo.com"],
+    domains: [`${process.env.SITE_URL}`, "youtube.com", "vimeo.com"],
     alias: {
-      "https://beingmomen.com": "https://beingmomen.com",
+      beingmomen: process.env.SITE_URL as string,
       youtube: "youtube.com",
       vimeo: "vimeo.com",
     },
@@ -147,7 +147,7 @@ export default defineNuxtConfig({
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
-      siteUrl: process.env.BASE_URL || "https://beingmomen.com",
+      siteUrl: process.env.SITE_URL,
       cloudinary: {
         cloudinaryUrl: process.env.CLOUDINARY_URL,
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
@@ -158,7 +158,7 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: process.env.PORT,
+    port: process.env.PORT as undefined | number,
   },
 
   compatibilityDate: "2024-11-27",
