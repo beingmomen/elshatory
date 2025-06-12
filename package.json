@@ -19,6 +19,7 @@
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "@vueuse/motion": "^2.2.6",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "joi": "^17.13.3",
     "nuxt": "^3.17.1"
   },
