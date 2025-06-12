@@ -125,7 +125,6 @@ export default defineNuxtConfig({
     hostname: process.env.SITE_URL,
     gzip: true,
     routes: async () => {
-      // Static routes
       const staticRoutes = [
         {
           url: "/",
