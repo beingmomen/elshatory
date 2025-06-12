@@ -44,7 +44,7 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           type: "image/webp",
-          href: `${process.env.CLOUDINARY_URL}beingmomen/xhjsrjkz4pfcsworh2mt`,
+          href: `${process.env.CLOUDINARY_URL}Global/ouw3rqzi0xym347xiyyw`,
         },
         {
           rel: "canonical",
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
             url: process.env.SITE_URL,
             image: {
               "@type": "ImageObject",
-              url: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+              url: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/Global/hzihujxexpmxa81g4dkn",
               width: "800",
               height: "600",
             },
@@ -169,7 +169,7 @@ export default defineNuxtConfig({
       alternateName: ["Abdelmomen Elshatory", "beingmomen"],
       url: process.env.SITE_URL,
       image:
-        "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+        "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/Global/hzihujxexpmxa81g4dkn",
       sameAs: [
         "https://github.com/beingmomen",
         "https://linkedin.com/in/beingmomen",

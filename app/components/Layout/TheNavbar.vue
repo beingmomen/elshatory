@@ -5,7 +5,7 @@
         <NuxtLink to="/">
           <NuxtImg
             provider="cloudinary"
-            src="beingmomen/xhjsrjkz4pfcsworh2mt"
+            src="Global/ouw3rqzi0xym347xiyyw"
             alt="beingmomen"
             class="w-40 h-20 object-contain"
             width="200"
