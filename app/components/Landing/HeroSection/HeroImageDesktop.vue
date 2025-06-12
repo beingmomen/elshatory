@@ -1,7 +1,7 @@
 <template>
   <div class="justify-center">
     <div
-      class="hero-img flex justify-center h-[323px] lg:w-[472.31px] lg:h-[510.45px] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-all duration-300"
+      class="hero-img flex justify-center w-[323px] lg:w-[472px] aspect-[323/323] lg:aspect-[472/510] rounded-[28px] border-2 border-pro-100 hover:border-pro-50 rotate-[4.29deg] hover:rotate-0 transition-transform duration-300"
     >
       <NuxtImg
         provider="cloudinary"
@@ -13,6 +13,7 @@
         width="473"
         height="511"
         sizes="(max-width: 640px) 323px, 472px"
+        loading="eager"
       />
     </div>
   </div>
