@@ -6,7 +6,7 @@ module.exports = {
       exec_mode: "cluster",
       instances: "max",
       env: {
-        NITRO_PORT: 9997,
+        PORT: 9997,
       },
     },
   ],
