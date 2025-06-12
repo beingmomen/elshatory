@@ -105,7 +105,8 @@ export default defineNuxtConfig({
   site: {
     url: process.env.SITE_URL,
     name: "عبدالمؤمن الشطوري",
-    description: "مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js",
+    description:
+      "مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js",
     defaultLocale: "ar",
   },
 
@@ -168,7 +169,8 @@ export default defineNuxtConfig({
       name: "عبدالمؤمن الشطوري",
       alternateName: ["Abdelmomen Elshatory", "beingmomen"],
       url: process.env.SITE_URL,
-      image: "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
+      image:
+        "https://res.cloudinary.com/dyqfclwdk/image/upload/v1725117794/beingmomen/fdr33lrypqxafnvpu1ql.jpg",
       sameAs: [
         "https://github.com/beingmomen",
         "https://linkedin.com/in/beingmomen",
@@ -209,7 +211,7 @@ export default defineNuxtConfig({
       youtube: "youtube.com",
       vimeo: "vimeo.com",
     },
-    // provider: "cloudinary",
+
     cloudinary: {
       baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
     },
