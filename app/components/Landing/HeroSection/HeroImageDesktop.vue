@@ -5,7 +5,7 @@
     >
       <NuxtImg
         provider="cloudinary"
-        src="beingmomen/edisxdkamb8dn3z0bhez"
+        src="Global/hzihujxexpmxa81g4dkn"
         alt="عبدالمؤمن الشطوري - Frontend Developer"
         class="w-full h-full object-cover rounded-3xl"
         format="webp"
@@ -18,8 +18,6 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

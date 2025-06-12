@@ -36,7 +36,7 @@
           color="neutral"
           variant="ghost"
           :avatar="{
-            src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/v1749667056/Global/wg9qe16lqfbgcaizbhuj.jpg',
+            src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/v1749728101/Global/hzihujxexpmxa81g4dkn.webp',
             size: 'xl',
             alt: `عبدالمؤمن الشطوري - ${singleBlog.title}`,
           }"
