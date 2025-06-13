@@ -1,7 +1,7 @@
 <template>
   <div class="px-10 xl:px-0 py-4 xl:p-0 flex justify-center">
     <div
-      class="hero-img flex justify-center w-3xs aspect-square rounded-[28px] rotate-[4.29deg] hover:rotate-0 border-2 border-pro-100 hover:border-pro-50 transition-transform duration-300"
+      class="hero-img flex justify-center w-3xs aspect-square rounded-[28px] border-2 border-pro-100 hover:border-pro-50 transition-transform duration-300"
     >
       <NuxtImg
         provider="cloudinary"
