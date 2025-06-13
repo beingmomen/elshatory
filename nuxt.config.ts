@@ -98,7 +98,7 @@ export default defineNuxtConfig({
   ],
 
   socialShare: {
-    baseUrl: process.env.SITE_URL, // required!
+    baseUrl: process.env.SITE_URL,
   },
 
   site: {
