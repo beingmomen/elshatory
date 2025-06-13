@@ -1,8 +1,7 @@
 <template>
   <div class="justify-center">
-    <!-- rotate-[4.29deg] hover:rotate-0 -->
     <div
-      class="hero-img flex justify-center w-[320px] lg:w-[450px] aspect-3/3 rounded-[28px] border-2 border-pro-100 hover:border-pro-50 transition-transform duration-300"
+      class="hero-img flex justify-center w-[320px] lg:w-[450px] aspect-square rounded-[28px] rotate-[4.29deg] hover:rotate-0 border-2 border-pro-100 hover:border-pro-50 transition-transform duration-300"
     >
       <NuxtImg
         provider="cloudinary"
