@@ -2,8 +2,17 @@
 @import "./typography.css";
 @import "@nuxt/ui";
 
+/* Global font application */
+* {
+  font-family: "Tajawal", Arial, sans-serif !important;
+}
+
+body {
+  font-family: "Tajawal", Arial, sans-serif !important;
+}
+
 @theme {
-  --font-sans: "Public Sans", sans-serif;
+  /* --font-sans: "Public Sans", sans-serif; */
   --font-sans: "Tajawal", sans-serif;
 
   --container-8xl: 97rem;

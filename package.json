@@ -14,7 +14,9 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.26",
     "@iconify-json/simple-icons": "^1.2.26",
+    "@nuxt/fonts": "0.11.4",
     "@nuxt/ui": "^3.1.0",
+    "@nuxtjs/fontaine": "0.5.0",
     "@nuxtjs/seo": "^3.0.3",
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "@vueuse/motion": "^2.2.6",

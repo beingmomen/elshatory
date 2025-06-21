@@ -50,6 +50,7 @@ export default defineNuxtConfig({
           rel: "canonical",
           href: process.env.SITE_URL,
         },
+
       ],
       script: [
         {
@@ -96,7 +97,20 @@ export default defineNuxtConfig({
     "@stefanobartoletti/nuxt-social-share",
     "@nuxtjs/seo",
     "nuxt-booster",
+    "@nuxtjs/fontaine",
+    "@nuxt/fonts",
   ],
+
+  fonts: {
+    families: [
+      {
+        name: 'Tajawal',
+        provider: 'google',
+        weights: [200, 300, 400, 500, 700, 800, 900],
+        subsets: ['arabic', 'latin']
+      }
+    ]
+  },
 
   booster: {
     detection: {
@@ -130,6 +144,8 @@ export default defineNuxtConfig({
     intersectionObserver: {
       rootMargin: "50px",
     },
+
+
 
     fontDisplay: "swap",
     preloadThreshold: 1000,
