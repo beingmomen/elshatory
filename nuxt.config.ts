@@ -99,6 +99,7 @@ export default defineNuxtConfig({
     "nuxt-booster",
     "@nuxtjs/fontaine",
     "@nuxt/fonts",
+    "nuxt-delay-hydration",
   ],
 
   fonts: {
