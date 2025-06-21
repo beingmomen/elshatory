@@ -95,7 +95,95 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@stefanobartoletti/nuxt-social-share",
     "@nuxtjs/seo",
+    "nuxt-booster",
   ],
+
+  booster: {
+    detection: {
+      performance: true,
+      browserSupport: true,
+      battery: true,
+    },
+
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 },
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200,
+      },
+    },
+
+    targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
+
+    componentAutoImport: false,
+    componentPrefix: undefined,
+
+    lazyOffset: {
+      component: "0%",
+      asset: "0%",
+      iframe: "0%",
+    },
+
+    intersectionObserver: {
+      rootMargin: "50px",
+    },
+
+    fontDisplay: "swap",
+    preloadThreshold: 1000,
+
+    crossorigin: "anonymous",
+
+    criticalCSS: {
+      inline: true,
+      minify: true,
+      defer: true,
+    },
+
+    iframe: {
+      lazyload: true,
+      vimeo: true,
+      youtube: true,
+    },
+
+    picture: {
+      densities: "x1 x2",
+      quality: 85,
+      format: {
+        webp: { quality: 85 },
+        avif: { quality: 75 },
+        jpg: { quality: 85 },
+        png: { quality: 85 },
+      },
+      screens: {
+        default: "100vw",
+        xxs: "100vw",
+        xs: "100vw",
+        sm: "100vw",
+        md: "100vw",
+        lg: "100vw",
+        xl: "100vw",
+        xxl: "100vw",
+        "2xl": "100vw",
+      },
+      provider: "cloudinary",
+      cloudinary: {
+        baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`,
+      },
+    },
+
+    optimizeSSR: true,
+
+    disableNuxtFontaine: false,
+    disableNuxtImage: false,
+
+    experimental: {
+      asyncContext: true,
+      treeshakeClientOnly: true,
+    },
+  },
 
   socialShare: {
     baseUrl: process.env.SITE_URL,
