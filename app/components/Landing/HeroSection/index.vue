@@ -11,7 +11,7 @@
             </div>
 
             <!-- Mobile Image -->
-            <LandingHeroSectionHeroImageMobile class="block lg:hidden w-full" />
+            <!-- <LandingHeroSectionHeroImageMobile class="block lg:hidden w-full" /> -->
 
             <div class="space-y-6">
               <LandingHeroSectionHeroDescription />
@@ -28,8 +28,6 @@
   </main>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
