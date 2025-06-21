@@ -11,7 +11,7 @@
             </div>
 
             <!-- Mobile Image -->
-            <!-- <LandingHeroSectionHeroImageMobile class="block lg:hidden w-full" /> -->
+            <LandingHeroSectionHeroImageMobile class="block lg:hidden w-full" />
 
             <div class="space-y-6">
               <LandingHeroSectionHeroDescription />
