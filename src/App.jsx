@@ -5,10 +5,11 @@ import ServicesSection from "./components/landing/ServicesSection";
 import TestimonialsSection from "./components/landing/TestimonialsSection";
 import ProjectsSection from "./components/landing/ProjectsSection";
 import ClientsSection from "./components/landing/ClientsSection";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
-    <div className="bg-slate-900 h-[5000px] space-y-14">
+    <div className="bg-slate-900 space-y-14">
       <Navbar />
       <HeroSection />
       <SkillsSection />
@@ -16,6 +17,7 @@ function App() {
       <TestimonialsSection />
       <ProjectsSection />
       <ClientsSection />
+      <Footer />
     </div>
   );
 }
