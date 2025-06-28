@@ -11,7 +11,7 @@ function HeroSection() {
       <div className="container mx-auto px-4 flex gap-10">
         <div className="space-y-10 flex-1">
           <Welcome />
-          <h1 className="text-6xl font-bold text-sky-400 text-center md:text-start">
+          <h1 className="text-6xl font-bold text-sky-400 text-center lg:text-start">
             عبدالمؤمن الشطوري
           </h1>
           <div className=" flex lg:hidden justify-center items-center flex-1">

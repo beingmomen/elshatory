@@ -12,7 +12,7 @@ function App() {
     <div className="bg-slate-900 space-y-14">
       <Navbar />
       <HeroSection />
-      {/* <SkillsSection /> */}
+      <SkillsSection />
       {/* <ServicesSection /> */}
       {/* <TestimonialsSection /> */}
       {/* <ProjectsSection /> */}
