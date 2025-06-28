@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <SkillsSection />
-      {/* <ServicesSection /> */}
+      <ServicesSection />
       {/* <TestimonialsSection /> */}
       {/* <ProjectsSection /> */}
       {/* <ClientsSection /> */}
