@@ -1,14 +1,14 @@
 function Footer() {
   return (
     <footer className="pb-10">
-      <div className="container mx-auto px-4 ring-1 ring-slate-600 rounded-md py-8 bg-slate-950/20 flex justify-between items-center">
-        <div className="flex gap-4 items-center">
-          <p className="text-center text-slate-400 text-2xl">&copy; 2025</p>
+      <div className="container mx-auto px-4 ring-1 ring-slate-600 rounded-md py-8 bg-slate-950/20 flex flex-col lg:flex-row gap-10 justify-between items-center">
+        <div className="flex flex-col lg:flex-row gap-4 items-center justify-center">
+          <p className="text-center text-slate-200 text-2xl">&copy; 2025</p>
           <p className="text-center text-sky-400 text-4xl font-bold">
             عبدالمؤمن الشطوري
           </p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-center">
           {social.map((social) => (
             <img className="w-9" src={social.img} alt={social.name} />
           ))}
