@@ -2,6 +2,7 @@ import Navbar from "./components/layout/Navbar";
 import HeroSection from "./components/landing/HeroSection";
 import SkillsSection from "./components/landing/SkillsSection";
 import ServicesSection from "./components/landing/ServicesSection";
+import TestimonialsSection from "./components/landing/TestimonialsSection";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <HeroSection />
       <SkillsSection />
       <ServicesSection />
+      <TestimonialsSection />
     </div>
   );
 }
