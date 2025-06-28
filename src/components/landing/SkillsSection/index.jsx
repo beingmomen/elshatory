@@ -1,10 +1,12 @@
-import OrbitingCirclesDemo from "./OrbitingCirclesDemo";
+import OrbitingCirclesMobile from "./OrbitingCirclesMobile";
+import OrbitingCirclesDesktop from "./OrbitingCirclesDesktop";
 
 function SkillsSection() {
   return (
     <section>
       <div className="container mx-auto px-4 flex gap-10 ">
-        <OrbitingCirclesDemo />
+        <OrbitingCirclesMobile />
+        <OrbitingCirclesDesktop />
       </div>
     </section>
   );

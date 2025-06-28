@@ -3,7 +3,7 @@ import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 
 function OrbitingCirclesDemo() {
   return (
-    <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative hidden  md:flex h-[600px] w-full flex-col items-center justify-center overflow-hidden">
       <OrbitingCircles>
         {firstOrbit.map((orbit) => (
           <img className="w-10" src={orbit.src} alt={orbit.alt} />
