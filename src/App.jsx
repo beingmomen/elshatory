@@ -12,12 +12,12 @@ function App() {
     <div className="bg-slate-900 space-y-14">
       <Navbar />
       <HeroSection />
-      <SkillsSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <ProjectsSection />
-      <ClientsSection />
-      <Footer />
+      {/* <SkillsSection /> */}
+      {/* <ServicesSection /> */}
+      {/* <TestimonialsSection /> */}
+      {/* <ProjectsSection /> */}
+      {/* <ClientsSection /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

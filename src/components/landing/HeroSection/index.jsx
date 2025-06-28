@@ -1,5 +1,6 @@
 import Welcome from "./Welcome";
 import DesktopImage from "./DesktopImage";
+import MobileImage from "./MobileImage";
 import Info from "./Info";
 import Social from "./Social";
 import Contact from "./Contact";
@@ -10,7 +11,12 @@ function HeroSection() {
       <div className="container mx-auto px-4 flex gap-10">
         <div className="space-y-10 flex-1">
           <Welcome />
-          <h1 className="text-6xl font-bold text-sky-400">عبدالمؤمن الشطوري</h1>
+          <h1 className="text-6xl font-bold text-sky-400 text-center md:text-start">
+            عبدالمؤمن الشطوري
+          </h1>
+          <div className=" flex lg:hidden justify-center items-center flex-1">
+            <MobileImage />
+          </div>
           <Info />
           <p class="text-xl mb-8 text-white">
             أنا لست مجرد مطور، بل شريك في نجاحك. دعنا نحول أفكارك إلى تجارب ويب
