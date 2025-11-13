@@ -5,7 +5,7 @@
     >
       <NuxtImg
         provider="cloudinary"
-        src="Global/hzihujxexpmxa81g4dkn"
+        src="beingmomen/beingmomen-01_xczmdz"
         alt="عبدالمؤمن الشطوري - Frontend Developer"
         class="w-full h-full object-cover rounded-3xl"
         format="webp"
