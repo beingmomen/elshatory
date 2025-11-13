@@ -5,7 +5,7 @@
 
       <div class="flex items-center space-x-2 mt-10">
         <span class="text-2xl text-primary-500 font-bold">المقال</span>
-        <span class="text-gray-500 dark:text-gray-400">
+        <span class="text-gray-500 dark:text-gray-200 font-bold">
           ·&nbsp;&nbsp;
 
           <NuxtTime
@@ -25,7 +25,7 @@
         </h1>
       </div>
 
-      <div class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+      <div class="mt-4 text-lg text-gray-500 dark:text-gray-300">
         <p>
           {{ singleBlog.description }}
         </p>
