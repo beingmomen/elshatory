@@ -33,6 +33,3 @@ const networks = [
 ]
 </script>
 
-<style lang="scss" scoped>
-@use "assets/scss/table-of-contents";
-</style>

@@ -29,5 +29,3 @@ const singleBlog = inject('singleBlog')
 
 const links = computed(() => singleBlog.value.links)
 </script>
-
-<style lang="scss" scoped></style>

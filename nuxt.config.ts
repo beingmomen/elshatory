@@ -1,11 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui',
-    '@vueuse/nuxt',
     'motion-v/nuxt',
     '@stefanobartoletti/nuxt-social-share',
     '@nuxtjs/seo',
@@ -22,19 +20,23 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
+          content:
+            'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
         },
         {
           name: 'keywords',
-          content: 'مطور MEVN, Nuxt.js Developer, Vue.js Expert, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, MEVN Stack, مشاريع برمجية, تقييم عملاء'
+          content:
+            'مطور MEVN, Nuxt.js Developer, Vue.js Expert, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, MEVN Stack, مشاريع برمجية, تقييم عملاء'
         },
         {
           property: 'og:title',
-          content: 'عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل'
+          content:
+            'عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل'
         },
         {
           property: 'og:description',
-          content: 'حلول برمجية مبتكرة بـ Vue.js/Nuxt.js - تصفح أعمالي واحصل على استشارة مجانية الآن'
+          content:
+            'حلول برمجية مبتكرة بـ Vue.js/Nuxt.js - تصفح أعمالي واحصل على استشارة مجانية الآن'
         },
         {
           name: 'google-site-verification',
@@ -60,7 +62,8 @@ export default defineNuxtConfig({
   site: {
     url: process.env.SITE_URL,
     name: 'عبدالمؤمن الشطوري',
-    description: 'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js',
+    description:
+      'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js',
     defaultLocale: 'ar'
   },
 
@@ -78,12 +81,6 @@ export default defineNuxtConfig({
     }
   },
 
-  devServer: {
-    port: process.env.PORT
-  },
-
-  compatibilityDate: '2024-11-01',
-
   routeRules: {
     '/': { prerender: true },
     '/about': { prerender: true },
@@ -97,10 +94,34 @@ export default defineNuxtConfig({
     '/api/blog': { swr: 600 }
   },
 
+  devServer: {
+    port: process.env.PORT
+  },
+
+  compatibilityDate: '2024-11-01',
+
   nitro: {
+    compressPublicAssets: true,
+    minify: true,
     prerender: {
       routes: ['/'],
       crawlLinks: true
+    }
+  },
+
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('@nuxt/ui')) return 'nuxt-ui'
+              if (id.includes('motion-v')) return 'motion'
+            }
+          }
+        }
+      }
     }
   },
 
@@ -118,13 +139,13 @@ export default defineNuxtConfig({
       {
         name: 'Tajawal',
         provider: 'google',
-        weights: [200, 300, 400, 500, 700, 800, 900],
+        weights: [300, 400, 500, 700],
         subsets: ['arabic', 'latin']
       },
       {
         name: 'Space Grotesk',
         provider: 'google',
-        weights: [300, 400, 500, 600, 700]
+        weights: [400, 500, 700]
       }
     ]
   },
@@ -140,7 +161,7 @@ export default defineNuxtConfig({
 
   image: {
     quality: 80,
-    format: ['webp'],
+    format: ['avif', 'webp'],
     screens: {
       'xs': 320,
       'sm': 640,
@@ -160,6 +181,15 @@ export default defineNuxtConfig({
     }
   },
 
+  ogImage: {
+    defaults: {
+      component: 'OgImageArabic',
+      width: 1200,
+      height: 630
+    },
+    fonts: ['Tajawal:700']
+  },
+
   robots: {
     groups: [
       {
@@ -176,7 +206,8 @@ export default defineNuxtConfig({
       name: 'عبدالمؤمن الشطوري',
       alternateName: ['Abdelmomen Elshatory', 'beingmomen'],
       url: process.env.SITE_URL,
-      image: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
+      image:
+        'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
       sameAs: [
         'https://github.com/beingmomen',
         'https://linkedin.com/in/beingmomen',
@@ -196,15 +227,6 @@ export default defineNuxtConfig({
 
   seo: {
     redirectToCanonicalSiteUrl: true
-  },
-
-  ogImage: {
-    defaults: {
-      component: 'OgImageArabic',
-      width: 1200,
-      height: 630
-    },
-    fonts: ['Tajawal:700']
   },
 
   sitemap: {

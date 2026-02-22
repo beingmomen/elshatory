@@ -42,5 +42,3 @@ const socialLinks = [
   }
 ]
 </script>
-
-<style lang="scss" scoped></style>

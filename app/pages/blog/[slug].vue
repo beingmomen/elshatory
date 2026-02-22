@@ -96,7 +96,7 @@ useHead({
             '@id': `${config.public.siteUrl}/blog/${route.params.slug}`
           }
         })
-    },
+    }
   ]
 })
 

@@ -99,5 +99,3 @@ const onResult = (result) => {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

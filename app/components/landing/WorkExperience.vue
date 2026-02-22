@@ -35,7 +35,10 @@ const experiences = useExperiences()
           <p class="text-sm text-dimmed self-end">
             {{ experience.startDate }} - {{ experience.endDate }}
           </p>
-          <USeparator v-if="index < experiences.length - 1" class="mt-1" />
+          <USeparator
+            v-if="index < experiences.length - 1"
+            class="mt-1"
+          />
         </Motion>
       </div>
     </template>

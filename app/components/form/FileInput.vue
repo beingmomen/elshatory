@@ -124,6 +124,3 @@ const handleLocalFile = (file) => {
   emit('update:modelValue', file)
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
