@@ -26,12 +26,12 @@ Pages → Composables → useApiRequest → $api plugin → Backend API
 
 - `app/plugins/api.ts` — Creates `$api` helper with base URL from runtimeConfig
 - `app/composables/useApiRequest.js` — Generic HTTP request wrapper with error handling
+- `app/composables/useAPI.ts` — `useFetch` wrapper with `$api` client
 - `app/composables/useLanding.js` — Landing page data (hero, skills, services, etc.)
 - `app/composables/useBlog.js` — Blog list + single blog
-- `app/composables/useServices.js` — Services data
 - `app/composables/useProjects.js` — Projects data (static)
 - `app/composables/useExperiences.js` — Work experiences data (static)
-- `app/composables/useFormatDate.js` — Date formatting utility
+- `app/composables/useBreadcrumbSchema.ts` — Breadcrumb structured data
 - `app/composables/useErrorHandler.js` — Toast-based error handling
 
 ## Component Organization
@@ -50,7 +50,7 @@ app/components/
 │   ├── Blog           # Latest 3 blogs (API)
 │   └── FAQ            # Accordion tabs (inline data)
 ├── blog/              # Blog page components
-├── animations/        # Marquee, ReviewCard, LinkPreview
+├── animations/        # Marquee, ReviewCard
 ├── common/            # Social links
 ├── form/              # File upload components
 ├── sdlc/              # SDLC English components (7)
@@ -74,6 +74,22 @@ app/components/
 | `/testimonial` | Testimonial form (Cloudinary upload) |
 | `/sdlc` | SDLC English page |
 | `/sdlc-ar` | SDLC Arabic page |
+
+## Modules
+
+- `@nuxt/ui` — UI component library (Nuxt UI 4)
+- `@nuxt/image` — Image optimization (Cloudinary provider)
+- `@nuxt/fonts` — Google Fonts (Tajawal + Space Grotesk)
+- `@nuxt/eslint` — ESLint integration
+- `motion-v/nuxt` — Animation library (replaced GSAP)
+- `@nuxtjs/seo` — SEO suite (sitemap, robots, schema.org, og-image)
+- `@stefanobartoletti/nuxt-social-share` — Social sharing
+- `@nuxtjs/fontaine` — Font fallback optimization
+
+## Utils
+
+- `app/utils/clipboard.ts` — Clipboard copy utility
+- `app/utils/links.ts` — Navigation and social links data
 
 ## Styling
 
@@ -113,5 +129,13 @@ app/components/
 
 ## Server Routes
 
-- `server/api/blog.get.js` — Proxy blog API
+- `server/api/blog.get.js` — Proxy blog API + generates RSS feed
+- `server/api/__sitemap__/urls.get.ts` — Dynamic sitemap URLs
+- `server/og-image/OgImageArabic.vue` — Arabic OG image template
 - `server/plugins/epipe-handler.ts` — EPIPE error handler
+
+## Deployment
+
+- PM2 config: `ecosystem.config.cjs`
+- Node version: `.nvmrc` (v24.13.0)
+- Route rules: Static pages prerendered, blog uses SWR caching
