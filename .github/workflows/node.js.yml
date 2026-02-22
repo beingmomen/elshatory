@@ -1,0 +1,81 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - "main" # demo branch
+      - "prod" # production branch
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "اختر البيئة للنشر"
+        required: true
+        type: choice
+        options:
+          - demo
+          - prod
+
+jobs:
+  deploy-demo:
+    runs-on: [self-hosted, demo]
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'demo')
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Create .env file for Demo
+        run: echo "${{ vars.ENV_DEMO }}" > .env
+
+      - name: Build project
+        run: pnpm run build --if-present
+
+      - run: pm2 startOrRestart ecosystem.config.cjs
+
+  deploy-prod:
+    runs-on: [self-hosted, prod]
+    if: github.ref == 'refs/heads/prod' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Create .env file for Production
+        run: echo "${{ vars.ENV_PROD }}" > .env
+
+      - name: Build project
+        run: pnpm run build --if-present
+
+      - run: pm2 startOrRestart ecosystem.config.cjs

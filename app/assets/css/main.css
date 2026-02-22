@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "./typography.css";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: "Tajawal", sans-serif;
+}
+
+:root {
+  --ui-container: var(--container-4xl);
+
+  ::selection {
+    color: #282a30;
+    background-color: #c8c8c8;
+  }
+}
+
+.dark {
+  ::selection {
+    color: #ffffff;
+    background-color: #474747;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-primary-500 to-primary-300;
+}
