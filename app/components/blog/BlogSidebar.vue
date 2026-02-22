@@ -32,4 +32,3 @@ const networks = [
   'telegram'
 ]
 </script>
-

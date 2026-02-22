@@ -95,7 +95,7 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: process.env.PORT
+    port: process.env.PORT ? Number(process.env.PORT) : undefined
   },
 
   compatibilityDate: '2024-11-01',
