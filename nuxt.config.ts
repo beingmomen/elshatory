@@ -174,10 +174,6 @@ export default defineNuxtConfig({
     domains: ['beingmomen.com'],
     cloudinary: {
       baseURL: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`
-    },
-    modifiers: {
-      effect: 'sharpen:100',
-      quality: 'auto:best'
     }
   },
 
