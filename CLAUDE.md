@@ -16,7 +16,7 @@ pnpm lint:fix     # Run ESLint with auto-fix
 - **Data**: Backend API (not Nuxt Content)
 - **Language**: Arabic RTL (dir="rtl", lang="ar")
 - **Font**: Tajawal (Arabic) + Space Grotesk (Latin)
-- **Theme**: Primary = picton, Neutral = slate
+- **Theme**: Primary = blue, Neutral = neutral
 
 ## Data Flow
 
@@ -39,20 +39,24 @@ Pages → Composables → useApiRequest → $api plugin → Backend API
 ```
 app/components/
 ├── landing/           # Landing page sections
-│   ├── HeroSection/   # Hero with typed text (8 sub-components)
-│   ├── SkillsSection  # Skills marquee slider
-│   ├── About          # About section (inline data)
-│   ├── ServicesSection # Services grid
-│   ├── WorkExperience # Work timeline (useExperiences)
-│   ├── TestimonialsSection # Review marquee
-│   ├── ProjectsSection # Project carousel
-│   ├── ClientsSection  # Client logos
-│   ├── Blog           # Latest 3 blogs (API)
-│   └── FAQ            # Accordion tabs (inline data)
+│   ├── Hero.vue       # Hero section
+│   ├── About.vue      # About section (inline data)
+│   ├── WorkExperience.vue # Work timeline (useExperiences)
+│   ├── Testimonials.vue   # Testimonials marquee
+│   ├── Blog.vue       # Latest 3 blogs (API)
+│   └── FAQ.vue        # Accordion tabs (inline data)
 ├── blog/              # Blog page components
-├── animations/        # Marquee, ReviewCard
+│   ├── BlogSidebar.vue
+│   ├── BlogSidebarLinks.vue
+│   ├── BlogSidebarSocial.vue
+│   └── BlogSidebarTableOfContents.vue
 ├── common/            # Social links
+│   ├── CommonSocialPart.vue
+│   ├── CommonSocialPartLink.vue
+│   └── SocialLink.vue
 ├── form/              # File upload components
+│   ├── FileInput.vue
+│   └── TheCLDFile.vue
 ├── sdlc/              # SDLC English components (7)
 ├── sdlc-ar/           # SDLC Arabic components (7)
 ├── AppHeader.vue      # Navigation header
@@ -93,12 +97,10 @@ app/components/
 
 ## Styling
 
-- **Tailwind v4** with `@theme` for custom colors
-- Custom picton color scale defined in `app/assets/css/main.css`
-- `.text-gradient` and `.bg-gradient-primary` utility classes
-- SDLC glassmorphism and aurora animation styles
-- Skills slider with `@keyframes scroll`
-- Typography styles in `app/assets/css/typography.css`
+- **Tailwind v4** with `@theme static` for custom colors in `app/assets/css/main.css`
+- `.text-gradient` utility class for gradient text
+- SDLC glassmorphism and aurora animation styles (scoped in SDLC components)
+- Typography styles in `app/assets/css/typography.css` (Tiptap/ProseMirror)
 
 ## RTL
 
@@ -113,6 +115,12 @@ app/components/
 - Icon format: `i-lucide-name` (not `lucide:name`)
 - UApp locale: `<UApp :locale="ar">`
 - Toast via `useToast()` with semantic colors
+
+## Key Config Files
+
+- `app/app.config.ts` — UI colors (`primary: 'blue'`, `neutral: 'neutral'`), global config, footer links
+- `app/layouts/default.vue` — Default layout with AppHeader + AppFooter
+- `nuxt.config.ts` — Modules, runtimeConfig, routeRules, SEO settings
 
 ## Environment Variables
 
