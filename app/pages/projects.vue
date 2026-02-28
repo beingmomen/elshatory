@@ -1,8 +1,7 @@
 <script setup>
-const projects = useProjects()
+const { data: projects } = await useProjects()
 
 const { global } = useAppConfig()
-const { cloudinary } = useRuntimeConfig().public
 
 useSeoMeta({
   title: 'المشاريع - عبدالمؤمن الشطوري',
@@ -48,11 +47,10 @@ useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
     >
       <div
         v-for="(project, index) in projects"
-        :key="project.title"
+        :key="project._id"
       >
         <UPageCard
           :title="project.title"
-          :description="project.description"
           :to="project.url"
           orientation="horizontal"
           variant="naked"
@@ -64,15 +62,15 @@ useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
         >
           <template #leading>
             <span class="text-sm text-muted">
-              {{ project.type }}
+              {{ project.tag }}
             </span>
           </template>
           <template #footer>
             <div class="flex flex-wrap gap-2 mb-3">
               <UBadge
-                v-for="badge in project.badges"
-                :key="badge"
-                :label="badge"
+                v-for="tag in project.tags"
+                :key="tag._id"
+                :label="tag.title"
                 color="primary"
                 variant="subtle"
                 size="xs"
@@ -91,8 +89,8 @@ useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
             </ULink>
           </template>
           <img
-            :src="`${cloudinary.cloudinaryUrl}${project.image}`"
-            :alt="project.title"
+            :src="project.image"
+            :alt="project.altText || project.title"
             class="object-cover w-full h-48 rounded-lg"
           >
         </UPageCard>
