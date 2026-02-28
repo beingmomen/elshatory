@@ -1,9 +1,6 @@
-const blogs = ref([])
 const singleBlog = ref({})
 
 export const useBlog = () => {
-  const config = useRuntimeConfig()
-  const cloudinary = config.public.cloudinary
   const route = useRoute()
   const { get } = useApiRequest()
 
@@ -20,16 +17,6 @@ export const useBlog = () => {
     }
   ])
 
-  const fetchBlogs = async () => {
-    const { data } = await useFetch('/api/blog')
-
-    const transformedBlogs = data.value.map(blog => ({
-      ...blog,
-      image: `${cloudinary.cloudinaryUrl}${blog.image}`
-    }))
-    blogs.value = transformedBlogs
-  }
-
   const fetchSingleBlog = async (slug) => {
     const { data } = await get(`/blogs/slug/${slug}`)
 
@@ -37,10 +24,8 @@ export const useBlog = () => {
   }
 
   return {
-    fetchBlogs,
     fetchSingleBlog,
     singleBlog,
-    breadcrumbList,
-    data: blogs
+    breadcrumbList
   }
 }

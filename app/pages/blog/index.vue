@@ -1,7 +1,14 @@
 <script setup>
-const { fetchBlogs, data } = useBlog()
+const { cloudinary } = useRuntimeConfig().public
 
-await fetchBlogs()
+const { data } = await useFetch('/api/blog', {
+  key: 'blogs',
+  default: () => [],
+  transform: blogs => blogs.map(blog => ({
+    ...blog,
+    image: `${cloudinary.cloudinaryUrl}${blog.image}`
+  }))
+})
 
 const posts = computed(() => {
   return (data.value || []).map(blog => ({
