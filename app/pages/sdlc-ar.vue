@@ -1,32 +1,19 @@
 <template>
-  <div
-    dir="rtl"
-    class="min-h-screen sdlc-page sdlc-ar-page"
-  >
+  <UPage dir="rtl">
     <SdlcArHero :phases="phases" />
     <SdlcArTimeline :phases="phases" />
 
-    <template
+    <SdlcArPhaseSection
       v-for="phase in phases"
       :key="phase.id"
-    >
-      <div class="border-t border-neutral-800">
-        <SdlcArPhaseSection :phase="phase" />
-      </div>
-    </template>
+      :phase="phase"
+    />
 
-    <div class="border-t border-neutral-800">
-      <SdlcArWorkflow />
-    </div>
-
-    <div class="border-t border-neutral-800">
-      <SdlcArDecisions />
-    </div>
-
-    <div class="border-t border-neutral-800">
-      <SdlcArDiagrams />
-    </div>
-  </div>
+    <SdlcArWorkflow />
+    <SdlcArTasks />
+    <SdlcArDecisions />
+    <SdlcArDiagrams />
+  </UPage>
 </template>
 
 <script setup>

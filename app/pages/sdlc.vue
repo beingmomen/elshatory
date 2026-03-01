@@ -1,32 +1,19 @@
 <template>
-  <div
-    dir="ltr"
-    class="min-h-screen sdlc-page"
-  >
+  <UPage dir="ltr">
     <SdlcHero :phases="phases" />
     <SdlcTimeline :phases="phases" />
 
-    <template
+    <SdlcPhaseSection
       v-for="phase in phases"
       :key="phase.id"
-    >
-      <div class="border-t border-neutral-800">
-        <SdlcPhaseSection :phase="phase" />
-      </div>
-    </template>
+      :phase="phase"
+    />
 
-    <div class="border-t border-neutral-800">
-      <SdlcWorkflow />
-    </div>
-
-    <div class="border-t border-neutral-800">
-      <SdlcDecisions />
-    </div>
-
-    <div class="border-t border-neutral-800">
-      <SdlcDiagrams />
-    </div>
-  </div>
+    <SdlcWorkflow />
+    <SdlcTasks />
+    <SdlcDecisions />
+    <SdlcDiagrams />
+  </UPage>
 </template>
 
 <script setup>
