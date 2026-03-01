@@ -1,14 +1,14 @@
 # عبدالمؤمن الشطوري - Abdelmomen Elshatory
 
-> مطور واجهات أمامية متخصص في MEVN Stack بخبرة أكثر من 3 سنوات في Vue.js و Nuxt.js
+> مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء
 
 ## About
-Abdelmomen Elshatory (عبدالمؤمن الشطوري) is a frontend developer specializing in the MEVN Stack (MongoDB, Express.js, Vue.js, Node.js) with 3+ years of experience building modern, high-performance web applications. Available for freelance projects.
+Abdelmomen Elshatory (عبدالمؤمن الشطوري) is a frontend engineer with 5+ years of experience building modern, high-performance web applications with a focus on user experience. Available for freelance projects.
 
 ## Skills
-- Vue.js, Nuxt.js (primary expertise)
+- Vue.js, Nuxt.js, React, TypeScript
 - Tailwind CSS, Nuxt UI
-- MongoDB, Express.js, Node.js
+- Node.js, Express.js, MongoDB
 - Cloudinary, REST APIs
 - RTL/Arabic UI development
 
@@ -36,4 +36,4 @@ Abdelmomen Elshatory (عبدالمؤمن الشطوري) is a frontend developer
 - Website: https://beingmomen.com
 
 ## Blog
-The blog covers web development topics, JavaScript, Vue.js, Nuxt.js, and software engineering best practices. Blog posts are available at https://beingmomen.com/blog
+The blog covers web development topics, JavaScript, frontend engineering, and software engineering best practices. Blog posts are available at https://beingmomen.com/blog

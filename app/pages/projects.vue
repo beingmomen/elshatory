@@ -16,8 +16,8 @@ const { global } = useAppConfig()
 useSeoMeta({
   title: 'المشاريع - عبدالمؤمن الشطوري',
   ogTitle: 'المشاريع - عبدالمؤمن الشطوري',
-  description: 'استعرض مشاريعي في تطوير الويب والتطبيقات باستخدام Vue.js و Nuxt.js',
-  ogDescription: 'استعرض مشاريعي في تطوير الويب والتطبيقات باستخدام Vue.js و Nuxt.js'
+  description: 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء',
+  ogDescription: 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء'
 })
 
 useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])

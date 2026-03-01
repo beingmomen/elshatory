@@ -40,7 +40,7 @@ defineProps<{
         maxWidth: '800px'
       }"
     >
-      {{ description || 'مطور واجهات أمامية متخصص في MEVN Stack' }}
+      {{ description || 'مهندس واجهات أمامية' }}
     </div>
     <div
       :style="{

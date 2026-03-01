@@ -5,11 +5,11 @@ const experiences = useExperiences()
 
 const page = {
   title: 'نبذة عني',
-  description: 'مطور واجهات أمامية متخصص في MEVN Stack بخبرة أكثر من 3 سنوات في Vue.js و Nuxt.js. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
+  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
   story: {
     paragraphs: [
       'بدأت شغفي بالبرمجة حين اكتشفت أن الكود يمكنه تحويل فكرة بسيطة إلى تجربة حقيقية يستخدمها آلاف الأشخاص. منذ تلك اللحظة، لم أتوقف عن التعلم والبناء.',
-      'بدأت مسيرتي كمتدرب في HamaServ عام 2020، وسرعان ما تطورت لأتولى دور مطور واجهات أمامية كامل. اليوم، أعمل في NanoSoft على تطوير أنظمة محاسبية متكاملة وتطبيقات بيانات باستخدام Vue.js و Nuxt.js.'
+      'بدأت مسيرتي كمتدرب في HamaServ عام 2020، وسرعان ما تطورت لأتولى دور مطور واجهات أمامية كامل. اليوم، أعمل في NanoSoft على تطوير أنظمة محاسبية متكاملة وتطبيقات بيانات بتقنيات حديثة.'
     ],
     quote: 'أؤمن بأن التكنولوجيا الجيدة لا تُرى — ما يُرى هو تجربة المستخدم التي تبنيها'
   },
@@ -72,7 +72,7 @@ useSeoMeta({
   twitterTitle: 'نبذة عني | عبدالمؤمن الشطوري',
   twitterDescription: page.description,
   twitterSite: '@beingmomen',
-  keywords: 'عبدالمؤمن الشطوري, مطور ويب, Vue.js, Nuxt.js, MEVN Stack, مطور واجهات أمامية'
+  keywords: 'عبدالمؤمن الشطوري, مهندس واجهات أمامية, Frontend Engineer, تطوير ويب, مطور واجهات أمامية'
 })
 
 useHead({
@@ -88,7 +88,7 @@ useHead({
         'mainEntity': {
           '@type': 'Person',
           'name': 'عبدالمؤمن الشطوري',
-          'jobTitle': 'Frontend Developer',
+          'jobTitle': 'Frontend Engineer',
           'email': 'abdelmomenelshatory@gmail.com'
         }
       })
@@ -131,7 +131,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <UBadge
-            label="مطور واجهات أمامية · MEVN Stack"
+            label="مهندس واجهات أمامية · Frontend Engineer"
             color="primary"
             variant="soft"
             size="sm"

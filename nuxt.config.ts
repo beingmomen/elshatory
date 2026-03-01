@@ -14,29 +14,29 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'عبدالمؤمن الشطوري | Frontend Developer',
+      title: 'عبدالمؤمن الشطوري | Frontend Engineer',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         {
           name: 'description',
           content:
-            'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
+            'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
         },
         {
           name: 'keywords',
           content:
-            'مطور MEVN, Nuxt.js Developer, Vue.js Expert, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, MEVN Stack, مشاريع برمجية, تقييم عملاء'
+            'مهندس واجهات أمامية, Frontend Engineer, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, مشاريع برمجية, تقييم عملاء, تطوير ويب'
         },
         {
           property: 'og:title',
           content:
-            'عبدالمؤمن الشطوري - مطور MEVN Stack | مشاريع واقعية لأكثر من +50 عميل'
+            'عبدالمؤمن الشطوري - مهندس واجهات أمامية | مشاريع واقعية لأكثر من +50 عميل'
         },
         {
           property: 'og:description',
           content:
-            'حلول برمجية مبتكرة بـ Vue.js/Nuxt.js - تصفح أعمالي واحصل على استشارة مجانية الآن'
+            'حلول برمجية مبتكرة وتجارب مستخدم استثنائية — تصفح أعمالي واحصل على استشارة مجانية الآن'
         },
         {
           name: 'google-site-verification',
@@ -63,7 +63,7 @@ export default defineNuxtConfig({
     url: process.env.SITE_URL,
     name: 'عبدالمؤمن الشطوري',
     description:
-      'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js',
+      'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
     defaultLocale: 'ar'
   },
 
@@ -211,7 +211,7 @@ export default defineNuxtConfig({
         'https://www.facebook.com/beingmomen/',
         'https://www.instagram.com/beingmomen/'
       ],
-      jobTitle: 'مطور واجهات أمامية ومتخصص في MEVN Stack',
+      jobTitle: 'مهندس واجهات أمامية',
       worksFor: {
         type: 'Organization',
         name: 'عمل حر'

@@ -3,7 +3,7 @@ const { footer, global } = useAppConfig()
 
 const hero = {
   title: 'عبدالمؤمن الشطوري',
-  description: 'مطور واجهات أمامية متخصص في MEVN Stack بخبرة أكثر من 3 سنوات في Vue.js و Nuxt.js. أبني تطبيقات ويب حديثة وعالية الأداء.',
+  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
   links: [
     { label: 'تواصل معي', to: '/contact', color: 'primary', size: 'md' }
   ],

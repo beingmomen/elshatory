@@ -146,7 +146,7 @@ useBreadcrumbSchema([
               variant="outline"
               class="justify-center items-center text-center"
               name="عبدالمؤمن الشطوري"
-              description="مطور واجهات أمامية"
+              description="مهندس واجهات أمامية"
               :avatar="{
                 src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
                 alt: 'عبدالمؤمن الشطوري'
