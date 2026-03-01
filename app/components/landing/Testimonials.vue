@@ -1,5 +1,5 @@
 <script setup>
-const { data } = await useLanding()
+const { data } = useLanding()
 const config = useRuntimeConfig()
 
 const testimonials = computed(() => {
@@ -10,7 +10,7 @@ const testimonials = computed(() => {
       name: item.name,
       description: item.email,
       avatar: {
-        src: item.image ? `${config.public.cloudinary.cloudinaryUrl}${item.image}` : undefined,
+        src: item.image?.trim() ? `${config.public.cloudinary.cloudinaryUrl}${item.image}` : undefined,
         alt: item.name
       }
     }

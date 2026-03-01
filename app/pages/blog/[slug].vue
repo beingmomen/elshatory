@@ -2,9 +2,7 @@
 const route = useRoute()
 const config = useRuntimeConfig()
 
-const { fetchSingleBlog, singleBlog } = useBlog()
-
-await fetchSingleBlog(route.params.slug)
+const { singleBlog, breadcrumbList } = useBlog()
 
 const blogTitle = computed(
   () => singleBlog.value.title || 'مقال - عبدالمؤمن الشطوري'
@@ -102,14 +100,14 @@ useHead({
 
 useBreadcrumbSchema([
   { name: 'المدونة', path: '/blog' },
-  { name: singleBlog.value.title, path: `/blog/${route.params.slug}` }
+  { name: singleBlog.value?.title || route.params.slug, path: `/blog/${route.params.slug}` }
 ])
 </script>
 
 <template>
   <UMain class="mt-20 px-2">
     <UContainer class="relative min-h-screen">
-      <UPage v-if="singleBlog.title">
+      <UPage v-if="singleBlog?.title">
         <ULink
           to="/blog"
           class="text-sm flex items-center gap-1"

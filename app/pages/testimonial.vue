@@ -2,25 +2,44 @@
 import Joi from 'joi'
 
 const config = useRuntimeConfig()
+const { global } = useAppConfig()
 const { loading, post } = useApiRequest()
+const { data: landingData } = await useLanding()
+
+const submitted = ref(false)
+const form = ref(null)
+
+const testimonials = computed(() => {
+  const items = landingData.value?.testimonials || []
+  return items.map(item => ({
+    quote: item.description,
+    author: {
+      name: item.name,
+      description: item.email,
+      avatar: {
+        src: item.image?.trim() ? `${config.public.cloudinary.cloudinaryUrl}${item.image}` : undefined,
+        alt: item.name
+      }
+    }
+  }))
+})
 
 useSeoMeta({
   title: 'آراء العملاء | عبدالمؤمن الشطوري',
-  description: 'شارك تجربتك معنا. اقرأ آراء وتجارب العملاء السابقين مع عبدالمؤمن الشطوري.',
+  description: 'شارك تقييمك واطلع على تجارب العملاء السابقين مع عبدالمؤمن الشطوري. رأيك يساعدنا على التطور والنمو.',
   ogTitle: 'آراء العملاء | عبدالمؤمن الشطوري',
-  ogDescription: 'شارك تجربتك مع عبدالمؤمن الشطوري واقرأ آراء العملاء السابقين.',
+  ogDescription: 'شارك تقييمك واطلع على تجارب العملاء السابقين مع عبدالمؤمن الشطوري. رأيك يساعدنا على التطور والنمو.',
   ogUrl: `${config.public.siteUrl}/testimonial`,
   ogType: 'website',
   ogLocale: 'ar_EG',
   twitterCard: 'summary_large_image',
   twitterTitle: 'آراء العملاء | عبدالمؤمن الشطوري',
-  twitterDescription: 'شارك تجربتك معنا واقرأ آراء العملاء.',
+  twitterDescription: 'شارك تقييمك واطلع على آراء العملاء السابقين. رأيك يساعدنا على التطور.',
   twitterSite: '@beingmomen',
   keywords: 'آراء العملاء, تقييمات, عبدالمؤمن الشطوري, تجارب العملاء'
 })
 
 useHead({
-  titleTemplate: 'قم بتقييمنا - %s',
   script: [
     {
       type: 'application/ld+json',
@@ -36,8 +55,6 @@ useHead({
 })
 
 useBreadcrumbSchema([{ name: 'آراء العملاء', path: '/testimonial' }])
-
-const form = ref(null)
 
 const schema = Joi.object({
   name: Joi.string().required().messages({
@@ -72,7 +89,7 @@ const state = reactive({
 watch(
   () => state.image,
   () => {
-    form.value.clear()
+    form.value?.clear()
   }
 )
 
@@ -80,87 +97,305 @@ async function onSubmit(event) {
   const { status } = await post('/testimonials', event.data)
 
   if (status === 'success') {
-    state.name = ''
-    state.email = ''
-    state.description = ''
-    state.image = ''
+    submitted.value = true
   }
+}
+
+function resetForm() {
+  state.name = ''
+  state.email = ''
+  state.description = ''
+  state.image = ''
+  submitted.value = false
+  nextTick(() => form.value?.clear())
 }
 </script>
 
 <template>
   <UPage>
+    <!-- Section 1: Animated Hero -->
     <UPageHero
-      title="نحن هنا نهتم برأيك"
-      description="نرجو منك ابداء رأيك فى عملنا"
       :ui="{
-        title: '!mx-0',
-        description: '!mx-0 text-gradient font-bold'
+        headline: 'flex items-center justify-center',
+        title: 'text-center',
+        description: 'text-center text-gradient font-bold',
+        links: 'mt-4 flex-col justify-center items-center'
       }"
-    />
-    <UPageSection :ui="{ container: '!pt-0' }">
-      <UForm
-        ref="form"
-        :schema="schema"
-        :state="state"
-        class="space-y-4 mx-auto w-full md:w-2/3 lg:w-1/2"
-        @submit="onSubmit"
+    >
+      <template #headline>
+        <Motion
+          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
+          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :transition="{ duration: 0.6, delay: 0.1 }"
+        >
+          <UColorModeAvatar
+            class="size-18 ring ring-default ring-offset-3 ring-offset-bg"
+            :light="global.picture?.light"
+            :dark="global.picture?.dark"
+            :alt="global.picture?.alt"
+          />
+        </Motion>
+      </template>
+
+      <template #title>
+        <Motion
+          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
+          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :transition="{ duration: 0.6, delay: 0.2 }"
+        >
+          رأيك يصنع الفارق
+        </Motion>
+      </template>
+
+      <template #description>
+        <Motion
+          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
+          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :transition="{ duration: 0.6, delay: 0.4 }"
+        >
+          تجربتك تلهمنا وتقييمك يساعدنا على تقديم الأفضل دائماً
+        </Motion>
+      </template>
+
+      <template #links>
+        <Motion
+          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
+          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :transition="{ duration: 0.6, delay: 0.6 }"
+        >
+          <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-muted">
+            <span class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-users"
+                class="size-5 text-primary"
+              />
+              عملاء سعداء
+            </span>
+            <span class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-star"
+                class="size-5 text-primary"
+              />
+              تقييم ممتاز
+            </span>
+            <span class="flex items-center gap-2">
+              <UIcon
+                name="i-lucide-shield-check"
+                class="size-5 text-primary"
+              />
+              موثوق ومعتمد
+            </span>
+          </div>
+        </Motion>
+      </template>
+    </UPageHero>
+
+    <!-- Section 2: Testimonials Carousel -->
+    <UPageSection
+      v-if="testimonials.length"
+      title="ماذا قال عملاؤنا"
+      description="تجارب حقيقية من عملاء وثقوا بنا وشاركونا آراءهم"
+      :ui="{
+        container: 'px-0 !pt-0',
+        title: 'text-xl sm:text-xl lg:text-2xl font-medium',
+        description: 'mt-2 text-sm text-muted'
+      }"
+    >
+      <Motion
+        :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ delay: 0.2 }"
+        :in-view-options="{ once: true }"
       >
-        <UFormField
-          label="الاسم"
-          name="name"
-          size="lg"
-          required
+        <UCarousel
+          v-slot="{ item }"
+          :items="testimonials"
+          :autoplay="{ delay: 4000 }"
+          loop
+          dots
+          :ui="{
+            viewport: '-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 max-w-(--ui-container)'
+          }"
         >
-          <UInput
-            v-model="state.name"
-            class="w-full"
+          <UPageCTA
+            :description="item.quote"
+            variant="naked"
+            class="rounded-none"
+            :ui="{
+              container: 'sm:py-12 lg:py-12 sm:gap-8',
+              description: '!text-base text-balance before:content-[open-quote] before:text-5xl lg:before:text-7xl before:inline-block before:text-dimmed before:absolute before:-mr-6 lg:before:-mr-10 before:-mt-2 lg:before:-mt-4 after:content-[close-quote] after:text-5xl lg:after:text-7xl after:inline-block after:text-dimmed after:absolute after:mt-1 lg:after:mt-0 after:mr-1 lg:after:mr-2'
+            }"
+          >
+            <UUser
+              v-bind="item.author"
+              size="xl"
+              class="justify-center"
+            />
+          </UPageCTA>
+        </UCarousel>
+      </Motion>
+    </UPageSection>
+
+    <!-- Section 3: Form / Success -->
+    <UPageSection :ui="{ container: '!pt-0' }">
+      <!-- Success State -->
+      <Motion
+        v-if="submitted"
+        :initial="{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }"
+        :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+        :transition="{ duration: 0.5, delay: 0.1 }"
+      >
+        <div class="mx-auto w-full md:w-2/3 lg:w-1/2 bg-elevated/50 rounded-xl p-8 sm:p-12 text-center space-y-6">
+          <UIcon
+            name="i-lucide-circle-check"
+            class="size-16 text-success mx-auto"
           />
-        </UFormField>
+          <h2 class="text-2xl sm:text-3xl font-bold text-highlighted">
+            تم الإرسال بنجاح!
+          </h2>
+          <p class="text-muted text-base">
+            شكراً لثقتك ولمشاركتنا تجربتك. تقييمك يساعدنا على التطور والنمو.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <UButton
+              label="إرسال تقييم آخر"
+              icon="i-lucide-refresh-cw"
+              color="primary"
+              @click="resetForm"
+            />
+            <UButton
+              label="العودة للرئيسية"
+              icon="i-lucide-home"
+              color="neutral"
+              variant="outline"
+              to="/"
+            />
+          </div>
+        </div>
+      </Motion>
 
-        <UFormField
-          label="البريد الإلكتروني"
-          name="email"
-          size="lg"
-          required
-        >
-          <UInput
-            v-model="state.email"
-            class="w-full"
-          />
-        </UFormField>
+      <!-- Form -->
+      <Motion
+        v-else
+        :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ delay: 0.2 }"
+        :in-view-options="{ once: true }"
+      >
+        <div class="mx-auto w-full md:w-3/4 lg:w-2/3 bg-elevated/50 rounded-xl p-6 sm:p-8 lg:p-10">
+          <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-1">
+            أضف تقييمك
+          </p>
+          <h2 class="text-xl sm:text-2xl font-bold text-highlighted mb-6">
+            شاركنا تجربتك
+          </h2>
 
-        <UFormField
-          label="رأيك يهمنا"
-          name="description"
-          size="lg"
-          required
-        >
-          <UTextarea
-            v-model="state.description"
-            class="w-full"
-            :rows="6"
-          />
-        </UFormField>
+          <UForm
+            ref="form"
+            :schema="schema"
+            :state="state"
+            class="space-y-5"
+            @submit="onSubmit"
+          >
+            <Motion
+              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+              :transition="{ delay: 0.3 }"
+              :in-view-options="{ once: true }"
+            >
+              <UFormField
+                label="الاسم الكريم"
+                name="name"
+                size="lg"
+                required
+              >
+                <UInput
+                  v-model="state.name"
+                  icon="i-lucide-user"
+                  placeholder="اسمك الكريم"
+                  class="w-full"
+                />
+              </UFormField>
+            </Motion>
 
-        <FormFileInput
-          v-model="state.image"
-          label="الصورة"
-          name="image"
-          size="xl"
-          input-size="lg"
-          folder="testimonial"
-        />
+            <Motion
+              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+              :transition="{ delay: 0.4 }"
+              :in-view-options="{ once: true }"
+            >
+              <UFormField
+                label="البريد الإلكتروني"
+                name="email"
+                size="lg"
+                required
+              >
+                <UInput
+                  v-model="state.email"
+                  icon="i-lucide-mail"
+                  placeholder="بريدك الإلكتروني"
+                  class="w-full"
+                  :ui="{ base: 'text-left' }"
+                />
+              </UFormField>
+            </Motion>
 
-        <UButton
-          type="submit"
-          block
-          class="font-black text-xl cursor-pointer"
-          :loading="loading"
-        >
-          ارسال
-        </UButton>
-      </UForm>
+            <Motion
+              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+              :transition="{ delay: 0.5 }"
+              :in-view-options="{ once: true }"
+            >
+              <UFormField
+                label="رأيك وتجربتك"
+                name="description"
+                size="lg"
+                required
+                hint="كلما زادت التفاصيل كان أفضل"
+              >
+                <UTextarea
+                  v-model="state.description"
+                  placeholder="أخبرنا عن تجربتك معنا... ما الذي أعجبك وما الذي يمكن تحسينه؟"
+                  class="w-full"
+                  :rows="6"
+                />
+              </UFormField>
+            </Motion>
+
+            <Motion
+              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+              :transition="{ delay: 0.6 }"
+              :in-view-options="{ once: true }"
+            >
+              <FormFileInput
+                v-model="state.image"
+                label="الصورة الشخصية"
+                name="image"
+                hint="صورتك تضيف مصداقية لتقييمك"
+                folder="testimonial"
+              />
+            </Motion>
+
+            <Motion
+              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+              :transition="{ delay: 0.7 }"
+              :in-view-options="{ once: true }"
+            >
+              <UButton
+                type="submit"
+                block
+                icon="i-lucide-send"
+                class="font-black text-xl cursor-pointer"
+                :loading="loading"
+              >
+                إرسال التقييم
+              </UButton>
+            </Motion>
+          </UForm>
+        </div>
+      </Motion>
     </UPageSection>
   </UPage>
 </template>

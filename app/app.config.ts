@@ -6,7 +6,7 @@ export default defineAppConfig({
       alt: 'عبدالمؤمن الشطوري'
     },
     meetingLink: 'https://beingmomen.com/contact',
-    email: 'beingmomen@gmail.com',
+    email: 'abdelmomenelshatory@gmail.com',
     available: true
   },
   ui: {

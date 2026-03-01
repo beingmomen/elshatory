@@ -1,5 +1,15 @@
 <script setup>
-const { data: projects } = await useProjects()
+const { cloudinary } = useRuntimeConfig().public
+
+const { data: projects } = await useAPI('/projects', {
+  query: { isActive: true },
+  transform: (response) => {
+    return (response.data || []).map(project => ({
+      ...project,
+      image: `${cloudinary.cloudinaryUrl}${project.image}`
+    }))
+  }
+})
 
 const { global } = useAppConfig()
 

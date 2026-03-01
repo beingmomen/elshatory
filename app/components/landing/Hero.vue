@@ -43,7 +43,7 @@ const hero = {
         }"
       >
         <UColorModeAvatar
-          class="size-18 ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+          class="size-18 ring ring-default ring-offset-3 ring-offset-bg"
           :light="global.picture?.light"
           :dark="global.picture?.dark"
           :alt="global.picture?.alt"
@@ -164,7 +164,7 @@ const hero = {
       </div>
     </template>
 
-    <UMarquee
+    <!-- <UMarquee
       pause-on-hover
       class="py-2 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:40s]"
     >
@@ -195,6 +195,6 @@ const hero = {
           :alt="img.alt"
         >
       </Motion>
-    </UMarquee>
+    </UMarquee> -->
   </UPageHero>
 </template>

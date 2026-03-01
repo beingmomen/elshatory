@@ -26,7 +26,7 @@ const latestBlogs = computed(() => {
     title="آخر المقالات"
     description="اطلع على أحدث المقالات والمواضيع التقنية"
     :ui="{
-      container: 'px-0 !pt-0 sm:gap-6 lg:gap-8',
+      container: 'px-0 !pt-4 sm:gap-4 lg:gap-6',
       title: 'text-right text-xl sm:text-xl lg:text-2xl font-medium',
       description: 'text-right mt-2 text-sm sm:text-md lg:text-sm text-muted'
     }"
@@ -43,7 +43,7 @@ const latestBlogs = computed(() => {
         v-bind="post"
         :to="post.path"
         :ui="{
-          root: 'group relative lg:items-start lg:flex ring-0 hover:ring-0',
+          root: 'group relative lg:items-start lg:flex rounded-xl border border-default/60 bg-elevated/30 p-4 sm:p-5 hover:bg-elevated/60 transition-colors duration-300',
           body: '!px-0',
           header: 'hidden'
         }"

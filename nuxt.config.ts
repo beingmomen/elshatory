@@ -54,7 +54,7 @@ export default defineNuxtConfig({
         }
       ]
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: false
   },
 
   css: ['~/assets/css/main.css'],
@@ -88,7 +88,7 @@ export default defineNuxtConfig({
     '/sdlc': { prerender: true },
     '/sdlc-ar': { prerender: true },
     '/blog': { swr: 600 },
-    '/blog/**': { swr: 3600 },
+    '/blog/**': { ssr: true },
     '/contact': { ssr: true },
     '/testimonial': { ssr: true },
     '/api/blog': { swr: 600 }
@@ -216,7 +216,7 @@ export default defineNuxtConfig({
         type: 'Organization',
         name: 'عمل حر'
       },
-      email: 'beingmomen@gmail.com',
+      email: 'abdelmomenelshatory@gmail.com',
       knowsLanguage: ['ar', 'en']
     }
   },

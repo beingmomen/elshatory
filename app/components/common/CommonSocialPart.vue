@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-4 flex-wrap justify-center">
-    <CommonCommonSocialPartLink
+    <CommonSocialPartLink
       v-for="link in socialLinks"
       :key="link.url"
       v-bind="link"

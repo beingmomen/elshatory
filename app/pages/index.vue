@@ -1,7 +1,4 @@
 <script setup>
-const { fetchLandingData } = await useLanding()
-await fetchLandingData()
-
 useSeoMeta({
   title: 'عبدالمؤمن الشطوري | مطور واجهات أمامية - MEVN Stack',
   description: 'مطور واجهات أمامية متخصص في MEVN Stack | خبرة 3+ سنوات في Vue.js و Nuxt.js. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.',
@@ -28,6 +25,7 @@ useSeoMeta({
       <LandingWorkExperience />
     </UPageSection>
 
+    <LandingStats />
     <LandingBlog />
     <LandingTestimonials />
     <LandingFAQ />
