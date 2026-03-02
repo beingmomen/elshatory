@@ -27,3 +27,4 @@ logs
 .history
 .claude
 .mcp.json
+public/rss.xml
