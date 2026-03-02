@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui',
+    '@nuxt/content',
     'motion-v/nuxt',
     '@stefanobartoletti/nuxt-social-share',
     '@nuxtjs/seo',
@@ -91,7 +92,9 @@ export default defineNuxtConfig({
     '/blog/**': { ssr: true },
     '/contact': { ssr: true },
     '/testimonial': { ssr: true },
-    '/api/blog': { swr: 600 }
+    '/api/blog': { swr: 600 },
+    '/mcp': { ssr: true },
+    '/mcp/**': { ssr: true }
   },
 
   devServer: {

@@ -12,7 +12,8 @@ const quickLinks = [
 
 const guides = [
   { label: 'SDLC Framework', to: '/sdlc' },
-  { label: 'دورة حياة تطوير البرمجيات', to: '/sdlc-ar' }
+  { label: 'دورة حياة تطوير البرمجيات', to: '/sdlc-ar' },
+  { label: 'MCP Servers', to: '/mcp' }
 ]
 </script>
 

@@ -10,9 +10,7 @@
     />
 
     <SdlcWorkflow />
-    <SdlcTasks />
     <SdlcDecisions />
-    <SdlcDiagrams />
   </UPage>
 </template>
 
