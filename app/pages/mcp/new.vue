@@ -21,29 +21,23 @@ const schema = Joi.object({
     'string.empty': 'طريقة التثبيت مطلوبة',
     'any.required': 'طريقة التثبيت مطلوبة'
   }),
-  mcpKey: Joi.string().required().messages({
-    'string.empty': 'مفتاح MCP مطلوب',
-    'any.required': 'مفتاح MCP مطلوب'
-  }),
+  mcpKey: Joi.string().allow('', null).optional(),
   mcpConfigJson: Joi.string().required().messages({
     'string.empty': 'إعداد MCP مطلوب',
     'any.required': 'إعداد MCP مطلوب'
   }),
-  installationSteps: Joi.string().required().messages({
-    'string.empty': 'خطوات التثبيت مطلوبة',
-    'any.required': 'خطوات التثبيت مطلوبة'
-  }),
-  notes: Joi.string().allow('').optional()
+  installCommand: Joi.string().allow('', null).optional(),
+  notes: Joi.string().allow('', null).optional()
 })
 
 const state = reactive({
-  name: undefined as string | undefined,
-  category: undefined as string | undefined,
-  installationMethod: undefined as string | undefined,
-  mcpKey: undefined as string | undefined,
-  mcpConfigJson: undefined as string | undefined,
-  installationSteps: undefined as string | undefined,
-  notes: undefined as string | undefined
+  name: '',
+  category: '',
+  installationMethod: '',
+  mcpKey: '',
+  mcpConfigJson: '',
+  installCommand: '',
+  notes: ''
 })
 
 const loading = ref(false)
@@ -66,14 +60,15 @@ const methodOptions = [
   { label: 'أخرى', value: 'other' }
 ]
 
-async function onSubmit(event: any) {
+async function onSubmit() {
   loading.value = true
 
   try {
-    // Validate JSON before submitting
-    if (event.data.mcpConfigJson) {
+    // Validate JSON client-side
+    if (state.mcpConfigJson) {
       try {
-        JSON.parse(event.data.mcpConfigJson)
+        const clean = state.mcpConfigJson.replace(/,\s*([}\]])/g, '$1')
+        JSON.parse(clean)
       } catch {
         toast.add({
           title: 'خطأ',
@@ -88,7 +83,15 @@ async function onSubmit(event: any) {
 
     const result = await $fetch('/api/mcp', {
       method: 'POST',
-      body: event.data
+      body: {
+        name: state.name,
+        category: state.category,
+        installationMethod: state.installationMethod,
+        mcpKey: state.mcpKey,
+        mcpConfigJson: state.mcpConfigJson,
+        installCommand: state.installCommand,
+        notes: state.notes
+      }
     })
 
     createdPath.value = (result as any).path
@@ -112,13 +115,13 @@ async function onSubmit(event: any) {
 }
 
 function resetForm() {
-  state.name = undefined
-  state.category = undefined
-  state.installationMethod = undefined
-  state.mcpKey = undefined
-  state.mcpConfigJson = undefined
-  state.installationSteps = undefined
-  state.notes = undefined
+  state.name = ''
+  state.category = ''
+  state.installationMethod = ''
+  state.mcpKey = ''
+  state.mcpConfigJson = ''
+  state.installCommand = ''
+  state.notes = ''
   submitted.value = false
   createdPath.value = ''
 }
@@ -248,8 +251,7 @@ function resetForm() {
               label="MCP Key"
               name="mcpKey"
               size="lg"
-              required
-              hint="المعرّف في ملف .mcp.json"
+              hint="اختياري — يُستخرج تلقائياً من JSON"
             >
               <UInput
                 v-model="state.mcpKey"
@@ -265,31 +267,31 @@ function resetForm() {
               name="mcpConfigJson"
               size="lg"
               required
-              hint="إعداد الخادم بصيغة JSON"
+              hint="الصق من ملف .mcp.json"
             >
               <UTextarea
                 v-model="state.mcpConfigJson"
-                :placeholder="`{\n  \&quot;command\&quot;: \&quot;npx\&quot;,\n  \&quot;args\&quot;: [\&quot;-y\&quot;, \&quot;@example/mcp-server\&quot;]\n}`"
-                class="w-full font-mono"
+                placeholder="{&quot;command&quot;: &quot;npx&quot;, &quot;args&quot;: [&quot;-y&quot;, &quot;@example/mcp&quot;]}"
+                class="w-full font-mono text-sm"
                 :rows="6"
                 dir="ltr"
               />
             </UFormField>
 
-            <USeparator label="التوثيق" />
+            <USeparator label="معلومات إضافية" />
 
             <UFormField
-              label="خطوات التثبيت"
-              name="installationSteps"
+              label="أمر التثبيت"
+              name="installCommand"
               size="lg"
-              required
-              hint="يدعم Markdown"
+              hint="اختياري — مثل: npx install-package --yes"
             >
-              <UTextarea
-                v-model="state.installationSteps"
-                placeholder="الخطوة 1: تثبيت الحزمة..."
-                class="w-full"
-                :rows="8"
+              <UInput
+                v-model="state.installCommand"
+                leading-icon="i-lucide-terminal"
+                placeholder="npx claude-code-templates@latest --mcp=example --yes"
+                class="w-full font-mono text-sm"
+                dir="ltr"
               />
             </UFormField>
 
@@ -297,11 +299,11 @@ function resetForm() {
               label="ملاحظات"
               name="notes"
               size="lg"
-              hint="اختياري"
+              hint="اختياري — كل سطر يتحول إلى نقطة"
             >
               <UTextarea
                 v-model="state.notes"
-                placeholder="أي ملاحظات إضافية..."
+                placeholder="يوفر وصولاً لقراءة وكتابة الملفات&#10;يعمل مع المستودعات العامة والخاصة"
                 class="w-full"
                 :rows="3"
               />

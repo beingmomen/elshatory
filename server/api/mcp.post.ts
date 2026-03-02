@@ -11,19 +11,25 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, '')
 }
 
-function toYamlValue(value: unknown, indent: number): string {
+function jsonToYaml(obj: Record<string, any>, indent = 4): string {
   const pad = ' '.repeat(indent)
-  if (typeof value === 'string') return `"${value}"`
-  if (typeof value === 'number' || typeof value === 'boolean') return String(value)
-  if (Array.isArray(value)) {
-    return value.map(v => `\n${pad}- ${typeof v === 'string' ? `"${v}"` : toYamlValue(v, indent + 2)}`).join('')
+  const lines: string[] = []
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (typeof value === 'string') {
+      lines.push(`${pad}${key}: "${value}"`)
+    } else if (typeof value === 'number' || typeof value === 'boolean') {
+      lines.push(`${pad}${key}: ${value}`)
+    } else if (Array.isArray(value)) {
+      const items = value.map(v => typeof v === 'string' ? `"${v}"` : String(v))
+      lines.push(`${pad}${key}: [${items.join(', ')}]`)
+    } else if (typeof value === 'object' && value !== null) {
+      lines.push(`${pad}${key}:`)
+      lines.push(jsonToYaml(value, indent + 2))
+    }
   }
-  if (typeof value === 'object' && value !== null) {
-    return Object.entries(value)
-      .map(([k, v]) => `\n${pad}${k}: ${toYamlValue(v, indent + 2)}`)
-      .join('')
-  }
-  return String(value)
+
+  return lines.join('\n')
 }
 
 export default defineEventHandler(async (event) => {
@@ -35,13 +41,12 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody(event)
+  const { name, category, installationMethod, installCommand, notes, mcpKey, mcpConfigJson } = body
 
-  const { name, category, installationMethod, installationSteps, notes, mcpKey, mcpConfigJson } = body
-
-  if (!name || !category || !installationMethod || !installationSteps) {
+  if (!name || !category || !installationMethod || !mcpConfigJson) {
     throw createError({
       statusCode: 400,
-      message: 'Missing required fields: name, category, installationMethod, installationSteps'
+      message: 'Missing required fields: name, category, installationMethod, mcpConfigJson'
     })
   }
 
@@ -49,7 +54,6 @@ export default defineEventHandler(async (event) => {
   const dir = resolve(process.cwd(), 'content', 'mcp')
   const filePath = resolve(dir, `${slug}.md`)
 
-  // Ensure directory exists
   await mkdir(dir, { recursive: true })
 
   // Check for duplicate
@@ -61,46 +65,80 @@ export default defineEventHandler(async (event) => {
     })
   } catch (err: any) {
     if (err.statusCode === 409) throw err
-    // File doesn't exist — proceed
   }
 
   const today = new Date().toISOString().split('T')[0]
 
-  // Build mcp_config YAML block
-  let mcpConfigBlock = ''
-  if (mcpKey && mcpConfigJson) {
-    try {
-      const serverConfig = JSON.parse(mcpConfigJson)
-      mcpConfigBlock = `mcp_config:
-  key: "${mcpKey}"
-  server:${toYamlValue(serverConfig, 4)}
-`
-    } catch {
-      throw createError({
-        statusCode: 400,
-        message: 'mcpConfigJson must be valid JSON'
-      })
+  // Parse and normalize the MCP config JSON
+  const cleanJson = mcpConfigJson.replace(/,\s*([}\]])/g, '$1')
+  let serverConfig: Record<string, any>
+  let resolvedKey = mcpKey || ''
+
+  try {
+    let parsed = JSON.parse(cleanJson)
+
+    // Auto-unwrap {"mcpServers": {...}}
+    if (parsed.mcpServers && typeof parsed.mcpServers === 'object') {
+      parsed = parsed.mcpServers
     }
+
+    // Auto-unwrap {"serverName": {"command":...}}
+    const keys = Object.keys(parsed)
+    const firstKey = keys[0] as string
+    if (keys.length === 1 && firstKey && typeof parsed[firstKey] === 'object' && parsed[firstKey].command) {
+      if (!resolvedKey) resolvedKey = firstKey
+      parsed = parsed[firstKey]
+    }
+
+    if (!resolvedKey) resolvedKey = name
+    serverConfig = parsed
+  } catch {
+    throw createError({
+      statusCode: 400,
+      message: 'mcpConfigJson must be valid JSON'
+    })
   }
 
-  let markdown = `---
-title: "${name}"
-category: "${category}"
-installation_method: "${installationMethod}"
-created_at: "${today}"
-${mcpConfigBlock}---
+  // Build YAML frontmatter mcp_config block
+  const mcpConfigBlock = `mcp_config:\n  key: "${resolvedKey}"\n  server:\n${jsonToYaml(serverConfig, 4)}\n`
 
-## Installation Steps
+  // Build the full .mcp.json example for the markdown body
+  const mcpJsonExample = JSON.stringify({
+    mcpServers: {
+      [resolvedKey]: serverConfig
+    }
+  }, null, 2)
 
-${installationSteps}
-`
+  // Build installation steps markdown
+  let stepNum = 1
+  let installSteps = ''
+
+  // If there's an install command, add it as first step
+  if (installCommand) {
+    installSteps += `${stepNum}. Install using the following command:\n\n\`\`\`bash\n${installCommand}\n\`\`\`\n\n`
+    stepNum++
+  }
+
+  // Always add the .mcp.json configuration step
+  installSteps += `${stepNum}. Add the following to your \`.mcp.json\` configuration:\n\n\`\`\`json\n${mcpJsonExample}\n\`\`\`\n\n`
+  stepNum++
+
+  // Always add restart step
+  installSteps += `${stepNum}. Restart Claude Code to apply the changes.\n`
+
+  // Build the full markdown
+  let markdown = `---\ntitle: "${name}"\ncategory: "${category}"\ninstallation_method: "${installationMethod}"\ncreated_at: "${today}"\n${mcpConfigBlock}---\n\n## Installation Steps\n\n${installSteps}\n`
 
   if (notes) {
-    markdown += `
-## Notes
+    // Format notes as bullet list if not already formatted
+    const noteLines = notes.split('\n').filter((l: string) => l.trim())
+    const formattedNotes = noteLines.map((l: string) => {
+      const trimmed = l.trim()
+      if (trimmed.startsWith('-') || trimmed.startsWith('*')) return trimmed
+      return `- ${trimmed}`
+    }).join('\n')
 
-${notes}
-`
+    markdown += `## Notes\n\n${formattedNotes}\n`
   }
 
   await writeFile(filePath, markdown, 'utf-8')

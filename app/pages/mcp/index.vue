@@ -65,6 +65,43 @@ function toggleAll() {
   }
 }
 
+const toast = useToast()
+const deletingSelected = ref(false)
+const showDeleteConfirm = ref(false)
+
+async function deleteSelected() {
+  if (!servers.value) return
+  deletingSelected.value = true
+
+  const selected = servers.value.filter(s => selectedServers.value.has(s.path))
+  let successCount = 0
+
+  for (const server of selected) {
+    const slug = server.path.replace('/mcp/', '')
+    try {
+      await $fetch('/api/mcp', {
+        method: 'DELETE',
+        body: { slug }
+      })
+      successCount++
+    } catch {
+      // continue deleting others
+    }
+  }
+
+  toast.add({
+    title: `تم حذف ${successCount} خادم`,
+    color: 'success',
+    icon: 'i-lucide-check-circle'
+  })
+
+  selectedServers.value = new Set()
+  showDeleteConfirm.value = false
+  deletingSelected.value = false
+
+  refreshNuxtData('mcp-servers')
+}
+
 function downloadMcpJson() {
   if (!servers.value) return
 
@@ -236,8 +273,54 @@ function downloadMcpJson() {
             size="sm"
             @click="downloadMcpJson"
           />
+          <UButton
+            icon="i-lucide-trash-2"
+            label="حذف"
+            size="sm"
+            color="error"
+            variant="outline"
+            @click="showDeleteConfirm = true"
+          />
         </div>
       </Transition>
+
+      <!-- Delete Confirmation Modal -->
+      <UModal
+        :open="showDeleteConfirm"
+        @update:open="showDeleteConfirm = $event"
+      >
+        <template #content>
+          <div class="p-6 text-center space-y-4">
+            <div class="size-12 rounded-full bg-error/10 flex items-center justify-center mx-auto">
+              <UIcon
+                name="i-lucide-alert-triangle"
+                class="size-6 text-error"
+              />
+            </div>
+            <h3 class="text-lg font-bold">
+              حذف {{ selectedServers.size }} خادم؟
+            </h3>
+            <p class="text-sm text-muted">
+              سيتم حذف الخوادم المحددة نهائياً. لا يمكن التراجع عن هذا الإجراء.
+            </p>
+            <div class="flex items-center justify-center gap-3 pt-2">
+              <UButton
+                label="إلغاء"
+                variant="outline"
+                color="neutral"
+                @click="showDeleteConfirm = false"
+              />
+              <UButton
+                label="حذف"
+                color="error"
+                icon="i-lucide-trash-2"
+                :loading="deletingSelected"
+                @click="deleteSelected"
+              />
+            </div>
+          </div>
+        </template>
+      </UModal>
     </UPageSection>
   </UPage>
 </template>
