@@ -16,7 +16,7 @@
 
 <script setup>
 useHead({
-  title: 'SDLC Visual Framework — Architect Playbook',
+  title: 'SDLC Visual Framework — Architect\'s Playbook',
   meta: [
     {
       name: 'description',
@@ -27,7 +27,7 @@ useHead({
 })
 
 useSeoMeta({
-  ogTitle: 'SDLC Visual Framework — Architect Playbook',
+  ogTitle: 'SDLC Visual Framework — Architect\'s Playbook',
   ogDescription: 'A visual framework for understanding the complete Software Development Life Cycle.',
   ogType: 'article',
   twitterCard: 'summary_large_image',
@@ -47,16 +47,16 @@ const phases = [
     tagline: 'Understand the problem before solving it',
     layerA: {
       title: 'What is this phase?',
-      body: 'Transform vague stakeholder expectations into precise, documented requirements. Define what the system must do — never how.',
+      body: 'Transform vague stakeholder expectations into precise, documented requirements. Define what the system must do — never how it should do it.',
       output: 'Requirements Specification Document'
     },
     layerB: {
       title: 'Requirements Breakdown',
       items: [
-        'Vision — The big picture & project goal',
-        'Functional Req. — What the system does',
-        'Non-Functional Req. — Performance, security, scale',
-        'Constraints — Hard limits & boundaries',
+        'Vision — The big picture and project goals',
+        'Functional Requirements — What the system does',
+        'Non-Functional Requirements — Performance, security, and scalability',
+        'Constraints — Hard limits and boundaries',
         'Assumptions — Accepted unknowns'
       ]
     },
@@ -64,16 +64,16 @@ const phases = [
       title: 'Decision Checkpoints',
       items: [
         'Is the vision clear to ALL stakeholders?',
-        'Are requirements measurable & testable?',
+        'Are requirements measurable and testable?',
         'Are constraints documented explicitly?',
         'Have assumptions been validated?',
-        'Can non-functional reqs be measured?'
+        'Can non-functional requirements be measured?'
       ]
     },
     meta: {
       roles: 'Product Owner · Project Manager · Business Analyst · CTO',
       question: 'What problem are we solving?',
-      trigger: 'All requirements reviewed & signed off',
+      trigger: 'All requirements are reviewed and signed off',
       risk: 'Building the entirely wrong system'
     }
   },
@@ -85,8 +85,8 @@ const phases = [
     tagline: 'Translate requirements into architectural blueprints',
     layerA: {
       title: 'What is this phase?',
-      body: 'Convert functional requirements into system structures. Define the problem domain, establish boundaries, model use cases and define architecture decomposition.',
-      output: 'Architecture Blueprint + UML Diagrams'
+      body: 'Convert functional requirements into system structures. Define the problem domain, establish boundaries, model use cases, and define architectural decomposition.',
+      output: 'Architectural Blueprint and UML Diagrams'
     },
     layerB: {
       title: 'Design Activities',
@@ -95,23 +95,23 @@ const phases = [
         'Mission Use Cases — Core system purpose flows',
         'System Use Cases — All user-system interactions',
         'Actors — Who interacts with the system',
-        'Architecture Decomposition — Layers, modules, interfaces'
+        'Architectural Decomposition — Layers, modules, and interfaces'
       ]
     },
     layerC: {
       title: 'Decision Checkpoints',
       items: [
         'Are domain boundaries drawn explicitly?',
-        'Are ALL actors (human & system) identified?',
+        'Are ALL actors (human and system) identified?',
         'Do use cases cover every user goal?',
-        'Is architecture scalable for future req?',
-        'Are external interfaces & APIs defined?'
+        'Is the architecture scalable for future requirements?',
+        'Are external interfaces and APIs defined?'
       ]
     },
     meta: {
       roles: 'System Architect · UX/UI Designer',
       question: 'How will the system be structured?',
-      trigger: 'Architecture reviewed & approved by team',
+      trigger: 'Architecture is reviewed and approved by the team',
       risk: 'Unscalable, brittle codebase from day one'
     }
   },
@@ -123,33 +123,33 @@ const phases = [
     tagline: 'Turn architectural design into working, tested code',
     layerA: {
       title: 'What is this phase?',
-      body: 'Implement the designed architecture. Frontend and backend teams build the system following the approved specifications, data models, and flowcharts.',
-      output: 'Working Source Code + Unit Tests'
+      body: 'Implement the designed architecture. Frontend and backend teams build the system following the approved specifications, data models, and workflow designs.',
+      output: 'Working Source Code and Unit Tests'
     },
     layerB: {
       title: 'Build Activities',
       items: [
         'Entities (Data Model) — Define data structures',
-        'Flowchart — Implement application logic flow',
+        'Flowcharts — Implement application logic flow',
         'Pseudocode — Plan logic before writing code',
         'Sequence Diagrams — Object interaction ordering',
-        'Frontend + Backend — UI, APIs, business logic, DB'
+        'Frontend and Backend — UI, APIs, business logic, and database'
       ]
     },
     layerC: {
       title: 'Decision Checkpoints',
       items: [
-        'Does code match the approved architecture?',
-        'Are coding standards enforced via review?',
-        'Are edge cases and nulls handled?',
+        'Does the code match the approved architecture?',
+        'Are coding standards enforced via peer reviews?',
+        'Are edge cases and null values handled?',
         'Is unit test coverage adequate?',
-        'Is pseudocode written before coding?'
+        'Is pseudocode drafted before coding?'
       ]
     },
     meta: {
       roles: 'Frontend Developer · Backend Developer',
       question: 'Does the code correctly implement the design?',
-      trigger: 'Feature-complete + code review passed',
+      trigger: 'Feature complete and code reviews passed',
       risk: 'Technical debt compounds rapidly'
     }
   },
@@ -158,11 +158,11 @@ const phases = [
     num: '04',
     color: 'amber',
     title: 'Testing',
-    tagline: 'Validate every behavior against its requirement',
+    tagline: 'Validate every behavior against its requirements',
     layerA: {
       title: 'What is this phase?',
-      body: 'Systematically verify the system meets every requirement. Find and eliminate defects before they reach real users in production.',
-      output: 'Test Reports + Bug-free Release Candidate'
+      body: 'Systematically verify that the system meets every requirement. Find and eliminate defects before they reach real users in production.',
+      output: 'Test Reports and Bug-Free Release Candidate'
     },
     layerB: {
       title: 'Testing Types',
@@ -171,24 +171,24 @@ const phases = [
         'Integration Testing — Combined module behavior',
         'System Testing — Full end-to-end flows',
         'UAT — User acceptance validation',
-        'Performance — Load, stress, scalability'
+        'Performance Testing — Load, stress, and scalability'
       ]
     },
     layerC: {
       title: 'Decision Checkpoints',
       items: [
         'Are ALL use cases covered by tests?',
-        'Are non-functional reqs validated?',
+        'Are non-functional requirements validated?',
         'Are test cases traceable to requirements?',
         'Is regression testing automated?',
-        'Has the product owner signed off UAT?'
+        'Has the product owner signed off on UAT?'
       ]
     },
     meta: {
       roles: 'Solutions Architect · QA Engineer · Tester · DevOps',
       question: 'Does the system do exactly what we promised?',
-      trigger: 'All critical bugs resolved, coverage met',
-      risk: 'Production failures & broken user trust'
+      trigger: 'All critical bugs resolved and test coverage met',
+      risk: 'Production failures and broken user trust'
     }
   },
   {
@@ -200,15 +200,15 @@ const phases = [
     layerA: {
       title: 'What is this phase?',
       body: 'Move the tested system into the live production environment. Configure infrastructure, run migrations, activate monitoring, and execute the go-live plan.',
-      output: 'Live System + Deployment Documentation'
+      output: 'Live System and Deployment Documentation'
     },
     layerB: {
       title: 'Deployment Activities',
       items: [
-        'Environment Setup — Servers, config, secrets',
-        'Database Migration — Schema, seed data',
-        'CI/CD Pipeline — Automated release process',
-        'Smoke Testing — Post-deploy verification',
+        'Environment Setup — Servers, configurations, and secrets',
+        'Database Migration — Schema and seed data',
+        'CI/CD Pipeline — Automated release processes',
+        'Smoke Testing — Post-deployment verification',
         'Rollback Plan — Defined revert strategy'
       ]
     },
@@ -216,17 +216,17 @@ const phases = [
       title: 'Decision Checkpoints',
       items: [
         'Is a rollback strategy clearly defined?',
-        'Are monitoring & alerts active?',
-        'Is deployment window communicated?',
-        'Are secrets & config secured?',
+        'Are monitoring and alerts active?',
+        'Is the deployment window communicated to stakeholders?',
+        'Are secrets and configurations secured?',
         'Is data migration reversible?'
       ]
     },
     meta: {
-      roles: 'Data Administrator · DevOps',
+      roles: 'Database Administrator · DevOps',
       question: 'Is the system safely live for end users?',
-      trigger: 'System stable in prod, users onboarded',
-      risk: 'Data loss, downtime, security exposure'
+      trigger: 'System is stable in production and users are onboarded',
+      risk: 'Data loss, downtime, and security exposures'
     }
   },
   {
@@ -238,7 +238,7 @@ const phases = [
     layerA: {
       title: 'What is this phase?',
       body: 'Monitor and keep the system healthy. Respond to user feedback, patch production bugs, and feed learnings into the next SDLC iteration.',
-      output: 'Patches · Updated Docs · Next Iteration Feed'
+      output: 'Patches, Updated Docs, and Next Iteration Feed'
     },
     layerB: {
       title: 'Maintenance Types',
@@ -246,14 +246,14 @@ const phases = [
         'Corrective — Fix reported production bugs',
         'Adaptive — Adjust to environment changes',
         'Perfective — Performance improvements',
-        'Preventive — Refactoring, reduce tech debt'
+        'Preventive — Refactoring and reducing tech debt'
       ]
     },
     layerC: {
       title: 'Decision Checkpoints',
       items: [
         'Is monitoring surfacing real issues early?',
-        'Is user feedback channeled into backlog?',
+        'Is user feedback channeled into the backlog?',
         'Are hotfixes following a proper process?',
         'When does the next SDLC cycle start?'
       ]

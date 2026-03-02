@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import type { NuxtError } from '#app'
-
+<script setup>
 defineProps({
   error: {
-    type: Object as PropType<NuxtError>,
+    type: Object,
     required: true
   }
 })

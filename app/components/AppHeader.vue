@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
-
-defineProps<{
-  links: NavigationMenuItem[]
-}>()
+<script setup>
+defineProps({
+  links: {
+    type: Array,
+    required: true
+  }
+})
 </script>
 
 <template>

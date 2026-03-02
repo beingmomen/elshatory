@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const colorMode = useColorMode()
 
 const nextTheme = computed(() => (colorMode.value === 'dark' ? 'light' : 'dark'))
@@ -7,7 +7,7 @@ const switchTheme = () => {
   colorMode.preference = nextTheme.value
 }
 
-const startViewTransition = (event: MouseEvent) => {
+const startViewTransition = (event) => {
   if (!document.startViewTransition) {
     switchTheme()
     return

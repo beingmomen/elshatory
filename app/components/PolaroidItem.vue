@@ -1,11 +1,14 @@
-<script setup lang="ts">
-defineProps<{
+<script setup>
+defineProps({
   image: {
-    src: string
-    alt: string
+    type: Object,
+    required: true
+  },
+  index: {
+    type: Number,
+    required: true
   }
-  index: number
-}>()
+})
 </script>
 
 <template>

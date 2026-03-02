@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const route = useRoute()
 const toast = useToast()
 
@@ -13,7 +13,7 @@ if (!page.value) {
   })
 }
 
-const categoryColors: Record<string, string> = {
+const categoryColors = {
   frontend: 'info',
   backend: 'success',
   devops: 'warning',
@@ -49,7 +49,7 @@ async function deleteServer() {
     })
 
     await navigateTo('/mcp')
-  } catch (err: any) {
+  } catch (err) {
     toast.add({
       title: 'خطأ',
       description: err.data?.message || 'فشل في حذف الخادم',
@@ -92,7 +92,7 @@ async function deleteServer() {
           </h1>
           <div class="flex flex-wrap items-center gap-3">
             <UBadge
-              :color="(categoryColors[page.category] as any) || 'neutral'"
+              :color="categoryColors[page.category] || 'neutral'"
               variant="subtle"
               :label="page.category"
               size="lg"

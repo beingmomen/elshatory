@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 useSeoMeta({
   title: 'MCP Servers Manager',
   description: 'Browse and manage MCP server configurations'
@@ -9,7 +9,7 @@ const { data: servers } = await useAsyncData('mcp-servers', () => {
 })
 
 const activeCategory = ref('all')
-const selectedServers = ref(new Set<string>())
+const selectedServers = ref(new Set())
 
 const categories = [
   { label: 'الكل', value: 'all' },
@@ -21,7 +21,7 @@ const categories = [
   { label: 'أخرى', value: 'other' }
 ]
 
-const categoryColors: Record<string, string> = {
+const categoryColors = {
   frontend: 'info',
   backend: 'success',
   devops: 'warning',
@@ -43,7 +43,7 @@ const allFilteredSelected = computed(() => {
   return filteredServers.value.every(s => selectedServers.value.has(s.path))
 })
 
-function toggleServer(path: string) {
+function toggleServer(path) {
   const next = new Set(selectedServers.value)
   if (next.has(path)) {
     next.delete(path)
@@ -106,7 +106,7 @@ function downloadMcpJson() {
   if (!servers.value) return
 
   const selected = servers.value.filter(s => selectedServers.value.has(s.path))
-  const mcpServers: Record<string, any> = {}
+  const mcpServers = {}
 
   for (const server of selected) {
     if (server.mcp_config?.key && server.mcp_config?.server) {
@@ -212,7 +212,7 @@ function downloadMcpJson() {
                 </h3>
                 <div class="flex flex-wrap gap-2">
                   <UBadge
-                    :color="(categoryColors[server.category] as any) || 'neutral'"
+                    :color="categoryColors[server.category] || 'neutral'"
                     variant="subtle"
                     :label="server.category"
                   />

@@ -93,6 +93,7 @@ function openModal(role, phase) {
       :open="modalOpen"
       :title="activeRole"
       :description="activePhase?.title"
+      :ui="{ content: '[direction:ltr] text-left' }"
       @update:open="modalOpen = $event"
     >
       <template #body>

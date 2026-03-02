@@ -113,6 +113,9 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      exclude: ['@nuxtjs/mdc']
+    },
     build: {
       cssCodeSplit: true,
       rollupOptions: {

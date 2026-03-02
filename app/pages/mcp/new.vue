@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Joi from 'joi'
 
 useSeoMeta({
@@ -94,7 +94,7 @@ async function onSubmit() {
       }
     })
 
-    createdPath.value = (result as any).path
+    createdPath.value = result.path
     submitted.value = true
 
     toast.add({
@@ -102,7 +102,7 @@ async function onSubmit() {
       color: 'success',
       icon: 'i-lucide-check-circle'
     })
-  } catch (err: any) {
+  } catch (err) {
     toast.add({
       title: 'خطأ',
       description: err.data?.message || 'فشل في إنشاء الخادم',
