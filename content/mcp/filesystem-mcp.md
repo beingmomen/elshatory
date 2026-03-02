@@ -10,15 +10,31 @@ mcp_config:
     args: ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"]
 ---
 
-## Installation Steps
+## ما هو Filesystem MCP Server؟
 
-1. Install the filesystem MCP server globally:
+Filesystem MCP Server يتيح لـ Claude Code قراءة وكتابة الملفات والمجلدات على النظام المحلي. يوفر وصولاً آمناً ومحدوداً للمجلدات المحددة فقط في الإعدادات.
+
+## الأدوات المتاحة
+
+- **read_file** — قراءة محتوى ملف
+- **write_file** — كتابة محتوى في ملف
+- **list_directory** — عرض محتويات مجلد
+- **create_directory** — إنشاء مجلد جديد
+- **move_file** — نقل أو إعادة تسمية ملف
+- **search_files** — البحث عن ملفات بنمط معين
+- **get_file_info** — الحصول على معلومات ملف (الحجم، تاريخ التعديل، الصلاحيات)
+
+## خطوات التثبيت
+
+### 1. التثبيت
 
 ```bash
 npm install -g @modelcontextprotocol/server-filesystem
 ```
 
-2. Add it to your `.mcp.json` configuration:
+### 2. إضافة الإعدادات
+
+أضف التالي إلى ملف `.mcp.json` في جذر المشروع:
 
 ```json
 {
@@ -35,12 +51,25 @@ npm install -g @modelcontextprotocol/server-filesystem
 }
 ```
 
-3. Replace `/path/to/allowed/directory` with the actual directory you want the server to access.
+### 3. تعديل المسار
 
-4. Restart your MCP client to apply the changes.
+استبدل `/path/to/allowed/directory` بمسار المجلد الفعلي الذي تريد السماح بالوصول إليه.
 
-## Notes
+### 4. إعادة تشغيل Claude Code
 
-- Provides read/write access to files and directories.
-- Only allows access to directories specified in the configuration.
-- Useful for file management tasks and code editing workflows.
+أعد تشغيل Claude Code لتطبيق التغييرات.
+
+## أمثلة على الاستخدام
+
+- "اقرأ محتوى ملف package.json"
+- "أنشئ مجلد جديد باسم utils"
+- "ابحث عن جميع ملفات .vue في المشروع"
+- "انقل الملف من src إلى dist"
+- "اعرض معلومات ملف index.ts"
+
+## ملاحظات
+
+- يسمح بالوصول فقط للمجلدات المحددة في الإعدادات — آمن بالتصميم.
+- يدعم القراءة والكتابة والبحث والنقل.
+- مفيد لمهام إدارة الملفات وسير عمل تحرير الكود.
+- يمكن تحديد عدة مجلدات بإضافة مسارات متعددة في الـ args.

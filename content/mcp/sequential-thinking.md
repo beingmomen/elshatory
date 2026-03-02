@@ -1,5 +1,5 @@
 ---
-title: "sequential-thinking"
+title: "Sequential Thinking"
 category: "other"
 installation_method: "cloud code"
 created_at: "2026-03-02"
@@ -13,25 +13,54 @@ mcp_config:
 
 ---
 
-## Installation Steps
+## ما هو Sequential Thinking MCP Server؟
 
-1. Add the following to your `.mcp.json` configuration:
+Sequential Thinking هو أداة تفكير متسلسل تساعد Claude Code على تحليل المشاكل المعقدة خطوة بخطوة. تتيح التفكير الديناميكي مع إمكانية المراجعة والتفرع والتصحيح أثناء عملية الحل.
+
+## الأدوات المتاحة
+
+- **sequentialthinking** — أداة تفكير متسلسل مع الميزات التالية:
+  - تقسيم المشاكل المعقدة إلى خطوات
+  - مراجعة وتعديل الأفكار السابقة
+  - التفرع لاستكشاف مسارات بديلة
+  - توليد فرضيات والتحقق منها
+  - تعديل عدد الخطوات المتوقعة أثناء التحليل
+
+## خطوات التثبيت
+
+### 1. إضافة الإعدادات
+
+أضف التالي إلى ملف `.mcp.json` في جذر المشروع:
 
 ```json
 {
   "mcpServers": {
     "sequential-thinking": {
-      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "env": {}
+      ]
     }
   }
 }
 ```
 
-2. Restart Claude Code to apply the changes.
+### 2. إعادة تشغيل Claude Code
 
+أعد تشغيل Claude Code لتطبيق التغييرات.
+
+## متى تستخدمه؟
+
+- تحليل مشاكل معقدة تحتاج تقسيم لخطوات
+- التخطيط والتصميم مع إمكانية المراجعة
+- المشاكل التي تحتاج تصحيح المسار أثناء الحل
+- المهام التي تتطلب الحفاظ على السياق عبر خطوات متعددة
+- المواقف التي تحتاج تصفية المعلومات غير المتعلقة
+
+## ملاحظات
+
+- لا يحتاج إلى أي إعدادات إضافية أو API keys.
+- يعمل محلياً بالكامل.
+- مفيد للمشاكل التي تحتاج تفكير عميق ومنظم.
+- يدعم التفرع والعودة لمراجعة خطوات سابقة.
