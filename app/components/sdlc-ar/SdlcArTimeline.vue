@@ -65,14 +65,14 @@ function openModal(role, phase) {
         :in-view-options="{ once: true }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 text-right">
-          <div class="flex items-center gap-2 mb-3 justify-end">
-            <span class="text-base font-semibold">{{ phase.title }}</span>
+          <div class="flex items-center gap-2 mb-3">
             <UBadge
               :label="phase.num"
               color="primary"
               variant="subtle"
               size="xs"
             />
+            <span class="text-base font-semibold">{{ phase.title }}</span>
           </div>
           <USeparator class="mb-3" />
           <ul class="space-y-2">

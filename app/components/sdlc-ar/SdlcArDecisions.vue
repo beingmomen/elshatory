@@ -73,7 +73,7 @@ const nodeStyles = {
               {{ node.condition }}
             </div>
             <p class="text-sm text-muted leading-relaxed">
-              ← {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
+              → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>
         </Motion>
@@ -99,7 +99,7 @@ const nodeStyles = {
               {{ node.condition }}
             </div>
             <p class="text-sm text-muted leading-relaxed">
-              ← {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
+              → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>
         </Motion>

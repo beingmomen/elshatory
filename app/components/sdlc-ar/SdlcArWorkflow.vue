@@ -53,24 +53,24 @@ const stages = [
         :in-view-options="{ once: true }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full text-right">
-          <div class="flex items-center gap-2 mb-3 justify-end">
-            <span class="text-base font-semibold">{{ stage.title }}</span>
+          <div class="flex items-center gap-2 mb-3">
             <UBadge
               :label="`${index + 1}`"
               color="primary"
               variant="subtle"
               size="xs"
             />
+            <span class="text-base font-semibold">{{ stage.title }}</span>
           </div>
           <USeparator class="mb-3" />
           <ul class="space-y-1.5">
             <li
               v-for="item in stage.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-center justify-end leading-relaxed"
+              class="text-sm text-muted flex gap-2 items-center leading-relaxed"
             >
-              {{ item }}
               <span class="size-1 rounded-full bg-primary/50 shrink-0" />
+              {{ item }}
             </li>
           </ul>
         </div>

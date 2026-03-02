@@ -42,7 +42,7 @@ const tasks = [
         :transition="{ duration: 0.4, delay: 0.1 + index * 0.12 }"
         :in-view-options="{ once: true }"
       >
-        <div class="flex gap-4 items-start flex-row-reverse">
+        <div class="flex gap-4 items-start">
           <div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary text-sm font-bold shrink-0">
             {{ index + 1 }}
           </div>
@@ -53,7 +53,7 @@ const tasks = [
             <p class="text-sm text-muted leading-relaxed mb-3">
               {{ task.desc }}
             </p>
-            <div class="flex flex-wrap gap-2 justify-end">
+            <div class="flex flex-wrap gap-2">
               <UBadge
                 v-for="tag in task.tags"
                 :key="tag"

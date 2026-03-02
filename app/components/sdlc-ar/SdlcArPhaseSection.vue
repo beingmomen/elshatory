@@ -33,14 +33,14 @@ const metaItems = computed(() => [
         :in-view-options="{ once: true }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
-          <div class="flex items-center gap-2 mb-3 justify-end">
-            <span class="text-base font-semibold">{{ phase.layerA.title }}</span>
+          <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
               <UIcon
                 name="i-lucide-zap"
                 class="size-4 text-primary"
               />
             </div>
+            <span class="text-base font-semibold">{{ phase.layerA.title }}</span>
           </div>
           <p class="text-sm text-muted leading-relaxed mb-4 text-right">
             {{ phase.layerA.body }}
@@ -63,32 +63,32 @@ const metaItems = computed(() => [
         :in-view-options="{ once: true }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
-          <div class="flex items-center gap-2 mb-3 justify-end">
-            <span class="text-base font-semibold">{{ phase.layerB.title }}</span>
+          <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
               <UIcon
                 name="i-lucide-list"
                 class="size-4 text-primary"
               />
             </div>
+            <span class="text-base font-semibold">{{ phase.layerB.title }}</span>
           </div>
           <ul class="space-y-2">
             <li
               v-for="item in phase.layerB.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-start justify-end"
+              class="text-sm text-muted flex gap-2 items-start"
             >
-              <span class="text-right">
+              <UIcon
+                name="i-lucide-circle-check"
+                class="size-3.5 text-primary/50 mt-0.5 shrink-0"
+              />
+              <span>
                 <template v-if="item.includes(' — ')">
                   <strong class="text-highlighted">{{ item.split(' — ')[0] }}</strong>
                   <span class="text-dimmed"> — </span>{{ item.split(' — ').slice(1).join(' — ') }}
                 </template>
                 <template v-else>{{ item }}</template>
               </span>
-              <UIcon
-                name="i-lucide-circle-check"
-                class="size-3.5 text-primary/50 mt-0.5 shrink-0"
-              />
             </li>
           </ul>
         </div>
@@ -101,26 +101,26 @@ const metaItems = computed(() => [
         :in-view-options="{ once: true }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
-          <div class="flex items-center gap-2 mb-3 justify-end">
-            <span class="text-base font-semibold">{{ phase.layerC.title }}</span>
+          <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
               <UIcon
                 name="i-lucide-brain"
                 class="size-4 text-primary"
               />
             </div>
+            <span class="text-base font-semibold">{{ phase.layerC.title }}</span>
           </div>
           <ul class="space-y-2">
             <li
               v-for="item in phase.layerC.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-start justify-end"
+              class="text-sm text-muted flex gap-2 items-start"
             >
-              <span class="text-right">{{ item }}</span>
               <UIcon
                 name="i-lucide-help-circle"
                 class="size-3.5 text-warning/60 mt-0.5 shrink-0"
               />
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
@@ -137,14 +137,14 @@ const metaItems = computed(() => [
         :in-view-options="{ once: true }"
       >
         <div class="rounded-lg border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 text-right">
-          <div class="flex items-center gap-1.5 mb-1.5 justify-end">
-            <div class="text-sm font-semibold text-muted uppercase tracking-wide">
-              {{ metaItem.label }}
-            </div>
+          <div class="flex items-center gap-1.5 mb-1.5">
             <UIcon
               :name="metaItem.icon"
               class="size-3 text-muted"
             />
+            <div class="text-sm font-semibold text-muted uppercase tracking-wide">
+              {{ metaItem.label }}
+            </div>
           </div>
           <div class="text-sm leading-relaxed">
             {{ metaItem.value }}
