@@ -178,6 +178,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
               variant="ghost"
               class="gap-2"
               :to="global.available ? global.meetingLink : ''"
+              :target="global.available ? '_blank' : undefined"
               :label="global.available ? 'متاح للمشاريع الجديدة' : 'غير متاح حالياً'"
             >
               <template #leading>

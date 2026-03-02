@@ -5,7 +5,7 @@ export default defineAppConfig({
       light: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
       alt: 'عبدالمؤمن الشطوري'
     },
-    meetingLink: 'https://beingmomen.com/contact',
+    meetingLink: 'https://cal.com/beingmomen',
     email: 'abdelmomenelshatory@gmail.com',
     available: true
   },

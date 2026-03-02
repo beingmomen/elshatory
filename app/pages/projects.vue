@@ -39,6 +39,7 @@ useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
           <UButton
             label="تواصل معي"
             :to="global.meetingLink"
+            target="_blank"
             color="primary"
           />
           <UButton

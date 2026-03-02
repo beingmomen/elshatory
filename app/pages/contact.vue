@@ -291,10 +291,8 @@ const contactPills = [
                   <UInput
                     v-model="state.phone"
                     leading-icon="i-lucide-phone"
-                    placeholder="+20 xxx xxx xxxx"
-                    type="tel"
+                    placeholder="رقم الهاتف"
                     class="w-full"
-                    :ui="{ base: 'text-left' }"
                   />
                 </UFormField>
               </Motion>
@@ -313,10 +311,9 @@ const contactPills = [
                   <UInput
                     v-model="state.email"
                     leading-icon="i-lucide-mail"
-                    placeholder="your@email.com"
+                    placeholder="البريد الإلكتروني"
                     type="email"
                     class="w-full"
-                    :ui="{ base: 'text-left' }"
                   />
                 </UFormField>
               </Motion>
@@ -424,6 +421,7 @@ const contactPills = [
             <UButton
               v-if="global.meetingLink"
               :to="global.meetingLink"
+              target="_blank"
               block
               variant="outline"
               color="primary"
