@@ -6,7 +6,7 @@ export const useBlog = () => {
     {
       key: `blog-${route.params.slug}`,
       default: () => ({}),
-      transform: (response) => response.data?.data || {}
+      transform: response => response.data?.data || {}
     }
   )
 

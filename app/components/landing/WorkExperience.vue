@@ -11,7 +11,10 @@ const experiences = useExperiences()
     }"
   >
     <template #description>
-      <div dir="ltr" class="flex flex-col gap-2">
+      <div
+        dir="ltr"
+        class="flex flex-col gap-2"
+      >
         <Motion
           v-for="(experience, index) in experiences"
           :key="index"

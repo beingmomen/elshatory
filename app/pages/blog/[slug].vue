@@ -2,7 +2,7 @@
 const route = useRoute()
 const config = useRuntimeConfig()
 
-const { singleBlog, breadcrumbList } = useBlog()
+const { singleBlog } = useBlog()
 
 const blogTitle = computed(
   () => singleBlog.value.title || 'مقال - عبدالمؤمن الشطوري'
