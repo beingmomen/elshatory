@@ -12,8 +12,14 @@ const quickLinks = [
 
 const guides = [
   { label: 'SDLC Framework', to: '/sdlc' },
-  { label: 'دورة حياة تطوير البرمجيات', to: '/sdlc-ar' },
-  { label: 'MCP Servers', to: '/mcp' }
+  { label: 'دورة حياة تطوير البرمجيات', to: '/sdlc-ar' }
+]
+
+const aiTools = [
+  { label: 'MCP Servers', to: '/mcp', icon: 'i-lucide-server' },
+  { label: 'Agents', to: '/agents', icon: 'i-lucide-bot' },
+  { label: 'Skills', to: '/skills', icon: 'i-lucide-zap' },
+  { label: 'Commands', to: '/commands', icon: 'i-lucide-terminal' }
 ]
 </script>
 
@@ -21,7 +27,7 @@ const guides = [
   <footer class="z-10 mt-16">
     <div class="-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 border-t border-default px-4 sm:px-12 lg:px-16">
       <div class="max-w-(--ui-container) mx-auto py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <!-- Column 1: Brand -->
           <div class="space-y-4">
             <div>
@@ -64,14 +70,38 @@ const guides = [
             </ul>
           </div>
 
-          <!-- Column 3: Contact + Guides -->
+          <!-- Column 3: AI Tools -->
+          <div>
+            <h4 class="text-sm font-semibold mb-4">
+              أدوات AI
+            </h4>
+            <ul class="space-y-2.5">
+              <li
+                v-for="tool in aiTools"
+                :key="tool.to"
+              >
+                <NuxtLink
+                  :to="tool.to"
+                  class="text-sm text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                >
+                  <UIcon
+                    :name="tool.icon"
+                    class="size-3.5 text-primary/60 shrink-0"
+                  />
+                  {{ tool.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact + Guides -->
           <div class="space-y-6">
             <div>
               <h4 class="text-sm font-semibold mb-4">
                 تواصل معي
               </h4>
-              <NuxtLink
-                :to="`mailto:${global.email}`"
+              <a
+                :href="`mailto:${global.email}`"
                 class="text-sm text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
               >
                 <UIcon
@@ -79,7 +109,7 @@ const guides = [
                   class="size-4 text-primary/60 shrink-0"
                 />
                 {{ global.email }}
-              </NuxtLink>
+              </a>
             </div>
 
             <div>

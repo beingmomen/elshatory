@@ -15,6 +15,31 @@ export default defineContentConfig({
           server: z.record(z.any())
         }).optional()
       })
+    }),
+    agents: defineCollection({
+      type: 'page',
+      source: 'agents/*.md',
+      schema: z.object({
+        category: z.string(),
+        created_at: z.string()
+      })
+    }),
+    skills: defineCollection({
+      type: 'page',
+      source: 'skills/*.md',
+      schema: z.object({
+        category: z.string(),
+        trigger: z.string().optional(),
+        created_at: z.string()
+      })
+    }),
+    commands: defineCollection({
+      type: 'page',
+      source: 'commands/*.md',
+      schema: z.object({
+        description: z.string().optional(),
+        created_at: z.string()
+      })
     })
   }
 })

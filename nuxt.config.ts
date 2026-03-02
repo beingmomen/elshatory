@@ -94,7 +94,13 @@ export default defineNuxtConfig({
     '/testimonial': { ssr: true },
     '/api/blog': { swr: 600 },
     '/mcp': { ssr: true },
-    '/mcp/**': { ssr: true }
+    '/mcp/**': { ssr: true },
+    '/agents': { ssr: true },
+    '/agents/**': { ssr: true },
+    '/skills': { ssr: true },
+    '/skills/**': { ssr: true },
+    '/commands': { ssr: true },
+    '/commands/**': { ssr: true }
   },
 
   devServer: {
