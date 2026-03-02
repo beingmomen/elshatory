@@ -1,62 +1,116 @@
-# Nuxt Portfolio Template
+# beingmomen.com — Portfolio
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Personal portfolio website for **Abdelmomen Elshatory** (عبدالمؤمن الشطوري), a Frontend Engineer with 5+ years of experience building modern, high-performance web applications.
 
-Use this template to create your own portfolio with [Nuxt UI](https://ui.nuxt.com).
+![Hero Preview](.github/hero-preview.png)
 
-- [Live demo](https://portfolio-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/getting-started/installation)
+## Tech Stack
 
-<a href="https://portfolio-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/portfolio-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png">
-    <img alt="Nuxt Portfolio Template" src="https://ui.nuxt.com/assets/templates/nuxt/portfolio-dark.png">
-  </picture>
-</a>
+- **Framework:** Nuxt 4.3 + Vue 3
+- **UI:** Nuxt UI 4 (125+ components)
+- **Styling:** Tailwind CSS v4
+- **Animation:** Motion V (Vue motion library)
+- **Images:** Cloudinary via @nuxt/image
+- **Fonts:** Tajawal (Arabic) + Space Grotesk (Latin)
+- **SEO:** @nuxtjs/seo (sitemap, robots, schema.org, og-image)
+- **Validation:** Joi
+- **Language:** Arabic RTL primary
 
-## Quick Start
+## Prerequisites
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/portfolio
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=portfolio&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fportfolio&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fportfolio-dark.png&demo-url=https%3A%2F%2Fportfolio-template.nuxt.dev%2F&demo-title=Nuxt%20Portfolio%20Template&demo-description=A%20sleek%20portfolio%20template%20to%20showcase%20your%20work%2C%20skills%20and%20blog%20powered%20by%20Nuxt%20Content.)
+- Node.js v24.13.0 (see `.nvmrc`)
+- pnpm 10.29+
 
 ## Setup
-
-Make sure to install the dependencies:
 
 ```bash
 pnpm install
 ```
 
-## Development Server
+Create a `.env` file:
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-pnpm dev
+```env
+BASE_URL=           # Backend API base URL
+SITE_URL=           # Public site URL
+PORT=               # Server port
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_UPLOAD_PRESET=
+CLOUDINARY_API_KEY=
+CLOUDINARY_URL=
+LOGO=               # Site logo URL
 ```
 
-## Production
+## Development
 
-Build the application for production:
+```bash
+pnpm dev            # Start dev server (port 3000)
+```
+
+## Build & Production
+
+```bash
+pnpm build          # Build for production
+pnpm preview        # Preview production build locally
+```
+
+### PM2 Deployment
 
 ```bash
 pnpm build
+pm2 start ecosystem.config.cjs
 ```
 
-Locally preview production build:
+## Linting
 
 ```bash
-pnpm preview
+pnpm lint           # Run ESLint
+pnpm lint:fix       # Auto-fix lint issues
+pnpm typecheck      # Run type checking
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Pages
 
-## Renovate integration
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page (hero, about, skills, services, experience, testimonials, blog, FAQ) |
+| `/blog` | Blog list with card grid |
+| `/blog/[slug]` | Single blog with sidebar + table of contents |
+| `/about` | About page with polaroid gallery |
+| `/projects` | Projects grid |
+| `/contact` | Contact form with Joi validation |
+| `/testimonial` | Testimonial submission form with Cloudinary upload |
+| `/sdlc` | SDLC Visual Framework (English) |
+| `/sdlc-ar` | SDLC Visual Framework (Arabic) |
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+## Project Structure
+
+```
+app/
+├── assets/css/          # Global styles (Tailwind, typography)
+├── components/
+│   ├── landing/         # Landing page sections
+│   ├── blog/            # Blog sidebar & TOC
+│   ├── sdlc/            # SDLC English components
+│   ├── sdlc-ar/         # SDLC Arabic components
+│   ├── common/          # Social links
+│   └── form/            # File upload components
+├── composables/         # Data fetching & utilities
+├── layouts/             # Default layout (header + footer)
+├── pages/               # File-based routing
+├── plugins/             # $api helper plugin
+└── utils/               # Clipboard, navigation links
+server/
+├── api/                 # Blog proxy, sitemap URLs
+├── og-image/            # Arabic OG image template
+└── plugins/             # EPIPE error handler
+```
+
+## Data Flow
+
+```
+Pages → Composables → useApiRequest → $api plugin → Backend API
+```
+
+## License
+
+All rights reserved.
