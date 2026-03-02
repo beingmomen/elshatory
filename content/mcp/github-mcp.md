@@ -9,7 +9,7 @@ mcp_config:
     command: "npx"
     args: ["-y", "@modelcontextprotocol/server-github"]
     env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: "<your-token>"
+      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_PERSONAL_ACCESS_TOKEN}"
 ---
 
 ## ما هو GitHub MCP Server؟

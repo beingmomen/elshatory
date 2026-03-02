@@ -6,10 +6,8 @@ created_at: "2026-03-02"
 mcp_config:
   key: "playwright"
   server:
-    type: "stdio"
     command: "npx"
     args: ["-y", "@playwright/mcp@latest"]
-    env:
 
 ---
 

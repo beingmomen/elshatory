@@ -6,9 +6,8 @@ created_at: "2026-03-02"
 mcp_config:
   key: "nuxt-ui"
   server:
-    nuxt-ui:
-      type: "http"
-      url: "https://ui.nuxt.com/mcp"
+    type: "http"
+    url: "https://ui.nuxt.com/mcp"
 ---
 
 ## ما هو Nuxt UI MCP Server؟

@@ -6,9 +6,8 @@ created_at: "2026-03-02"
 mcp_config:
   key: "exa"
   server:
-    exa:
-      type: "http"
-      url: "https://mcp.exa.ai/mcp"
+    type: "http"
+    url: "https://mcp.exa.ai/mcp"
 ---
 
 ## ما هو Exa MCP Server؟

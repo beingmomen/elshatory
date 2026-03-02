@@ -6,10 +6,8 @@ created_at: "2026-03-02"
 mcp_config:
   key: "sequential-thinking"
   server:
-    type: "stdio"
     command: "npx"
     args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
-    env:
 
 ---
 
