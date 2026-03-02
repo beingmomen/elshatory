@@ -15,6 +15,7 @@ const diagrams = [
     title="مناطق مخططات UML"
     description="كل نوع مخطط يجيب على سؤال معماري محدد. استخدم المخطط المناسب لمشكلة التفكير المناسبة."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
       description: 'text-right text-sm text-muted mt-2'
     }"

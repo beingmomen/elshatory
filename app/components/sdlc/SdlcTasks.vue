@@ -28,6 +28,7 @@ const tasks = [
     title="Team Workflow"
     description="Concrete tasks for the Vacation Tracking System (Ch12) — the applied project for this OOA&D mentorship program."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

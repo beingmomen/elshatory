@@ -20,6 +20,7 @@ const metaItems = computed(() => [
     :title="`${phase.num} — ${phase.title}`"
     :description="phase.tagline"
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

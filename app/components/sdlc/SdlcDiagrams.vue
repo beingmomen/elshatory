@@ -15,6 +15,7 @@ const diagrams = [
     title="UML Diagram Zones"
     description="Each diagram type answers a specific architectural question. Use the right diagram for the right thinking problem."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

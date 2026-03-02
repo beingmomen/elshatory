@@ -47,6 +47,7 @@ const nodeStyles = {
     title="Decision Flow System"
     description="The conditional logic an architect applies when something is wrong, incomplete, or ambiguous — and how to recover."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

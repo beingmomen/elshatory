@@ -28,6 +28,7 @@ const stages = [
     title="Analysis & Design Workflow"
     description="The structured pipeline from raw requirements to deployed architecture — each stage produces concrete artifacts that feed the next."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

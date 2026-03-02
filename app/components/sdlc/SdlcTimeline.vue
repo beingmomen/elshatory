@@ -50,6 +50,7 @@ function openModal(role, phase) {
     title="6 Phases · Roles at a Glance"
     description="Every phase has distinct stakeholders, inputs, and outputs. The cycle is iterative — not strictly linear."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
       description: 'text-sm text-muted mt-2'
     }"

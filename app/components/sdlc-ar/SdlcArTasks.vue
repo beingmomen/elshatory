@@ -28,6 +28,7 @@ const tasks = [
     title="سير عمل الفريق"
     description="مهام ملموسة لنظام تتبع الإجازات (الفصل 12) — المشروع التطبيقي لبرنامج الإرشاد OOA&D."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
       description: 'text-right text-sm text-muted mt-2'
     }"

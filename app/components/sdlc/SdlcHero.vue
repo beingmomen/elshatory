@@ -11,6 +11,7 @@ defineProps({
   <div>
     <UPageHero
       :ui="{
+        container: 'py-12 sm:py-16 lg:py-20',
         title: 'text-pretty text-3xl sm:text-4xl lg:text-5xl',
         description: 'text-md max-w-xl text-muted',
         links: 'mt-4'
@@ -69,7 +70,7 @@ defineProps({
       </template>
     </UPageHero>
 
-    <UPageSection :ui="{ container: '!pt-0' }">
+    <UPageSection :ui="{ container: '!pt-0 pb-8 sm:pb-12 lg:pb-16' }">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Motion
           v-for="(phase, index) in phases"

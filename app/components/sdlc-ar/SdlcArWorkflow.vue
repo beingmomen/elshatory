@@ -28,6 +28,7 @@ const stages = [
     title="سير عمل التحليل والتصميم"
     description="خط الأنابيب المنظّم من المتطلبات الخام إلى البنية المنشورة — كل مرحلة تنتج مخرجات ملموسة تغذي المرحلة التالية."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
       description: 'text-right text-sm text-muted mt-2'
     }"

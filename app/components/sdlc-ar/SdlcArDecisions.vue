@@ -47,6 +47,7 @@ const nodeStyles = {
     title="نظام تدفق القرارات"
     description="المنطق الشرطي الذي يطبّقه المعماري عندما يكون هناك خطأ أو نقص أو غموض — وكيفية التعافي."
     :ui="{
+      container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
       description: 'text-right text-sm text-muted mt-2'
     }"
