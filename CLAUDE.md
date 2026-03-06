@@ -114,6 +114,7 @@ app/components/
 - Write all plan mode outputs in Arabic
 - Keep technical terms in English (component, composable, API, SSR, route, etc.)
 - Use the arabic-planner agent proactively for plan research
+- Wrap plan file content with `<div dir="rtl">` at the start and `</div>` at the end for Arabic RTL display
 
 ## Nuxt UI 4 Patterns
 

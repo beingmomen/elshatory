@@ -21,6 +21,36 @@ useSeoMeta({
 })
 
 useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
+
+const config = useRuntimeConfig()
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        'name': 'المشاريع - عبدالمؤمن الشطوري',
+        'description': 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء',
+        'url': `${config.public.siteUrl}/projects`,
+        'mainEntity': {
+          '@type': 'ItemList',
+          'itemListElement': (projects.value || []).map((project, index) => ({
+            '@type': 'ListItem',
+            'position': index + 1,
+            'item': {
+              '@type': 'CreativeWork',
+              'name': project.title,
+              'url': project.url,
+              'image': project.image
+            }
+          }))
+        }
+      })
+    }
+  ]
+})
 </script>
 
 <template>

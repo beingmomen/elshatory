@@ -133,6 +133,8 @@ useSeoMeta({
 
 useBreadcrumbSchema([{ name: 'القرارات المعمارية', path: '/adr' }])
 
+const config = useRuntimeConfig()
+
 const adrs = [
   {
     slug: 'global-data',
@@ -155,4 +157,33 @@ const adrs = [
     readTime: '15 دقيقة قراءة'
   }
 ]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        'name': 'القرارات المعمارية — Architecture Decision Records',
+        'description': 'توثيق القرارات المعمارية في مشاريع حقيقية — الأنماط المستخدمة، البدائل المدروسة، والنتائج العملية.',
+        'url': `${config.public.siteUrl}/adr`,
+        'inLanguage': 'ar',
+        'mainEntity': {
+          '@type': 'ItemList',
+          'itemListElement': adrs.map((adr, index) => ({
+            '@type': 'ListItem',
+            'position': index + 1,
+            'item': {
+              '@type': 'TechArticle',
+              'name': adr.title,
+              'url': `${config.public.siteUrl}/adr/${adr.slug}`,
+              'description': adr.description
+            }
+          }))
+        }
+      })
+    }
+  ]
+})
 </script>

@@ -38,6 +38,28 @@ useSeoMeta({
 
 useBreadcrumbSchema([{ name: 'SDLC Visual Framework', path: '/sdlc' }])
 
+const config = useRuntimeConfig()
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        'headline': 'SDLC Visual Framework — Architect\'s Playbook',
+        'description': 'A cognitive visual framework for the Software Development Life Cycle — phases, roles, OOA&D workflow, UML diagrams, and decision flows.',
+        'author': {
+          '@type': 'Person',
+          'name': 'عبدالمؤمن الشطوري'
+        },
+        'url': `${config.public.siteUrl}/sdlc`,
+        'inLanguage': 'en'
+      })
+    }
+  ]
+})
+
 const phases = [
   {
     id: 'analysis',

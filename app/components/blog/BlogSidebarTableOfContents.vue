@@ -4,7 +4,7 @@
       محتويات المقال
     </h3>
 
-    <nav class="toc-navigation space-y-1">
+    <nav aria-label="جدول المحتويات" class="toc-navigation space-y-1">
       <UButton
         v-for="item in table"
         :key="item.id"
@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-const singleBlog = inject('singleBlog')
+const singleBlog = inject('singleBlog', ref({}))
 const table = computed(() => singleBlog.value.tableOfContents)
 
 const activeHeading = ref('')

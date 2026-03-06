@@ -69,15 +69,18 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    cloudinary: {
+      cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+      uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
+      apiKey: process.env.CLOUDINARY_API_KEY
+    },
     public: {
       logo: process.env.LOGO,
       baseURL: process.env.BASE_URL,
       siteUrl: process.env.SITE_URL,
       cloudinary: {
         cloudinaryUrl: process.env.CLOUDINARY_URL,
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
-        apiKey: process.env.CLOUDINARY_API_KEY
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME
       }
     }
   },
@@ -117,6 +120,17 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'],
       crawlLinks: true
+    },
+    routeRules: {
+      '/**': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'X-XSS-Protection': '1; mode=block',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+        }
+      }
     }
   },
 

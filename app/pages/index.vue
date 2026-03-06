@@ -1,4 +1,23 @@
 <script setup>
+const config = useRuntimeConfig()
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': 'عبدالمؤمن الشطوري',
+        'alternateName': 'Abdelmomen Elshatory',
+        'url': config.public.siteUrl,
+        'description': 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
+        'inLanguage': 'ar'
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'عبدالمؤمن الشطوري | مهندس واجهات أمامية',
   description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.',
@@ -25,9 +44,9 @@ useSeoMeta({
       <LandingWorkExperience />
     </UPageSection>
 
-    <LandingStats />
-    <LandingBlog />
-    <LandingTestimonials />
-    <LandingFAQ />
+    <LazyLandingStats />
+    <LazyLandingBlog />
+    <LazyLandingTestimonials />
+    <LazyLandingFAQ />
   </UPage>
 </template>

@@ -36,6 +36,28 @@ const items = computed(() => {
   }))
 })
 
+const allQuestions = faqData.categories.flatMap(c => c.questions)
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': allQuestions.map(q => ({
+          '@type': 'Question',
+          'name': q.label,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': q.content
+          }
+        }))
+      })
+    }
+  ]
+})
+
 const ui = {
   root: 'flex items-center gap-4 w-full',
   list: 'relative flex bg-transparent dark:bg-transparent gap-2 px-0',

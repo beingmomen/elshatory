@@ -3,6 +3,30 @@ defineProps({
   phases: {
     type: Array,
     required: true
+  },
+  badgeLabel: {
+    type: String,
+    default: 'Architect Playbook · OOA&D'
+  },
+  title: {
+    type: String,
+    default: 'Software Development'
+  },
+  titleHighlight: {
+    type: String,
+    default: 'Life Cycle'
+  },
+  description: {
+    type: String,
+    default: 'A cognitive visual framework for system thinkers — transforming SDLC theory into an interactive mental model for Object Oriented Analysis & Design.'
+  },
+  buttonLabel: {
+    type: String,
+    default: 'Explore Phases'
+  },
+  arrowIcon: {
+    type: String,
+    default: 'i-lucide-arrow-right'
   }
 })
 </script>
@@ -24,7 +48,7 @@ defineProps({
           :transition="{ duration: 0.6, delay: 0.1 }"
         >
           <UBadge
-            label="Architect Playbook · OOA&D"
+            :label="badgeLabel"
             color="primary"
             variant="soft"
             size="sm"
@@ -39,7 +63,7 @@ defineProps({
           :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
-          Software Development <span class="text-gradient">Life Cycle</span>
+          {{ title }} <span class="text-gradient">{{ titleHighlight }}</span>
         </Motion>
       </template>
 
@@ -49,7 +73,7 @@ defineProps({
           :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.4 }"
         >
-          A cognitive visual framework for system thinkers — transforming SDLC theory into an interactive mental model for Object Oriented Analysis & Design.
+          {{ description }}
         </Motion>
       </template>
 
@@ -60,7 +84,7 @@ defineProps({
           :transition="{ duration: 0.6, delay: 0.6 }"
         >
           <UButton
-            label="Explore Phases"
+            :label="buttonLabel"
             to="#analysis"
             color="primary"
             size="md"
@@ -94,7 +118,7 @@ defineProps({
               </div>
             </div>
             <UIcon
-              name="i-lucide-arrow-right"
+              :name="arrowIcon"
               class="size-4 text-muted group-hover:text-primary transition-colors shrink-0"
             />
           </a>

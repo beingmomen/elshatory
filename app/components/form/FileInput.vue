@@ -72,7 +72,6 @@ const loading = ref(false)
 
 if (props.isCloudinary) {
   image.value = `${cloudinary.cloudinaryUrl}${props.modelValue}`
-  // console.log("image.value :>> ", image.value);
 } else {
   image.value = props.modelValue
 }
@@ -93,23 +92,20 @@ const uploadToCloudinary = async (file) => {
 
   const formData = new FormData()
   formData.append('file', file)
-  formData.append('upload_preset', cloudinary.uploadPreset)
-  formData.append('folder', `${cloudinary.uploadPreset}/${props.folder}`)
-  formData.append('api_key', cloudinary.apiKey)
-
-  const url = `https://api.cloudinary.com/v1_1/${cloudinary.cloudName}/image/upload`
+  formData.append('folder', props.folder)
+  formData.append('fullPath', String(props.fullPath))
 
   try {
-    const response = await $fetch(url, {
+    const response = await $fetch('/api/upload', {
       method: 'POST',
       body: formData
     })
 
-    image.value = response.secure_url
+    image.value = response.url
     if (props.fullPath) {
-      emit('update:modelValue', response.secure_url)
+      emit('update:modelValue', response.url)
     } else {
-      emit('update:modelValue', `${response.public_id}.${response.format}`)
+      emit('update:modelValue', response.path)
     }
   } catch (error) {
     // Error handled silently — toast notifications via useErrorHandler

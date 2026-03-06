@@ -23,7 +23,7 @@ const stats = [
           :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
           :in-view-options="{ once: true }"
         >
-          <div class="flex flex-col items-center gap-2 text-center group">
+          <div class="flex flex-col items-center gap-2 text-center group" :aria-label="`${stat.value} ${stat.label}`">
             <div class="p-3 rounded-2xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300">
               <UIcon
                 :name="stat.icon"

@@ -1,6 +1,5 @@
 export const useErrorHandler = () => {
   const toast = useToast()
-  // const { signOut } = useAuth();
   const handleError = async (error) => {
     if (error?.response?._data) {
       const { _data: errorData } = error.response
@@ -26,9 +25,6 @@ export const useErrorHandler = () => {
         })
       }
 
-      if (errorData.statusCode === 401) {
-        // await signOut({ callbackUrl: "/login", redirect: true });
-      }
     }
   }
 

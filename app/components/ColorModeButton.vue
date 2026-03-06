@@ -55,7 +55,10 @@ const startViewTransition = (event) => {
       @click="startViewTransition"
     />
     <template #fallback>
-      <div class="size-4" />
+      <div
+        class="size-4"
+        aria-hidden="true"
+      />
     </template>
   </ClientOnly>
 </template>

@@ -1,7 +1,7 @@
 <script setup>
 const { cloudinary } = useRuntimeConfig().public
 
-const { data } = await useFetch('/api/blog', {
+const { data, status } = await useFetch('/api/blog', {
   key: 'blogs',
   default: () => [],
   transform: blogs => blogs.map(blog => ({
@@ -22,6 +22,16 @@ const posts = computed(() => {
     path: `/blog/${blog.slug}`
   }))
 })
+
+const page = ref(1)
+const pageSize = 6
+
+const paginatedPosts = computed(() => {
+  const start = (page.value - 1) * pageSize
+  return posts.value.slice(start, start + pageSize)
+})
+
+const totalPages = computed(() => Math.ceil(posts.value.length / pageSize))
 
 useSeoMeta({
   title: 'المدونة - عبدالمؤمن الشطوري',
@@ -54,23 +64,49 @@ useBreadcrumbSchema([{ name: 'المدونة', path: '/blog' }])
     />
 
     <UPageSection :ui="{ container: '!pt-0' }">
-      <UBlogPosts orientation="vertical">
-        <UBlogPost
-          v-for="(post, index) in posts"
-          :key="post.path"
-          variant="naked"
-          orientation="horizontal"
-          :to="post.path"
-          v-bind="post"
-          :ui="{
-            root: 'md:grid md:grid-cols-2 group overflow-visible transition-all duration-300',
-            image: 'group-hover/blog-post:scale-105 rounded-lg shadow-lg border-4 border-muted ring-2 ring-default',
-            header: index % 2 === 0
-              ? 'sm:-rotate-1 overflow-visible'
-              : 'sm:rotate-1 overflow-visible'
-          }"
-        />
-      </UBlogPosts>
+      <div v-if="status === 'pending'" class="space-y-8">
+        <div v-for="i in 3" :key="i" class="md:grid md:grid-cols-2 gap-8">
+          <USkeleton class="h-48 rounded-lg" />
+          <div class="space-y-4 mt-4 md:mt-0">
+            <USkeleton class="h-6 w-3/4" />
+            <USkeleton class="h-4 w-full" />
+            <USkeleton class="h-4 w-2/3" />
+          </div>
+        </div>
+      </div>
+
+      <template v-else-if="posts.length">
+        <UBlogPosts orientation="vertical">
+          <UBlogPost
+            v-for="(post, index) in paginatedPosts"
+            :key="post.path"
+            variant="naked"
+            orientation="horizontal"
+            :to="post.path"
+            v-bind="post"
+            :ui="{
+              root: 'md:grid md:grid-cols-2 group overflow-visible transition-all duration-300',
+              image: 'group-hover/blog-post:scale-105 rounded-lg shadow-lg border-4 border-muted ring-2 ring-default',
+              header: index % 2 === 0
+                ? 'sm:-rotate-1 overflow-visible'
+                : 'sm:rotate-1 overflow-visible'
+            }"
+          />
+        </UBlogPosts>
+
+        <div v-if="totalPages > 1" class="flex justify-center mt-8">
+          <UPagination
+            v-model="page"
+            :total="posts.length"
+            :items-per-page="pageSize"
+          />
+        </div>
+      </template>
+
+      <div v-else class="text-center py-12">
+        <UIcon name="i-lucide-file-text" class="size-12 text-muted mx-auto mb-4" />
+        <p class="text-muted">لا توجد مقالات حالياً</p>
+      </div>
     </UPageSection>
   </UPage>
 </template>
