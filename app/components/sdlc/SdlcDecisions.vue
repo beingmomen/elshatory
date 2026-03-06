@@ -49,7 +49,7 @@ const nodeStyles = {
     :ui="{
       container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
-      description: 'text-sm text-muted mt-2'
+      description: 'text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <div class="grid md:grid-cols-2 gap-4">
@@ -72,7 +72,7 @@ const nodeStyles = {
             >
               {{ node.condition }}
             </div>
-            <p class="text-sm text-muted leading-relaxed">
+            <p class="text-base text-muted leading-relaxed">
               → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>
@@ -98,7 +98,7 @@ const nodeStyles = {
             >
               {{ node.condition }}
             </div>
-            <p class="text-sm text-muted leading-relaxed">
+            <p class="text-base text-muted leading-relaxed">
               → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>

@@ -90,7 +90,7 @@ async function deleteItem() {
           >
             {{ page.description }}
           </p>
-          <span class="text-sm text-muted block">
+          <span class="text-base text-muted block">
             {{ page.created_at }}
           </span>
         </div>
@@ -121,7 +121,7 @@ async function deleteItem() {
           <h3 class="text-lg font-bold">
             حذف الأمر؟
           </h3>
-          <p class="text-sm text-muted">
+          <p class="text-base text-muted">
             سيتم حذف "{{ page?.title }}" نهائياً. لا يمكن التراجع عن هذا الإجراء.
           </p>
           <div class="flex items-center justify-center gap-3 pt-2">

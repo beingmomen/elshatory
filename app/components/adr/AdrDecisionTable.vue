@@ -20,7 +20,7 @@ defineProps({
         <span class="text-base font-semibold">{{ title }}</span>
       </div>
       <div class="overflow-x-auto">
-        <table class="w-full text-sm">
+        <table class="w-full text-base">
           <thead>
             <tr class="border-b border-default/60">
               <th

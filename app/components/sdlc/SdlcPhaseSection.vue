@@ -22,7 +22,7 @@ const metaItems = computed(() => [
     :ui="{
       container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
-      description: 'text-sm text-muted mt-2'
+      description: 'text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <div class="grid md:grid-cols-3 gap-4">
@@ -42,14 +42,14 @@ const metaItems = computed(() => [
             </div>
             <span class="text-base font-semibold">{{ phase.layerA.title }}</span>
           </div>
-          <p class="text-sm text-muted leading-relaxed mb-4">
+          <p class="text-base text-muted leading-relaxed mb-4">
             {{ phase.layerA.body }}
           </p>
           <div class="rounded-lg bg-primary/5 border border-primary/20 p-3">
             <div class="text-sm font-semibold text-primary mb-1">
               Key Output
             </div>
-            <div class="text-sm">
+            <div class="text-base">
               {{ phase.layerA.output }}
             </div>
           </div>
@@ -76,7 +76,7 @@ const metaItems = computed(() => [
             <li
               v-for="item in phase.layerB.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-start"
+              class="text-base text-muted flex gap-2 items-start"
             >
               <UIcon
                 name="i-lucide-circle-check"
@@ -114,7 +114,7 @@ const metaItems = computed(() => [
             <li
               v-for="item in phase.layerC.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-start"
+              class="text-base text-muted flex gap-2 items-start"
             >
               <UIcon
                 name="i-lucide-help-circle"
@@ -146,7 +146,7 @@ const metaItems = computed(() => [
               {{ metaItem.label }}
             </div>
           </div>
-          <div class="text-sm leading-relaxed">
+          <div class="text-base leading-relaxed">
             {{ metaItem.value }}
           </div>
         </div>

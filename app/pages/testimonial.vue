@@ -147,7 +147,7 @@ function resetForm() {
           :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.6 }"
         >
-          <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-muted">
+          <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-base text-muted">
             <span class="flex items-center gap-2">
               <UIcon
                 name="i-lucide-users"
@@ -182,7 +182,7 @@ function resetForm() {
       :ui="{
         container: 'px-0 !pt-0',
         title: 'text-xl sm:text-xl lg:text-2xl font-medium',
-        description: 'mt-2 text-sm text-muted'
+        description: 'mt-2 text-base text-muted leading-relaxed'
       }"
     >
       <Motion

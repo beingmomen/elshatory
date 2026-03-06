@@ -30,11 +30,11 @@ defineProps({
             </div>
             <div class="flex-1 min-w-0">
               <div class="text-base font-semibold">{{ step.title }}</div>
-              <div v-if="step.description" class="text-sm text-muted mt-0.5">{{ step.description }}</div>
+              <div v-if="step.description" class="text-base text-muted mt-0.5">{{ step.description }}</div>
             </div>
             <UBadge v-if="step.badge" :label="step.badge" color="primary" variant="subtle" size="xs" />
           </div>
-          <div v-if="step.details" class="mt-3 text-sm text-muted leading-relaxed">
+          <div v-if="step.details" class="mt-3 text-base text-muted leading-relaxed">
             {{ step.details }}
           </div>
         </div>

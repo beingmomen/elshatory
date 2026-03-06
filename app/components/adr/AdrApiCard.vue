@@ -21,7 +21,7 @@ defineProps({
         <UBadge v-if="type" :label="type" color="neutral" variant="subtle" size="xs" />
       </div>
 
-      <p class="text-sm text-muted leading-relaxed mb-3">{{ description }}</p>
+      <p class="text-base text-muted leading-relaxed mb-3">{{ description }}</p>
 
       <div v-if="params.length" class="mb-3 space-y-1">
         <div v-for="param in params" :key="param.name" class="flex items-start gap-2 text-sm">

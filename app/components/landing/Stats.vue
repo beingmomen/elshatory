@@ -33,7 +33,7 @@ const stats = [
             <span class="text-4xl sm:text-5xl font-bold text-gradient">
               {{ stat.value }}
             </span>
-            <span class="text-sm text-muted">
+            <span class="text-base text-muted">
               {{ stat.label }}
             </span>
           </div>

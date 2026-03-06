@@ -33,14 +33,14 @@ onMounted(() => {
 <template>
   <nav class="sticky top-24 space-y-1 text-right">
     <div class="flex items-center justify-end gap-2 mb-3 px-3">
-      <span class="text-sm font-semibold">الفهرس</span>
+      <span class="text-base font-semibold">الفهرس</span>
       <UIcon name="i-lucide-list" class="size-4 text-primary" />
     </div>
     <a
       v-for="section in sections"
       :key="section.id"
       :href="`#${section.id}`"
-      class="flex items-center justify-end gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors duration-200"
+      class="flex items-center justify-end gap-2 px-3 py-1.5 rounded-lg text-base transition-colors duration-200"
       :class="activeId === section.id
         ? 'bg-primary/10 text-primary font-medium'
         : 'text-muted hover:text-highlighted hover:bg-elevated/60'"

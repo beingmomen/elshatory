@@ -25,7 +25,7 @@
                 </div>
                 <div>
                   <div class="text-base font-semibold mb-2">المبدأ الأساسي</div>
-                  <p class="text-sm text-muted leading-relaxed">
+                  <p class="text-base text-muted leading-relaxed">
                     <code class="font-mono text-primary" dir="ltr">useGlobal</code>
                     يقرأ مباشرة من
                     <code class="font-mono text-primary" dir="ltr">useAuth().data</code>
@@ -64,7 +64,7 @@
               >
                 <div class="rounded-lg border border-default/60 bg-elevated/30 p-4 text-right">
                   <UBadge :label="`${step.num}`" color="primary" variant="subtle" size="xs" class="mb-2" />
-                  <div class="text-sm text-muted">{{ step.text }}</div>
+                  <div class="text-base text-muted">{{ step.text }}</div>
                 </div>
               </Motion>
             </div>
@@ -108,11 +108,11 @@
             />
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 mt-4">
               <div class="text-base font-semibold mb-2">لماذا computed وليس نسخ؟</div>
-              <div class="flex items-center gap-2 text-sm text-muted font-mono" dir="ltr" style="direction: ltr;">
+              <div class="flex items-center gap-2 text-base text-muted font-mono" dir="ltr" style="direction: ltr;">
                 useAuth().data ──computed──→ useGlobal ──read──→ أي مكان
               </div>
               <ul class="mt-3 space-y-2">
-                <li v-for="point in computedPoints" :key="point" class="text-sm text-muted flex gap-2 items-start">
+                <li v-for="point in computedPoints" :key="point" class="text-base text-muted flex gap-2 items-start">
                   <UIcon name="i-lucide-circle-check" class="size-3.5 text-primary/50 mt-0.5 shrink-0" />
                   <span>{{ point }}</span>
                 </li>

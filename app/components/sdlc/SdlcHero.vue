@@ -113,7 +113,7 @@ defineProps({
               <div class="text-base font-semibold">
                 {{ phase.title }}
               </div>
-              <div class="text-sm text-muted">
+              <div class="text-base text-muted">
                 {{ phase.tagline }}
               </div>
             </div>

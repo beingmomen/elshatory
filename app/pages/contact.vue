@@ -154,7 +154,7 @@ const contactPills = [
                 :name="pill.icon"
                 class="size-4 text-primary"
               />
-              <span class="text-sm text-muted font-medium">{{ pill.label }}</span>
+              <span class="text-base text-muted font-medium">{{ pill.label }}</span>
             </div>
           </Motion>
         </div>
@@ -210,7 +210,7 @@ const contactPills = [
               <h3 class="text-xl font-bold text-highlighted">
                 تم الإرسال بنجاح!
               </h3>
-              <p class="text-muted text-sm max-w-xs">
+              <p class="text-muted text-base max-w-xs">
                 شكراً لتواصلك، سأرد عليك في أقرب وقت ممكن بإذن الله.
               </p>
               <div class="flex items-center gap-3 mt-2">
@@ -365,7 +365,7 @@ const contactPills = [
               <h3 class="text-lg font-bold text-highlighted">
                 معلومات التواصل
               </h3>
-              <p class="text-sm text-muted mt-1">
+              <p class="text-base text-muted mt-1">
                 يمكنك التواصل معي عبر أي من الوسائل التالية
               </p>
             </template>
@@ -385,7 +385,7 @@ const contactPills = [
                   <p class="text-xs text-muted mb-0.5">
                     البريد الإلكتروني
                   </p>
-                  <p class="text-sm font-medium text-highlighted truncate">
+                  <p class="text-base font-medium text-highlighted truncate">
                     {{ global.email }}
                   </p>
                 </div>
@@ -431,7 +431,7 @@ const contactPills = [
                   />
                 </span>
                 <span
-                  class="text-sm font-medium"
+                  class="text-base font-medium"
                   :class="global.available ? 'text-success' : 'text-error'"
                 >
                   {{ global.available ? 'متاح للمشاريع' : 'غير متاح حالياً' }}

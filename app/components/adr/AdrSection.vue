@@ -16,7 +16,7 @@ defineProps({
     :ui="{
       container: 'py-6 sm:py-8 scroll-mt-20',
       title: 'text-right text-xl sm:text-2xl font-medium',
-      description: 'text-right text-sm text-muted mt-2'
+      description: 'text-right text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <template v-if="badge || icon" #headline>

@@ -126,7 +126,7 @@ function resetForm() {
             <h3 class="text-xl font-bold text-highlighted">
               تمت الإضافة بنجاح!
             </h3>
-            <p class="text-muted text-sm max-w-xs">
+            <p class="text-muted text-base max-w-xs">
               تم حفظ الـ Agent كملف markdown.
             </p>
             <div class="flex items-center gap-3 mt-2">

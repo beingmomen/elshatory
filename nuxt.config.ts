@@ -167,10 +167,16 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
+        name: 'IBM Plex Sans Arabic',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+        subsets: ['arabic', 'latin']
+      },
+      {
         name: 'Tajawal',
         provider: 'google',
-        weights: [300, 400, 500, 700],
-        subsets: ['arabic', 'latin']
+        weights: [400, 500, 700],
+        subsets: ['arabic']
       },
       {
         name: 'Space Grotesk',
@@ -213,7 +219,7 @@ export default defineNuxtConfig({
       width: 1200,
       height: 630
     },
-    fonts: ['Tajawal:700']
+    fonts: ['IBM Plex Sans Arabic:700']
   },
 
   robots: {

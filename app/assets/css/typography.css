@@ -32,7 +32,7 @@
 
 /* Paragraphs and basic text */
 .ProseMirror p {
-  @apply text-xl leading-7 my-4 text-gray-700 dark:text-gray-200;
+  @apply text-xl leading-9 my-4 text-gray-700 dark:text-gray-200;
 }
 
 /* Lists */
@@ -42,7 +42,7 @@
 }
 
 .ProseMirror li {
-  @apply my-2 leading-6;
+  @apply my-2 leading-8;
 }
 
 .ProseMirror ul li {

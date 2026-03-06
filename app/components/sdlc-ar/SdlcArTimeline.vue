@@ -52,7 +52,7 @@ function openModal(role, phase) {
     :ui="{
       container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
-      description: 'text-right text-sm text-muted mt-2'
+      description: 'text-right text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -79,7 +79,7 @@ function openModal(role, phase) {
             <li
               v-for="role in phaseRoles[phase.id]"
               :key="role"
-              class="text-sm text-muted hover:text-primary cursor-pointer transition-colors duration-200"
+              class="text-base text-muted hover:text-primary cursor-pointer transition-colors duration-200"
               @click="openModal(role, phase)"
             >
               {{ role }}
@@ -96,7 +96,7 @@ function openModal(role, phase) {
       @update:open="modalOpen = $event"
     >
       <template #body>
-        <p class="text-sm text-muted leading-relaxed text-right">
+        <p class="text-base text-muted leading-relaxed text-right">
           {{ roleDetails[activeRole]?.summary }}
         </p>
       </template>

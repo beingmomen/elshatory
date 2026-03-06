@@ -28,10 +28,10 @@ const experiences = useExperiences()
             target="_blank"
             class="flex items-baseline justify-between gap-4 py-2 group"
           >
-            <span class="text-sm text-dimmed whitespace-nowrap">
+            <span class="text-base text-dimmed whitespace-nowrap">
               {{ experience.startDate }} – {{ experience.endDate }}
             </span>
-            <span class="text-sm text-muted text-right whitespace-nowrap">
+            <span class="text-base text-muted text-right whitespace-nowrap">
               {{ experience.position }} at
               <span class="font-semibold text-primary group-hover:underline">{{ experience.company }}</span>
             </span>

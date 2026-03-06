@@ -28,7 +28,7 @@ defineProps({
           class="flex items-start gap-4 px-5 py-3 hover:bg-elevated/40 transition-colors"
         >
           <code class="text-xs font-mono text-primary bg-primary/5 px-2 py-1 rounded shrink-0" dir="ltr">{{ file.path }}</code>
-          <span class="text-sm text-muted">{{ file.description }}</span>
+          <span class="text-base text-muted">{{ file.description }}</span>
         </div>
       </div>
     </div>

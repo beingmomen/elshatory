@@ -34,11 +34,11 @@ const aiTools = [
               <h3 class="text-lg font-semibold">
                 عبدالمؤمن الشطوري
               </h3>
-              <p class="text-sm text-muted mt-1">
+              <p class="text-base text-muted mt-1">
                 مهندس واجهات أمامية
               </p>
             </div>
-            <p class="text-sm text-muted leading-relaxed">
+            <p class="text-base text-muted leading-relaxed">
               أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.
             </p>
             <div class="flex gap-1">
@@ -52,7 +52,7 @@ const aiTools = [
 
           <!-- Column 2: Quick Links -->
           <div>
-            <h4 class="text-sm font-semibold mb-4">
+            <h4 class="text-base font-semibold mb-4">
               روابط سريعة
             </h4>
             <ul class="space-y-2.5">
@@ -62,7 +62,7 @@ const aiTools = [
               >
                 <NuxtLink
                   :to="link.to"
-                  class="text-sm text-muted hover:text-primary transition-colors duration-200"
+                  class="text-base text-muted hover:text-primary transition-colors duration-200"
                 >
                   {{ link.label }}
                 </NuxtLink>
@@ -72,7 +72,7 @@ const aiTools = [
 
           <!-- Column 3: AI Tools -->
           <div>
-            <h4 class="text-sm font-semibold mb-4">
+            <h4 class="text-base font-semibold mb-4">
               أدوات AI
             </h4>
             <ul class="space-y-2.5">
@@ -82,7 +82,7 @@ const aiTools = [
               >
                 <NuxtLink
                   :to="tool.to"
-                  class="text-sm text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                  class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
                 >
                   <UIcon
                     :name="tool.icon"
@@ -97,12 +97,12 @@ const aiTools = [
           <!-- Column 4: Contact + Guides -->
           <div class="space-y-6">
             <div>
-              <h4 class="text-sm font-semibold mb-4">
+              <h4 class="text-base font-semibold mb-4">
                 تواصل معي
               </h4>
               <a
                 :href="`mailto:${global.email}`"
-                class="text-sm text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
               >
                 <UIcon
                   name="i-lucide-mail"
@@ -113,7 +113,7 @@ const aiTools = [
             </div>
 
             <div>
-              <h4 class="text-sm font-semibold mb-4">
+              <h4 class="text-base font-semibold mb-4">
                 أدلة تقنية
               </h4>
               <ul class="space-y-2.5">
@@ -123,7 +123,7 @@ const aiTools = [
                 >
                   <NuxtLink
                     :to="guide.to"
-                    class="text-sm text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                    class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
                   >
                     <UIcon
                       name="i-lucide-book-open"

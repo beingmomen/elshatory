@@ -73,7 +73,7 @@
               />
             </div>
 
-            <p class="text-sm text-muted leading-relaxed mb-4">{{ adr.description }}</p>
+            <p class="text-base text-muted leading-relaxed mb-4">{{ adr.description }}</p>
 
             <USeparator class="mb-4" />
 

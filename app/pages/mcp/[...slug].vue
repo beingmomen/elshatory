@@ -103,7 +103,7 @@ async function deleteServer() {
               :label="page.installation_method"
               size="lg"
             />
-            <span class="text-sm text-muted">
+            <span class="text-base text-muted">
               {{ page.created_at }}
             </span>
           </div>
@@ -132,7 +132,7 @@ async function deleteServer() {
           <h3 class="text-lg font-bold">
             حذف الخادم؟
           </h3>
-          <p class="text-sm text-muted">
+          <p class="text-base text-muted">
             سيتم حذف "{{ page?.title }}" نهائياً. لا يمكن التراجع عن هذا الإجراء.
           </p>
           <div class="flex items-center justify-center gap-3 pt-2">

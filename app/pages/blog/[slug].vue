@@ -116,7 +116,7 @@ useBreadcrumbSchema([
       <UPage v-if="singleBlog?.title">
         <ULink
           to="/blog"
-          class="text-sm flex items-center gap-1"
+          class="text-base flex items-center gap-1"
         >
           <UIcon name="i-lucide-chevron-right" />
           المقالات

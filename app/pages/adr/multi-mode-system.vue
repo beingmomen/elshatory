@@ -25,7 +25,7 @@
                 </div>
                 <div>
                   <div class="text-base font-semibold mb-2">المبدأ الأساسي</div>
-                  <p class="text-sm text-muted leading-relaxed">
+                  <p class="text-base text-muted leading-relaxed">
                     فصل كامل — كل ملف نظيف 100% بدون شروط. الـ mode logic موجود في <strong class="text-highlighted">4 أماكن فقط</strong> في النظام بأكمله.
                   </p>
                 </div>
@@ -44,9 +44,9 @@
                 <div class="rounded-xl border border-default/60 bg-elevated/30 p-4 hover:bg-elevated/60 transition-colors duration-300 h-full">
                   <div class="flex items-center gap-2 mb-2">
                     <UIcon :name="impact.icon" class="size-4 text-primary" />
-                    <span class="text-sm font-semibold">{{ impact.title }}</span>
+                    <span class="text-base font-semibold">{{ impact.title }}</span>
                   </div>
-                  <p class="text-sm text-muted">{{ impact.description }}</p>
+                  <p class="text-base text-muted">{{ impact.description }}</p>
                 </div>
               </Motion>
             </div>
@@ -92,7 +92,7 @@
                     <UBadge label="Dynamic Component" color="neutral" variant="subtle" size="xs" class="ms-2" />
                   </div>
                 </div>
-                <p class="text-sm text-muted leading-relaxed mb-3">
+                <p class="text-base text-muted leading-relaxed mb-3">
                   يستقبل map من المكوّنات ويرسم الصحيح تلقائياً حسب الـ mode. يمرر <code class="font-mono text-primary" dir="ltr">$attrs</code> و <code class="font-mono text-primary" dir="ltr">$slots</code> للمكوّن المختار.
                 </p>
                 <AdrCodeBlock
@@ -112,7 +112,7 @@
                     <UBadge label="Conditional Render" color="neutral" variant="subtle" size="xs" class="ms-2" />
                   </div>
                 </div>
-                <p class="text-sm text-muted leading-relaxed mb-3">
+                <p class="text-base text-muted leading-relaxed mb-3">
                   للحالات البسيطة — إظهار/إخفاء محتوى حسب الـ mode. يُستخدم خارج الفورمات فقط.
                 </p>
                 <AdrCodeBlock
@@ -136,8 +136,8 @@
                 :in-view-options="{ once: true }"
               >
                 <div class="rounded-xl border p-4 transition-colors duration-300" :class="rule.style">
-                  <div class="text-sm font-semibold mb-1" :class="rule.textStyle">{{ rule.title }}</div>
-                  <p class="text-sm text-muted">{{ rule.description }}</p>
+                  <div class="text-base font-semibold mb-1" :class="rule.textStyle">{{ rule.title }}</div>
+                  <p class="text-base text-muted">{{ rule.description }}</p>
                 </div>
               </Motion>
             </div>
@@ -151,7 +151,7 @@
           <!-- Sidebar Filtering -->
           <AdrSection id="sidebar-filtering" title="تصفية الـ Sidebar" icon="i-lucide-sidebar" description="إضافة خاصية modes اختيارية لعناصر الـ sidebar">
             <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 mb-4">
-              <p class="text-sm text-muted leading-relaxed">
+              <p class="text-base text-muted leading-relaxed">
                 <strong class="text-highlighted">القاعدة:</strong> عنصر بدون <code class="font-mono text-primary" dir="ltr">modes</code> = يظهر في كل الأنظمة. عنصر مع <code class="font-mono text-primary" dir="ltr">modes</code> = يظهر فقط في الأنظمة المحددة.
               </p>
             </div>
@@ -232,14 +232,14 @@
                     <UBadge :label="`${index + 1}`" color="primary" variant="subtle" size="xs" />
                     <code class="text-xs font-mono text-primary" dir="ltr">{{ location.file }}</code>
                   </div>
-                  <p class="text-sm text-muted">{{ location.purpose }}</p>
+                  <p class="text-base text-muted">{{ location.purpose }}</p>
                 </div>
               </Motion>
             </div>
             <div class="rounded-lg border border-success/30 bg-success/5 p-4 mt-4">
               <div class="flex items-center gap-2">
                 <UIcon name="i-lucide-circle-check" class="size-4 text-success" />
-                <span class="text-sm font-semibold text-success">كل ملف آخر (schema, form, component, table, columns, service) = كود نظيف 100% بدون أي شرط.</span>
+                <span class="text-base font-semibold text-success">كل ملف آخر (schema, form, component, table, columns, service) = كود نظيف 100% بدون أي شرط.</span>
               </div>
             </div>
           </AdrSection>
@@ -259,7 +259,7 @@
                       <UBadge :label="`${index + 1}`" color="primary" variant="soft" size="sm" />
                       <span class="text-base font-semibold">{{ step.title }}</span>
                     </div>
-                    <p class="text-sm text-muted leading-relaxed">{{ step.description }}</p>
+                    <p class="text-base text-muted leading-relaxed">{{ step.description }}</p>
                     <AdrCodeBlock
                       v-if="step.code"
                       :language="step.language || 'js'"

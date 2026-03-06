@@ -226,7 +226,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
             :transition="{ duration: 0.5, delay: 0.15 + 0.15 * index }"
             :in-view-options="{ once: true }"
           >
-            <p class="text-muted text-right text-sm sm:text-base leading-8">
+            <p class="text-muted text-right text-base sm:text-lg leading-relaxed">
               {{ paragraph }}
             </p>
           </Motion>
@@ -289,7 +289,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
               <span class="text-4xl sm:text-5xl font-bold text-gradient">
                 {{ stat.value }}
               </span>
-              <span class="text-sm text-muted">
+              <span class="text-base text-muted">
                 {{ stat.label }}
               </span>
             </div>
@@ -420,7 +420,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                         class="size-3.5 text-muted"
                       />
                     </ULink>
-                    <p class="text-sm text-muted mt-0.5">
+                    <p class="text-base text-muted mt-0.5">
                       {{ exp.position }}
                     </p>
                   </div>
@@ -455,7 +455,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                   <li
                     v-for="(resp, rIndex) in exp.responsibilities.slice(0, 3)"
                     :key="rIndex"
-                    class="flex items-start gap-2 text-sm text-muted"
+                    class="flex items-start gap-2 text-base text-muted"
                   >
                     <UIcon
                       name="i-lucide-circle-check"

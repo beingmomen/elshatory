@@ -74,7 +74,7 @@ const ui = {
     :ui="{
       container: 'px-0 !pt-0 gap-4 sm:gap-4',
       title: 'text-right text-xl sm:text-xl lg:text-2xl font-medium',
-      description: 'text-right mt-2 text-sm sm:text-md lg:text-sm text-muted'
+      description: 'text-right mt-2 text-base sm:text-lg lg:text-base text-muted leading-relaxed'
     }"
   >
     <UTabs

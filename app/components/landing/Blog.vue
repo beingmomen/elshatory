@@ -28,7 +28,7 @@ const latestBlogs = computed(() => {
     :ui="{
       container: 'px-0 !pt-4 sm:gap-4 lg:gap-6',
       title: 'text-right text-xl sm:text-xl lg:text-2xl font-medium',
-      description: 'text-right mt-2 text-sm sm:text-md lg:text-sm text-muted'
+      description: 'text-right mt-2 text-base sm:text-lg lg:text-base text-muted leading-relaxed'
     }"
   >
     <UBlogPosts

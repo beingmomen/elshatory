@@ -30,7 +30,7 @@ const stages = [
     :ui="{
       container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-xl sm:text-2xl font-medium',
-      description: 'text-sm text-muted mt-2'
+      description: 'text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <template #headline>
@@ -67,7 +67,7 @@ const stages = [
             <li
               v-for="item in stage.items"
               :key="item"
-              class="text-sm text-muted flex gap-2 items-center leading-relaxed"
+              class="text-base text-muted flex gap-2 items-center leading-relaxed"
             >
               <span class="size-1 rounded-full bg-primary/50 shrink-0" />
               {{ item }}

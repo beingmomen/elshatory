@@ -102,7 +102,7 @@ useHead({
           }"
         >
           <template #leading>
-            <span class="text-sm text-muted">
+            <span class="text-base text-muted">
               {{ project.tag }}
             </span>
           </template>
@@ -120,7 +120,7 @@ useHead({
             <ULink
               :to="project.url"
               target="_blank"
-              class="text-sm text-primary flex items-center"
+              class="text-base text-primary flex items-center"
             >
               عرض المشروع
               <UIcon

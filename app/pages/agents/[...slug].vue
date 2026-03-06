@@ -99,7 +99,7 @@ async function deleteAgent() {
               :label="page.category"
               size="lg"
             />
-            <span class="text-sm text-muted">
+            <span class="text-base text-muted">
               {{ page.created_at }}
             </span>
           </div>
@@ -128,7 +128,7 @@ async function deleteAgent() {
           <h3 class="text-lg font-bold">
             حذف الـ Agent؟
           </h3>
-          <p class="text-sm text-muted">
+          <p class="text-base text-muted">
             سيتم حذف "{{ page?.title }}" نهائياً. لا يمكن التراجع عن هذا الإجراء.
           </p>
           <div class="flex items-center justify-center gap-3 pt-2">

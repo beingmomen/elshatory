@@ -30,7 +30,7 @@ const tasks = [
     :ui="{
       container: 'py-8 sm:py-12 lg:py-16',
       title: 'text-right text-xl sm:text-2xl font-medium',
-      description: 'text-right text-sm text-muted mt-2'
+      description: 'text-right text-base text-muted mt-2 leading-relaxed'
     }"
   >
     <div class="space-y-4">
@@ -50,7 +50,7 @@ const tasks = [
             <h3 class="text-base font-semibold mb-1">
               {{ task.title }}
             </h3>
-            <p class="text-sm text-muted leading-relaxed mb-3">
+            <p class="text-base text-muted leading-relaxed mb-3">
               {{ task.desc }}
             </p>
             <div class="flex flex-wrap gap-2">

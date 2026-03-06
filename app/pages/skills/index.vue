@@ -200,7 +200,7 @@ async function deleteSelected() {
                     :label="item.trigger"
                   />
                 </div>
-                <p class="text-sm text-muted">
+                <p class="text-base text-muted">
                   {{ item.created_at }}
                 </p>
               </div>
@@ -242,7 +242,7 @@ async function deleteSelected() {
           v-if="hasSelection"
           class="fixed bottom-6 start-1/2 -translate-x-1/2 z-50 flex items-center gap-4 px-6 py-3 rounded-full bg-elevated border border-default shadow-xl backdrop-blur-sm"
         >
-          <span class="text-sm font-medium">
+          <span class="text-base font-medium">
             {{ selectedItems.size }} مُحدد
           </span>
           <UButton
@@ -272,7 +272,7 @@ async function deleteSelected() {
             <h3 class="text-lg font-bold">
               حذف {{ selectedItems.size }} Skill؟
             </h3>
-            <p class="text-sm text-muted">
+            <p class="text-base text-muted">
               سيتم حذف الـ Skills المحددة نهائياً. لا يمكن التراجع عن هذا الإجراء.
             </p>
             <div class="flex items-center justify-center gap-3 pt-2">
