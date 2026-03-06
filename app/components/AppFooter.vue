@@ -25,13 +25,66 @@ const aiTools = [
 
 <template>
   <footer class="z-10 mt-16">
-    <div class="-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 border-t border-default px-4 sm:px-12 lg:px-16">
+    <!-- CTA Banner -->
+    <div class="-mx-4 sm:-mx-12 lg:-mx-16 px-4 sm:px-12 lg:px-16">
+      <div class="max-w-(--ui-container) mx-auto">
+        <div class="rounded-2xl border border-default/60 bg-muted/40 backdrop-blur-sm p-8 sm:p-12 text-center shadow-lg shadow-neutral-950/5">
+          <Motion
+            :initial="{ scale: 1.1, opacity: 0 }"
+            :animate="{ scale: 1, opacity: 1 }"
+            :transition="{ duration: 0.6, delay: 0.1 }"
+          >
+            <h2 class="text-2xl sm:text-3xl font-bold mb-3">
+              هل لديك مشروع؟
+              <span class="text-gradient">لنعمل معاً</span>
+            </h2>
+          </Motion>
+
+          <Motion
+            :initial="{ scale: 1.1, opacity: 0 }"
+            :animate="{ scale: 1, opacity: 1 }"
+            :transition="{ duration: 0.6, delay: 0.3 }"
+          >
+            <p class="text-base text-muted mb-6 max-w-lg mx-auto">
+              أنا متاح لمشاريع جديدة ومستعد لتحويل أفكارك إلى واقع رقمي مميز
+            </p>
+          </Motion>
+
+          <Motion
+            :initial="{ scale: 1.1, opacity: 0 }"
+            :animate="{ scale: 1, opacity: 1 }"
+            :transition="{ duration: 0.6, delay: 0.5 }"
+          >
+            <div class="flex items-center justify-center gap-3">
+              <UButton
+                label="تواصل معي"
+                to="/contact"
+                color="primary"
+                size="md"
+              />
+              <UButton
+                label="احجز اجتماع"
+                :to="global.meetingLink"
+                target="_blank"
+                color="neutral"
+                variant="outline"
+                size="md"
+                icon="i-lucide-calendar"
+              />
+            </div>
+          </Motion>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 border-t border-default px-4 sm:px-12 lg:px-16 mt-10">
       <div class="max-w-(--ui-container) mx-auto py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <!-- Column 1: Brand -->
           <div class="space-y-4">
             <div>
-              <h3 class="text-lg font-semibold">
+              <h3 class="text-lg font-bold text-gradient inline-block">
                 عبدالمؤمن الشطوري
               </h3>
               <p class="text-base text-muted mt-1">
@@ -41,18 +94,25 @@ const aiTools = [
             <p class="text-base text-muted leading-relaxed">
               أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.
             </p>
-            <div class="flex gap-1">
-              <UButton
-                v-for="link of footer?.links"
-                :key="link.to || link.href"
-                v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
+            <a
+              :href="`mailto:${global.email}`"
+              class="inline-flex items-center gap-2 text-sm text-muted hover:text-primary transition-colors duration-200"
+            >
+              <UIcon
+                name="i-lucide-mail"
+                class="size-4 text-primary/60 shrink-0"
               />
-            </div>
+              {{ global.email }}
+            </a>
           </div>
 
           <!-- Column 2: Quick Links -->
           <div>
-            <h4 class="text-base font-semibold mb-4">
+            <h4 class="text-base font-semibold mb-4 flex items-center gap-2">
+              <UIcon
+                name="i-lucide-link"
+                class="size-4 text-primary/60"
+              />
               روابط سريعة
             </h4>
             <ul class="space-y-2.5">
@@ -62,7 +122,7 @@ const aiTools = [
               >
                 <NuxtLink
                   :to="link.to"
-                  class="text-base text-muted hover:text-primary transition-colors duration-200"
+                  class="text-base text-muted hover:text-primary transition-all duration-200 inline-block"
                 >
                   {{ link.label }}
                 </NuxtLink>
@@ -72,7 +132,11 @@ const aiTools = [
 
           <!-- Column 3: AI Tools -->
           <div>
-            <h4 class="text-base font-semibold mb-4">
+            <h4 class="text-base font-semibold mb-4 flex items-center gap-2">
+              <UIcon
+                name="i-lucide-sparkles"
+                class="size-4 text-primary/60"
+              />
               أدوات AI
             </h4>
             <ul class="space-y-2.5">
@@ -82,11 +146,11 @@ const aiTools = [
               >
                 <NuxtLink
                   :to="tool.to"
-                  class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                  class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2 group"
                 >
                   <UIcon
                     :name="tool.icon"
-                    class="size-3.5 text-primary/60 shrink-0"
+                    class="size-3.5 text-primary/60 shrink-0 group-hover:scale-110 transition-transform duration-200"
                   />
                   {{ tool.label }}
                 </NuxtLink>
@@ -94,54 +158,52 @@ const aiTools = [
             </ul>
           </div>
 
-          <!-- Column 4: Contact + Guides -->
-          <div class="space-y-6">
-            <div>
-              <h4 class="text-base font-semibold mb-4">
-                تواصل معي
-              </h4>
-              <a
-                :href="`mailto:${global.email}`"
-                class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
+          <!-- Column 4: Guides -->
+          <div>
+            <h4 class="text-base font-semibold mb-4 flex items-center gap-2">
+              <UIcon
+                name="i-lucide-book-open"
+                class="size-4 text-primary/60"
+              />
+              أدلة تقنية
+            </h4>
+            <ul class="space-y-2.5">
+              <li
+                v-for="guide in guides"
+                :key="guide.to"
               >
-                <UIcon
-                  name="i-lucide-mail"
-                  class="size-4 text-primary/60 shrink-0"
-                />
-                {{ global.email }}
-              </a>
-            </div>
-
-            <div>
-              <h4 class="text-base font-semibold mb-4">
-                أدلة تقنية
-              </h4>
-              <ul class="space-y-2.5">
-                <li
-                  v-for="guide in guides"
-                  :key="guide.to"
+                <NuxtLink
+                  :to="guide.to"
+                  class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
                 >
-                  <NuxtLink
-                    :to="guide.to"
-                    class="text-base text-muted hover:text-primary transition-colors duration-200 flex items-center gap-2"
-                  >
-                    <UIcon
-                      name="i-lucide-book-open"
-                      class="size-3.5 text-primary/60 shrink-0"
-                    />
-                    {{ guide.label }}
-                  </NuxtLink>
-                </li>
-              </ul>
-            </div>
+                  <UIcon
+                    name="i-lucide-file-text"
+                    class="size-3.5 text-primary/60 shrink-0"
+                  />
+                  {{ guide.label }}
+                </NuxtLink>
+              </li>
+            </ul>
           </div>
         </div>
 
         <!-- Bottom Bar -->
         <USeparator class="mt-10 mb-6" />
-        <p class="text-xs text-muted text-center">
-          {{ footer.credits }}
-        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-muted">
+            {{ footer.credits }}
+          </p>
+
+          <div class="flex items-center gap-1">
+            <UButton
+              v-for="link of footer?.links"
+              :key="link.to || link.href"
+              v-bind="{ size: 'sm', color: 'neutral', variant: 'ghost', ...link }"
+              class="hover:text-primary hover:bg-primary/10 transition-all duration-200"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </footer>

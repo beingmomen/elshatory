@@ -78,9 +78,9 @@ const ui = {
     }"
   >
     <UTabs
-      :items
+      :items="items"
       orientation="horizontal"
-      :ui
+      :ui="ui"
     >
       <template #content="{ item }">
         <UAccordion
