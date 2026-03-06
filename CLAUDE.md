@@ -109,6 +109,12 @@ app/components/
 - Use `text-right` for text alignment
 - Use `i-lucide-arrow-left` for "forward" arrows (RTL)
 
+## Plan Mode
+
+- Write all plan mode outputs in Arabic
+- Keep technical terms in English (component, composable, API, SSR, route, etc.)
+- Use the arabic-planner agent proactively for plan research
+
 ## Nuxt UI 4 Patterns
 
 - Use semantic colors: `error`, `success`, `warning`, `info` (not `red`, `green`, etc.)
