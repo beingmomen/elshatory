@@ -1,5 +1,5 @@
 <script setup>
-import Joi from 'joi'
+import { z } from 'zod'
 
 useSeoMeta({
   title: 'إضافة أمر',
@@ -8,13 +8,10 @@ useSeoMeta({
 
 const toast = useToast()
 
-const schema = Joi.object({
-  name: Joi.string().required().messages({
-    'string.empty': 'اسم الأمر مطلوب',
-    'any.required': 'اسم الأمر مطلوب'
-  }),
-  description: Joi.string().allow('', null).optional(),
-  content: Joi.string().allow('', null).optional()
+const schema = z.object({
+  name: z.string({ error: 'اسم الأمر مطلوب' }).min(1, 'اسم الأمر مطلوب'),
+  description: z.string().optional().or(z.literal('')),
+  content: z.string().optional().or(z.literal(''))
 })
 
 const state = reactive({

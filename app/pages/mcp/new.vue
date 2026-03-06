@@ -1,5 +1,5 @@
 <script setup>
-import Joi from 'joi'
+import { z } from 'zod'
 
 useSeoMeta({
   title: 'إضافة خادم MCP',
@@ -8,26 +8,14 @@ useSeoMeta({
 
 const toast = useToast()
 
-const schema = Joi.object({
-  name: Joi.string().required().messages({
-    'string.empty': 'اسم الخادم مطلوب',
-    'any.required': 'اسم الخادم مطلوب'
-  }),
-  category: Joi.string().required().messages({
-    'string.empty': 'التصنيف مطلوب',
-    'any.required': 'التصنيف مطلوب'
-  }),
-  installationMethod: Joi.string().required().messages({
-    'string.empty': 'طريقة التثبيت مطلوبة',
-    'any.required': 'طريقة التثبيت مطلوبة'
-  }),
-  mcpKey: Joi.string().allow('', null).optional(),
-  mcpConfigJson: Joi.string().required().messages({
-    'string.empty': 'إعداد MCP مطلوب',
-    'any.required': 'إعداد MCP مطلوب'
-  }),
-  installCommand: Joi.string().allow('', null).optional(),
-  notes: Joi.string().allow('', null).optional()
+const schema = z.object({
+  name: z.string({ error: 'اسم الخادم مطلوب' }).min(1, 'اسم الخادم مطلوب'),
+  category: z.string({ error: 'التصنيف مطلوب' }).min(1, 'التصنيف مطلوب'),
+  installationMethod: z.string({ error: 'طريقة التثبيت مطلوبة' }).min(1, 'طريقة التثبيت مطلوبة'),
+  mcpKey: z.string().optional().or(z.literal('')),
+  mcpConfigJson: z.string({ error: 'إعداد MCP مطلوب' }).min(1, 'إعداد MCP مطلوب'),
+  installCommand: z.string().optional().or(z.literal('')),
+  notes: z.string().optional().or(z.literal(''))
 })
 
 const state = reactive({

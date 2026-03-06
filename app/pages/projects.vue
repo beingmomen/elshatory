@@ -99,11 +99,14 @@ useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
               />
             </ULink>
           </template>
-          <img
+          <NuxtImg
             :src="project.image"
             :alt="project.altText || project.title"
+            width="400"
+            height="192"
+            loading="lazy"
             class="object-cover w-full h-48 rounded-lg"
-          >
+          />
         </UPageCard>
       </div>
     </UPageSection>

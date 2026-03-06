@@ -26,5 +26,4 @@ logs
 # VSC
 .history
 .claude
-.mcp.json
 public/rss.xml

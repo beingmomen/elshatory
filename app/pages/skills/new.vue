@@ -1,5 +1,5 @@
 <script setup>
-import Joi from 'joi'
+import { z } from 'zod'
 
 useSeoMeta({
   title: 'إضافة Skill',
@@ -8,18 +8,12 @@ useSeoMeta({
 
 const toast = useToast()
 
-const schema = Joi.object({
-  name: Joi.string().required().messages({
-    'string.empty': 'اسم الـ Skill مطلوب',
-    'any.required': 'اسم الـ Skill مطلوب'
-  }),
-  category: Joi.string().required().messages({
-    'string.empty': 'التصنيف مطلوب',
-    'any.required': 'التصنيف مطلوب'
-  }),
-  trigger: Joi.string().allow('', null).optional(),
-  description: Joi.string().allow('', null).optional(),
-  notes: Joi.string().allow('', null).optional()
+const schema = z.object({
+  name: z.string({ error: 'اسم الـ Skill مطلوب' }).min(1, 'اسم الـ Skill مطلوب'),
+  category: z.string({ error: 'التصنيف مطلوب' }).min(1, 'التصنيف مطلوب'),
+  trigger: z.string().optional().or(z.literal('')),
+  description: z.string().optional().or(z.literal('')),
+  notes: z.string().optional().or(z.literal(''))
 })
 
 const state = reactive({
