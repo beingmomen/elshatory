@@ -36,8 +36,8 @@ const latestBlogs = computed(() => {
       class="gap-4 lg:gap-y-4"
     >
       <UBlogPost
-        v-for="(post, index) in latestBlogs"
-        :key="index"
+        v-for="post in latestBlogs"
+        :key="post.path"
         orientation="horizontal"
         variant="naked"
         v-bind="post"

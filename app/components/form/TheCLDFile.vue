@@ -30,6 +30,7 @@
             width="40"
             height="40"
             alt="logo"
+            loading="lazy"
           />
           <UAvatar
             v-else
@@ -76,26 +77,19 @@ onMounted(() => {
 
 const onUploadSuccess = (result) => {
   try {
-    console.warn('result', result.info)
     if (result?.info) {
       const fullPath = `${result.info.public_id}.${result.info.format}`
       image.value = fullPath
       emit('update:modelValue', fullPath)
     }
   } catch (error) {
-    console.error('Error processing upload result:', error)
     onError(error)
   }
 }
 
-const onError = (error) => {
-  console.error('Upload error:', error)
+const onError = () => {
   emit('update:modelValue', '')
 }
 
-const onResult = (result) => {
-  if (!result?.info) {
-    console.warn('Invalid upload result:', result)
-  }
-}
+const onResult = () => {}
 </script>

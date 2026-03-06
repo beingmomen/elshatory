@@ -106,21 +106,29 @@ const uploadToCloudinary = async (file) => {
     })
 
     image.value = response.secure_url
-    console.log('response :>> ', response)
     if (props.fullPath) {
       emit('update:modelValue', response.secure_url)
     } else {
       emit('update:modelValue', `${response.public_id}.${response.format}`)
     }
   } catch (error) {
-    console.error('Error uploading to Cloudinary:', error)
+    // Error handled silently — toast notifications via useErrorHandler
   } finally {
     loading.value = false
   }
 }
 
 const handleLocalFile = (file) => {
+  if (image.value && image.value.startsWith('blob:')) {
+    URL.revokeObjectURL(image.value)
+  }
   image.value = file ? URL.createObjectURL(file) : ''
   emit('update:modelValue', file)
 }
+
+onBeforeUnmount(() => {
+  if (image.value && image.value.startsWith('blob:')) {
+    URL.revokeObjectURL(image.value)
+  }
+})
 </script>

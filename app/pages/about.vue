@@ -112,8 +112,8 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
       }"
     >
       <Motion
-        :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-        :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+        :initial="{ scale: 1.1, opacity: 0 }"
+        :animate="{ scale: 1, opacity: 1 }"
         :transition="{ duration: 0.6, delay: 0.1 }"
       >
         <UColorModeAvatar
@@ -126,8 +126,8 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
 
       <template #headline>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <UBadge
@@ -142,8 +142,8 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
 
       <template #title>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.3 }"
         >
           <span class="text-gradient">عبدالمؤمن الشطوري</span>
@@ -152,8 +152,8 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
 
       <template #description>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.4 }"
         >
           {{ page.description }}
@@ -162,8 +162,8 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
 
       <template #links>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.5 }"
         >
           <div class="flex items-center gap-2">

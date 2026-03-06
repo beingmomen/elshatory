@@ -21,6 +21,7 @@
         width="32"
         height="32"
         format="webp"
+        loading="lazy"
       />
     </template>
   </NuxtLink>

@@ -17,7 +17,7 @@ const stats = [
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-(--ui-container) mx-auto">
         <Motion
           v-for="(stat, index) in stats"
-          :key="index"
+          :key="stat.label"
           :initial="{ opacity: 0, transform: 'translateY(16px)' }"
           :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
           :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"

@@ -44,6 +44,9 @@ const generateRSSFeed = (blogs, siteUrl) => {
 </rss>`
 }
 
+let lastRssGeneration = 0
+const RSS_CACHE_DURATION = 10 * 60 * 1000 // 10 minutes
+
 export default defineEventHandler(async () => {
   const config = useRuntimeConfig()
 
@@ -58,17 +61,18 @@ export default defineEventHandler(async () => {
       })
     }
 
-    // Generate RSS feed using site URL (not API URL)
-    const siteUrl = config.public.siteUrl
-    const rssContent = generateRSSFeed(data, siteUrl)
-
-    // Save RSS feed to public directory
-    const publicDir = resolve('./public')
-    await writeFile(resolve(publicDir, 'rss.xml'), rssContent, 'utf-8')
+    // Generate RSS feed only if cache expired
+    const now = Date.now()
+    if (now - lastRssGeneration > RSS_CACHE_DURATION) {
+      const siteUrl = config.public.siteUrl
+      const rssContent = generateRSSFeed(data, siteUrl)
+      const publicDir = resolve('./public')
+      await writeFile(resolve(publicDir, 'rss.xml'), rssContent, 'utf-8')
+      lastRssGeneration = now
+    }
 
     return data
   } catch (error) {
-    console.error('Error fetching blogs:', error)
     throw createError({
       statusCode: 500,
       message: 'Internal server error'

@@ -19,8 +19,8 @@ defineProps({
     >
       <template #headline>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.1 }"
         >
           <UBadge
@@ -35,8 +35,8 @@ defineProps({
 
       <template #title>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           دورة حياة <span class="text-gradient">تطوير البرمجيات</span>
@@ -45,8 +45,8 @@ defineProps({
 
       <template #description>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.4 }"
         >
           إطار بصري معرفي للمفكرين النظاميين — يحوّل نظرية SDLC إلى نموذج ذهني تفاعلي للتحليل والتصميم كائني التوجه.
@@ -55,8 +55,8 @@ defineProps({
 
       <template #links>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.6 }"
         >
           <UButton

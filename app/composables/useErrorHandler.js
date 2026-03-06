@@ -2,8 +2,6 @@ export const useErrorHandler = () => {
   const toast = useToast()
   // const { signOut } = useAuth();
   const handleError = async (error) => {
-    console.error('Request error:', error?.response?._data)
-
     if (error?.response?._data) {
       const { _data: errorData } = error.response
 

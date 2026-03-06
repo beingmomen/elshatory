@@ -17,7 +17,7 @@ const experiences = useExperiences()
       >
         <Motion
           v-for="(experience, index) in experiences"
-          :key="index"
+          :key="experience.company"
           :initial="{ opacity: 0, transform: 'translateY(20px)' }"
           :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
           :transition="{ delay: 0.4 + 0.2 * index }"

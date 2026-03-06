@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@nuxt/fonts'
   ],
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
 
   app: {
     head: {

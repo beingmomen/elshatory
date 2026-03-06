@@ -1,5 +1,5 @@
 <script setup>
-import Joi from 'joi'
+import { z } from 'zod'
 
 const config = useRuntimeConfig()
 const { global } = useAppConfig()
@@ -56,27 +56,11 @@ useHead({
 
 useBreadcrumbSchema([{ name: 'آراء العملاء', path: '/testimonial' }])
 
-const schema = Joi.object({
-  name: Joi.string().required().messages({
-    'string.empty': 'الاسم مطلوب',
-    'any.required': 'الاسم مطلوب'
-  }),
-  email: Joi.string()
-    .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
-    .required()
-    .messages({
-      'string.empty': 'البريد الإلكتروني مطلوب',
-      'string.email': 'يرجى إدخال عنوان بريد إلكتروني صالح',
-      'any.required': 'البريد الإلكتروني مطلوب'
-    }),
-  description: Joi.string().required().messages({
-    'string.empty': 'رسالتك مطلوبة',
-    'any.required': 'الوصف مطلوب'
-  }),
-  image: Joi.string().required().messages({
-    'string.empty': 'الصورة مطلوبة',
-    'any.required': 'الصورة مطلوبة'
-  })
+const schema = z.object({
+  name: z.string({ error: 'الاسم مطلوب' }).min(1, 'الاسم مطلوب'),
+  email: z.string({ error: 'البريد الإلكتروني مطلوب' }).email('يرجى إدخال عنوان بريد إلكتروني صالح'),
+  description: z.string({ error: 'رسالتك مطلوبة' }).min(1, 'رسالتك مطلوبة'),
+  image: z.string({ error: 'الصورة مطلوبة' }).min(1, 'الصورة مطلوبة')
 })
 
 const state = reactive({
@@ -124,8 +108,8 @@ function resetForm() {
     >
       <template #headline>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.1 }"
         >
           <UColorModeAvatar
@@ -139,8 +123,8 @@ function resetForm() {
 
       <template #title>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           رأيك يصنع الفارق
@@ -149,8 +133,8 @@ function resetForm() {
 
       <template #description>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.4 }"
         >
           تجربتك تلهمنا وتقييمك يساعدنا على تقديم الأفضل دائماً
@@ -159,8 +143,8 @@ function resetForm() {
 
       <template #links>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.6 }"
         >
           <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-muted">
@@ -241,8 +225,8 @@ function resetForm() {
       <!-- Success State -->
       <Motion
         v-if="submitted"
-        :initial="{ scale: 0.95, opacity: 0, filter: 'blur(10px)' }"
-        :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+        :initial="{ scale: 0.95, opacity: 0 }"
+        :animate="{ scale: 1, opacity: 1 }"
         :transition="{ duration: 0.5, delay: 0.1 }"
       >
         <div class="mx-auto w-full md:w-2/3 lg:w-1/2 bg-elevated/50 rounded-xl p-8 sm:p-12 text-center space-y-6">

@@ -30,12 +30,10 @@ const hero = {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
@@ -56,12 +54,10 @@ const hero = {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
@@ -77,12 +73,10 @@ const hero = {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
@@ -98,12 +92,10 @@ const hero = {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
@@ -142,17 +134,15 @@ const hero = {
       <div class="gap-x-4 inline-flex mt-4">
         <Motion
           v-for="(link, index) of footer?.links"
-          :key="index"
+          :key="link.to || link.href"
           :initial="{
             scale: 1.1,
             opacity: 0,
-            filter: 'blur(20px)'
-          }"
+            }"
           :animate="{
             scale: 1,
             opacity: 1,
-            filter: 'blur(0px)'
-          }"
+            }"
           :transition="{
             duration: 0.6,
             delay: 0.5 + index * 0.1
@@ -175,12 +165,10 @@ const hero = {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,

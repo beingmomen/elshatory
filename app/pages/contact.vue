@@ -1,5 +1,5 @@
 <script setup>
-import Joi from 'joi'
+import { z } from 'zod'
 
 const config = useRuntimeConfig()
 const { global } = useAppConfig()
@@ -37,26 +37,11 @@ useHead({
 
 useBreadcrumbSchema([{ name: 'تواصل معنا', path: '/contact' }])
 
-const schema = Joi.object({
-  name: Joi.string().required().messages({
-    'string.empty': 'يرجى كتابة اسمك',
-    'any.required': 'يرجى كتابة اسمك'
-  }),
-  phone: Joi.string().required().messages({
-    'string.empty': 'يرجى إدخال رقم التواصل',
-    'any.required': 'يرجى إدخال رقم التواصل'
-  }),
-  email: Joi.string()
-    .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
-    .messages({
-      'string.empty': 'يرجى إدخال بريدك الإلكتروني',
-      'string.email': 'يرجى إدخال عنوان بريد إلكتروني صالح',
-      'any.required': 'يرجى إدخال بريدك الإلكتروني'
-    }),
-  description: Joi.string().required().messages({
-    'string.empty': 'يرجى كتابة رسالتك أو وصف مشروعك',
-    'any.required': 'يرجى كتابة رسالتك أو وصف مشروعك'
-  })
+const schema = z.object({
+  name: z.string({ error: 'يرجى كتابة اسمك' }).min(1, 'يرجى كتابة اسمك'),
+  phone: z.string({ error: 'يرجى إدخال رقم التواصل' }).min(1, 'يرجى إدخال رقم التواصل'),
+  email: z.string().email('يرجى إدخال عنوان بريد إلكتروني صالح').optional().or(z.literal('')),
+  description: z.string({ error: 'يرجى كتابة رسالتك أو وصف مشروعك' }).min(1, 'يرجى كتابة رسالتك أو وصف مشروعك')
 })
 
 const state = reactive({
@@ -107,8 +92,8 @@ const contactPills = [
     >
       <template #title>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.1 }"
         >
           لنبني شيئاً رائعاً معاً
@@ -117,8 +102,8 @@ const contactPills = [
 
       <template #description>
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.3 }"
         >
           سواء كان لديك مشروع جديد، سؤال تقني، أو فقط تريد التعارف — أنا هنا وأسعد دائماً بالتحدث
@@ -128,8 +113,8 @@ const contactPills = [
       <template #links>
         <!-- Availability Badge -->
         <Motion
-          :initial="{ scale: 1.1, opacity: 0, filter: 'blur(20px)' }"
-          :animate="{ scale: 1, opacity: 1, filter: 'blur(0px)' }"
+          :initial="{ scale: 1.1, opacity: 0 }"
+          :animate="{ scale: 1, opacity: 1 }"
           :transition="{ duration: 0.6, delay: 0.4 }"
         >
           <UButton
@@ -158,8 +143,8 @@ const contactPills = [
           <Motion
             v-for="(pill, index) in contactPills"
             :key="index"
-            :initial="{ opacity: 0, y: 16, filter: 'blur(8px)' }"
-            :animate="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
+            :initial="{ opacity: 0, y: 16 }"
+            :animate="{ opacity: 1, y: 0 }"
             :transition="{ duration: 0.5, delay: 0.5 + index * 0.1 }"
           >
             <div

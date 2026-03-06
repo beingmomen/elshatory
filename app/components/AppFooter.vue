@@ -43,8 +43,8 @@ const aiTools = [
             </p>
             <div class="flex gap-1">
               <UButton
-                v-for="(link, index) of footer?.links"
-                :key="index"
+                v-for="link of footer?.links"
+                :key="link.to || link.href"
                 v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
               />
             </div>

@@ -11,8 +11,8 @@
 <script setup>
 import { ar } from '@nuxt/ui/locale'
 
-const lang = computed(() => ar.code)
-const dir = computed(() => ar.dir)
+const lang = ar.code
+const dir = ar.dir
 
 const colorMode = useColorMode()
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
