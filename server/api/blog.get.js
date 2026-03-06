@@ -2,7 +2,9 @@ export default defineEventHandler(async () => {
   const config = useRuntimeConfig()
 
   try {
-    const response = await fetch(`${config.public.baseURL}/blogs/all`)
+    const response = await fetch(`${config.public.baseURL}/blogs/all`, {
+      signal: AbortSignal.timeout(10000)
+    })
     const data = await response.json()
 
     if (!response.ok) {
@@ -14,6 +16,7 @@ export default defineEventHandler(async () => {
 
     return data
   } catch (error) {
+    if (error.statusCode) throw error
     throw createError({
       statusCode: 500,
       message: 'Internal server error'

@@ -128,7 +128,9 @@ export default defineNuxtConfig({
           'X-Frame-Options': 'DENY',
           'X-XSS-Protection': '1; mode=block',
           'Referrer-Policy': 'strict-origin-when-cross-origin',
-          'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+          // eslint-disable-next-line @stylistic/quotes
+          'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://res.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.beingmomen.com https://res.cloudinary.com; media-src 'self'; frame-src 'none'"
         }
       }
     }

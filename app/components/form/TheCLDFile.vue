@@ -71,9 +71,9 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 const image = ref()
 
-onMounted(() => {
-  image.value = props.modelValue
-})
+watch(() => props.modelValue, (val) => {
+  image.value = val
+}, { immediate: true })
 
 const onUploadSuccess = (result) => {
   try {

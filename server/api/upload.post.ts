@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Validate file type
-  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif', 'image/svg+xml']
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif']
   if (fileField.type && !allowedTypes.includes(fileField.type)) {
     throw createError({ statusCode: 400, message: 'Invalid file type. Only images are allowed.' })
   }

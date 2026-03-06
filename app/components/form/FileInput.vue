@@ -107,8 +107,9 @@ const uploadToCloudinary = async (file) => {
     } else {
       emit('update:modelValue', response.path)
     }
-  } catch (error) {
-    // Error handled silently — toast notifications via useErrorHandler
+  } catch {
+    const toast = useToast()
+    toast.add({ title: 'فشل رفع الصورة', color: 'error', timeout: 4000 })
   } finally {
     loading.value = false
   }

@@ -12,7 +12,7 @@ export const useBreadcrumbSchema = (items: { name: string, path: string }[]) => 
       '@type': 'ListItem',
       'position': index + 2,
       'name': item.name,
-      'item': `${config.public.siteUrl}${item.path}`
+      'item': `${(config.public.siteUrl as string)?.replace(/\/$/, '')}${item.path}`
     }))
   ]
 

@@ -24,7 +24,8 @@ export const useErrorHandler = () => {
           toast.add({ title: err, timeout: 4000, color: 'error' })
         })
       }
-
+    } else {
+      toast.add({ title: error?.message || 'حدث خطأ غير متوقع', timeout: 4000, color: 'error' })
     }
   }
 
