@@ -88,6 +88,8 @@ export default defineNuxtConfig({
     '/projects': { prerender: true },
     '/sdlc': { prerender: true },
     '/sdlc-ar': { prerender: true },
+    '/adr': { prerender: true },
+    '/adr/**': { prerender: true },
     '/blog': { swr: 600 },
     '/blog/**': { ssr: true },
     '/contact': { ssr: true },

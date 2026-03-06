@@ -383,48 +383,48 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
               <!-- Timeline node -->
               <div
                 class="hidden sm:flex absolute right-0 top-2 items-center justify-center size-10 rounded-xl border shadow-sm transition-all duration-300"
-                :class="exp.endDate === 'Current'
+                :class="exp.endDate === 'الحالي'
                   ? 'bg-primary/10 border-primary/40 ring-2 ring-primary/20'
                   : 'bg-elevated border-default'"
               >
                 <UIcon
-                  :name="exp.endDate === 'Current' ? 'i-lucide-zap' : 'i-lucide-building-2'"
+                  :name="exp.endDate === 'الحالي' ? 'i-lucide-zap' : 'i-lucide-building-2'"
                   class="size-4"
-                  :class="exp.endDate === 'Current' ? 'text-primary' : 'text-muted'"
+                  :class="exp.endDate === 'الحالي' ? 'text-primary' : 'text-muted'"
                 />
               </div>
 
               <!-- Mobile left-border accent -->
               <div
                 class="sm:hidden absolute right-0 top-0 bottom-0 w-0.5 rounded-full"
-                :class="exp.endDate === 'Current' ? 'bg-primary' : 'bg-default'"
+                :class="exp.endDate === 'الحالي' ? 'bg-primary' : 'bg-default'"
               />
 
               <!-- Experience card -->
               <div
                 class="flex-1 rounded-xl border p-4 sm:p-5 mr-4 sm:mr-0 transition-all duration-300 hover:shadow-md"
-                :class="exp.endDate === 'Current'
+                :class="exp.endDate === 'الحالي'
                   ? 'border-primary/30 bg-primary/5'
                   : 'border-default bg-elevated/40'"
               >
                 <div class="flex items-start justify-between flex-wrap gap-2 mb-3">
-                  <div class="text-right">
+                  <div>
                     <ULink
                       :to="exp.companySiteUrl"
                       target="_blank"
-                      class="font-semibold text-base text-highlighted hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 flex-row-reverse"
+                      class="font-semibold text-base text-highlighted hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5"
                     >
+                      {{ exp.company }}
                       <UIcon
                         name="i-lucide-external-link"
                         class="size-3.5 text-muted"
                       />
-                      {{ exp.company }}
                     </ULink>
                     <p class="text-sm text-muted mt-0.5">
                       {{ exp.position }}
                     </p>
                   </div>
-                  <div class="shrink-0 flex flex-col items-start gap-1">
+                  <div class="shrink-0 flex flex-col items-end gap-1">
                     <UBadge
                       :label="`${exp.startDate} — ${exp.endDate}`"
                       color="neutral"
@@ -451,17 +451,17 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
 
                 <USeparator class="my-3" />
 
-                <ul class="space-y-2 text-right">
+                <ul class="space-y-2">
                   <li
                     v-for="(resp, rIndex) in exp.responsibilities.slice(0, 3)"
                     :key="rIndex"
-                    class="flex items-start gap-2 text-sm text-muted justify-end"
+                    class="flex items-start gap-2 text-sm text-muted"
                   >
-                    <span>{{ resp }}</span>
                     <UIcon
                       name="i-lucide-circle-check"
-                      class="size-3.5 text-primary/50 mt-0.5 shrink-0"
+                      class="size-3.5 text-primary/50 mt-1 shrink-0"
                     />
+                    <span>{{ resp }}</span>
                   </li>
                 </ul>
                 <p
