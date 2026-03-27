@@ -6,7 +6,7 @@ const { data, status } = await useFetch('/api/blog', {
   default: () => [],
   transform: blogs => blogs.map(blog => ({
     ...blog,
-    image: `${cloudinary.cloudinaryUrl}${blog.image}`
+    image: blog.image?.startsWith('http') ? blog.image : `${cloudinary.cloudinaryUrl}${blog.image}`
   }))
 })
 

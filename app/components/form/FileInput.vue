@@ -71,7 +71,7 @@ const image = ref('')
 const loading = ref(false)
 
 if (props.isCloudinary) {
-  image.value = `${cloudinary.cloudinaryUrl}${props.modelValue}`
+  image.value = props.modelValue?.startsWith('http') ? props.modelValue : `${cloudinary.cloudinaryUrl}${props.modelValue}`
 } else {
   image.value = props.modelValue
 }

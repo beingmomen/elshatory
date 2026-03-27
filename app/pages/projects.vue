@@ -6,7 +6,7 @@ const { data: projects } = await useAPI('/projects', {
   transform: (response) => {
     return (response.data || []).map(project => ({
       ...project,
-      image: `${cloudinary.cloudinaryUrl}${project.image}`
+      image: project.image?.startsWith('http') ? project.image : `${cloudinary.cloudinaryUrl}${project.image}`
     }))
   }
 })
@@ -92,6 +92,7 @@ useHead({
       >
         <UPageCard
           :title="project.title"
+          :description="project.description"
           :to="project.url"
           orientation="horizontal"
           variant="naked"
