@@ -298,6 +298,7 @@ function resetForm() {
                   icon="i-lucide-user"
                   placeholder="اسمك الكريم"
                   class="w-full"
+                  :disabled="loading"
                 />
               </UFormField>
             </Motion>
@@ -320,6 +321,7 @@ function resetForm() {
                   placeholder="بريدك الإلكتروني"
                   class="w-full"
                   :ui="{ base: 'text-left' }"
+                  :disabled="loading"
                 />
               </UFormField>
             </Motion>
@@ -342,6 +344,7 @@ function resetForm() {
                   placeholder="أخبرنا عن تجربتك معنا... ما الذي أعجبك وما الذي يمكن تحسينه؟"
                   class="w-full"
                   :rows="6"
+                  :disabled="loading"
                 />
               </UFormField>
             </Motion>

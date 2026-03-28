@@ -153,7 +153,11 @@ function downloadMcpJson() {
       }"
     >
       <!-- Category Filters -->
-      <div class="flex flex-wrap gap-2 mb-8 justify-center">
+      <div
+        class="flex flex-wrap gap-2 mb-8 justify-center"
+        role="group"
+        aria-label="تصفية حسب الفئة"
+      >
         <UButton
           v-for="cat in categories"
           :key="cat.value"
@@ -161,6 +165,7 @@ function downloadMcpJson() {
           :variant="activeCategory === cat.value ? 'solid' : 'outline'"
           :color="activeCategory === cat.value ? 'primary' : 'neutral'"
           size="sm"
+          :aria-pressed="activeCategory === cat.value"
           @click="activeCategory = cat.value"
         />
       </div>

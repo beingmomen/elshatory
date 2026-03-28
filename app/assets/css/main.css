@@ -32,18 +32,30 @@ body {
   --ui-container: var(--container-6xl);
 
   ::selection {
-    color: #282a30;
-    background-color: #c8c8c8;
+    color: #ffffff;
+    background-color: var(--color-primary-500);
   }
 }
 
 .dark {
   ::selection {
     color: #ffffff;
-    background-color: #474747;
+    background-color: var(--color-primary-600);
   }
 }
 
 .text-gradient {
   @apply bg-clip-text text-transparent bg-linear-to-r from-primary-500 to-primary-300;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

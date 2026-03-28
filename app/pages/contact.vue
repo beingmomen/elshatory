@@ -39,7 +39,7 @@ useBreadcrumbSchema([{ name: 'تواصل معنا', path: '/contact' }])
 
 const schema = z.object({
   name: z.string({ error: 'يرجى كتابة اسمك' }).min(1, 'يرجى كتابة اسمك'),
-  phone: z.string({ error: 'يرجى إدخال رقم التواصل' }).min(1, 'يرجى إدخال رقم التواصل'),
+  phone: z.string({ error: 'يرجى إدخال رقم التواصل' }).min(1, 'يرجى إدخال رقم التواصل').regex(/^[\d\s+\-()]{7,20}$/, 'يرجى إدخال رقم هاتف صحيح'),
   email: z.string().email('يرجى إدخال عنوان بريد إلكتروني صالح').optional().or(z.literal('')),
   description: z.string({ error: 'يرجى كتابة رسالتك أو وصف مشروعك' }).min(1, 'يرجى كتابة رسالتك أو وصف مشروعك')
 })
@@ -257,6 +257,7 @@ const contactPills = [
                     leading-icon="i-lucide-user"
                     placeholder="ما اسمك؟"
                     class="w-full"
+                    :disabled="loading"
                   />
                 </UFormField>
               </Motion>
@@ -278,6 +279,7 @@ const contactPills = [
                     leading-icon="i-lucide-phone"
                     placeholder="رقم الهاتف"
                     class="w-full"
+                    :disabled="loading"
                   />
                 </UFormField>
               </Motion>
@@ -299,6 +301,7 @@ const contactPills = [
                     placeholder="البريد الإلكتروني"
                     type="email"
                     class="w-full"
+                    :disabled="loading"
                   />
                 </UFormField>
               </Motion>
@@ -321,6 +324,7 @@ const contactPills = [
                     placeholder="أخبرني عن مشروعك، أهدافك، والجدول الزمني المتوقع..."
                     class="w-full"
                     :rows="5"
+                    :disabled="loading"
                   />
                 </UFormField>
               </Motion>

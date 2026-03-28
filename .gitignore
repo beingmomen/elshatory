@@ -27,3 +27,4 @@ logs
 .history
 .claude
 public/rss.xml
+audit/

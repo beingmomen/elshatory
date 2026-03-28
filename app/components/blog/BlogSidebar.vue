@@ -11,12 +11,17 @@
       size="sm"
       type="dashed"
     />
-    <div class="flex justify-between">
+    <div
+      class="flex justify-between"
+      role="group"
+      aria-label="مشاركة المقال"
+    >
       <SocialShare
         v-for="network in networks"
         :key="network"
         :network="network"
         :label="false"
+        :aria-label="`مشاركة عبر ${network}`"
       />
     </div>
   </div>
