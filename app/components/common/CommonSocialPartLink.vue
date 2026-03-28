@@ -3,7 +3,7 @@
     :to="url"
     target="_blank"
     :aria-label="label"
-    class="hover:opacity-80 transition-opacity"
+    class="inline-flex items-center justify-center min-w-11 min-h-11 p-1.5 rounded-lg hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none transition-opacity"
     rel="noopener noreferrer"
   >
     <template v-if="icon">

@@ -202,6 +202,7 @@ function resetForm() {
                 leading-icon="i-lucide-server"
                 placeholder="مثال: GitHub MCP Server"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -216,6 +217,7 @@ function resetForm() {
                 :items="categoryOptions"
                 placeholder="اختر التصنيف"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -230,6 +232,7 @@ function resetForm() {
                 :items="methodOptions"
                 placeholder="اختر الطريقة"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -247,6 +250,7 @@ function resetForm() {
                 placeholder="مثال: github, filesystem"
                 class="w-full"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -263,6 +267,7 @@ function resetForm() {
                 class="w-full font-mono text-sm"
                 :rows="6"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -280,6 +285,7 @@ function resetForm() {
                 placeholder="npx claude-code-templates@latest --mcp=example --yes"
                 class="w-full font-mono text-sm"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -294,6 +300,7 @@ function resetForm() {
                 placeholder="يوفر وصولاً لقراءة وكتابة الملفات&#10;يعمل مع المستودعات العامة والخاصة"
                 class="w-full"
                 :rows="3"
+                :disabled="loading"
               />
             </UFormField>
 

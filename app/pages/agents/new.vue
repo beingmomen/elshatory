@@ -172,6 +172,7 @@ function resetForm() {
                 leading-icon="i-lucide-bot"
                 placeholder="مثال: Explore Agent"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -186,6 +187,7 @@ function resetForm() {
                 :items="categoryOptions"
                 placeholder="اختر التصنيف"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -200,6 +202,7 @@ function resetForm() {
                 placeholder="وصف مختصر لما يقوم به هذا الـ Agent"
                 class="w-full"
                 :rows="3"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -215,6 +218,7 @@ function resetForm() {
                 class="w-full font-mono text-sm"
                 :rows="6"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -229,6 +233,7 @@ function resetForm() {
                 placeholder="ملاحظة أولى&#10;ملاحظة ثانية"
                 class="w-full"
                 :rows="3"
+                :disabled="loading"
               />
             </UFormField>
 

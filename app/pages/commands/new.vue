@@ -153,6 +153,7 @@ function resetForm() {
                 leading-icon="i-lucide-terminal"
                 placeholder="مثال: useFetch Check"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -167,6 +168,7 @@ function resetForm() {
                 leading-icon="i-lucide-text"
                 placeholder="مثال: Enforce useFetch architectural rules"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -182,6 +184,7 @@ function resetForm() {
                 class="w-full font-mono text-sm"
                 :rows="12"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 

@@ -43,7 +43,7 @@ const latestBlogs = computed(() => {
         v-bind="post"
         :to="post.path"
         :ui="{
-          root: 'group relative lg:items-start lg:flex rounded-xl border border-default/60 bg-elevated/30 p-4 sm:p-5 hover:bg-elevated/60 transition-colors duration-300',
+          root: 'group relative lg:items-start lg:flex rounded-xl border border-default/60 bg-elevated/30 p-4 sm:p-5 hover:bg-elevated/60 transition-colors duration-300 cursor-pointer',
           body: '!px-0',
           header: 'hidden'
         }"

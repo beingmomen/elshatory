@@ -171,6 +171,7 @@ function resetForm() {
                 leading-icon="i-lucide-zap"
                 placeholder="مثال: Commit Skill"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -185,6 +186,7 @@ function resetForm() {
                 :items="categoryOptions"
                 placeholder="اختر التصنيف"
                 class="w-full"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -200,6 +202,7 @@ function resetForm() {
                 placeholder="مثال: /commit"
                 class="w-full font-mono"
                 dir="ltr"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -214,6 +217,7 @@ function resetForm() {
                 placeholder="وصف ما يقوم به هذا الـ Skill..."
                 class="w-full"
                 :rows="3"
+                :disabled="loading"
               />
             </UFormField>
 
@@ -228,6 +232,7 @@ function resetForm() {
                 placeholder="ملاحظات إضافية..."
                 class="w-full"
                 :rows="3"
+                :disabled="loading"
               />
             </UFormField>
 

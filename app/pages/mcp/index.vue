@@ -196,7 +196,7 @@ function downloadMcpJson() {
           class="group relative"
         >
           <!-- Checkbox -->
-          <div class="absolute top-3 start-3 z-10">
+          <div class="absolute top-2 start-2 z-10 min-w-11 min-h-11 flex items-center justify-center">
             <UCheckbox
               :model-value="selectedServers.has(server.path)"
               @update:model-value="toggleServer(server.path)"
@@ -205,10 +205,11 @@ function downloadMcpJson() {
 
           <NuxtLink
             :to="server.path"
+            class="cursor-pointer focus-visible:outline-none"
           >
             <UCard
               variant="outline"
-              class="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/50 hover:ring-1 hover:ring-primary/20"
+              class="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/50 hover:ring-1 hover:ring-primary/20 focus-within:ring-2 focus-within:ring-primary"
               :class="{ 'ring-1 ring-primary/40 border-primary/50': selectedServers.has(server.path) }"
             >
               <div class="space-y-3 ps-8">
@@ -268,6 +269,7 @@ function downloadMcpJson() {
         <div
           v-if="hasSelection"
           class="fixed bottom-6 start-1/2 -translate-x-1/2 z-50 flex items-center gap-4 px-6 py-3 rounded-full bg-elevated border border-default shadow-xl backdrop-blur-sm"
+          aria-live="polite"
         >
           <span class="text-base font-medium">
             {{ selectedServers.size }} مُحدد
@@ -295,17 +297,28 @@ function downloadMcpJson() {
         @update:open="showDeleteConfirm = $event"
       >
         <template #content>
-          <div class="p-6 text-center space-y-4">
+          <div
+            class="p-6 text-center space-y-4"
+            role="alertdialog"
+            aria-labelledby="delete-title"
+            aria-describedby="delete-desc"
+          >
             <div class="size-12 rounded-full bg-error/10 flex items-center justify-center mx-auto">
               <UIcon
                 name="i-lucide-alert-triangle"
                 class="size-6 text-error"
               />
             </div>
-            <h3 class="text-lg font-bold">
+            <h3
+              id="delete-title"
+              class="text-lg font-bold"
+            >
               حذف {{ selectedServers.size }} خادم؟
             </h3>
-            <p class="text-base text-muted">
+            <p
+              id="delete-desc"
+              class="text-base text-muted"
+            >
               سيتم حذف الخوادم المحددة نهائياً. لا يمكن التراجع عن هذا الإجراء.
             </p>
             <div class="flex items-center justify-center gap-3 pt-2">
