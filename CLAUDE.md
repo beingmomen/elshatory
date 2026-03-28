@@ -29,7 +29,6 @@ Pages → Composables → useApiRequest → $api plugin → Backend API
 - `app/composables/useAPI.ts` — `useFetch` wrapper with `$api` client
 - `app/composables/useLanding.js` — Landing page data (hero, skills, services, etc.)
 - `app/composables/useBlog.js` — Blog list + single blog
-- `app/composables/useProjects.js` — Projects data (static)
 - `app/composables/useExperiences.js` — Work experiences data (static)
 - `app/composables/useBreadcrumbSchema.ts` — Breadcrumb structured data
 - `app/composables/useErrorHandler.js` — Toast-based error handling
@@ -57,6 +56,7 @@ app/components/
 ├── form/              # File upload components
 │   ├── FileInput.vue
 │   └── TheCLDFile.vue
+├── adr/               # ADR (Architecture Decision Records) components (8)
 ├── sdlc/              # SDLC English components (7)
 ├── sdlc-ar/           # SDLC Arabic components (7)
 ├── AppHeader.vue      # Navigation header
@@ -78,6 +78,11 @@ app/components/
 | `/testimonial` | Testimonial form (Cloudinary upload) |
 | `/sdlc` | SDLC English page |
 | `/sdlc-ar` | SDLC Arabic page |
+| `/adr` | Architecture Decision Records |
+| `/agents` | Agents CRUD management |
+| `/commands` | Commands CRUD management |
+| `/mcp` | MCP servers CRUD management |
+| `/skills` | Skills CRUD management |
 
 ## Modules
 
@@ -145,6 +150,11 @@ app/components/
 ## Server Routes
 
 - `server/api/blog.get.js` — Proxy blog API + generates RSS feed
+- `server/api/agents.{post,delete}.ts` — Agents CRUD
+- `server/api/commands.{post,delete}.ts` — Commands CRUD
+- `server/api/mcp.{post,delete}.ts` — MCP servers CRUD
+- `server/api/skills.{post,delete}.ts` — Skills CRUD
+- `server/api/upload.post.ts` — File upload endpoint
 - `server/api/__sitemap__/urls.get.ts` — Dynamic sitemap URLs
 - `server/og-image/OgImageArabic.vue` — Arabic OG image template
 - `server/plugins/epipe-handler.ts` — EPIPE error handler
