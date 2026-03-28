@@ -8,8 +8,6 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@stefanobartoletti/nuxt-social-share',
     '@nuxtjs/seo',
-    '@nuxtjs/fontaine',
-    '@nuxt/fonts'
   ],
   devtools: { enabled: process.env.NODE_ENV === 'development' },
 
@@ -164,28 +162,6 @@ export default defineNuxtConfig({
     }
   },
 
-  fonts: {
-    families: [
-      {
-        name: 'IBM Plex Sans Arabic',
-        provider: 'google',
-        weights: [300, 400, 500, 600, 700],
-        subsets: ['arabic', 'latin']
-      },
-      {
-        name: 'Tajawal',
-        provider: 'google',
-        weights: [400, 500, 700],
-        subsets: ['arabic']
-      },
-      {
-        name: 'Space Grotesk',
-        provider: 'google',
-        weights: [400, 500, 700]
-      }
-    ]
-  },
-
   icon: {
     customCollections: [
       {
@@ -219,7 +195,7 @@ export default defineNuxtConfig({
       width: 1200,
       height: 630
     },
-    fonts: ['IBM Plex Sans Arabic:700']
+    fonts: ['Tajawal:700']
   },
 
   robots: {

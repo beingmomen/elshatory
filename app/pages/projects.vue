@@ -130,14 +130,16 @@ useHead({
               />
             </ULink>
           </template>
-          <NuxtImg
-            :src="project.image"
-            :alt="project.altText || project.title"
-            width="400"
-            height="192"
-            loading="lazy"
-            class="object-cover w-full h-48 rounded-lg"
-          />
+          <div class="w-100">
+            <NuxtImg
+              :src="project.image"
+              :alt="project.altText || project.title"
+              width="400"
+              height="192"
+              loading="lazy"
+              class="object-cover w-full h-48 rounded-lg"
+            />
+          </div>
         </UPageCard>
       </div>
     </UPageSection>
