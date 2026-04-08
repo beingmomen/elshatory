@@ -1,20 +1,10 @@
 <script setup>
 const config = useRuntimeConfig()
-const { cloudinary } = config.public
 
 await useAPI('/landing', {
   key: 'landing',
   default: () => ({}),
   transform: response => response.data || {}
-})
-
-await useFetch('/api/blog', {
-  key: 'blogs',
-  default: () => [],
-  transform: blogs => blogs.map(blog => ({
-    ...blog,
-    image: blog.image?.startsWith('http') ? blog.image : `${cloudinary.cloudinaryUrl}${blog.image}`
-  }))
 })
 
 useHead({
