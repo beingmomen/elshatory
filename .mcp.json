@@ -1,13 +1,5 @@
 {
   "mcpServers": {
-    "DeepGraph Vue MCP": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-code-graph@latest",
-        "vuejs/core"
-      ]
-    },
     "nuxt": {
       "type": "http",
       "url": "https://nuxt.com/mcp"
@@ -15,13 +7,6 @@
     "nuxt-ui": {
       "type": "http",
       "url": "https://ui.nuxt.com/mcp"
-    },
-    "chrome-devtools": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "chrome-devtools-mcp@latest"
-      ]
     }
   }
 }
