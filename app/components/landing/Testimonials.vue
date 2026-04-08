@@ -1,5 +1,5 @@
 <script setup>
-const { data } = useLanding()
+const { data } = useNuxtData('landing')
 const config = useRuntimeConfig()
 
 const testimonials = computed(() => {

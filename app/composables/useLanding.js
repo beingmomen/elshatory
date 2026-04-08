@@ -1,7 +1,5 @@
+// Deprecated: landing data is now fetched directly in pages using useAPI('/landing', { key: 'landing' }).
+// Components read from Nuxt payload via useNuxtData('landing').
 export const useLanding = () => {
-  return useAPI('/landing', {
-    key: 'landing',
-    default: () => ({}),
-    transform: response => response.data || {}
-  })
+  return useNuxtData('landing')
 }

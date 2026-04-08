@@ -4,7 +4,11 @@ import { z } from 'zod'
 const config = useRuntimeConfig()
 const { global } = useAppConfig()
 const { loading, post } = useApiRequest()
-const { data: landingData } = await useLanding()
+const { data: landingData } = await useAPI('/landing', {
+  key: 'landing',
+  default: () => ({}),
+  transform: response => response.data || {}
+})
 
 const submitted = ref(false)
 const form = ref(null)

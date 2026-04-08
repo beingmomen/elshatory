@@ -4,7 +4,11 @@ import DOMPurify from 'isomorphic-dompurify'
 const route = useRoute()
 const config = useRuntimeConfig()
 
-const { singleBlog } = useBlog()
+const { data: singleBlog } = await useAPI(`/blogs/slug/${route.params.slug}`, {
+  key: `blog-${route.params.slug}`,
+  default: () => ({}),
+  transform: response => response.data?.data || {}
+})
 
 const sanitizedContent = computed(() =>
   singleBlog.value?.content ? DOMPurify.sanitize(singleBlog.value.content) : ''
@@ -137,7 +141,7 @@ useBreadcrumbSchema([
             v-if="singleBlog.image"
             :src="blogImage"
             :alt="singleBlog.title"
-            class="rounded-lg w-full h-[300px] object-cover object-center"
+            class="rounded-lg w-full h-75 object-cover object-center"
           />
           <h1 class="text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
             {{ singleBlog.title }}

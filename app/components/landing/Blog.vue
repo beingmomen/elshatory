@@ -1,14 +1,5 @@
 <script setup>
-const { cloudinary } = useRuntimeConfig().public
-
-const { data: blogs } = await useFetch('/api/blog', {
-  key: 'blogs',
-  default: () => [],
-  transform: blogs => blogs.map(blog => ({
-    ...blog,
-    image: blog.image?.startsWith('http') ? blog.image : `${cloudinary.cloudinaryUrl}${blog.image}`
-  }))
-})
+const { data: blogs } = useNuxtData('blogs')
 
 const latestBlogs = computed(() => {
   return (blogs.value || []).slice(0, 3).map(blog => ({

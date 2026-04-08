@@ -2,6 +2,7 @@
 const { cloudinary } = useRuntimeConfig().public
 
 const { data: projects } = await useAPI('/projects', {
+  key: 'projects',
   query: { isActive: true },
   transform: (response) => {
     return (response.data || []).map(project => ({
