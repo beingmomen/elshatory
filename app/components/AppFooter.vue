@@ -29,32 +29,20 @@ const aiTools = [
     <div class="-mx-4 sm:-mx-12 lg:-mx-16 px-4 sm:px-12 lg:px-16">
       <div class="max-w-(--ui-container) mx-auto">
         <div class="rounded-2xl border border-default/60 bg-muted/40 backdrop-blur-sm p-8 sm:p-12 text-center shadow-lg shadow-neutral-950/5">
-          <Motion
-            :initial="{ scale: 1.1, opacity: 0 }"
-            :animate="{ scale: 1, opacity: 1 }"
-            :transition="{ duration: 0.6, delay: 0.1 }"
-          >
+          <span class="animate-fade-in">
             <h2 class="text-2xl sm:text-3xl font-bold mb-3">
               هل لديك مشروع؟
               <span class="text-gradient">لنعمل معاً</span>
             </h2>
-          </Motion>
+          </span>
 
-          <Motion
-            :initial="{ scale: 1.1, opacity: 0 }"
-            :animate="{ scale: 1, opacity: 1 }"
-            :transition="{ duration: 0.6, delay: 0.3 }"
-          >
+          <span class="animate-fade-in animation-delay-300">
             <p class="text-base text-muted mb-6 max-w-lg mx-auto">
               أنا متاح لمشاريع جديدة ومستعد لتحويل أفكارك إلى واقع رقمي مميز
             </p>
-          </Motion>
+          </span>
 
-          <Motion
-            :initial="{ scale: 1.1, opacity: 0 }"
-            :animate="{ scale: 1, opacity: 1 }"
-            :transition="{ duration: 0.6, delay: 0.5 }"
-          >
+          <span class="animate-fade-in animation-delay-500">
             <div class="flex items-center justify-center gap-3">
               <UButton
                 label="تواصل معي"
@@ -72,7 +60,7 @@ const aiTools = [
                 icon="i-lucide-calendar"
               />
             </div>
-          </Motion>
+          </span>
         </div>
       </div>
     </div>

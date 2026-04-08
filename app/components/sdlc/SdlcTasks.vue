@@ -34,13 +34,11 @@ const tasks = [
     }"
   >
     <div class="space-y-4">
-      <Motion
+      <div
         v-for="(task, index) in tasks"
         :key="task.title"
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.1 + index * 0.12 }"
-        :in-view-options="{ once: true }"
+        class="animate-fade-in"
+        :style="{ animationDelay: `${0.1 + index * 0.12}s` }"
       >
         <div class="flex gap-4 items-start">
           <div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary text-sm font-bold shrink-0">
@@ -65,7 +63,7 @@ const tasks = [
             </div>
           </div>
         </div>
-      </Motion>
+      </div>
     </div>
   </UPageSection>
 </template>

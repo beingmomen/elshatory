@@ -19,7 +19,10 @@ defineProps({
       description: 'text-right text-base text-muted mt-2 leading-relaxed'
     }"
   >
-    <template v-if="badge || icon" #headline>
+    <template
+      v-if="badge || icon"
+      #headline
+    >
       <UBadge
         v-if="badge"
         :label="badge"
@@ -28,9 +31,15 @@ defineProps({
         size="sm"
         :icon="icon"
       />
-      <div v-else-if="icon" class="flex items-center gap-2">
+      <div
+        v-else-if="icon"
+        class="flex items-center gap-2"
+      >
         <div class="p-1.5 rounded-lg bg-primary/10">
-          <UIcon :name="icon" class="size-4 text-primary" />
+          <UIcon
+            :name="icon"
+            class="size-4 text-primary"
+          />
         </div>
       </div>
     </template>

@@ -107,46 +107,30 @@ function resetForm() {
       }"
     >
       <template #headline>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.1 }"
-        >
+        <span class="animate-fade-in">
           <UColorModeAvatar
             class="size-18 ring ring-default ring-offset-3 ring-offset-bg"
             :light="global.picture?.light"
             :dark="global.picture?.dark"
             :alt="global.picture?.alt"
           />
-        </Motion>
+        </span>
       </template>
 
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.2 }"
-        >
+        <span class="animate-fade-in animation-delay-200">
           رأيك يصنع الفارق
-        </Motion>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           تجربتك تلهمنا وتقييمك يساعدنا على تقديم الأفضل دائماً
-        </Motion>
+        </span>
       </template>
 
       <template #links>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.6 }"
-        >
+        <span class="animate-fade-in animation-delay-600">
           <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-base text-muted">
             <span class="flex items-center gap-2">
               <UIcon
@@ -170,7 +154,7 @@ function resetForm() {
               موثوق ومعتمد
             </span>
           </div>
-        </Motion>
+        </span>
       </template>
     </UPageHero>
 
@@ -185,12 +169,7 @@ function resetForm() {
         description: 'mt-2 text-base text-muted leading-relaxed'
       }"
     >
-      <Motion
-        :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ delay: 0.2 }"
-        :in-view-options="{ once: true }"
-      >
+      <div class="animate-fade-in animation-delay-200">
         <UCarousel
           v-slot="{ item }"
           :items="testimonials"
@@ -217,17 +196,15 @@ function resetForm() {
             />
           </UPageCTA>
         </UCarousel>
-      </Motion>
+      </div>
     </UPageSection>
 
     <!-- Section 3: Form / Success -->
     <UPageSection :ui="{ container: '!pt-0' }">
       <!-- Success State -->
-      <Motion
+      <div
         v-if="submitted"
-        :initial="{ scale: 0.95, opacity: 0 }"
-        :animate="{ scale: 1, opacity: 1 }"
-        :transition="{ duration: 0.5, delay: 0.1 }"
+        class="animate-fade-in"
       >
         <div class="mx-auto w-full md:w-2/3 lg:w-1/2 bg-elevated/50 rounded-xl p-8 sm:p-12 text-center space-y-6">
           <UIcon
@@ -256,15 +233,12 @@ function resetForm() {
             />
           </div>
         </div>
-      </Motion>
+      </div>
 
       <!-- Form -->
-      <Motion
+      <div
         v-else
-        :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ delay: 0.2 }"
-        :in-view-options="{ once: true }"
+        class="animate-fade-in animation-delay-200"
       >
         <div class="mx-auto w-full md:w-3/4 lg:w-2/3 bg-elevated/50 rounded-xl p-6 sm:p-8 lg:p-10">
           <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-1">
@@ -281,12 +255,7 @@ function resetForm() {
             class="space-y-5"
             @submit="onSubmit"
           >
-            <Motion
-              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-              :transition="{ delay: 0.3 }"
-              :in-view-options="{ once: true }"
-            >
+            <div class="animate-fade-in animation-delay-300">
               <UFormField
                 label="الاسم الكريم"
                 name="name"
@@ -301,14 +270,9 @@ function resetForm() {
                   :disabled="loading"
                 />
               </UFormField>
-            </Motion>
+            </div>
 
-            <Motion
-              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-              :transition="{ delay: 0.4 }"
-              :in-view-options="{ once: true }"
-            >
+            <div class="animate-fade-in animation-delay-400">
               <UFormField
                 label="البريد الإلكتروني"
                 name="email"
@@ -324,14 +288,9 @@ function resetForm() {
                   :disabled="loading"
                 />
               </UFormField>
-            </Motion>
+            </div>
 
-            <Motion
-              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-              :transition="{ delay: 0.5 }"
-              :in-view-options="{ once: true }"
-            >
+            <div class="animate-fade-in animation-delay-500">
               <UFormField
                 label="رأيك وتجربتك"
                 name="description"
@@ -347,14 +306,9 @@ function resetForm() {
                   :disabled="loading"
                 />
               </UFormField>
-            </Motion>
+            </div>
 
-            <Motion
-              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-              :transition="{ delay: 0.6 }"
-              :in-view-options="{ once: true }"
-            >
+            <div class="animate-fade-in animation-delay-600">
               <FormFileInput
                 v-model="state.image"
                 label="الصورة الشخصية"
@@ -362,13 +316,11 @@ function resetForm() {
                 hint="صورتك تضيف مصداقية لتقييمك"
                 folder="testimonial"
               />
-            </Motion>
+            </div>
 
-            <Motion
-              :initial="{ opacity: 0, transform: 'translateY(10px)' }"
-              :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-              :transition="{ delay: 0.7 }"
-              :in-view-options="{ once: true }"
+            <div
+              class="animate-fade-in"
+              style="animation-delay: 0.7s"
             >
               <UButton
                 type="submit"
@@ -379,10 +331,10 @@ function resetForm() {
               >
                 إرسال التقييم
               </UButton>
-            </Motion>
+            </div>
           </UForm>
         </div>
-      </Motion>
+      </div>
     </UPageSection>
   </UPage>
 </template>

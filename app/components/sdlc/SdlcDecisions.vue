@@ -54,13 +54,11 @@ const nodeStyles = {
   >
     <div class="grid md:grid-cols-2 gap-4">
       <div class="space-y-3">
-        <Motion
+        <div
           v-for="(node, index) in leftNodes"
           :key="node.condition"
-          :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
         >
           <div
             class="rounded-xl border p-5 transition-colors duration-300"
@@ -76,17 +74,15 @@ const nodeStyles = {
               → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>
-        </Motion>
+        </div>
       </div>
 
       <div class="space-y-3">
-        <Motion
+        <div
           v-for="(node, index) in rightNodes"
           :key="node.condition"
-          :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
         >
           <div
             class="rounded-xl border p-5 transition-colors duration-300"
@@ -102,7 +98,7 @@ const nodeStyles = {
               → {{ node.action.prefix }}<strong class="text-highlighted">{{ node.action.target }}</strong>{{ node.action.suffix }}
             </p>
           </div>
-        </Motion>
+        </div>
       </div>
     </div>
   </UPageSection>

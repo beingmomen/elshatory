@@ -111,25 +111,17 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
         links: 'justify-start'
       }"
     >
-      <Motion
-        :initial="{ scale: 1.1, opacity: 0 }"
-        :animate="{ scale: 1, opacity: 1 }"
-        :transition="{ duration: 0.6, delay: 0.1 }"
-      >
+      <div class="animate-fade-in">
         <UColorModeAvatar
           class="size-24 sm:size-32 lg:size-36 rounded-2xl ring-2 ring-primary/30 ring-offset-4 ring-offset-bg rotate-2 hover:rotate-0 transition-all duration-500"
           :light="global.picture?.light"
           :dark="global.picture?.dark"
           :alt="global.picture?.alt"
         />
-      </Motion>
+      </div>
 
       <template #headline>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.2 }"
-        >
+        <span class="animate-fade-in animation-delay-200">
           <UBadge
             label="مهندس واجهات أمامية · Frontend Engineer"
             color="primary"
@@ -137,35 +129,23 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
             size="sm"
             icon="i-lucide-code-2"
           />
-        </Motion>
+        </span>
       </template>
 
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.3 }"
-        >
+        <span class="animate-fade-in animation-delay-300">
           <span class="text-gradient">عبدالمؤمن الشطوري</span>
-        </Motion>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           {{ page.description }}
-        </Motion>
+        </span>
       </template>
 
       <template #links>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.5 }"
-        >
+        <span class="animate-fade-in animation-delay-500">
           <div class="flex items-center gap-2">
             <UButton
               label="تواصل معي"
@@ -195,7 +175,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
               </template>
             </UButton>
           </div>
-        </Motion>
+        </span>
       </template>
     </UPageHero>
 
@@ -207,58 +187,47 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
     >
       <div class="lg:grid lg:grid-cols-3 lg:gap-10">
         <div class="lg:col-span-2 space-y-6">
-          <Motion
-            :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-            :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-            :transition="{ duration: 0.5, delay: 0.1 }"
-            :in-view-options="{ once: true }"
-          >
+          <div class="animate-fade-in animation-delay-100">
             <h2 class="text-right text-xl sm:text-2xl font-medium text-highlighted">
               قصتي
             </h2>
-          </Motion>
+          </div>
 
-          <Motion
+          <div
             v-for="(paragraph, index) in page.story.paragraphs"
             :key="index"
-            :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-            :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-            :transition="{ duration: 0.5, delay: 0.15 + 0.15 * index }"
-            :in-view-options="{ once: true }"
+            class="animate-fade-in"
+            :style="{ animationDelay: `${0.15 + 0.15 * index}s` }"
           >
             <p class="text-muted text-right text-base sm:text-lg leading-relaxed">
               {{ paragraph }}
             </p>
-          </Motion>
+          </div>
 
-          <Motion
-            :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-            :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-            :transition="{ duration: 0.5, delay: 0.45 }"
-            :in-view-options="{ once: true }"
+          <div
+            class="animate-fade-in"
+            style="animation-delay: 0.45s"
           >
             <blockquote class="border-r-4 border-primary pr-6 py-3 bg-primary/5 dark:bg-primary/10 rounded-l-xl">
               <p class="text-primary-600 dark:text-primary-400 text-base sm:text-lg font-medium leading-relaxed text-right">
                 "{{ page.story.quote }}"
               </p>
             </blockquote>
-          </Motion>
+          </div>
         </div>
 
         <div class="lg:col-span-1 flex flex-row lg:flex-col justify-center items-center py-10 lg:py-0 -space-x-8 lg:space-x-0 lg:gap-6">
-          <Motion
+          <div
             v-for="(image, index) in page.images"
             :key="index"
-            :initial="{ opacity: 0, scale: 0.9 }"
-            :while-in-view="{ opacity: 1, scale: 1 }"
-            :transition="{ duration: 0.5, delay: 0.3 + 0.15 * index }"
-            :in-view-options="{ once: true }"
+            class="animate-fade-in"
+            :style="{ animationDelay: `${0.3 + 0.15 * index}s` }"
           >
             <PolaroidItem
               :image="image"
               :index="index"
             />
-          </Motion>
+          </div>
         </div>
       </div>
     </UPageSection>
@@ -271,13 +240,11 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
     >
       <div class="-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 border-y border-default py-10 px-4 sm:px-12 lg:px-16">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-(--ui-container) mx-auto">
-          <Motion
+          <div
             v-for="(stat, index) in page.stats"
             :key="index"
-            :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-            :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-            :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-            :in-view-options="{ once: true }"
+            class="animate-fade-in"
+            :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
           >
             <div class="flex flex-col items-center gap-2 text-center group">
               <div class="p-3 rounded-2xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300">
@@ -293,7 +260,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                 {{ stat.label }}
               </span>
             </div>
-          </Motion>
+          </div>
         </div>
       </div>
     </UPageSection>
@@ -307,13 +274,11 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
       }"
     >
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        <Motion
+        <div
           v-for="(category, cIndex) in page.skills"
           :key="cIndex"
-          :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.5, delay: 0.2 + cIndex * 0.15 }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="{ animationDelay: `${0.2 + cIndex * 0.15}s` }"
         >
           <div class="rounded-2xl border border-default bg-elevated/40 p-5 sm:p-6 space-y-4 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
             <div class="flex items-center justify-end gap-3">
@@ -331,13 +296,11 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
             <USeparator />
 
             <div class="flex flex-wrap gap-2 justify-end">
-              <Motion
+              <div
                 v-for="(skill, sIndex) in category.items"
                 :key="sIndex"
-                :initial="{ opacity: 0, scale: 0.85 }"
-                :while-in-view="{ opacity: 1, scale: 1 }"
-                :transition="{ delay: 0.3 + cIndex * 0.1 + sIndex * 0.05 }"
-                :in-view-options="{ once: true }"
+                class="animate-fade-in"
+                :style="{ animationDelay: `${0.3 + cIndex * 0.1 + sIndex * 0.05}s` }"
               >
                 <UBadge
                   :label="skill.name"
@@ -353,10 +316,10 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                     />
                   </template>
                 </UBadge>
-              </Motion>
+              </div>
             </div>
           </div>
-        </Motion>
+        </div>
       </div>
     </UPageSection>
 
@@ -371,13 +334,11 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
         <div class="hidden sm:block absolute top-0 right-5 w-px h-full bg-default" />
 
         <div class="space-y-6">
-          <Motion
+          <div
             v-for="(exp, index) in experiences"
             :key="index"
-            :initial="{ opacity: 0, transform: 'translateX(16px)' }"
-            :while-in-view="{ opacity: 1, transform: 'translateX(0)' }"
-            :transition="{ duration: 0.5, delay: 0.2 + index * 0.15 }"
-            :in-view-options="{ once: true }"
+            class="animate-fade-in"
+            :style="{ animationDelay: `${0.2 + index * 0.15}s` }"
           >
             <div class="relative flex items-start gap-4 sm:pr-14">
               <!-- Timeline node -->
@@ -472,19 +433,14 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                 </p>
               </div>
             </div>
-          </Motion>
+          </div>
         </div>
       </div>
     </UPageSection>
 
     <!-- ========== SECTION 6: CTA ========== -->
     <UPageSection :ui="{ container: '!pt-0' }">
-      <Motion
-        :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.5, delay: 0.2 }"
-        :in-view-options="{ once: true }"
-      >
+      <div class="animate-fade-in animation-delay-200">
         <UPageCTA
           title="هل لديك مشروع في ذهنك؟"
           description="سواء كان مشروعاً جديداً أو تحسين منتج قائم، أنا هنا للمساعدة والتعاون. لا تتردد في التواصل."
@@ -515,7 +471,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
             </div>
           </template>
         </UPageCTA>
-      </Motion>
+      </div>
     </UPageSection>
   </UPage>
 </template>

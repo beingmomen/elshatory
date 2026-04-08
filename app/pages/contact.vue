@@ -91,32 +91,20 @@ const contactPills = [
       }"
     >
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.1 }"
-        >
+        <span class="animate-fade-in">
           لنبني شيئاً رائعاً معاً
-        </Motion>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.3 }"
-        >
+        <span class="animate-fade-in animation-delay-300">
           سواء كان لديك مشروع جديد، سؤال تقني، أو فقط تريد التعارف — أنا هنا وأسعد دائماً بالتحدث
-        </Motion>
+        </span>
       </template>
 
       <template #links>
         <!-- Availability Badge -->
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           <UButton
             :color="global.available ? 'success' : 'error'"
             variant="ghost"
@@ -136,16 +124,15 @@ const contactPills = [
               </span>
             </template>
           </UButton>
-        </Motion>
+        </span>
 
         <!-- Contact Info Pills -->
         <div class="flex flex-wrap gap-3 justify-center mt-2">
-          <Motion
+          <div
             v-for="(pill, index) in contactPills"
             :key="index"
-            :initial="{ opacity: 0, y: 16 }"
-            :animate="{ opacity: 1, y: 0 }"
-            :transition="{ duration: 0.5, delay: 0.5 + index * 0.1 }"
+            class="animate-fade-in"
+            :style="{ animationDelay: `${0.5 + index * 0.1}s` }"
           >
             <div
               class="flex items-center gap-2 px-4 py-2 rounded-full bg-muted/80 backdrop-blur-sm border border-default/50 shadow-sm"
@@ -156,7 +143,7 @@ const contactPills = [
               />
               <span class="text-base text-muted font-medium">{{ pill.label }}</span>
             </div>
-          </Motion>
+          </div>
         </div>
       </template>
     </UPageHero>
@@ -195,18 +182,14 @@ const contactPills = [
               class="flex flex-col items-center justify-center py-12 gap-4 text-center"
               role="alert"
             >
-              <Motion
-                :initial="{ scale: 0, opacity: 0 }"
-                :animate="{ scale: 1, opacity: 1 }"
-                :transition="{ type: 'spring', stiffness: 200, damping: 15 }"
-              >
+              <div class="animate-fade-in">
                 <div class="size-16 rounded-full bg-success/10 flex items-center justify-center">
                   <UIcon
                     name="i-lucide-check-circle"
                     class="size-8 text-success"
                   />
                 </div>
-              </Motion>
+              </div>
               <h3 class="text-xl font-bold text-highlighted">
                 تم الإرسال بنجاح!
               </h3>
@@ -240,12 +223,7 @@ const contactPills = [
               class="space-y-5"
               @submit="onSubmit"
             >
-              <Motion
-                :initial="{ opacity: 0, y: 16 }"
-                :while-in-view="{ opacity: 1, y: 0 }"
-                :transition="{ delay: 0.1 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-100">
                 <UFormField
                   label="الاسم الكريم"
                   name="name"
@@ -260,14 +238,9 @@ const contactPills = [
                     :disabled="loading"
                   />
                 </UFormField>
-              </Motion>
+              </div>
 
-              <Motion
-                :initial="{ opacity: 0, y: 16 }"
-                :while-in-view="{ opacity: 1, y: 0 }"
-                :transition="{ delay: 0.18 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-200">
                 <UFormField
                   label="رقم الهاتف"
                   name="phone"
@@ -282,14 +255,9 @@ const contactPills = [
                     :disabled="loading"
                   />
                 </UFormField>
-              </Motion>
+              </div>
 
-              <Motion
-                :initial="{ opacity: 0, y: 16 }"
-                :while-in-view="{ opacity: 1, y: 0 }"
-                :transition="{ delay: 0.26 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-300">
                 <UFormField
                   label="البريد الإلكتروني"
                   name="email"
@@ -304,14 +272,9 @@ const contactPills = [
                     :disabled="loading"
                   />
                 </UFormField>
-              </Motion>
+              </div>
 
-              <Motion
-                :initial="{ opacity: 0, y: 16 }"
-                :while-in-view="{ opacity: 1, y: 0 }"
-                :transition="{ delay: 0.34 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-400">
                 <UFormField
                   label="تفاصيل مشروعك"
                   name="description"
@@ -327,14 +290,9 @@ const contactPills = [
                     :disabled="loading"
                   />
                 </UFormField>
-              </Motion>
+              </div>
 
-              <Motion
-                :initial="{ opacity: 0, y: 16 }"
-                :while-in-view="{ opacity: 1, y: 0 }"
-                :transition="{ delay: 0.42 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-500">
                 <UButton
                   type="submit"
                   block
@@ -345,7 +303,7 @@ const contactPills = [
                 >
                   إرسال الرسالة
                 </UButton>
-              </Motion>
+              </div>
             </UForm>
           </Transition>
         </div>
@@ -353,12 +311,7 @@ const contactPills = [
 
       <!-- Info Panel Section -->
       <div>
-        <Motion
-          :initial="{ opacity: 0, x: -24 }"
-          :while-in-view="{ opacity: 1, x: 0 }"
-          :transition="{ delay: 0.2 }"
-          :in-view-options="{ once: true }"
-        >
+        <div class="animate-fade-in animation-delay-200">
           <UCard
             variant="soft"
           >
@@ -462,7 +415,7 @@ const contactPills = [
               </p>
             </template>
           </UCard>
-        </Motion>
+        </div>
       </div>
     </UPageSection>
   </UPage>

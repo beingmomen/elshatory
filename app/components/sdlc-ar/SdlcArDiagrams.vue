@@ -20,13 +20,11 @@ const diagrams = [
     }"
   >
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      <Motion
+      <div
         v-for="(diagram, index) in diagrams"
         :key="diagram.name"
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.1 + index * 0.06 }"
-        :in-view-options="{ once: true }"
+        class="animate-fade-in"
+        :style="{ animationDelay: `${0.1 + index * 0.06}s` }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 text-center hover:bg-elevated/60 transition-colors duration-300">
           <div class="size-12 rounded-xl bg-primary/10 mx-auto mb-3 flex items-center justify-center text-xl">
@@ -36,7 +34,7 @@ const diagrams = [
             {{ diagram.name }}
           </h4>
         </div>
-      </Motion>
+      </div>
     </div>
   </UPageSection>
 </template>

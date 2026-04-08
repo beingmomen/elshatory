@@ -9,11 +9,7 @@
       }"
     >
       <template #headline>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.1 }"
-        >
+        <span class="animate-fade-in">
           <UBadge
             label="Architecture Decision Records"
             color="primary"
@@ -21,39 +17,29 @@
             size="sm"
             icon="i-lucide-landmark"
           />
-        </Motion>
+        </span>
       </template>
 
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.2 }"
-        >
+        <span class="animate-fade-in animation-delay-200">
           القرارات <span class="text-gradient">المعمارية</span>
-        </Motion>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           توثيق للقرارات المعمارية التي اتخذتها في المشاريع الحقيقية — لماذا اخترت هذا النمط؟ ما البدائل التي درستها؟ وما النتائج؟
-        </Motion>
+        </span>
       </template>
     </UPageHero>
 
     <UPageSection :ui="{ container: '!pt-0 pb-12 sm:pb-16 lg:pb-20' }">
       <div class="grid sm:grid-cols-2 gap-6">
-        <Motion
+        <div
           v-for="(adr, index) in adrs"
           :key="adr.slug"
-          :initial="{ opacity: 0, transform: 'translateY(24px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.5, delay: 0.1 + index * 0.15 }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="{ animationDelay: `${0.1 + index * 0.15}s` }"
         >
           <NuxtLink
             :to="`/adr/${adr.slug}`"
@@ -61,11 +47,17 @@
           >
             <div class="flex items-start gap-4 mb-4">
               <div class="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <UIcon :name="adr.icon" class="size-6 text-primary" />
+                <UIcon
+                  :name="adr.icon"
+                  class="size-6 text-primary"
+                />
               </div>
               <div class="flex-1 min-w-0">
                 <h2 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{{ adr.title }}</h2>
-                <code class="text-xs font-mono text-muted" dir="ltr">{{ adr.subtitle }}</code>
+                <code
+                  class="text-xs font-mono text-muted"
+                  dir="ltr"
+                >{{ adr.subtitle }}</code>
               </div>
               <UIcon
                 name="i-lucide-arrow-left"
@@ -90,16 +82,22 @@
 
             <div class="flex items-center gap-4 mt-4 text-xs text-muted">
               <div class="flex items-center gap-1">
-                <UIcon name="i-lucide-layers" class="size-3" />
+                <UIcon
+                  name="i-lucide-layers"
+                  class="size-3"
+                />
                 <span>{{ adr.sections }} قسم</span>
               </div>
               <div class="flex items-center gap-1">
-                <UIcon name="i-lucide-clock" class="size-3" />
+                <UIcon
+                  name="i-lucide-clock"
+                  class="size-3"
+                />
                 <span>{{ adr.readTime }}</span>
               </div>
             </div>
           </NuxtLink>
-        </Motion>
+        </div>
       </div>
     </UPageSection>
   </UPage>

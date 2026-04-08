@@ -42,11 +42,7 @@ defineProps({
       }"
     >
       <template #headline>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.1 }"
-        >
+        <span class="animate-fade-in">
           <UBadge
             :label="badgeLabel"
             color="primary"
@@ -54,35 +50,23 @@ defineProps({
             size="sm"
             icon="i-lucide-book-open"
           />
-        </Motion>
+        </span>
       </template>
 
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.2 }"
-        >
+        <span class="animate-fade-in animation-delay-200">
           {{ title }} <span class="text-gradient">{{ titleHighlight }}</span>
-        </Motion>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           {{ description }}
-        </Motion>
+        </span>
       </template>
 
       <template #links>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.6 }"
-        >
+        <span class="animate-fade-in animation-delay-600">
           <UButton
             :label="buttonLabel"
             to="#analysis"
@@ -90,19 +74,17 @@ defineProps({
             size="md"
             trailing-icon="i-lucide-arrow-down"
           />
-        </Motion>
+        </span>
       </template>
     </UPageHero>
 
     <UPageSection :ui="{ container: '!pt-0 pb-8 sm:pb-12 lg:pb-16' }">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Motion
+        <div
           v-for="(phase, index) in phases"
           :key="phase.id"
-          :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.4, delay: 0.1 + index * 0.08 }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="{ animationDelay: `${0.1 + index * 0.08}s` }"
         >
           <a
             :href="`#${phase.id}`"
@@ -122,7 +104,7 @@ defineProps({
               class="size-4 text-muted group-hover:text-primary transition-colors shrink-0"
             />
           </a>
-        </Motion>
+        </div>
       </div>
     </UPageSection>
   </div>

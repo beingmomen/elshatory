@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
   const fullPath = fullPathField?.data?.toString() === 'true'
 
   const cloudinaryForm = new FormData()
-  const blob = new Blob([fileField.data], { type: fileField.type || 'image/jpeg' })
+  const blob = new Blob([new Uint8Array(fileField.data)], { type: fileField.type || 'image/jpeg' })
   cloudinaryForm.append('file', blob, fileField.filename || 'upload')
   cloudinaryForm.append('upload_preset', config.cloudinary.uploadPreset)
   cloudinaryForm.append('api_key', config.cloudinary.apiKey)

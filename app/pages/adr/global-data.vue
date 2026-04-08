@@ -17,24 +17,47 @@
         <!-- Main Content -->
         <div class="min-w-0 space-y-0">
           <!-- Overview -->
-          <AdrSection id="overview" title="نظرة عامة" icon="i-lucide-eye">
+          <AdrSection
+            id="overview"
+            title="نظرة عامة"
+            icon="i-lucide-eye"
+          >
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5">
               <div class="flex items-start gap-3">
                 <div class="p-2 rounded-xl bg-primary/10 shrink-0">
-                  <UIcon name="i-lucide-lightbulb" class="size-5 text-primary" />
+                  <UIcon
+                    name="i-lucide-lightbulb"
+                    class="size-5 text-primary"
+                  />
                 </div>
                 <div>
-                  <div class="text-base font-semibold mb-2">المبدأ الأساسي</div>
+                  <div class="text-base font-semibold mb-2">
+                    المبدأ الأساسي
+                  </div>
                   <p class="text-base text-muted leading-relaxed">
-                    <code class="font-mono text-primary" dir="ltr">useGlobal</code>
+                    <code
+                      class="font-mono text-primary"
+                      dir="ltr"
+                    >useGlobal</code>
                     يقرأ مباشرة من
-                    <code class="font-mono text-primary" dir="ltr">useAuth().data</code>
+                    <code
+                      class="font-mono text-primary"
+                      dir="ltr"
+                    >useAuth().data</code>
                     عبر
-                    <code class="font-mono text-primary" dir="ltr">computed</code>
+                    <code
+                      class="font-mono text-primary"
+                      dir="ltr"
+                    >computed</code>
                     — بدون نسخ البيانات أو sync يدوي. لو البيانات موجودة أصلاً في مصدر reactive — لا تنسخها.
                   </p>
                   <div class="mt-3">
-                    <UBadge label="composables/core/useGlobal.js" color="neutral" variant="subtle" size="xs" />
+                    <UBadge
+                      label="composables/core/useGlobal.js"
+                      color="neutral"
+                      variant="subtle"
+                      size="xs"
+                    />
                   </div>
                 </div>
               </div>
@@ -42,36 +65,57 @@
           </AdrSection>
 
           <!-- Architecture Flow -->
-          <AdrSection id="architecture" title="مسار تدفق البيانات" icon="i-lucide-workflow" description="كيف تنتقل البيانات من تسجيل الدخول إلى أي مكان في التطبيق">
+          <AdrSection
+            id="architecture"
+            title="مسار تدفق البيانات"
+            icon="i-lucide-workflow"
+            description="كيف تنتقل البيانات من تسجيل الدخول إلى أي مكان في التطبيق"
+          >
             <AdrFlowDiagram :steps="architectureSteps" />
           </AdrSection>
 
           <!-- Session Data Structure -->
-          <AdrSection id="session-data" title="هيكل بيانات الجلسة" icon="i-lucide-braces" description="البيانات التي يرجعها الـ API بعد تسجيل الدخول">
+          <AdrSection
+            id="session-data"
+            title="هيكل بيانات الجلسة"
+            icon="i-lucide-braces"
+            description="البيانات التي يرجعها الـ API بعد تسجيل الدخول"
+          >
             <AdrCodeBlock
               title="Session Data Structure"
               language="JSON"
               :code="sessionDataCode"
             />
             <div class="grid sm:grid-cols-3 gap-3 mt-4">
-              <Motion
+              <div
                 v-for="(step, index) in sessionSteps"
                 :key="step.num"
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-                :in-view-options="{ once: true }"
+                class="animate-fade-in"
+                :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
               >
                 <div class="rounded-lg border border-default/60 bg-elevated/30 p-4 text-right">
-                  <UBadge :label="`${step.num}`" color="primary" variant="subtle" size="xs" class="mb-2" />
-                  <div class="text-base text-muted">{{ step.text }}</div>
+                  <UBadge
+                    :label="`${step.num}`"
+                    color="primary"
+                    variant="subtle"
+                    size="xs"
+                    class="mb-2"
+                  />
+                  <div class="text-base text-muted">
+                    {{ step.text }}
+                  </div>
                 </div>
-              </Motion>
+              </div>
             </div>
           </AdrSection>
 
           <!-- API Reference -->
-          <AdrSection id="api-reference" title="مرجع الـ API" icon="i-lucide-book-open" description="كل الخصائص والدوال التي يصدّرها useGlobal">
+          <AdrSection
+            id="api-reference"
+            title="مرجع الـ API"
+            icon="i-lucide-book-open"
+            description="كل الخصائص والدوال التي يصدّرها useGlobal"
+          >
             <AdrCodeBlock
               title="استيراد واستخدام"
               language="js"
@@ -87,7 +131,12 @@
           </AdrSection>
 
           <!-- Usage Examples -->
-          <AdrSection id="usage-examples" title="أمثلة الاستخدام" icon="i-lucide-code-2" description="كيف يُستخدم useGlobal في أماكن مختلفة من التطبيق">
+          <AdrSection
+            id="usage-examples"
+            title="أمثلة الاستخدام"
+            icon="i-lucide-code-2"
+            description="كيف يُستخدم useGlobal في أماكن مختلفة من التطبيق"
+          >
             <div class="space-y-4">
               <AdrCodeBlock
                 v-for="example in usageExamples"
@@ -100,20 +149,38 @@
           </AdrSection>
 
           <!-- How It Works -->
-          <AdrSection id="how-it-works" title="الآلية الداخلية" icon="i-lucide-cpu" description="كيف يعمل useGlobal من الداخل">
+          <AdrSection
+            id="how-it-works"
+            title="الآلية الداخلية"
+            icon="i-lucide-cpu"
+            description="كيف يعمل useGlobal من الداخل"
+          >
             <AdrCodeBlock
               title="Implementation"
               language="js"
               :code="implementationCode"
             />
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 mt-4">
-              <div class="text-base font-semibold mb-2">لماذا computed وليس نسخ؟</div>
-              <div class="flex items-center gap-2 text-base text-muted font-mono" dir="ltr" style="direction: ltr;">
+              <div class="text-base font-semibold mb-2">
+                لماذا computed وليس نسخ؟
+              </div>
+              <div
+                class="flex items-center gap-2 text-base text-muted font-mono"
+                dir="ltr"
+                style="direction: ltr;"
+              >
                 useAuth().data ──computed──→ useGlobal ──read──→ أي مكان
               </div>
               <ul class="mt-3 space-y-2">
-                <li v-for="point in computedPoints" :key="point" class="text-base text-muted flex gap-2 items-start">
-                  <UIcon name="i-lucide-circle-check" class="size-3.5 text-primary/50 mt-0.5 shrink-0" />
+                <li
+                  v-for="point in computedPoints"
+                  :key="point"
+                  class="text-base text-muted flex gap-2 items-start"
+                >
+                  <UIcon
+                    name="i-lucide-circle-check"
+                    class="size-3.5 text-primary/50 mt-0.5 shrink-0"
+                  />
                   <span>{{ point }}</span>
                 </li>
               </ul>
@@ -121,12 +188,22 @@
           </AdrSection>
 
           <!-- Refresh Cycle -->
-          <AdrSection id="refresh-cycle" title="دورة تحديث البيانات" icon="i-lucide-refresh-cw" description="كيف تتحدث البيانات بعد إضافة عنصر جديد">
+          <AdrSection
+            id="refresh-cycle"
+            title="دورة تحديث البيانات"
+            icon="i-lucide-refresh-cw"
+            description="كيف تتحدث البيانات بعد إضافة عنصر جديد"
+          >
             <AdrFlowDiagram :steps="refreshSteps" />
           </AdrSection>
 
           <!-- Design Decisions -->
-          <AdrSection id="design-decisions" title="القرارات التصميمية" icon="i-lucide-scale" description="لماذا اخترنا هذا النمط وليس البدائل الأخرى">
+          <AdrSection
+            id="design-decisions"
+            title="القرارات التصميمية"
+            icon="i-lucide-scale"
+            description="لماذا اخترنا هذا النمط وليس البدائل الأخرى"
+          >
             <div class="space-y-4">
               <AdrDecisionTable
                 title="لماذا ليس Pinia أو useState؟"
@@ -148,7 +225,11 @@
           </AdrSection>
 
           <!-- Related Files -->
-          <AdrSection id="related-files" title="الملفات ذات الصلة" icon="i-lucide-folder-open">
+          <AdrSection
+            id="related-files"
+            title="الملفات ذات الصلة"
+            icon="i-lucide-folder-open"
+          >
             <AdrFileReference :files="relatedFiles" />
           </AdrSection>
         </div>

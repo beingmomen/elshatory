@@ -17,14 +17,23 @@
         <!-- Main Content -->
         <div class="min-w-0 space-y-0">
           <!-- Overview -->
-          <AdrSection id="overview" title="نظرة عامة" icon="i-lucide-eye">
+          <AdrSection
+            id="overview"
+            title="نظرة عامة"
+            icon="i-lucide-eye"
+          >
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 mb-4">
               <div class="flex items-start gap-3">
                 <div class="p-2 rounded-xl bg-primary/10 shrink-0">
-                  <UIcon name="i-lucide-lightbulb" class="size-5 text-primary" />
+                  <UIcon
+                    name="i-lucide-lightbulb"
+                    class="size-5 text-primary"
+                  />
                 </div>
                 <div>
-                  <div class="text-base font-semibold mb-2">المبدأ الأساسي</div>
+                  <div class="text-base font-semibold mb-2">
+                    المبدأ الأساسي
+                  </div>
                   <p class="text-base text-muted leading-relaxed">
                     فصل كامل — كل ملف نظيف 100% بدون شروط. الـ mode logic موجود في <strong class="text-highlighted">4 أماكن فقط</strong> في النظام بأكمله.
                   </p>
@@ -33,27 +42,35 @@
             </div>
 
             <div class="grid sm:grid-cols-3 gap-3">
-              <Motion
+              <div
                 v-for="(impact, index) in impacts"
                 :key="impact.title"
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-                :in-view-options="{ once: true }"
+                class="animate-fade-in"
+                :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
               >
                 <div class="rounded-xl border border-default/60 bg-elevated/30 p-4 hover:bg-elevated/60 transition-colors duration-300 h-full">
                   <div class="flex items-center gap-2 mb-2">
-                    <UIcon :name="impact.icon" class="size-4 text-primary" />
+                    <UIcon
+                      :name="impact.icon"
+                      class="size-4 text-primary"
+                    />
                     <span class="text-base font-semibold">{{ impact.title }}</span>
                   </div>
-                  <p class="text-base text-muted">{{ impact.description }}</p>
+                  <p class="text-base text-muted">
+                    {{ impact.description }}
+                  </p>
                 </div>
-              </Motion>
+              </div>
             </div>
           </AdrSection>
 
           <!-- Mode Detection -->
-          <AdrSection id="mode-detection" title="كشف النظام — useMode.js" icon="i-lucide-scan" description="يقرأ الـ mode من session data ويوحد الصيغة">
+          <AdrSection
+            id="mode-detection"
+            title="كشف النظام — useMode.js"
+            icon="i-lucide-scan"
+            description="يقرأ الـ mode من session data ويوحد الصيغة"
+          >
             <AdrDecisionTable
               title="قواعد التحويل"
               :headers="['المصدر', 'القيمة', 'النتيجة']"
@@ -69,7 +86,12 @@
           </AdrSection>
 
           <!-- API Reference -->
-          <AdrSection id="api-reference" title="مرجع الـ API" icon="i-lucide-book-open" description="الدوال والثوابت التي يصدّرها useMode">
+          <AdrSection
+            id="api-reference"
+            title="مرجع الـ API"
+            icon="i-lucide-book-open"
+            description="الدوال والثوابت التي يصدّرها useMode"
+          >
             <div class="grid sm:grid-cols-2 gap-4">
               <AdrApiCard
                 v-for="api in apiReference"
@@ -80,20 +102,40 @@
           </AdrSection>
 
           <!-- Components -->
-          <AdrSection id="components" title="المكوّنات" icon="i-lucide-component" description="مكوّنات Vue للتعامل مع الأوضاع المتعددة">
+          <AdrSection
+            id="components"
+            title="المكوّنات"
+            icon="i-lucide-component"
+            description="مكوّنات Vue للتعامل مع الأوضاع المتعددة"
+          >
             <div class="space-y-4">
               <div class="rounded-xl border border-default/60 bg-elevated/30 p-5">
                 <div class="flex items-center gap-2 mb-3">
                   <div class="p-2 rounded-xl bg-primary/10">
-                    <UIcon name="i-lucide-repeat" class="size-4 text-primary" />
+                    <UIcon
+                      name="i-lucide-repeat"
+                      class="size-4 text-primary"
+                    />
                   </div>
                   <div>
                     <span class="text-base font-semibold">BaseModeSwitch</span>
-                    <UBadge label="Dynamic Component" color="neutral" variant="subtle" size="xs" class="ms-2" />
+                    <UBadge
+                      label="Dynamic Component"
+                      color="neutral"
+                      variant="subtle"
+                      size="xs"
+                      class="ms-2"
+                    />
                   </div>
                 </div>
                 <p class="text-base text-muted leading-relaxed mb-3">
-                  يستقبل map من المكوّنات ويرسم الصحيح تلقائياً حسب الـ mode. يمرر <code class="font-mono text-primary" dir="ltr">$attrs</code> و <code class="font-mono text-primary" dir="ltr">$slots</code> للمكوّن المختار.
+                  يستقبل map من المكوّنات ويرسم الصحيح تلقائياً حسب الـ mode. يمرر <code
+                    class="font-mono text-primary"
+                    dir="ltr"
+                  >$attrs</code> و <code
+                    class="font-mono text-primary"
+                    dir="ltr"
+                  >$slots</code> للمكوّن المختار.
                 </p>
                 <AdrCodeBlock
                   title="Usage"
@@ -105,11 +147,20 @@
               <div class="rounded-xl border border-default/60 bg-elevated/30 p-5">
                 <div class="flex items-center gap-2 mb-3">
                   <div class="p-2 rounded-xl bg-primary/10">
-                    <UIcon name="i-lucide-eye" class="size-4 text-primary" />
+                    <UIcon
+                      name="i-lucide-eye"
+                      class="size-4 text-primary"
+                    />
                   </div>
                   <div>
                     <span class="text-base font-semibold">BaseModeShow</span>
-                    <UBadge label="Conditional Render" color="neutral" variant="subtle" size="xs" class="ms-2" />
+                    <UBadge
+                      label="Conditional Render"
+                      color="neutral"
+                      variant="subtle"
+                      size="xs"
+                      class="ms-2"
+                    />
                   </div>
                 </div>
                 <p class="text-base text-muted leading-relaxed mb-3">
@@ -125,21 +176,34 @@
           </AdrSection>
 
           <!-- Middleware -->
-          <AdrSection id="middleware" title="حماية الصفحات — Middleware" icon="i-lucide-shield" description="middleware عام يحمي الصفحات المقيدة بنظام معين">
+          <AdrSection
+            id="middleware"
+            title="حماية الصفحات — Middleware"
+            icon="i-lucide-shield"
+            description="middleware عام يحمي الصفحات المقيدة بنظام معين"
+          >
             <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <Motion
+              <div
                 v-for="(rule, index) in middlewareRules"
                 :key="rule.title"
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-                :in-view-options="{ once: true }"
+                class="animate-fade-in"
+                :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
               >
-                <div class="rounded-xl border p-4 transition-colors duration-300" :class="rule.style">
-                  <div class="text-base font-semibold mb-1" :class="rule.textStyle">{{ rule.title }}</div>
-                  <p class="text-base text-muted">{{ rule.description }}</p>
+                <div
+                  class="rounded-xl border p-4 transition-colors duration-300"
+                  :class="rule.style"
+                >
+                  <div
+                    class="text-base font-semibold mb-1"
+                    :class="rule.textStyle"
+                  >
+                    {{ rule.title }}
+                  </div>
+                  <p class="text-base text-muted">
+                    {{ rule.description }}
+                  </p>
                 </div>
-              </Motion>
+              </div>
             </div>
             <AdrCodeBlock
               title="definePageMeta — أمثلة"
@@ -149,10 +213,21 @@
           </AdrSection>
 
           <!-- Sidebar Filtering -->
-          <AdrSection id="sidebar-filtering" title="تصفية الـ Sidebar" icon="i-lucide-sidebar" description="إضافة خاصية modes اختيارية لعناصر الـ sidebar">
+          <AdrSection
+            id="sidebar-filtering"
+            title="تصفية الـ Sidebar"
+            icon="i-lucide-sidebar"
+            description="إضافة خاصية modes اختيارية لعناصر الـ sidebar"
+          >
             <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 mb-4">
               <p class="text-base text-muted leading-relaxed">
-                <strong class="text-highlighted">القاعدة:</strong> عنصر بدون <code class="font-mono text-primary" dir="ltr">modes</code> = يظهر في كل الأنظمة. عنصر مع <code class="font-mono text-primary" dir="ltr">modes</code> = يظهر فقط في الأنظمة المحددة.
+                <strong class="text-highlighted">القاعدة:</strong> عنصر بدون <code
+                  class="font-mono text-primary"
+                  dir="ltr"
+                >modes</code> = يظهر في كل الأنظمة. عنصر مع <code
+                  class="font-mono text-primary"
+                  dir="ltr"
+                >modes</code> = يظهر فقط في الأنظمة المحددة.
               </p>
             </div>
             <AdrCodeBlock
@@ -163,40 +238,45 @@
           </AdrSection>
 
           <!-- Module Pattern -->
-          <AdrSection id="module-pattern" title="نمط الموديول — الفصل الكامل" icon="i-lucide-puzzle" description="للموديولات التي تختلف بين الأنظمة: ملف منفصل لكل نظام">
+          <AdrSection
+            id="module-pattern"
+            title="نمط الموديول — الفصل الكامل"
+            icon="i-lucide-puzzle"
+            description="للموديولات التي تختلف بين الأنظمة: ملف منفصل لكل نظام"
+          >
             <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <Motion
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.1 }"
-                :in-view-options="{ once: true }"
-              >
+              <div class="animate-fade-in animation-delay-100">
                 <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 h-full">
                   <div class="flex items-center gap-2 mb-3">
-                    <UBadge label="موديول مختلف" color="primary" variant="soft" size="xs" />
+                    <UBadge
+                      label="موديول مختلف"
+                      color="primary"
+                      variant="soft"
+                      size="xs"
+                    />
                   </div>
                   <AdrCodeBlock
                     language="text"
                     :code="moduleStructureDifferent"
                   />
                 </div>
-              </Motion>
-              <Motion
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.2 }"
-                :in-view-options="{ once: true }"
-              >
+              </div>
+              <div class="animate-fade-in animation-delay-200">
                 <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 h-full">
                   <div class="flex items-center gap-2 mb-3">
-                    <UBadge label="موديول مشترك" color="success" variant="soft" size="xs" />
+                    <UBadge
+                      label="موديول مشترك"
+                      color="success"
+                      variant="soft"
+                      size="xs"
+                    />
                   </div>
                   <AdrCodeBlock
                     language="text"
                     :code="moduleStructureShared"
                   />
                 </div>
-              </Motion>
+              </div>
             </div>
 
             <AdrDecisionTable
@@ -208,7 +288,12 @@
           </AdrSection>
 
           <!-- Orchestrator Pattern -->
-          <AdrSection id="orchestrator" title="نمط الأوركسترا — index.js" icon="i-lucide-music" description="المكان الوحيد في الموديول فيه mode logic — يستخدم map بسيط لاختيار الملفات الصحيحة">
+          <AdrSection
+            id="orchestrator"
+            title="نمط الأوركسترا — index.js"
+            icon="i-lucide-music"
+            description="المكان الوحيد في الموديول فيه mode logic — يستخدم map بسيط لاختيار الملفات الصحيحة"
+          >
             <AdrCodeBlock
               title="Orchestrator — index.js"
               language="js"
@@ -217,49 +302,78 @@
           </AdrSection>
 
           <!-- Where Mode Logic Exists -->
-          <AdrSection id="mode-logic-locations" title="أين يوجد Mode Logic؟" icon="i-lucide-map-pin" description="في النظام بأكمله، الـ mode logic موجود في 4 أماكن فقط">
+          <AdrSection
+            id="mode-logic-locations"
+            title="أين يوجد Mode Logic؟"
+            icon="i-lucide-map-pin"
+            description="في النظام بأكمله، الـ mode logic موجود في 4 أماكن فقط"
+          >
             <div class="grid sm:grid-cols-2 gap-4">
-              <Motion
+              <div
                 v-for="(location, index) in modeLocations"
                 :key="location.file"
-                :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-                :in-view-options="{ once: true }"
+                class="animate-fade-in"
+                :style="{ animationDelay: `${0.1 + index * 0.1}s` }"
               >
                 <div class="rounded-xl border border-primary/30 bg-primary/5 p-4 hover:bg-primary/10 transition-colors duration-300">
                   <div class="flex items-center gap-2 mb-2">
-                    <UBadge :label="`${index + 1}`" color="primary" variant="subtle" size="xs" />
-                    <code class="text-xs font-mono text-primary" dir="ltr">{{ location.file }}</code>
+                    <UBadge
+                      :label="`${index + 1}`"
+                      color="primary"
+                      variant="subtle"
+                      size="xs"
+                    />
+                    <code
+                      class="text-xs font-mono text-primary"
+                      dir="ltr"
+                    >{{ location.file }}</code>
                   </div>
-                  <p class="text-base text-muted">{{ location.purpose }}</p>
+                  <p class="text-base text-muted">
+                    {{ location.purpose }}
+                  </p>
                 </div>
-              </Motion>
+              </div>
             </div>
             <div class="rounded-lg border border-success/30 bg-success/5 p-4 mt-4">
               <div class="flex items-center gap-2">
-                <UIcon name="i-lucide-circle-check" class="size-4 text-success" />
+                <UIcon
+                  name="i-lucide-circle-check"
+                  class="size-4 text-success"
+                />
                 <span class="text-base font-semibold text-success">كل ملف آخر (schema, form, component, table, columns, service) = كود نظيف 100% بدون أي شرط.</span>
               </div>
             </div>
           </AdrSection>
 
           <!-- Adding a New Mode -->
-          <AdrSection id="adding-new-mode" title="إضافة نظام جديد" icon="i-lucide-plus-circle" description="خطوات إضافة نظام mixed (mode: 3) — بدون إعادة هيكلة أو تعديل ملفات الأنظمة الموجودة">
+          <AdrSection
+            id="adding-new-mode"
+            title="إضافة نظام جديد"
+            icon="i-lucide-plus-circle"
+            description="خطوات إضافة نظام mixed (mode: 3) — بدون إعادة هيكلة أو تعديل ملفات الأنظمة الموجودة"
+          >
             <div class="space-y-0">
-              <template v-for="(step, index) in addModeSteps" :key="step.title">
-                <Motion
-                  :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-                  :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-                  :transition="{ duration: 0.4, delay: 0.1 + index * 0.08 }"
-                  :in-view-options="{ once: true }"
+              <template
+                v-for="(step, index) in addModeSteps"
+                :key="step.title"
+              >
+                <div
+                  class="animate-fade-in"
+                  :style="{ animationDelay: `${0.1 + index * 0.08}s` }"
                 >
                   <div class="rounded-xl border border-default/60 bg-elevated/30 p-4 hover:bg-elevated/60 transition-colors duration-300">
                     <div class="flex items-center gap-3 mb-2">
-                      <UBadge :label="`${index + 1}`" color="primary" variant="soft" size="sm" />
+                      <UBadge
+                        :label="`${index + 1}`"
+                        color="primary"
+                        variant="soft"
+                        size="sm"
+                      />
                       <span class="text-base font-semibold">{{ step.title }}</span>
                     </div>
-                    <p class="text-base text-muted leading-relaxed">{{ step.description }}</p>
+                    <p class="text-base text-muted leading-relaxed">
+                      {{ step.description }}
+                    </p>
                     <AdrCodeBlock
                       v-if="step.code"
                       :language="step.language || 'js'"
@@ -267,16 +381,27 @@
                       class="mt-3"
                     />
                   </div>
-                </Motion>
-                <div v-if="index < addModeSteps.length - 1" class="flex justify-center py-1">
-                  <UIcon name="i-lucide-arrow-down" class="size-4 text-primary/30" />
+                </div>
+                <div
+                  v-if="index < addModeSteps.length - 1"
+                  class="flex justify-center py-1"
+                >
+                  <UIcon
+                    name="i-lucide-arrow-down"
+                    class="size-4 text-primary/30"
+                  />
                 </div>
               </template>
             </div>
           </AdrSection>
 
           <!-- Design Decisions -->
-          <AdrSection id="design-decisions" title="القرارات التصميمية" icon="i-lucide-scale" description="لماذا اخترنا الفصل بالملفات وليس البدائل الأخرى">
+          <AdrSection
+            id="design-decisions"
+            title="القرارات التصميمية"
+            icon="i-lucide-scale"
+            description="لماذا اخترنا الفصل بالملفات وليس البدائل الأخرى"
+          >
             <div class="space-y-4">
               <AdrDecisionTable
                 title="لماذا الفصل الكامل وليس شروط في template؟"
@@ -301,10 +426,20 @@
           </AdrSection>
 
           <!-- Related Files -->
-          <AdrSection id="related-files" title="الملفات ذات الصلة" icon="i-lucide-folder-open">
+          <AdrSection
+            id="related-files"
+            title="الملفات ذات الصلة"
+            icon="i-lucide-folder-open"
+          >
             <div class="space-y-4">
-              <AdrFileReference title="Core Files" :files="coreFiles" />
-              <AdrFileReference title="Module Example (Signatures)" :files="moduleFiles" />
+              <AdrFileReference
+                title="Core Files"
+                :files="coreFiles"
+              />
+              <AdrFileReference
+                title="Module Example (Signatures)"
+                :files="moduleFiles"
+              />
             </div>
           </AdrSection>
         </div>
@@ -475,7 +610,7 @@ const formComponents = {
   private: FormPrivate,
   government: FormGovernment
 }
-<` + `/script>
+  <` + `/script>
 
 <template>
   <BaseModeSwitch :is="formComponents" />

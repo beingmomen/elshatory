@@ -56,13 +56,11 @@ function openModal(role, phase) {
     }"
   >
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <Motion
+      <div
         v-for="(phase, index) in phases"
         :key="phase.id"
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.1 + index * 0.08 }"
-        :in-view-options="{ once: true }"
+        class="animate-fade-in"
+        :style="{ animationDelay: `${0.1 + index * 0.08}s` }"
       >
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300">
           <div class="flex items-center gap-2 mb-3">
@@ -86,7 +84,7 @@ function openModal(role, phase) {
             </li>
           </ul>
         </div>
-      </Motion>
+      </div>
     </div>
 
     <UModal

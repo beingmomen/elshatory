@@ -18,11 +18,7 @@ defineProps({
       }"
     >
       <template #headline>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.1 }"
-        >
+        <span class="animate-fade-in">
           <UBadge
             :label="badge"
             color="primary"
@@ -30,35 +26,26 @@ defineProps({
             size="sm"
             icon="i-lucide-landmark"
           />
-        </Motion>
+        </span>
       </template>
 
       <template #title>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.2 }"
-        >
-          {{ title }} <span v-if="highlight" class="text-gradient">{{ highlight }}</span>
-        </Motion>
+        <span class="animate-fade-in animation-delay-200">
+          {{ title }} <span
+            v-if="highlight"
+            class="text-gradient"
+          >{{ highlight }}</span>
+        </span>
       </template>
 
       <template #description>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.4 }"
-        >
+        <span class="animate-fade-in animation-delay-400">
           {{ description }}
-        </Motion>
+        </span>
       </template>
 
       <template #links>
-        <Motion
-          :initial="{ scale: 1.1, opacity: 0 }"
-          :animate="{ scale: 1, opacity: 1 }"
-          :transition="{ duration: 0.6, delay: 0.6 }"
-        >
+        <span class="animate-fade-in animation-delay-600">
           <UButton
             label="العودة للقرارات المعمارية"
             to="/adr"
@@ -67,7 +54,7 @@ defineProps({
             size="md"
             icon="i-lucide-arrow-right"
           />
-        </Motion>
+        </span>
       </template>
     </UPageHero>
   </div>

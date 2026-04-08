@@ -4,7 +4,10 @@
       محتويات المقال
     </h3>
 
-    <nav aria-label="جدول المحتويات" class="toc-navigation space-y-1">
+    <nav
+      aria-label="جدول المحتويات"
+      class="toc-navigation space-y-1"
+    >
       <UButton
         v-for="item in table"
         :key="item.id"

@@ -5,9 +5,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
-    'motion-v/nuxt',
     '@stefanobartoletti/nuxt-social-share',
-    '@nuxtjs/seo',
+    '@nuxtjs/seo'
   ],
   devtools: { enabled: process.env.NODE_ENV === 'development' },
 
@@ -145,7 +144,6 @@ export default defineNuxtConfig({
           manualChunks(id) {
             if (id.includes('node_modules')) {
               if (id.includes('@nuxt/ui')) return 'nuxt-ui'
-              if (id.includes('motion-v')) return 'motion'
             }
           }
         }

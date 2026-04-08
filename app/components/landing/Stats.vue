@@ -15,29 +15,26 @@ const stats = [
   >
     <div class="-mx-4 sm:-mx-12 lg:-mx-16 bg-elevated/50 border-y border-default py-10 px-4 sm:px-12 lg:px-16">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-(--ui-container) mx-auto">
-        <Motion
+        <div
           v-for="(stat, index) in stats"
           :key="stat.label"
-          :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ duration: 0.4, delay: 0.1 + index * 0.1 }"
-          :in-view-options="{ once: true }"
+          class="flex flex-col items-center gap-2 text-center group animate-fade-in"
+          :style="`animation-delay: ${0.1 + index * 0.1}s`"
+          :aria-label="`${stat.value} ${stat.label}`"
         >
-          <div class="flex flex-col items-center gap-2 text-center group" :aria-label="`${stat.value} ${stat.label}`">
-            <div class="p-3 rounded-2xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300">
-              <UIcon
-                :name="stat.icon"
-                class="size-5 text-primary"
-              />
-            </div>
-            <span class="text-4xl sm:text-5xl font-bold text-gradient">
-              {{ stat.value }}
-            </span>
-            <span class="text-base text-muted">
-              {{ stat.label }}
-            </span>
+          <div class="p-3 rounded-2xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300">
+            <UIcon
+              :name="stat.icon"
+              class="size-5 text-primary"
+            />
           </div>
-        </Motion>
+          <span class="text-4xl sm:text-5xl font-bold text-gradient">
+            {{ stat.value }}
+          </span>
+          <span class="text-base text-muted">
+            {{ stat.label }}
+          </span>
+        </div>
       </div>
     </div>
   </UPageSection>

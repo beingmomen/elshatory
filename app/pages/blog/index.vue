@@ -64,8 +64,15 @@ useBreadcrumbSchema([{ name: 'المدونة', path: '/blog' }])
     />
 
     <UPageSection :ui="{ container: '!pt-0' }">
-      <div v-if="status === 'pending'" class="space-y-8">
-        <div v-for="i in 3" :key="i" class="md:grid md:grid-cols-2 gap-8">
+      <div
+        v-if="status === 'pending'"
+        class="space-y-8"
+      >
+        <div
+          v-for="i in 3"
+          :key="i"
+          class="md:grid md:grid-cols-2 gap-8"
+        >
           <USkeleton class="h-48 rounded-lg" />
           <div class="space-y-4 mt-4 md:mt-0">
             <USkeleton class="h-6 w-3/4" />
@@ -94,7 +101,10 @@ useBreadcrumbSchema([{ name: 'المدونة', path: '/blog' }])
           />
         </UBlogPosts>
 
-        <div v-if="totalPages > 1" class="flex justify-center mt-8">
+        <div
+          v-if="totalPages > 1"
+          class="flex justify-center mt-8"
+        >
           <UPagination
             v-model="page"
             :total="posts.length"
@@ -103,9 +113,17 @@ useBreadcrumbSchema([{ name: 'المدونة', path: '/blog' }])
         </div>
       </template>
 
-      <div v-else class="text-center py-12">
-        <UIcon name="i-lucide-file-text" class="size-12 text-muted mx-auto mb-4" />
-        <p class="text-muted">لا توجد مقالات حالياً</p>
+      <div
+        v-else
+        class="text-center py-12"
+      >
+        <UIcon
+          name="i-lucide-file-text"
+          class="size-12 text-muted mx-auto mb-4"
+        />
+        <p class="text-muted">
+          لا توجد مقالات حالياً
+        </p>
       </div>
     </UPageSection>
   </UPage>

@@ -62,7 +62,7 @@ export default defineEventHandler(async (event) => {
     setResponseHeader(event, 'cache-control', 'public, max-age=600')
 
     return rssContent
-  } catch (error) {
+  } catch {
     throw createError({
       statusCode: 500,
       message: 'Failed to generate RSS feed'

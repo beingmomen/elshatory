@@ -15,13 +15,11 @@ const experiences = useExperiences()
         dir="ltr"
         class="flex flex-col gap-2"
       >
-        <Motion
+        <div
           v-for="(experience, index) in experiences"
           :key="experience.company"
-          :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ delay: 0.4 + 0.2 * index }"
-          :in-view-options="{ once: true }"
+          class="animate-fade-in"
+          :style="`animation-delay: ${0.4 + 0.2 * index}s`"
         >
           <ULink
             :to="experience.companySiteUrl"
@@ -39,7 +37,7 @@ const experiences = useExperiences()
           <USeparator
             v-if="index < experiences.length - 1"
           />
-        </Motion>
+        </div>
       </div>
     </template>
   </UPageSection>

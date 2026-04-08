@@ -26,134 +26,62 @@ const hero = {
     }"
   >
     <template #headline>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.1
-        }"
-      >
-        <UColorModeAvatar
-          class="size-18 ring ring-default ring-offset-3 ring-offset-bg"
-          :light="global.picture?.light"
-          :dark="global.picture?.dark"
-          :alt="global.picture?.alt"
-        />
-      </Motion>
+      <UColorModeAvatar
+        class="size-18 ring ring-default ring-offset-3 ring-offset-bg animate-fade-in"
+        :light="global.picture?.light"
+        :dark="global.picture?.dark"
+        :alt="global.picture?.alt"
+      />
     </template>
 
     <template #title>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.1
-        }"
-      >
+      <span class="animate-fade-in">
         {{ hero.title }}
-      </Motion>
+      </span>
     </template>
 
     <template #description>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.3
-        }"
-      >
+      <span class="animate-fade-in animation-delay-200">
         {{ hero.description }}
-      </Motion>
+      </span>
     </template>
 
     <template #links>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.5
-        }"
+      <div
+        v-if="hero.links"
+        class="flex items-center gap-2 animate-fade-in animation-delay-300"
       >
-        <div
-          v-if="hero.links"
-          class="flex items-center gap-2"
+        <UButton v-bind="hero.links[0]" />
+        <UButton
+          :color="global.available ? 'success' : 'error'"
+          variant="ghost"
+          class="gap-2"
+          :to="global.available ? global.meetingLink : ''"
+          :target="global.available ? '_blank' : undefined"
+          :label="global.available ? 'متاح للمشاريع الجديدة' : 'غير متاح حالياً'"
         >
-          <UButton v-bind="hero.links[0]" />
-          <UButton
-            :color="global.available ? 'success' : 'error'"
-            variant="ghost"
-            class="gap-2"
-            :to="global.available ? global.meetingLink : ''"
-            :target="global.available ? '_blank' : undefined"
-            :label="global.available ? 'متاح للمشاريع الجديدة' : 'غير متاح حالياً'"
-          >
-            <template #leading>
-              <span class="relative flex size-2">
-                <span
-                  class="absolute inline-flex size-full rounded-full opacity-75"
-                  :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
-                />
-                <span
-                  class="relative inline-flex size-2 scale-90 rounded-full"
-                  :class="global.available ? 'bg-success' : 'bg-error'"
-                />
-              </span>
-            </template>
-          </UButton>
-        </div>
-      </Motion>
+          <template #leading>
+            <span class="relative flex size-2">
+              <span
+                class="absolute inline-flex size-full rounded-full opacity-75"
+                :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
+              />
+              <span
+                class="relative inline-flex size-2 scale-90 rounded-full"
+                :class="global.available ? 'bg-success' : 'bg-error'"
+              />
+            </span>
+          </template>
+        </UButton>
+      </div>
 
-      <div class="gap-x-4 inline-flex mt-4">
-        <Motion
-          v-for="(link, index) of footer?.links"
+      <div class="gap-x-4 inline-flex mt-4 animate-fade-in animation-delay-400">
+        <UButton
+          v-for="link of footer?.links"
           :key="link.to || link.href"
-          :initial="{
-            scale: 1.1,
-            opacity: 0,
-            }"
-          :animate="{
-            scale: 1,
-            opacity: 1,
-            }"
-          :transition="{
-            duration: 0.6,
-            delay: 0.5 + index * 0.1
-          }"
-        >
-          <UButton
-            v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
-          />
-        </Motion>
+          v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
+        />
       </div>
     </template>
-
   </UPageHero>
 </template>

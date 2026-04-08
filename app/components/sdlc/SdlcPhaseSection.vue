@@ -26,12 +26,7 @@ const metaItems = computed(() => [
     }"
   >
     <div class="grid md:grid-cols-3 gap-4">
-      <Motion
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.1 }"
-        :in-view-options="{ once: true }"
-      >
+      <div class="animate-fade-in animation-delay-100">
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
           <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
@@ -54,14 +49,9 @@ const metaItems = computed(() => [
             </div>
           </div>
         </div>
-      </Motion>
+      </div>
 
-      <Motion
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.2 }"
-        :in-view-options="{ once: true }"
-      >
+      <div class="animate-fade-in animation-delay-200">
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
           <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
@@ -92,14 +82,9 @@ const metaItems = computed(() => [
             </li>
           </ul>
         </div>
-      </Motion>
+      </div>
 
-      <Motion
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.3 }"
-        :in-view-options="{ once: true }"
-      >
+      <div class="animate-fade-in animation-delay-300">
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300 h-full">
           <div class="flex items-center gap-2 mb-3">
             <div class="p-2 rounded-xl bg-primary/10">
@@ -124,17 +109,15 @@ const metaItems = computed(() => [
             </li>
           </ul>
         </div>
-      </Motion>
+      </div>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-      <Motion
+      <div
         v-for="(metaItem, i) in metaItems"
         :key="metaItem.label"
-        :initial="{ opacity: 0, transform: 'translateY(16px)' }"
-        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ duration: 0.4, delay: 0.1 + i * 0.1 }"
-        :in-view-options="{ once: true }"
+        class="animate-fade-in"
+        :style="{ animationDelay: `${0.1 + i * 0.1}s` }"
       >
         <div class="rounded-lg border border-default/60 bg-elevated/30 p-5 hover:bg-elevated/60 transition-colors duration-300">
           <div class="flex items-center gap-1.5 mb-1.5">
@@ -150,7 +133,7 @@ const metaItems = computed(() => [
             {{ metaItem.value }}
           </div>
         </div>
-      </Motion>
+      </div>
     </div>
   </UPageSection>
 </template>

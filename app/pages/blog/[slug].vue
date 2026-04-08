@@ -161,14 +161,25 @@ useBreadcrumbSchema([
           </div>
         </div>
         <UPageBody class="max-w-3xl mx-auto">
+          <!-- eslint-disable-next-line vue/no-v-html -->
           <article v-html="sanitizedContent" />
         </UPageBody>
       </UPage>
 
-      <div v-else class="flex flex-col items-center justify-center py-24 text-center">
-        <UIcon name="i-lucide-file-x" class="size-16 text-muted mb-4" />
-        <h1 class="text-2xl font-bold mb-2">المقال غير موجود</h1>
-        <p class="text-muted mb-6">لم نتمكن من العثور على المقال المطلوب</p>
+      <div
+        v-else
+        class="flex flex-col items-center justify-center py-24 text-center"
+      >
+        <UIcon
+          name="i-lucide-file-x"
+          class="size-16 text-muted mb-4"
+        />
+        <h1 class="text-2xl font-bold mb-2">
+          المقال غير موجود
+        </h1>
+        <p class="text-muted mb-6">
+          لم نتمكن من العثور على المقال المطلوب
+        </p>
         <UButton
           label="العودة للمدونة"
           to="/blog"

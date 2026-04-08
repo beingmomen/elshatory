@@ -34,7 +34,10 @@ onMounted(() => {
   <nav class="sticky top-24 space-y-1 text-right">
     <div class="flex items-center justify-end gap-2 mb-3 px-3">
       <span class="text-base font-semibold">الفهرس</span>
-      <UIcon name="i-lucide-list" class="size-4 text-primary" />
+      <UIcon
+        name="i-lucide-list"
+        class="size-4 text-primary"
+      />
     </div>
     <a
       v-for="section in sections"
@@ -46,7 +49,10 @@ onMounted(() => {
         : 'text-muted hover:text-highlighted hover:bg-elevated/60'"
     >
       {{ section.label }}
-      <span class="size-1.5 rounded-full shrink-0" :class="activeId === section.id ? 'bg-primary' : 'bg-muted/40'" />
+      <span
+        class="size-1.5 rounded-full shrink-0"
+        :class="activeId === section.id ? 'bg-primary' : 'bg-muted/40'"
+      />
     </a>
   </nav>
 </template>
