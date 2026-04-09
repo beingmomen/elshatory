@@ -73,10 +73,10 @@ const aiTools = [
           <div class="space-y-4">
             <div>
               <h3 class="text-lg font-bold text-gradient inline-block">
-                عبدالمؤمن الشطوري
+                {{ global.fullName }}
               </h3>
               <p class="text-base text-muted mt-1">
-                مهندس واجهات أمامية
+                {{ global.title }}
               </p>
             </div>
             <p class="text-base text-muted leading-relaxed">
