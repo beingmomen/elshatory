@@ -15,7 +15,12 @@ export default defineAppConfig({
     },
     meetingLink: 'https://cal.com/beingmomen',
     email: 'abdelmomenelshatory@gmail.com',
-    available: true
+    available: true,
+    aboutSection: {
+      title: 'من أنا؟',
+      description:
+        'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أعمل على بناء تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم والتصميم المتجاوب.'
+    }
   },
   ui: {
     colors: {

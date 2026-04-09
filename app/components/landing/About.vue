@@ -1,14 +1,11 @@
 <script setup>
-const aboutData = {
-  title: 'نبذة عني',
-  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أعمل على بناء تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم والتصميم المتجاوب.'
-}
+const { global } = useAppConfig()
 </script>
 
 <template>
   <UPageSection
-    :title="aboutData.title"
-    :description="aboutData.description"
+    title="نبذة عني"
+    :description="global.aboutSection.description"
     :ui="{
       container: '!p-0',
       title: 'text-right text-xl sm:text-xl lg:text-2xl font-medium',
