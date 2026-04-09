@@ -1,5 +1,12 @@
 export default defineAppConfig({
   global: {
+    fullName: 'عبدالمؤمن الشطوري',
+    title: 'Frontend Engineer',
+    description:
+      'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
+    links: [
+      { label: 'تواصل معي', to: '/contact', color: 'primary', size: 'md' }
+    ],
     picture: {
       dark: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
       light:

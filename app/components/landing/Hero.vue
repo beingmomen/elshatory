@@ -1,20 +1,5 @@
 <script setup>
 const { footer, global } = useAppConfig()
-
-const hero = {
-  title: 'عبدالمؤمن الشطوري',
-  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
-  links: [
-    { label: 'تواصل معي', to: '/contact', color: 'primary', size: 'md' }
-  ],
-  images: [
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/projects/kumcpisodzlmbjl09rkq', alt: 'Tiger Academy Dashboard' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/projects/z6maczq6efi4frqrocr4', alt: 'Golden Tiger Academy' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/projects/eue84zgeqqhcxnsqdmml', alt: 'STREAMMAXY' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/projects/ntzcicgt0xive8ea4eof', alt: 'Dream TV Player' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/projects/iioskrrbfdwywmta7ciy', alt: 'Spider TV' }
-  ]
-}
 </script>
 
 <template>
@@ -35,23 +20,27 @@ const hero = {
     </template>
 
     <template #title>
-      <span class="animate-fade-in">
-        {{ hero.title }}
-      </span>
+      <div class="animate-fade-in">
+        {{ global.fullName }}
+      </div>
+
+      <div class="animate-fade-in mt-4 text-4xl text-muted">
+        {{ global.title }}
+      </div>
     </template>
 
     <template #description>
       <span class="animate-fade-in animation-delay-200">
-        {{ hero.description }}
+        {{ global.description }}
       </span>
     </template>
 
     <template #links>
       <div
-        v-if="hero.links"
+        v-if="global.links"
         class="flex items-center gap-2 animate-fade-in animation-delay-300"
       >
-        <UButton v-bind="hero.links[0]" />
+        <UButton v-bind="global.links[0]" />
         <UButton
           :color="global.available ? 'success' : 'error'"
           variant="ghost"
