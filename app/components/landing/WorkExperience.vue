@@ -30,9 +30,12 @@ const experiences = useExperiences()
             <span class="text-base text-dimmed whitespace-nowrap">
               {{ formatArabicDate(experience.startDate) }} – {{ formatArabicDate(experience.endDate) }}
             </span>
-            <span class="text-base text-muted text-right whitespace-nowrap">
-              {{ experience.position }} at
+            <span class="text-base text-muted whitespace-nowrap">
               <span class="font-semibold text-primary group-hover:underline">{{ experience.company }}</span>
+              <span> في </span>
+              <span>
+                {{ experience.position }}
+              </span>
             </span>
           </ULink>
           <USeparator
