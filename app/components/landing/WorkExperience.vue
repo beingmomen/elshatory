@@ -4,6 +4,7 @@ const experiences = useExperiences()
 
 <template>
   <UPageSection
+    v-if="experiences.length"
     title="الخبرات العملية"
     :ui="{
       container: '!p-0 gap-4 sm:gap-4',
@@ -27,7 +28,7 @@ const experiences = useExperiences()
             class="flex items-baseline justify-between gap-4 py-2 group"
           >
             <span class="text-base text-dimmed whitespace-nowrap">
-              {{ experience.startDate }} – {{ experience.endDate }}
+              {{ formatArabicDate(experience.startDate) }} – {{ formatArabicDate(experience.endDate) }}
             </span>
             <span class="text-base text-muted text-right whitespace-nowrap">
               {{ experience.position }} at

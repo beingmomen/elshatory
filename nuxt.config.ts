@@ -83,26 +83,26 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
-    '/about': { prerender: true },
-    '/projects': { prerender: true },
-    '/sdlc': { prerender: true },
-    '/sdlc-ar': { prerender: true },
-    '/adr': { prerender: true },
-    '/adr/**': { prerender: true },
-    '/blog': { swr: 600 },
-    '/blog/**': { ssr: true },
-    '/contact': { ssr: true },
-    '/testimonial': { ssr: true },
-    '/api/blog': { swr: 600 },
-    '/mcp': { ssr: true },
-    '/mcp/**': { ssr: true },
-    '/agents': { ssr: true },
-    '/agents/**': { ssr: true },
-    '/skills': { ssr: true },
-    '/skills/**': { ssr: true },
-    '/commands': { ssr: true },
-    '/commands/**': { ssr: true }
+    '/': { swr: 600 },
+    '/about': { swr: 600 },
+    '/projects': { swr: 600 }
+    // '/sdlc': { prerender: true },
+    // '/sdlc-ar': { prerender: true },
+    // '/adr': { prerender: true },
+    // '/adr/**': { prerender: true },
+    // '/blog': { swr: 600 },
+    // '/blog/**': { ssr: true },
+    // '/contact': { ssr: true },
+    // '/testimonial': { ssr: true },
+    // '/api/blog': { swr: 600 },
+    // '/mcp': { ssr: true },
+    // '/mcp/**': { ssr: true },
+    // '/agents': { ssr: true },
+    // '/agents/**': { ssr: true },
+    // '/skills': { ssr: true },
+    // '/skills/**': { ssr: true },
+    // '/commands': { ssr: true },
+    // '/commands/**': { ssr: true }
   },
 
   devServer: {
@@ -115,8 +115,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     minify: true,
     prerender: {
-      routes: ['/'],
-      crawlLinks: true
+      crawlLinks: false
     },
     routeRules: {
       '/**': {

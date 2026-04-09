@@ -1,76 +1,47 @@
 <script setup>
 const { global } = useAppConfig()
 const config = useRuntimeConfig()
-const experiences = useExperiences()
 
-const page = {
-  title: 'نبذة عني',
-  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
-  story: {
-    paragraphs: [
-      'بدأت شغفي بالبرمجة حين اكتشفت أن الكود يمكنه تحويل فكرة بسيطة إلى تجربة حقيقية يستخدمها آلاف الأشخاص. منذ تلك اللحظة، لم أتوقف عن التعلم والبناء.',
-      'بدأت مسيرتي كمتدرب في HamaServ عام 2020، وسرعان ما تطورت لأتولى دور مطور واجهات أمامية كامل. اليوم، أعمل في NanoSoft على تطوير أنظمة محاسبية متكاملة وتطبيقات بيانات بتقنيات حديثة.'
-    ],
-    quote: 'أؤمن بأن التكنولوجيا الجيدة لا تُرى — ما يُرى هو تجربة المستخدم التي تبنيها'
-  },
-  stats: [
-    { value: '+5', label: 'سنوات خبرة', icon: 'i-lucide-calendar-days' },
-    { value: '+10', label: 'مشروع منجز', icon: 'i-lucide-folder-check' },
-    { value: '3', label: 'شركات', icon: 'i-lucide-building-2' },
-    { value: '100%', label: 'التزام بالجودة', icon: 'i-lucide-star' }
-  ],
-  skills: [
-    {
-      title: 'الواجهة الأمامية',
-      icon: 'i-lucide-monitor',
-      items: [
-        { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs' },
-        { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs' },
-        { name: 'JavaScript', icon: 'i-simple-icons-javascript' },
-        { name: 'TypeScript', icon: 'i-simple-icons-typescript' },
-        { name: 'Tailwind CSS', icon: 'i-simple-icons-tailwindcss' },
-        { name: 'Nuxt UI', icon: 'i-lucide-layout' }
-      ]
+const { data: infoData } = await useAPI('/infos', {
+  key: 'about-info',
+  default: () => ({}),
+  transform: response => response.data?.[0] || {}
+})
+
+const { data: experiences } = await useAPI('/experiences/all', {
+  key: 'about-experiences',
+  default: () => [],
+  transform: response => Array.isArray(response) ? response : (response?.data || [])
+})
+
+const page = computed(() => {
+  const info = infoData.value || {}
+  return {
+    title: 'نبذة عني',
+    description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
+    story: {
+      paragraphs: info.bio?.paragraphs || [],
+      quote: info.bio?.quote || ''
     },
-    {
-      title: 'الواجهة الخلفية',
-      icon: 'i-lucide-server',
-      items: [
-        { name: 'Node.js', icon: 'i-simple-icons-nodedotjs' },
-        { name: 'Express.js', icon: 'i-simple-icons-express' },
-        { name: 'MongoDB', icon: 'i-simple-icons-mongodb' }
-      ]
-    },
-    {
-      title: 'الأدوات والبنية',
-      icon: 'i-lucide-wrench',
-      items: [
-        { name: 'Git', icon: 'i-simple-icons-git' },
-        { name: 'GitHub', icon: 'i-simple-icons-github' },
-        { name: 'Cloudinary', icon: 'i-simple-icons-cloudinary' },
-        { name: 'Linux', icon: 'i-lucide-terminal' },
-        { name: 'REST APIs', icon: 'i-lucide-cable' }
-      ]
-    }
-  ],
-  images: [
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz', alt: 'عبدالمؤمن الشطوري' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/services/qhrcwqztvqltvawgzdlq', alt: 'تطوير الويب' },
-    { src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/services/rt2aapfyn1mw57cuqc0p', alt: 'البرمجة' }
-  ]
-}
+    stats: info.stats || [],
+    skills: info.skills || [],
+    images: info.images || []
+  }
+})
+
+const pageDescription = 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.'
 
 useSeoMeta({
   title: 'نبذة عني | عبدالمؤمن الشطوري',
   ogTitle: 'نبذة عني | عبدالمؤمن الشطوري',
-  description: page.description,
-  ogDescription: page.description,
+  description: pageDescription,
+  ogDescription: pageDescription,
   ogUrl: `${config.public.siteUrl}/about`,
   ogType: 'website',
   ogLocale: 'ar_EG',
   twitterCard: 'summary_large_image',
   twitterTitle: 'نبذة عني | عبدالمؤمن الشطوري',
-  twitterDescription: page.description,
+  twitterDescription: pageDescription,
   twitterSite: '@beingmomen',
   keywords: 'عبدالمؤمن الشطوري, مهندس واجهات أمامية, Frontend Engineer, تطوير ويب, مطور واجهات أمامية'
 })
@@ -83,7 +54,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'ProfilePage',
         'name': 'نبذة عني',
-        'description': page.description,
+        'description': pageDescription,
         'url': `${config.public.siteUrl}/about`,
         'mainEntity': {
           '@type': 'Person',
@@ -387,7 +358,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
                   </div>
                   <div class="shrink-0 flex flex-col items-end gap-1">
                     <UBadge
-                      :label="`${exp.startDate} — ${exp.endDate}`"
+                      :label="`${formatArabicDate(exp.startDate)} — ${formatArabicDate(exp.endDate)}`"
                       color="neutral"
                       variant="subtle"
                       size="xs"

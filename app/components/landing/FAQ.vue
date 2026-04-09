@@ -1,51 +1,49 @@
 <script setup>
-const faqData = {
-  title: 'الأسئلة الشائعة',
-  description: 'إجابات على الأسئلة الأكثر شيوعاً',
-  categories: [
-    {
-      title: 'عام',
-      questions: [
-        { label: 'ما هي خبرتك في تطوير الويب؟', content: 'لدي خبرة تزيد عن 5 سنوات في تطوير واجهات المستخدم وبناء تطبيقات ويب متكاملة باستخدام أحدث التقنيات والأدوات.' },
-        { label: 'ما هي التقنيات التي تستخدمها؟', content: 'أستخدم Vue.js, Nuxt.js, React, Tailwind CSS, TypeScript, Node.js وغيرها من التقنيات الحديثة حسب متطلبات كل مشروع.' },
-        { label: 'هل تقدم خدمات استشارية؟', content: 'نعم، أقدم استشارات تقنية في مجال تطوير الويب والواجهات الأمامية.' }
-      ]
-    },
-    {
-      title: 'المشاريع',
-      questions: [
-        { label: 'كم يستغرق تنفيذ مشروع؟', content: 'يعتمد على حجم وتعقيد المشروع. المشاريع البسيطة تأخذ من أسبوع إلى أسبوعين، والمشاريع الكبيرة قد تأخذ شهراً أو أكثر.' },
-        { label: 'هل تقدم دعم فني بعد التسليم؟', content: 'نعم، أقدم دعم فني مجاني لمدة شهر بعد تسليم المشروع، ويمكن تمديده حسب الاتفاق.' }
-      ]
-    },
-    {
-      title: 'التواصل',
-      questions: [
-        { label: 'كيف يمكنني التواصل معك؟', content: 'يمكنك التواصل معي عبر صفحة التواصل في الموقع أو عبر حساباتي على وسائل التواصل الاجتماعي.' },
-        { label: 'ما هي أوقات العمل؟', content: 'أعمل عن بُعد ومتاح للتواصل من الأحد إلى الخميس من الساعة 9 صباحاً حتى 5 مساءً.' }
-      ]
+const { data: landing } = useNuxtData('landing')
+
+const faqData = computed(() => {
+  const faqs = landing.value?.faqs || []
+  // Group by category
+  const categoryMap = {}
+  for (const faq of faqs) {
+    if (!categoryMap[faq.category]) {
+      categoryMap[faq.category] = []
     }
-  ]
-}
+    categoryMap[faq.category].push({
+      label: faq.question,
+      content: faq.answer
+    })
+  }
+  return {
+    title: 'الأسئلة الشائعة',
+    description: 'إجابات على الأسئلة الأكثر شيوعاً',
+    categories: Object.entries(categoryMap).map(([title, questions]) => ({
+      title,
+      questions
+    }))
+  }
+})
 
 const items = computed(() => {
-  return faqData.categories.map(faq => ({
+  return (faqData.value.categories || []).map(faq => ({
     label: faq.title,
     key: faq.title.toLowerCase(),
     questions: faq.questions
   }))
 })
 
-const allQuestions = faqData.categories.flatMap(c => c.questions)
+const allQuestions = computed(() =>
+  (faqData.value.categories || []).flatMap(c => c.questions)
+)
 
 useHead({
   script: [
     {
       type: 'application/ld+json',
-      innerHTML: JSON.stringify({
+      innerHTML: computed(() => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        'mainEntity': allQuestions.map(q => ({
+        'mainEntity': allQuestions.value.map(q => ({
           '@type': 'Question',
           'name': q.label,
           'acceptedAnswer': {
@@ -53,7 +51,7 @@ useHead({
             'text': q.content
           }
         }))
-      })
+      }))
     }
   ]
 })
@@ -69,6 +67,7 @@ const ui = {
 
 <template>
   <UPageSection
+    v-if="items.length"
     :title="faqData.title"
     :description="faqData.description"
     :ui="{
