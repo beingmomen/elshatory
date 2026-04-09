@@ -75,7 +75,6 @@ function handleCopyEmail() {
 
 const contactPills = [
   { icon: 'i-lucide-mail', label: global.email },
-  { icon: 'i-lucide-message-square', label: 'واتساب / تيليجرام' },
   { icon: 'i-lucide-map-pin', label: 'مصر — متاح عن بُعد' }
 ]
 </script>
@@ -84,21 +83,16 @@ const contactPills = [
   <UPage>
     <!-- Hero Section -->
     <UPageHero
+      description="سواء كان لديك مشروع جديد، سؤال تقني، أو فقط تريد التعارف — أنا هنا وأسعد دائماً بالتحدث"
       :ui="{
         title: 'text-center',
-        description: 'text-center text-gradient font-bold',
+        description: 'text-center text-gradient font-bold animate-fade-in animation-delay-300',
         links: 'mt-4 flex-col justify-center items-center'
       }"
     >
       <template #title>
         <span class="animate-fade-in">
           لنبني شيئاً رائعاً معاً
-        </span>
-      </template>
-
-      <template #description>
-        <span class="animate-fade-in animation-delay-300">
-          سواء كان لديك مشروع جديد، سؤال تقني، أو فقط تريد التعارف — أنا هنا وأسعد دائماً بالتحدث
         </span>
       </template>
 

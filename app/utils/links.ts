@@ -15,22 +15,22 @@ export const socialLinks = [
     url: 'https://qabilah.com/profile/beingmomen/posts',
     icon: 'i-custom-qabilah',
     label: 'Qabilah Profile'
-  },
-  {
-    url: 'https://twitter.com/beingmomen',
-    icon: 'i-devicon-twitter',
-    label: 'Twitter Profile'
-  },
-  {
-    url: 'https://www.facebook.com/beingmomen/',
-    icon: 'i-devicon-facebook',
-    label: 'Facebook Profile'
-  },
-  {
-    url: 'https://www.instagram.com/beingmomen/',
-    icon: 'i-skill-icons-instagram',
-    label: 'Instagram Profile'
   }
+  // {
+  //   url: 'https://twitter.com/beingmomen',
+  //   icon: 'i-devicon-twitter',
+  //   label: 'Twitter Profile'
+  // },
+  // {
+  //   url: 'https://www.facebook.com/beingmomen/',
+  //   icon: 'i-devicon-facebook',
+  //   label: 'Facebook Profile'
+  // },
+  // {
+  //   url: 'https://www.instagram.com/beingmomen/',
+  //   icon: 'i-skill-icons-instagram',
+  //   label: 'Instagram Profile'
+  // }
 ]
 
 export const navLinks: NavigationMenuItem[] = [{
