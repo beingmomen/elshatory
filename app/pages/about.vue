@@ -94,11 +94,10 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
       <template #headline>
         <span class="animate-fade-in animation-delay-200">
           <UBadge
-            label="Frontend Engineer · Frontend Engineer"
+            label="Abdelmomen Elshatory - Frontend Engineer"
             color="primary"
             variant="soft"
             size="sm"
-            icon="i-lucide-code-2"
           />
         </span>
       </template>

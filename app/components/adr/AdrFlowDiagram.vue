@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div :class="direction === 'horizontal' ? 'flex flex-wrap items-start gap-3' : 'space-y-0'">
-    <template
+    <div
       v-for="(step, index) in steps"
       :key="step.title"
     >
@@ -70,6 +70,6 @@ defineProps({
           class="size-5 text-primary/40"
         />
       </div>
-    </template>
+    </div>
   </div>
 </template>
