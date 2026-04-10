@@ -60,7 +60,7 @@ ui.colors.neutral  = 'neutral'
 
 ```
 العنوان: نبذة عني
-الوصف: مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أعمل على بناء تطبيقات ويب حديثة وعالية الأداء...
+الوصف: Frontend Engineer بخبرة تزيد عن 5 سنوات. أعمل على بناء تطبيقات ويب حديثة وعالية الأداء...
 ```
 
 ---
@@ -71,7 +71,7 @@ ui.colors.neutral  = 'neutral'
 
 ```
 العنوان: عبدالمؤمن الشطوري
-الوصف: مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات...
+الوصف: Frontend Engineer بخبرة تزيد عن 5 سنوات...
 الروابط: [تواصل معي → /contact]
 ```
 
@@ -181,9 +181,9 @@ contactPills = [
 
 ```
 title:          'عبدالمؤمن الشطوري | Frontend Engineer'
-description:    'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات...'
-keywords:       'مهندس واجهات أمامية, Frontend Engineer, عبدالمؤمن الشطوري...'
-og:title:       'عبدالمؤمن الشطوري - مهندس واجهات أمامية | مشاريع واقعية لأكثر من +50 عميل'
+description:    'Frontend Engineer بخبرة تزيد عن 5 سنوات...'
+keywords:       'Frontend Engineer, Frontend Engineer, عبدالمؤمن الشطوري...'
+og:title:       'عبدالمؤمن الشطوري - Frontend Engineer | مشاريع واقعية لأكثر من +50 عميل'
 og:description: 'حلول برمجية مبتكرة وتجارب مستخدم استثنائية...'
 author:         'Abdelmomen Elshatory'
 robots:         'index, follow, max-image-preview:large'

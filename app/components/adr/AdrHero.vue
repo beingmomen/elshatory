@@ -23,8 +23,7 @@ defineProps({
             :label="badge"
             color="primary"
             variant="soft"
-            size="sm"
-            icon="i-lucide-landmark"
+            size="lg"
           />
         </span>
       </template>

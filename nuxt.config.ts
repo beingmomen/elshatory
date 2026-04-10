@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const baseUrlOrigin = process.env.BASE_URL
+  ? new URL(process.env.BASE_URL).origin
+  : ''
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -19,17 +23,17 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
+            'Frontend Engineer بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.'
         },
         {
           name: 'keywords',
           content:
-            'مهندس واجهات أمامية, Frontend Engineer, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, مشاريع برمجية, تقييم عملاء, تطوير ويب'
+            'Frontend Engineer, Frontend Engineer, عبدالمؤمن الشطوري, Elshatory, beingmomen, تطوير تطبيقات ويب, واجهات أمامية, مشاريع برمجية, تقييم عملاء, تطوير ويب'
         },
         {
           property: 'og:title',
           content:
-            'عبدالمؤمن الشطوري - مهندس واجهات أمامية | مشاريع واقعية لأكثر من +50 عميل'
+            'عبدالمؤمن الشطوري - Frontend Engineer | مشاريع واقعية لأكثر من +50 عميل'
         },
         {
           property: 'og:description',
@@ -61,7 +65,7 @@ export default defineNuxtConfig({
     url: process.env.SITE_URL,
     name: 'عبدالمؤمن الشطوري',
     description:
-      'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
+      'Frontend Engineer بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
     defaultLocale: 'ar'
   },
 
@@ -125,8 +129,8 @@ export default defineNuxtConfig({
           'X-XSS-Protection': '1; mode=block',
           'Referrer-Policy': 'strict-origin-when-cross-origin',
           'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-          // eslint-disable-next-line @stylistic/quotes
-          'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://res.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.beingmomen.com https://res.cloudinary.com; media-src 'self'; frame-src 'none'"
+
+          'Content-Security-Policy': `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://res.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' ${baseUrlOrigin} https://api.beingmomen.com https://res.cloudinary.com; media-src 'self'; frame-src 'none'`
         }
       }
     }
@@ -220,7 +224,7 @@ export default defineNuxtConfig({
         'https://www.facebook.com/beingmomen/',
         'https://www.instagram.com/beingmomen/'
       ],
-      jobTitle: 'مهندس واجهات أمامية',
+      jobTitle: 'Frontend Engineer',
       worksFor: {
         type: 'Organization',
         name: 'عمل حر'

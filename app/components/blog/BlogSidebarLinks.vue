@@ -27,5 +27,5 @@
 <script setup>
 const singleBlog = inject('singleBlog')
 
-const links = computed(() => singleBlog.value.links)
+const links = computed(() => singleBlog.value.resources)
 </script>

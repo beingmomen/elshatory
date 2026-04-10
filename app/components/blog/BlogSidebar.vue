@@ -1,11 +1,11 @@
 <template>
   <div class="table-of-contents space-y-6">
-    <BlogBlogSidebarTableOfContents />
+    <BlogSidebarTableOfContents />
     <USeparator
       class="my-5"
       size="sm"
     />
-    <BlogBlogSidebarLinks />
+    <BlogSidebarLinks />
     <USeparator
       class="my-5"
       size="sm"

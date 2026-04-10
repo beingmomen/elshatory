@@ -18,7 +18,7 @@ const page = computed(() => {
   const info = infoData.value || {}
   return {
     title: 'نبذة عني',
-    description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
+    description: 'Frontend Engineer بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.',
     story: {
       paragraphs: info.bio?.paragraphs || [],
       quote: info.bio?.quote || ''
@@ -29,7 +29,7 @@ const page = computed(() => {
   }
 })
 
-const pageDescription = 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.'
+const pageDescription = 'Frontend Engineer بخبرة تزيد عن 5 سنوات. أبني تطبيقات ويب حديثة وعالية الأداء مع التركيز على تجربة المستخدم.'
 
 useSeoMeta({
   title: 'نبذة عني | عبدالمؤمن الشطوري',
@@ -43,7 +43,7 @@ useSeoMeta({
   twitterTitle: 'نبذة عني | عبدالمؤمن الشطوري',
   twitterDescription: pageDescription,
   twitterSite: '@beingmomen',
-  keywords: 'عبدالمؤمن الشطوري, مهندس واجهات أمامية, Frontend Engineer, تطوير ويب, مطور واجهات أمامية'
+  keywords: 'عبدالمؤمن الشطوري, Frontend Engineer, Frontend Engineer, تطوير ويب, مطور واجهات أمامية'
 })
 
 useHead({
@@ -94,7 +94,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
       <template #headline>
         <span class="animate-fade-in animation-delay-200">
           <UBadge
-            label="مهندس واجهات أمامية · Frontend Engineer"
+            label="Frontend Engineer · Frontend Engineer"
             color="primary"
             variant="soft"
             size="sm"

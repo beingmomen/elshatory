@@ -46,7 +46,7 @@ defineProps({
         maxWidth: '800px'
       }"
     >
-      {{ description || 'مهندس واجهات أمامية' }}
+      {{ description || 'Frontend Engineer' }}
     </div>
     <div
       :style="{

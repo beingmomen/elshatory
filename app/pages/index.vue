@@ -17,7 +17,7 @@ useHead({
         'name': 'عبدالمؤمن الشطوري',
         'alternateName': 'Abdelmomen Elshatory',
         'url': config.public.siteUrl,
-        'description': 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
+        'description': 'Frontend Engineer بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء',
         'inLanguage': 'ar'
       })
     }
@@ -25,15 +25,15 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'عبدالمؤمن الشطوري | مهندس واجهات أمامية',
-  description: 'مهندس واجهات أمامية بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.',
-  ogTitle: 'عبدالمؤمن الشطوري | مهندس واجهات أمامية',
+  title: 'عبدالمؤمن الشطوري | Frontend Engineer',
+  description: 'Frontend Engineer بخبرة تزيد عن 5 سنوات في بناء تطبيقات ويب حديثة وعالية الأداء. تصفح مشاريعي العملية، آراء العملاء، واتصل بي مباشرة لتنفيذ أفكارك التقنية.',
+  ogTitle: 'عبدالمؤمن الشطوري | Frontend Engineer',
   ogDescription: 'حلول برمجية مبتكرة وتجارب مستخدم استثنائية — تصفح أعمالي واحصل على استشارة مجانية الآن',
   ogType: 'website',
   ogLocale: 'ar_EG',
   ogSiteName: 'عبدالمؤمن الشطوري',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'عبدالمؤمن الشطوري | مهندس واجهات أمامية',
+  twitterTitle: 'عبدالمؤمن الشطوري | Frontend Engineer',
   twitterDescription: 'حلول برمجية مبتكرة وتجارب مستخدم استثنائية — تصفح أعمالي واحصل على استشارة مجانية',
   twitterSite: '@beingmomen',
   twitterCreator: '@beingmomen',

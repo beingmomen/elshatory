@@ -7,8 +7,10 @@ const config = useRuntimeConfig()
 const { data: singleBlog } = await useAPI(`/blogs/slug/${route.params.slug}`, {
   key: `blog-${route.params.slug}`,
   default: () => ({}),
-  transform: response => response.data?.data || {}
+  transform: response => response?.data || {}
 })
+
+provide('singleBlog', singleBlog)
 
 const sanitizedContent = computed(() =>
   singleBlog.value?.content ? DOMPurify.sanitize(singleBlog.value.content) : ''
@@ -62,7 +64,7 @@ useSeoMeta({
   articleModifiedTime: () =>
     singleBlog.value.updatedAt || singleBlog.value.createdAt,
   articleSection: 'تقنية',
-  articleTag: () => singleBlog.value?.tags?.split(',') || ['برمجة', 'تطوير']
+  articleTag: () => singleBlog.value?.tags || ['برمجة', 'تطوير']
 })
 
 useHead({
@@ -156,7 +158,7 @@ useBreadcrumbSchema([
               variant="outline"
               class="justify-center items-center text-center"
               name="عبدالمؤمن الشطوري"
-              description="مهندس واجهات أمامية"
+              description="Frontend Engineer"
               :avatar="{
                 src: 'https://res.cloudinary.com/dyqfclwdk/image/upload/beingmomen/beingmomen-01_xczmdz',
                 alt: 'عبدالمؤمن الشطوري'
@@ -164,10 +166,15 @@ useBreadcrumbSchema([
             />
           </div>
         </div>
-        <UPageBody class="max-w-3xl mx-auto">
-          <!-- eslint-disable-next-line vue/no-v-html -->
+        <UPageBody>
+          <!-- eslint-disable vue/no-v-html -->
           <article v-html="sanitizedContent" />
+          <!-- eslint-enable vue/no-v-html -->
         </UPageBody>
+
+        <template #right>
+          <BlogSidebar />
+        </template>
       </UPage>
 
       <div
