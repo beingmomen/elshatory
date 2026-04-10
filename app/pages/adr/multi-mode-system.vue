@@ -24,7 +24,7 @@
           >
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 mb-4">
               <div class="flex items-start gap-3">
-                <div class="p-2 rounded-xl bg-primary/10 shrink-0">
+                <div class="size-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <UIcon
                     name="i-lucide-lightbulb"
                     class="size-5 text-primary"
@@ -92,7 +92,7 @@
             icon="i-lucide-book-open"
             description="الدوال والثوابت التي يصدّرها useMode"
           >
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid sm:grid-cols-1 gap-4">
               <AdrApiCard
                 v-for="api in apiReference"
                 :key="api.name"
@@ -111,7 +111,7 @@
             <div class="space-y-4">
               <div class="rounded-xl border border-default/60 bg-elevated/30 p-5">
                 <div class="flex items-center gap-2 mb-3">
-                  <div class="p-2 rounded-xl bg-primary/10">
+                  <div class="size-8 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <UIcon
                       name="i-lucide-repeat"
                       class="size-4 text-primary"
@@ -146,7 +146,7 @@
 
               <div class="rounded-xl border border-default/60 bg-elevated/30 p-5">
                 <div class="flex items-center gap-2 mb-3">
-                  <div class="p-2 rounded-xl bg-primary/10">
+                  <div class="size-8 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <UIcon
                       name="i-lucide-eye"
                       class="size-4 text-primary"
@@ -244,7 +244,7 @@
             icon="i-lucide-puzzle"
             description="للموديولات التي تختلف بين الأنظمة: ملف منفصل لكل نظام"
           >
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div class="grid sm:grid-cols-1 gap-4 mb-4">
               <div class="animate-fade-in animation-delay-100">
                 <div class="rounded-xl border border-default/60 bg-elevated/30 p-5 h-full">
                   <div class="flex items-center gap-2 mb-3">
@@ -353,7 +353,7 @@
             description="خطوات إضافة نظام mixed (mode: 3) — بدون إعادة هيكلة أو تعديل ملفات الأنظمة الموجودة"
           >
             <div class="space-y-0">
-              <template
+              <div
                 v-for="(step, index) in addModeSteps"
                 :key="step.title"
               >
@@ -391,7 +391,7 @@
                     class="size-4 text-primary/30"
                   />
                 </div>
-              </template>
+              </div>
             </div>
           </AdrSection>
 

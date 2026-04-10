@@ -24,7 +24,7 @@
           >
             <div class="rounded-xl border border-primary/30 bg-primary/5 p-5">
               <div class="flex items-start gap-3">
-                <div class="p-2 rounded-xl bg-primary/10 shrink-0">
+                <div class="size-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <UIcon
                     name="i-lucide-lightbulb"
                     class="size-5 text-primary"
@@ -56,7 +56,7 @@
                       label="composables/core/useGlobal.js"
                       color="neutral"
                       variant="subtle"
-                      size="xs"
+                      size="md"
                     />
                   </div>
                 </div>
@@ -121,7 +121,7 @@
               language="js"
               :code="`const { user, lists, employees, findInList, refreshGlobal, session } = useGlobal()`"
             />
-            <div class="grid sm:grid-cols-2 gap-4 mt-4">
+            <div class="grid sm:grid-cols-1 gap-4 mt-4">
               <AdrApiCard
                 v-for="api in apiReference"
                 :key="api.name"

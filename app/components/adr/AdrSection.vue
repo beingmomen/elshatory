@@ -35,7 +35,7 @@ defineProps({
         v-else-if="icon"
         class="flex items-center gap-2"
       >
-        <div class="p-1.5 rounded-lg bg-primary/10">
+        <div class="size-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
           <UIcon
             :name="icon"
             class="size-4 text-primary"

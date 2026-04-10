@@ -23,7 +23,7 @@ defineProps({
         <div class="rounded-xl border border-default/60 bg-elevated/30 p-4 hover:bg-elevated/60 transition-colors duration-300">
           <div class="flex items-center gap-3">
             <div
-              class="p-2 rounded-xl"
+              class="size-8 rounded-xl flex items-center justify-center shrink-0"
               :class="step.color ? `bg-${step.color}/10` : 'bg-primary/10'"
             >
               <UIcon

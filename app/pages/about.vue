@@ -256,7 +256,7 @@ useBreadcrumbSchema([{ name: 'نبذة عني', path: '/about' }])
               <span class="font-semibold text-base text-right text-highlighted">
                 {{ category.title }}
               </span>
-              <div class="p-2.5 rounded-xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300 shrink-0">
+              <div class="size-10 rounded-xl bg-primary/10 dark:bg-primary/15 group-hover:bg-primary/20 transition-colors duration-300 shrink-0 flex items-center justify-center">
                 <UIcon
                   :name="category.icon"
                   class="size-5 text-primary"
