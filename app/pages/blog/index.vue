@@ -33,20 +33,22 @@ const paginatedPosts = computed(() => {
 
 const totalPages = computed(() => Math.ceil(posts.value.length / pageSize))
 
-useSeoMeta({
-  title: 'المدونة - عبدالمؤمن الشطوري',
-  ogTitle: 'المدونة - عبدالمؤمن الشطوري',
-  description: 'اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا',
-  ogDescription: 'اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا'
-})
+const config = useRuntimeConfig()
+const pageDescription = 'اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا'
 
-useHead({
-  meta: [
-    { name: 'keywords', content: 'مدونة, برمجة, تطوير الويب, جافا سكريبت, vue.js, nuxt.js, تقنية' },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: 'المدونة - عبدالمؤمن الشطوري' },
-    { name: 'twitter:description', content: 'اكتشف أحدث المقالات والمدونات حول تطوير الويب والبرمجة وأفضل الممارسات في عالم التكنولوجيا' }
-  ]
+useSeoMeta({
+  title: 'المدونة | عبدالمؤمن الشطوري',
+  ogTitle: 'المدونة | عبدالمؤمن الشطوري',
+  description: pageDescription,
+  ogDescription: pageDescription,
+  ogUrl: `${config.public.siteUrl}/blog`,
+  ogType: 'website',
+  ogLocale: 'ar_EG',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'المدونة | عبدالمؤمن الشطوري',
+  twitterDescription: pageDescription,
+  twitterSite: '@beingmomen',
+  keywords: 'مدونة, برمجة, تطوير الويب, جافا سكريبت, vue.js, nuxt.js, تقنية'
 })
 
 useBreadcrumbSchema([{ name: 'المدونة', path: '/blog' }])

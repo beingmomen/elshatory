@@ -1,5 +1,6 @@
 <script setup>
-const { cloudinary } = useRuntimeConfig().public
+const config = useRuntimeConfig()
+const { cloudinary } = config.public
 
 const { data: projects } = await useAPI('/projects', {
   key: 'projects',
@@ -14,16 +15,24 @@ const { data: projects } = await useAPI('/projects', {
 
 const { global } = useAppConfig()
 
+const pageDescription = 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء'
+
 useSeoMeta({
-  title: 'المشاريع - عبدالمؤمن الشطوري',
-  ogTitle: 'المشاريع - عبدالمؤمن الشطوري',
-  description: 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء',
-  ogDescription: 'استعرض مشاريعي في تطوير الويب وبناء تطبيقات حديثة وعالية الأداء'
+  title: 'المشاريع | عبدالمؤمن الشطوري',
+  ogTitle: 'المشاريع | عبدالمؤمن الشطوري',
+  description: pageDescription,
+  ogDescription: pageDescription,
+  ogUrl: `${config.public.siteUrl}/projects`,
+  ogType: 'website',
+  ogLocale: 'ar_EG',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'المشاريع | عبدالمؤمن الشطوري',
+  twitterDescription: pageDescription,
+  twitterSite: '@beingmomen',
+  keywords: 'مشاريع, تطوير ويب, Frontend Engineer, عبدالمؤمن الشطوري, تطبيقات ويب'
 })
 
 useBreadcrumbSchema([{ name: 'المشاريع', path: '/projects' }])
-
-const config = useRuntimeConfig()
 
 useHead({
   script: [
@@ -131,16 +140,14 @@ useHead({
               />
             </ULink>
           </template>
-          <div class="w-100">
-            <NuxtImg
-              :src="project.image"
-              :alt="project.altText || project.title"
-              width="400"
-              height="192"
-              loading="lazy"
-              class="object-cover w-full h-48 rounded-lg"
-            />
-          </div>
+          <NuxtImg
+            :src="project.image"
+            :alt="project.altText || project.title"
+            width="400"
+            height="192"
+            loading="lazy"
+            class="object-cover w-full h-48 rounded-lg"
+          />
         </UPageCard>
       </div>
     </UPageSection>

@@ -1,13 +1,5 @@
-import { unlink, access } from 'node:fs/promises'
-import { resolve } from 'node:path'
-
 export default defineEventHandler(async (event) => {
-  if (!import.meta.dev) {
-    throw createError({
-      statusCode: 403,
-      message: 'This endpoint is only available in development mode'
-    })
-  }
+  ensureDevOnly()
 
   const body = await readBody(event)
   const { slug } = body
@@ -19,18 +11,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const filePath = resolve(process.cwd(), 'content', 'mcp', `${slug}.md`)
-
-  try {
-    await access(filePath)
-  } catch {
-    throw createError({
-      statusCode: 404,
-      message: `Server "${slug}" not found`
-    })
-  }
-
-  await unlink(filePath)
+  await deleteMarkdownFile('mcp', slug)
 
   return {
     status: 'success',
