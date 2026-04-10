@@ -288,7 +288,6 @@ function resetForm() {
                   icon="i-lucide-mail"
                   placeholder="بريدك الإلكتروني"
                   class="w-full"
-                  :ui="{ base: 'text-left' }"
                   :disabled="loading"
                 />
               </UFormField>
