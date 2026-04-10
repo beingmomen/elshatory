@@ -16,6 +16,23 @@ export default defineAppConfig({
     meetingLink: 'https://cal.com/beingmomen',
     email: 'abdelmomenelshatory@gmail.com',
     available: true,
+    socialLinks: [
+      {
+        to: 'https://www.linkedin.com/in/beingmomen/',
+        icon: 'i-simple-icons-linkedin',
+        label: 'LinkedIn'
+      },
+      {
+        to: 'https://github.com/beingmomen',
+        icon: 'i-simple-icons-github',
+        label: 'GitHub'
+      },
+      {
+        to: 'https://qabilah.com/profile/beingmomen/posts',
+        icon: 'i-custom-qabilah',
+        label: 'Qabilah'
+      }
+    ],
     aboutSection: {
       title: 'من أنا؟',
       description:
@@ -38,38 +55,6 @@ export default defineAppConfig({
   },
   footer: {
     credits: `© ${new Date().getFullYear()} عبدالمؤمن الشطوري`,
-    colorMode: false,
-    links: [
-      {
-        'icon': 'i-simple-icons-linkedin',
-        'to': 'https://www.linkedin.com/in/beingmomen/',
-        'target': '_blank',
-        'aria-label': 'LinkedIn'
-      },
-      {
-        'icon': 'i-simple-icons-github',
-        'to': 'https://github.com/beingmomen',
-        'target': '_blank',
-        'aria-label': 'GitHub'
-      }
-      // {
-      //   'icon': 'i-simple-icons-x',
-      //   'to': 'https://twitter.com/beingmomen',
-      //   'target': '_blank',
-      //   'aria-label': 'Twitter'
-      // },
-      // {
-      //   'icon': 'i-simple-icons-facebook',
-      //   'to': 'https://www.facebook.com/beingmomen/',
-      //   'target': '_blank',
-      //   'aria-label': 'Facebook'
-      // },
-      // {
-      //   'icon': 'i-simple-icons-instagram',
-      //   'to': 'https://www.instagram.com/beingmomen/',
-      //   'target': '_blank',
-      //   'aria-label': 'Instagram'
-      // }
-    ]
+    colorMode: false
   }
 })

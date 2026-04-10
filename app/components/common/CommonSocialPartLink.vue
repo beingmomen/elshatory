@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="url"
+    :to="to"
     target="_blank"
     :aria-label="label"
     class="inline-flex items-center justify-center min-w-11 min-h-11 p-1.5 rounded-lg hover:opacity-80 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none transition-opacity"
@@ -9,7 +9,7 @@
     <template v-if="icon">
       <UIcon
         :name="icon"
-        class="w-8 h-8"
+        class="size-10"
       />
     </template>
     <template v-else-if="image">
@@ -29,7 +29,7 @@
 
 <script setup>
 defineProps({
-  url: {
+  to: {
     type: String,
     required: true
   },

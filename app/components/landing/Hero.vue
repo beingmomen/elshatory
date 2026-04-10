@@ -1,5 +1,5 @@
 <script setup>
-const { footer, global } = useAppConfig()
+const { global } = useAppConfig()
 </script>
 
 <template>
@@ -64,11 +64,11 @@ const { footer, global } = useAppConfig()
         </UButton>
       </div>
 
-      <div class="gap-x-4 inline-flex mt-4 animate-fade-in animation-delay-400">
-        <UButton
-          v-for="link of footer?.links"
-          :key="link.to || link.href"
-          v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
+      <div class="gap-x-2 inline-flex mt-4 animate-fade-in animation-delay-400">
+        <CommonSocialPartLink
+          v-for="link in global.socialLinks"
+          :key="link.to"
+          v-bind="link"
         />
       </div>
     </template>

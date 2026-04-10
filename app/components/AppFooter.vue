@@ -184,11 +184,10 @@ const aiTools = [
           </p>
 
           <div class="flex items-center gap-1">
-            <UButton
-              v-for="link of footer?.links"
-              :key="link.to || link.href"
-              v-bind="{ size: 'sm', color: 'neutral', variant: 'ghost', ...link }"
-              class="hover:text-primary hover:bg-primary/10 transition-all duration-200"
+            <CommonSocialPartLink
+              v-for="link in global.socialLinks"
+              :key="link.to"
+              v-bind="link"
             />
           </div>
         </div>

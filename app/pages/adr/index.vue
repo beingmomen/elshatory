@@ -14,8 +14,7 @@
             label="Architecture Decision Records"
             color="primary"
             variant="soft"
-            size="sm"
-            icon="i-lucide-landmark"
+            size="lg"
           />
         </span>
       </template>
@@ -45,11 +44,11 @@
             :to="`/adr/${adr.slug}`"
             class="group block rounded-2xl border border-default/60 bg-elevated/30 p-6 hover:bg-elevated/60 hover:border-primary/30 transition-all duration-300 h-full"
           >
-            <div class="flex items-start gap-4 mb-4">
-              <div class="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="size-14 rounded-xl flex items-center justify-center bg-primary/10 ring-1 ring-primary/20 group-hover:bg-primary/15 group-hover:ring-primary/30 transition-all duration-300 shrink-0">
                 <UIcon
                   :name="adr.icon"
-                  class="size-6 text-primary"
+                  class="size-7 text-primary"
                 />
               </div>
               <div class="flex-1 min-w-0">
@@ -61,7 +60,7 @@
               </div>
               <UIcon
                 name="i-lucide-arrow-left"
-                class="size-5 text-muted group-hover:text-primary transition-colors shrink-0 mt-1"
+                class="size-5 text-muted group-hover:text-primary transition-colors shrink-0"
               />
             </div>
 
@@ -70,31 +69,34 @@
             <USeparator class="mb-4" />
 
             <div class="flex flex-wrap gap-2">
-              <UBadge
+              <UButton
                 v-for="topic in adr.topics"
                 :key="topic"
                 :label="topic"
                 color="neutral"
                 variant="subtle"
-                size="xs"
+                size="sm"
+                class="cursor-default rounded-full"
               />
             </div>
 
-            <div class="flex items-center gap-4 mt-4 text-xs text-muted">
-              <div class="flex items-center gap-1">
-                <UIcon
-                  name="i-lucide-layers"
-                  class="size-3"
-                />
-                <span>{{ adr.sections }} قسم</span>
-              </div>
-              <div class="flex items-center gap-1">
-                <UIcon
-                  name="i-lucide-clock"
-                  class="size-3"
-                />
-                <span>{{ adr.readTime }}</span>
-              </div>
+            <div class="flex items-center gap-3 mt-4">
+              <UButton
+                :label="`${adr.sections} قسم`"
+                leading-icon="i-lucide-layers"
+                color="neutral"
+                variant="ghost"
+                size="sm"
+                class="cursor-default"
+              />
+              <UButton
+                :label="adr.readTime"
+                leading-icon="i-lucide-clock"
+                color="neutral"
+                variant="ghost"
+                size="sm"
+                class="cursor-default"
+              />
             </div>
           </NuxtLink>
         </div>
