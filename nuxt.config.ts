@@ -87,9 +87,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 600 },
-    '/about': { swr: 600 },
-    '/projects': { swr: 600 }
+    // '/': { swr: 600 },
+    // '/about': { swr: 600 },
+    // '/projects': { swr: 600 }
     // '/sdlc': { prerender: true },
     // '/sdlc-ar': { prerender: true },
     // '/adr': { prerender: true },
