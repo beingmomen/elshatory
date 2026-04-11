@@ -3,7 +3,7 @@ name: Node.js CI
 on:
   push:
     branches:
-      - "main" # demo branch
+      - "demo" # demo branch
       - "prod" # production branch
   workflow_dispatch:
     inputs:
@@ -18,7 +18,7 @@ on:
 jobs:
   deploy-demo:
     runs-on: [self-hosted, demo]
-    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'demo')
+    if: github.ref == 'refs/heads/demo' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'demo')
 
     strategy:
       matrix:
